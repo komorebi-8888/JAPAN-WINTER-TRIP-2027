@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer">
 <title>🎮 JAPAN WINTER QUEST 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --nes-bg: #5c94fc; 
@@ -20,7 +19,7 @@
   --shadow-retro: 6px 6px 0px var(--nes-dark);
   --border-retro: 4px solid var(--nes-dark);
   
-  --font-pixel: 'Press Start 2P', 'Chakra Petch', cursive; 
+  --font-pixel: 'Press Start 2P', cursive; 
   --font-thai: 'Chakra Petch', sans-serif;
   --font-body: 'IBM Plex Sans Thai', sans-serif;
 }
@@ -67,15 +66,16 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 
 /* ---------- SECTION SHELL ---------- */
 .section{padding:80px 0}
-.sHead{margin-bottom:40px; text-align:center; background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); padding:20px; display:inline-block; max-width:800px; margin-left:auto; margin-right:auto;}
+.sHead{margin-bottom:40px; text-align:center; background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); padding:20px; display:inline-block; width:100%;}
 .sHead h2{font-family:var(--font-pixel); font-size:clamp(16px,3vw,24px); margin:0 0 12px; color:var(--nes-dark); text-transform:uppercase;}
 .sHead p{margin:0; font-family:var(--font-thai); font-weight:600; font-size:16px;}
 
 /* ---------- VISUAL QUESTS (DAY 1 - 7) ---------- */
 .quest-timeline{display:flex; flex-direction:column; gap:32px;}
 .quest-card{background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); overflow:hidden; display:flex; flex-direction:row;}
-.q-img{width:45%; min-height:300px; background-size:cover; background-position:center; background-color:#333; border-right:var(--border-retro); transition:0.3s;}
-.quest-card:hover .q-img {filter: brightness(1.08);}
+.q-img{width:45%; min-height:300px; position:relative; background:#1a1a2e; border-right:var(--border-retro); overflow:hidden;}
+.q-img img{width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s;}
+.quest-card:hover .q-img img{transform:scale(1.05);}
 .q-content{width:55%; padding:32px; display:flex; flex-direction:column;}
 .qHead{margin-bottom:16px; padding-bottom:16px; border-bottom:4px dashed var(--nes-dark);}
 .q-day-badge{background:var(--nes-blue); color:#fff; font-family:var(--font-pixel); padding:8px 12px; font-size:12px; display:inline-block; border:2px solid #000; margin-bottom:12px;}
@@ -110,15 +110,97 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 .tInfoRow b{display:block; font-size:16px; font-family:var(--font-pixel); margin-bottom:4px;}
 @media(max-width:760px){.ticketRow{grid-template-columns:1fr}}
 
-/* ---------- LOOT & PARTY ---------- */
-.lootGrid{display:grid; grid-template-columns:1fr 1fr; gap:32px}
-.lootCard, .partyPanel{background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); padding:32px;}
-.lootCard h3{font-family:var(--font-thai); font-size:24px; margin:0 0 20px; border-bottom:4px solid #000; padding-bottom:10px;}
-.lootTotal{text-align:center; margin-bottom:24px; background:var(--nes-yellow); padding:16px; border:2px solid #000;}
-.lootTotal b{font-family:var(--font-pixel); font-size:20px; color:var(--nes-red); display:block; margin-bottom:8px;}
-.lootRow{display:flex; justify-content:space-between; padding:12px 0; border-bottom:2px dashed #ccc; font-family:var(--font-thai); font-weight:600;}
-.lootRow b{font-family:var(--font-pixel); font-size:12px;}
+/* ---------- LOOT & BUDGET (ปรับปรุงใหม่ เรียงสวย ไม่แตก) ---------- */
+.lootGrid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+.lootCard{
+  background: var(--nes-card);
+  border: var(--border-retro);
+  box-shadow: var(--shadow-retro);
+  padding: 28px;
+}
+.lootCard h3{
+  font-family: var(--font-thai);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  color: var(--nes-dark);
+  padding-bottom: 10px;
+  border-bottom: 4px solid var(--nes-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.lootTotal{
+  background: var(--nes-yellow);
+  border: 3px solid var(--nes-dark);
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 0px var(--nes-dark);
+}
+.lootTotal .total-title{
+  font-family: var(--font-thai);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--nes-dark);
+  margin-bottom: 2px;
+}
+.lootTotal .total-price{
+  font-family: var(--font-thai);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--nes-red);
+  line-height: 1.2;
+}
+.lootTotal .total-sub{
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-top: 4px;
+}
+
+.lootList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lootRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border: 2px solid var(--nes-dark);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px var(--nes-dark);
+}
+.lootRow .item-name{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--nes-dark);
+}
+.lootRow .item-price{
+  font-family: var(--font-thai);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--nes-blue);
+  background: #e7f5ff;
+  padding: 3px 10px;
+  border: 2px solid var(--nes-blue);
+  white-space: nowrap;
+}
+
+@media(max-width:800px){
+  .lootGrid{grid-template-columns:1fr;}
+}
+
+/* ---------- PARTY ---------- */
+.partyPanel{background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); padding:32px;}
 .partyPanel h2{font-family:var(--font-pixel); font-size:20px; text-align:center; margin-bottom:10px;}
 .partyRow{display:flex; flex-wrap:wrap; gap:20px; margin:30px 0; justify-content:center;}
 .slot{text-align:center; width:90px;}
@@ -189,34 +271,84 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   </div>
 </section>
 
+<!-- SECTION BUDGET (ปรับปรุงใหม่) -->
 <section class="section" id="loot">
   <div class="sHead" style="display:block;">
     <h2>💰 GOLD & ITEMS (BUDGET)</h2>
-    <p>สรุปงบการเดินทาง หาเหรียญเตรียมเปย์ได้เลย</p>
+    <p>สรุปงบประมาณการเดินทาง เรียงดูง่าย ชัดเจนทุกรายการ</p>
   </div>
   <div class="lootGrid">
+    
+    <!-- CARD 1: OVERALL BUDGET -->
     <div class="lootCard">
-      <h3>🪙 ค่าสเตตัสรวม / คน</h3>
+      <h3>🪙 ค่าใช้จ่ายประมาณการ / คน</h3>
+      
       <div class="lootTotal">
-        <b>฿33,000–38,000</b>
-        <span style="font-family:var(--font-thai); font-size:14px; color:var(--nes-dark);">*ยังไม่รวมช้อปปิ้งส่วนตัว</span>
+        <div class="total-title">ประมาณการรวมสุทธิ</div>
+        <div class="total-price">฿33,000 – ฿38,000</div>
+        <div class="total-sub">*ตัวเลขคร่าวๆ ไม่รวมงบช้อปปิ้งส่วนตัว</div>
       </div>
-      <div>
-        <div class="lootRow"><span>ตั๋วเครื่องบินไป-กลับ</span><b>~฿11,000</b></div>
-        <div class="lootRow"><span>ที่พัก 6 คืน</span><b>~฿6,000</b></div>
-        <div class="lootRow"><span>รถไฟเดินทางข้ามเมือง</span><b>~฿7,000–9,000</b></div>
-        <div class="lootRow"><span>ค่าเข้าดันเจี้ยน/กิจกรรม</span><b>~฿2,000–4,000</b></div>
-        <div class="lootRow"><span>เสบียงอาหาร</span><b>~฿7,000–9,000</b></div>
+      
+      <div class="lootList">
+        <div class="lootRow">
+          <span class="item-name">✈️ ตั๋วเครื่องบินไป-กลับ</span>
+          <span class="item-price">~฿11,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🏨 ที่พัก 6 คืน</span>
+          <span class="item-price">~฿6,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🚆 ค่าเดินทางในญี่ปุ่น</span>
+          <span class="item-price">~฿7,000–9,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🎟️ ตั๋วเข้าสถานที่ / กิจกรรม</span>
+          <span class="item-price">~฿2,000–4,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🍲 ค่าอาหารและของกิน</span>
+          <span class="item-price">~฿7,000–9,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🛡️ ประกันการเดินทาง</span>
+          <span class="item-price">~฿300–400</span>
+        </div>
       </div>
     </div>
+
+    <!-- CARD 2: MAIN TRANSPORTATION -->
     <div class="lootCard">
-      <h3>🚂 ตั๋ววาร์ปข้ามเมือง (PASS)</h3>
-      <div>
-        <div class="lootRow"><span>Osaka → Tokyo (Shinkansen)</span><b>~¥14,000</b></div>
-        <div class="lootRow"><span>Tokyo → Kawaguchiko (Bus)</span><b>~¥2,200</b></div>
-        <div class="lootRow"><span>Tokyo ↔ Gala Yuzawa (Pass)</span><b>~¥13,500</b></div>
+      <h3>🚂 ตั๋วเดินทางหลัก (Pass & Train)</h3>
+      
+      <div class="lootList" style="margin-top: 10px;">
+        <div class="lootRow">
+          <span class="item-name">🚄 Osaka ➔ Tokyo (Shinkansen)</span>
+          <span class="item-price">~¥14,000</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🚌 Tokyo ➔ Kawaguchiko (Bus)</span>
+          <span class="item-price">~¥2,200</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">⛷️ Tokyo ↔ Gala Yuzawa (Pass)</span>
+          <span class="item-price">~¥13,500</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🚃 KIX Airport ➔ Namba (Osaka)</span>
+          <span class="item-price">~¥1,400</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🏰 Tokyo ↔ Disneyland</span>
+          <span class="item-price">~¥600</span>
+        </div>
+        <div class="lootRow">
+          <span class="item-name">🎟️ บัตรเข้า Disneyland (1 Day)</span>
+          <span class="item-price">~¥8,400–10,900</span>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -246,39 +378,52 @@ for(let i=0;i<15;i++){const f=document.createElement("span");f.className="elemen
   f.style.animationDuration=(15+Math.random()*20)+"s";f.style.animationDelay=(-Math.random()*20)+"s";
   f.style.opacity="0.8"; sf.appendChild(f);}
 
-/* รูปที่ 1-6 ดึงจากไฟล์ในเครื่อง ส่วนรูปที่ 7 ดึงจากเว็บที่ไม่มีวันโดนบล็อก! */
 const quests=[
- {img:"day1.jpg",
+ {
+  localImg:"./day1.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dotonbori_at_night_2016.jpg/800px-Dotonbori_at_night_2016.jpg",
   icon:"🦀",day:"STAGE 1",date:"25 ก.พ.",title:"โอซาก้ายามค่ำคืน",
   summary:"ลงเครื่องปุ๊บ บุกตะลุย Dotonbori ป้ายไฟ ปูยักษ์ และของกินเพียบ!",
   tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
   
- {img:"day2.jpg",
+ {
+  localImg:"./day2.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Osaka_Castle_02bs3200.jpg/800px-Osaka_Castle_02bs3200.jpg",
   icon:"🏯",day:"STAGE 2",date:"26 ก.พ.",title:"ปราสาท & ช้อปปิ้ง",
   summary:"ชมความงามของปราสาทโอซาก้า แล้วไปละลายทรัพย์ที่ชินไซบาชิ",
   tl:[["เช้า","บุกปราสาทโอซาก้า (Osaka Castle)"],["บ่าย","Shinsaibashi ซื้อของฝาก"],["ค่ำ","จัดซูชิหรือทาโกะยากิชุดใหญ่"]]},
   
- {img:"day3.jpg",
+ {
+  localImg:"./day3.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Shinkansen_N700.jpg/800px-Shinkansen_N700.jpg",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
   summary:"นั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่มหานครโตเกียว",
   tl:[["เช้า","เช็คเอาท์ เตรียมตัวขึ้นรถไฟ"],["กลางวัน","กินข้าวกล่อง Ekiben บน Shinkansen"],["เย็น","เช็คอินที่พักโตเกียว เดินเล่นชิลๆ"]]},
   
- {img:"day4.jpg",
+ {
+  localImg:"./day4.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg/800px-Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg",
   icon:"🗻",day:"STAGE 4",date:"28 ก.พ.",title:"ตามล่าฟูจิซัง",
   summary:"นั่งบัสออกนอกเมืองไปชมภูเขาไฟฟูจิ แบบอลังการเต็มตา",
   tl:[["06:30","นั่งไฮเวย์บัส Tokyo → Kawaguchiko"],["09:30","เที่ยวรอบทะเลสาบ / เจดีย์แดงชูเรโตะ"],["16:00","เดินทางกลับโตเกียว"]]},
   
- {img:"day5.jpg",
+ {
+  localImg:"./day5.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tokyo_Disneyland_Cinderella_Castle_2019.jpg/800px-Tokyo_Disneyland_Cinderella_Castle_2019.jpg",
   icon:"🏰",day:"STAGE 5",date:"1 มี.ค.",title:"ดินแดนเวทมนตร์",
   summary:"ใช้แรงทั้งหมดที่มีใน Tokyo Disneyland เล่นเครื่องเล่น รอดูพาเหรด!",
   tl:[["06:30","รีบตื่นไปต่อแถวหน้าสวนสนุก"],["08:00","ลุยเครื่องเล่น ดูโชว์ไฟตอนกลางคืน"],["21:00","ขาลากกลับที่พัก"]]},
   
- {img:"day6.jpg",
+ {
+  localImg:"./day6.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gala_Yuzawa_Station_and_Ski_Resort.jpg/800px-Gala_Yuzawa_Station_and_Ski_Resort.jpg",
   icon:"⛷️",day:"STAGE 6",date:"2 มี.ค.",title:"ลุยหิมะ Gala Yuzawa",
   summary:"นั่งชินคันเซ็นขึ้นเหนือไปเจอหิมะฟูๆ เล่นถาดเลื่อนและสกี",
   tl:[["06:00","Shinkansen ตรงสู่ Gala Yuzawa"],["09:00","ลานสกี เล่นหิมะ แช่ออนเซ็น"],["17:00","กลับมาหาชาบู/ปิ้งย่างกินที่โตเกียว"]]},
   
- {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Narita_International_Airport_Terminal_1.jpg/800px-Narita_International_Airport_Terminal_1.jpg",
+ {
+  localImg:"./day7.jpg",
+  fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Narita_International_Airport_Terminal_1.jpg/800px-Narita_International_Airport_Terminal_1.jpg",
   icon:"🧳",day:"STAGE 7",date:"3 มี.ค.",title:"ภารกิจสุดท้าย",
   summary:"ซื้อของฝากที่สนามบินนาริตะ แล้วเดินทางกลับบ้านอย่างปลอดภัย",
   tl:[["08:00","เก็บตกช้อปปิ้งของที่ลืมซื้อ"],["10:00","เช็คเอาท์ นั่งรถไฟไปนาริตะ"],["18:30","เครื่องบินออก NRT → BKK"]]},
@@ -289,7 +434,9 @@ quests.forEach((q)=>{
   const el=document.createElement("div");
   el.className="quest-card";
   el.innerHTML=`
-    <div class="q-img" style="background-image:url('${q.img}')"></div>
+    <div class="q-img">
+      <img src="${q.localImg}" alt="${q.title}" onerror="this.onerror=null; this.src='${q.fallbackImg}';">
+    </div>
     <div class="q-content">
       <div class="qHead">
         <div class="qTitle">
