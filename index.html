@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- โค้ดบรรทัดนี้สำคัญมาก! ช่วยให้ดึงรูปจากเน็ตมาโชว์ได้ 100% ไม่โดนบล็อก -->
-<meta name="referrer" content="no-referrer">
 <title>🎮 JAPAN WINTER QUEST 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +52,7 @@ a{color:inherit; text-decoration:none;}
 .hud-hp span{color:var(--nes-red);}
 @media(max-width:760px){.hudNav{display:none}}
 
-/* ---------- HERO (TITLE SCREEN) ---------- */
+/* ---------- HERO ---------- */
 .hero{min-height:95vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:100px 0 60px;}
 .hero-tag{font-family:var(--font-pixel); font-size:12px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:30px; box-shadow:4px 4px 0px #000;}
 h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-height:1.4; margin:0 0 20px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
@@ -76,7 +74,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 .quest-timeline{display:flex; flex-direction:column; gap:32px;}
 .quest-card{background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); overflow:hidden; display:flex; flex-direction:row;}
 .q-img{width:45%; min-height:300px; background-size:cover; background-position:center; border-right:var(--border-retro); transition:0.3s;}
-.quest-card:hover .q-img {filter: brightness(1.1);}
+.quest-card:hover .q-img {filter: brightness(1.08);}
 .q-content{width:55%; padding:32px; display:flex; flex-direction:column;}
 .qHead{margin-bottom:16px; padding-bottom:16px; border-bottom:4px dashed var(--nes-dark);}
 .q-day-badge{background:var(--nes-blue); color:#fff; font-family:var(--font-pixel); padding:8px 12px; font-size:12px; display:inline-block; border:2px solid #000; margin-bottom:12px;}
@@ -95,7 +93,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
   .q-content{width:100%; padding:24px;}
 }
 
-/* ---------- TICKETS (ITEM BOXES) ---------- */
+/* ---------- TICKETS ---------- */
 .ticketRow{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
 .ticket{background:#fff; border:var(--border-retro); box-shadow:var(--shadow-retro); padding:24px; position:relative;}
 .ticket::before{content:'AIRSHIP TICKET'; position:absolute; top:-16px; left:20px; background:var(--nes-yellow); border:2px solid #000; padding:4px 10px; font-family:var(--font-pixel); font-size:10px;}
@@ -247,39 +245,39 @@ for(let i=0;i<15;i++){const f=document.createElement("span");f.className="elemen
   f.style.animationDuration=(15+Math.random()*20)+"s";f.style.animationDelay=(-Math.random()*20)+"s";
   f.style.opacity="0.8"; sf.appendChild(f);}
 
-/* ใส่รูปภาพจริงกลับมา! ดึงจาก Server ที่เสถียรที่สุด */
+/* รูปภาพจาก Wikimedia Commons CDN (ไม่มีวันโดนบล็อกบน GitHub Pages) */
 const quests=[
- {img:"https://images.unsplash.com/photo-1590253232145-8f6424564ee1?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dotonbori_at_night_2016.jpg/800px-Dotonbori_at_night_2016.jpg",
   icon:"🦀",day:"STAGE 1",date:"25 ก.พ.",title:"โอซาก้ายามค่ำคืน",
   summary:"ลงเครื่องปุ๊บ บุกตะลุย Dotonbori ป้ายไฟ ปูยักษ์ และของกินเพียบ!",
   tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
   
- {img:"https://images.unsplash.com/photo-1594701256722-e1cbfa2cb78b?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Osaka_Castle_02bs3200.jpg/800px-Osaka_Castle_02bs3200.jpg",
   icon:"🏯",day:"STAGE 2",date:"26 ก.พ.",title:"ปราสาท & ช้อปปิ้ง",
   summary:"ชมความงามของปราสาทโอซาก้า แล้วไปละลายทรัพย์ที่ชินไซบาชิ",
   tl:[["เช้า","บุกปราสาทโอซาก้า (Osaka Castle)"],["บ่าย","Shinsaibashi ซื้อของฝาก"],["ค่ำ","จัดซูชิหรือทาโกะยากิชุดใหญ่"]]},
   
- {img:"https://images.unsplash.com/photo-1574888277258-37704df77f76?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Shinkansen_N700.jpg/800px-Shinkansen_N700.jpg",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
   summary:"นั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่มหานครโตเกียว",
   tl:[["เช้า","เช็คเอาท์ เตรียมตัวขึ้นรถไฟ"],["กลางวัน","กินข้าวกล่อง Ekiben บน Shinkansen"],["เย็น","เช็คอินที่พักโตเกียว เดินเล่นชิลๆ"]]},
   
- {img:"https://images.unsplash.com/photo-1522204535313-2d259dd1d86d?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg/800px-Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg",
   icon:"🗻",day:"STAGE 4",date:"28 ก.พ.",title:"ตามล่าฟูจิซัง",
   summary:"นั่งบัสออกนอกเมืองไปชมภูเขาไฟฟูจิ แบบอลังการเต็มตา",
   tl:[["06:30","นั่งไฮเวย์บัส Tokyo → Kawaguchiko"],["09:30","เที่ยวรอบทะเลสาบ / เจดีย์แดงชูเรโตะ"],["16:00","เดินทางกลับโตเกียว"]]},
   
- {img:"https://images.unsplash.com/photo-1516997193297-76798b3c3b4a?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tokyo_Disneyland_Cinderella_Castle_2019.jpg/800px-Tokyo_Disneyland_Cinderella_Castle_2019.jpg",
   icon:"🏰",day:"STAGE 5",date:"1 มี.ค.",title:"ดินแดนเวทมนตร์",
   summary:"ใช้แรงทั้งหมดที่มีใน Tokyo Disneyland เล่นเครื่องเล่น รอดูพาเหรด!",
   tl:[["06:30","รีบตื่นไปต่อแถวหน้าสวนสนุก"],["08:00","ลุยเครื่องเล่น ดูโชว์ไฟตอนกลางคืน"],["21:00","ขาลากกลับที่พัก"]]},
   
- {img:"https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gala_Yuzawa_Station_and_Ski_Resort.jpg/800px-Gala_Yuzawa_Station_and_Ski_Resort.jpg",
   icon:"⛷️",day:"STAGE 6",date:"2 มี.ค.",title:"ลุยหิมะ Gala Yuzawa",
   summary:"นั่งชินคันเซ็นขึ้นเหนือไปเจอหิมะฟูๆ เล่นถาดเลื่อนและสกี",
   tl:[["06:00","Shinkansen ตรงสู่ Gala Yuzawa"],["09:00","ลานสกี เล่นหิมะ แช่ออนเซ็น"],["17:00","กลับมาหาชาบู/ปิ้งย่างกินที่โตเกียว"]]},
   
- {img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+ {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Narita_International_Airport_Terminal_1.jpg/800px-Narita_International_Airport_Terminal_1.jpg",
   icon:"🧳",day:"STAGE 7",date:"3 มี.ค.",title:"ภารกิจสุดท้าย",
   summary:"ซื้อของฝากที่สนามบินนาริตะ แล้วเดินทางกลับบ้านอย่างปลอดภัย",
   tl:[["08:00","เก็บตกช้อปปิ้งของที่ลืมซื้อ"],["10:00","เช็คเอาท์ นั่งรถไฟไปนาริตะ"],["18:30","เครื่องบินออก NRT → BKK"]]},
