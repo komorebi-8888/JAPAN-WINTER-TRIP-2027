@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🎮 JAPAN WINTER QUEST 2027</title>
+<meta name="referrer" content="no-referrer">
+<title>🎮 JAPAN WINTER TRIP 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -54,9 +55,10 @@ a{color:inherit; text-decoration:none;}
 
 /* ---------- HERO ---------- */
 .hero{min-height:95vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:100px 0 60px;}
-.hero-tag{font-family:var(--font-pixel); font-size:12px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:30px; box-shadow:4px 4px 0px #000;}
-h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-height:1.4; margin:0 0 20px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
-.hero-dates{font-family:var(--font-thai); font-size:clamp(22px,4vw,28px); font-weight:700; color:var(--nes-yellow); margin-bottom:30px; text-shadow: 2px 2px 0px #000;}
+.hero-tag{font-family:var(--font-pixel); font-size:11px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:30px; box-shadow:4px 4px 0px #000;}
+h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-height:1.4; margin:0 0 20px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
+.hero-dates{font-family:var(--font-thai); font-size:clamp(22px,4vw,28px); font-weight:700; color:var(--nes-yellow); margin-bottom:20px; text-shadow: 2px 2px 0px #000;}
+.hero-sub{font-family:var(--font-thai); font-size:18px; font-weight:700; color:#fff; background:rgba(0,0,0,0.3); padding:8px 20px; border-radius:8px; margin-bottom:30px;}
 .hero-meta{display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:40px; font-family:var(--font-thai); font-size:16px; font-weight:700;}
 .hero-meta span{background:var(--nes-card); padding:10px 20px; border:var(--border-retro); box-shadow:4px 4px 0px #000;}
 
@@ -67,8 +69,8 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 /* ---------- SECTION SHELL ---------- */
 .section{padding:80px 0}
 .sHead{margin-bottom:40px; text-align:center; background:var(--nes-card); border:var(--border-retro); box-shadow:var(--shadow-retro); padding:20px; display:inline-block; width:100%;}
-.sHead h2{font-family:var(--font-pixel); font-size:clamp(16px,3vw,24px); margin:0 0 12px; color:var(--nes-dark); text-transform:uppercase;}
-.sHead p{margin:0; font-family:var(--font-thai); font-weight:600; font-size:16px;}
+.sHead h2{font-family:var(--font-pixel); font-size:clamp(15px,2.5vw,22px); margin:0 0 12px; color:var(--nes-dark); text-transform:uppercase;}
+.sHead p{margin:0; font-family:var(--font-thai); font-weight:600; font-size:16px; color:#444;}
 
 /* ---------- VISUAL QUESTS (DAY 1 - 7) ---------- */
 .quest-timeline{display:flex; flex-direction:column; gap:32px;}
@@ -97,7 +99,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 /* ---------- TICKETS ---------- */
 .ticketRow{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
 .ticket{background:#fff; border:var(--border-retro); box-shadow:var(--shadow-retro); padding:24px; position:relative;}
-.ticket::before{content:'AIRSHIP TICKET'; position:absolute; top:-16px; left:20px; background:var(--nes-yellow); border:2px solid #000; padding:4px 10px; font-family:var(--font-pixel); font-size:10px;}
+.ticket::before{content:'AIRSHIP PASS'; position:absolute; top:-16px; left:20px; background:var(--nes-yellow); border:2px solid #000; padding:4px 10px; font-family:var(--font-pixel); font-size:10px;}
 .tTop{display:flex; justify-content:space-between; margin-bottom:20px; margin-top:10px;}
 .tTop .name{font-family:var(--font-pixel); font-size:20px; color:var(--nes-blue);}
 .tTop .fare{background:var(--nes-dark); color:#fff; font-family:var(--font-pixel); padding:8px; font-size:10px;}
@@ -110,7 +112,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 .tInfoRow b{display:block; font-size:16px; font-family:var(--font-pixel); margin-bottom:4px;}
 @media(max-width:760px){.ticketRow{grid-template-columns:1fr}}
 
-/* ---------- LOOT & BUDGET (ปรับปรุงใหม่ เรียงสวย ไม่แตก) ---------- */
+/* ---------- LOOT & BUDGET ---------- */
 .lootGrid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
 .lootCard{
   background: var(--nes-card);
@@ -141,7 +143,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 }
 .lootTotal .total-title{
   font-family: var(--font-thai);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--nes-dark);
   margin-bottom: 2px;
@@ -163,6 +165,7 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(28px,5vw,56px); line-hei
 
 .lootList{
   display: flex;
+  flex-direction: flex;
   flex-direction: column;
   gap: 10px;
 }
@@ -233,29 +236,32 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <main class="wrap">
 <section class="hero">
   <div class="hero-tag">🕹️ 3 PLAYERS / 7 DAYS / 2 CITIES</div>
-  <h1 class="title">JAPAN<br>WINTER QUEST</h1>
+  <h1 class="title">JAPAN<br>WINTER TRIP 2027</h1>
   <div class="hero-dates">25 FEB — 3 MAR 2027</div>
+  <div class="hero-sub">❄️ “ภารกิจผลาญเงินออม: ตะลุยหิมะเจแปน!”</div>
   
   <div class="hero-meta">
     <span>📍 Osaka & Tokyo</span>
     <span>⚔️ Level: Hardcore Snow</span>
   </div>
   
-  <button class="btn-start" onclick="startJourney()">► PRESS START</button>
+  <button class="btn-start" onclick="startJourney()">► PRESS START THE JOURNEY</button>
 </section>
 
+<!-- STAGES -->
 <section class="section" id="quests">
   <div class="sHead" style="display:block;">
-    <h2>🗺️ STAGE SELECT : THE JOURNEY</h2>
-    <p>เตรียมตัวตะลุยด่านแต่ละวัน เช็คไอเทมให้พร้อม!</p>
+    <h2>🗺️ STAGE SELECT : เควสต์ประจำวัน</h2>
+    <p>แพลนที่วางไว้แบบเน้นๆ แต่หน้างานจะหลงกี่โมงค่อยว่ากันอีกที!</p>
   </div>
   <div class="quest-timeline" id="questList"></div>
 </section>
 
+<!-- TICKETS -->
 <section class="section" id="tickets">
   <div class="sHead" style="display:block;">
-    <h2>🎒 INVENTORY : TICKETS</h2>
-    <p>ตั๋วขี่มังกรเหล็ก (เครื่องบิน) ของจริงสำหรับทริปนี้</p>
+    <h2>🎒 INVENTORY : ตั๋วขี่มังกรเหล็ก</h2>
+    <p>ใบเบิกทางข้ามมหาสมุทร (ถ้าลืม Passport = เควสต์ล้มเหลวทันที!)</p>
   </div>
   <div class="ticketRow">
     <div class="ticket">
@@ -271,47 +277,47 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   </div>
 </section>
 
-<!-- SECTION BUDGET (ปรับปรุงใหม่) -->
+<!-- BUDGET / GOLD -->
 <section class="section" id="loot">
   <div class="sHead" style="display:block;">
-    <h2>💰 GOLD & ITEMS (BUDGET)</h2>
-    <p>สรุปงบประมาณการเดินทาง เรียงดูง่าย ชัดเจนทุกรายการ</p>
+    <h2>💰 GOLD & COINS : เงินที่อดออมมาทั้งชีวิต</h2>
+    <p>เงินที่หามาทั้งหมด... เพื่อมาละลายให้ฟูจิซังและตู้กาชาที่ญี่ปุ่น!</p>
   </div>
   <div class="lootGrid">
     
     <!-- CARD 1: OVERALL BUDGET -->
     <div class="lootCard">
-      <h3>🪙 ค่าใช้จ่ายประมาณการ / คน</h3>
+      <h3>🪙 สินทรัพย์ที่ต้องสังเวย / คน</h3>
       
       <div class="lootTotal">
-        <div class="total-title">ประมาณการรวมสุทธิ</div>
+        <div class="total-title">งบประเมินความเสียหายรวม</div>
         <div class="total-price">฿33,000 – ฿38,000</div>
-        <div class="total-sub">*ตัวเลขคร่าวๆ ไม่รวมงบช้อปปิ้งส่วนตัว</div>
+        <div class="total-sub">*เงินเก็บทั้งปี สลายไปใน 7 วัน (ยังไม่รวมค่ากาชาและของฝาก)</div>
       </div>
       
       <div class="lootList">
         <div class="lootRow">
-          <span class="item-name">✈️ ตั๋วเครื่องบินไป-กลับ</span>
+          <span class="item-name">✈️ ตั๋วเครื่องบินขี่มังกร</span>
           <span class="item-price">~฿11,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🏨 ที่พัก 6 คืน</span>
+          <span class="item-name">🏨 ที่ซุกหัวนอน 6 คืน</span>
           <span class="item-price">~฿6,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🚆 ค่าเดินทางในญี่ปุ่น</span>
+          <span class="item-name">🚆 ค่าเดินทางลื่นไหล</span>
           <span class="item-price">~฿7,000–9,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🎟️ ตั๋วเข้าสถานที่ / กิจกรรม</span>
+          <span class="item-name">🎟️ ค่าเข้าดันเจี้ยน/สวนสนุก</span>
           <span class="item-price">~฿2,000–4,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🍲 ค่าอาหารและของกิน</span>
+          <span class="item-name">🍲 เสบียงอาหารประทังชีวิต</span>
           <span class="item-price">~฿7,000–9,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🛡️ ประกันการเดินทาง</span>
+          <span class="item-name">🛡️ ค่าประกันชีวิตชั่วคราว</span>
           <span class="item-price">~฿300–400</span>
         </div>
       </div>
@@ -319,31 +325,31 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 
     <!-- CARD 2: MAIN TRANSPORTATION -->
     <div class="lootCard">
-      <h3>🚂 ตั๋วเดินทางหลัก (Pass & Train)</h3>
+      <h3>🚂 ค่าพาหนะวาร์ปข้ามเมือง</h3>
       
       <div class="lootList" style="margin-top: 10px;">
         <div class="lootRow">
-          <span class="item-name">🚄 Osaka ➔ Tokyo (Shinkansen)</span>
+          <span class="item-name">🚄 Osaka ➔ Tokyo (ชินคันเซ็นความเร็วแสง)</span>
           <span class="item-price">~¥14,000</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🚌 Tokyo ➔ Kawaguchiko (Bus)</span>
+          <span class="item-name">🚌 Tokyo ➔ Kawaguchiko (บัสแล่นส่องฟูจิ)</span>
           <span class="item-price">~¥2,200</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">⛷️ Tokyo ↔ Gala Yuzawa (Pass)</span>
+          <span class="item-name">⛷️ Tokyo ↔ Gala Yuzawa (สกีความเร็วสูง)</span>
           <span class="item-price">~¥13,500</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🚃 KIX Airport ➔ Namba (Osaka)</span>
+          <span class="item-name">🚃 KIX Airport ➔ Namba (ออกจากสนามบิน)</span>
           <span class="item-price">~¥1,400</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🏰 Tokyo ↔ Disneyland</span>
+          <span class="item-name">🏰 Tokyo ↔ Disneyland (มุ่งหน้าดินแดนดิสนีย์)</span>
           <span class="item-price">~¥600</span>
         </div>
         <div class="lootRow">
-          <span class="item-name">🎟️ บัตรเข้า Disneyland (1 Day)</span>
+          <span class="item-name">🎟️ บัตรเข้าดันเจี้ยนดิสนีย์ (1 Day Pass)</span>
           <span class="item-price">~¥8,400–10,900</span>
         </div>
       </div>
@@ -352,18 +358,19 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   </div>
 </section>
 
+<!-- PARTY -->
 <section class="section" id="party">
   <div class="partyPanel" style="text-align:center;">
     <h2>👥 CHOOSE YOUR CHARACTER</h2>
-    <p style="font-family:var(--font-thai); font-weight:600; margin-bottom:20px;">ตอนนี้มีปาร์ตี้ 3 คนแล้ว ชวนเพื่อนมาร่วมตี้เพิ่มได้นะ!</p>
+    <p style="font-family:var(--font-thai); font-weight:600; margin-bottom:20px;">ตอนนี้ได้ผู้กล้า 3 คนแล้ว... ใครอยากมาช่วยหารค่าห้อง กดจอยตี้ด่วน!</p>
     <div class="partyRow" id="partyRow"></div>
     <br>
-    <button class="btn-yellow" onclick="inviteFriend()">📋 คัดลอกลิงก์ชวนเข้าปาร์ตี้</button>
+    <button class="btn-yellow" onclick="inviteFriend()">📋 คัดลอกลิงก์ชวนผู้กล้ามาร่วมตี้</button>
   </div>
 </section>
 </main>
 
-<footer>© 2027 WINTER QUEST · 8-BIT EDITION</footer>
+<footer>© 2027 JAPAN WINTER TRIP · 8-BIT EDITION</footer>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -463,8 +470,8 @@ party.forEach(p=>{
 });
 
 function inviteFriend(){
-  const msg="🎮 8-BIT TRIP PLAN: JAPAN WINTER QUEST 2027 ❄️\nเราทำหน้าต่างเควสต์แพลนเที่ยวมาให้ดูแล้ว! ทรงเกมกดเลย!\nOsaka → Tokyo → Kawaguchiko → Disneyland → Gala Yuzawa\n\nกด Start The Journey ดูเควสต์แต่ละวันได้เลย 👇\n"+location.href;
-  if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนเพื่อนแล้ว!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
+  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! ทรงเกมกด 8-bit สนุกๆ\nOsaka → Tokyo → Kawaguchiko → Disneyland → Gala Yuzawa\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
+  if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนผู้กล้าเรียบร้อย!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
   else showToast("🎉 ชวนเพื่อนมาร่วมตี้เลย!");
 }
 function showToast(t){const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");clearTimeout(window._tt);window._tt=setTimeout(()=>e.classList.remove("show"),2000);}
