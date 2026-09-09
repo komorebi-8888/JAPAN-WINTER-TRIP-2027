@@ -53,13 +53,60 @@ a{color:inherit; text-decoration:none;}
 .hud-hp span{color:var(--nes-red);}
 @media(max-width:760px){.hudNav{display:none}}
 
-/* ---------- HERO ---------- */
+/* ---------- HERO & COUNTDOWN (ปรับปรุงให้อ่านง่าย คมชัด) ---------- */
 .hero{min-height:95vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:100px 0 60px;}
-.hero-tag{font-family:var(--font-pixel); font-size:11px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:30px; box-shadow:4px 4px 0px #000;}
-h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-height:1.4; margin:0 0 20px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
-.hero-dates{font-family:var(--font-thai); font-size:clamp(22px,4vw,28px); font-weight:700; color:var(--nes-yellow); margin-bottom:20px; text-shadow: 2px 2px 0px #000;}
-.hero-sub{font-family:var(--font-thai); font-size:18px; font-weight:700; color:#fff; background:rgba(0,0,0,0.3); padding:8px 20px; border-radius:8px; margin-bottom:30px;}
-.hero-meta{display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:40px; font-family:var(--font-thai); font-size:16px; font-weight:700;}
+.hero-tag{font-family:var(--font-pixel); font-size:11px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:24px; box-shadow:4px 4px 0px #000;}
+h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-height:1.4; margin:0 0 16px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
+.hero-dates{font-family:var(--font-thai); font-size:clamp(22px,4vw,28px); font-weight:700; color:var(--nes-yellow); margin-bottom:16px; text-shadow: 2px 2px 0px #000;}
+.hero-sub{font-family:var(--font-thai); font-size:18px; font-weight:700; color:#fff; background:rgba(0,0,0,0.3); padding:8px 20px; border-radius:8px; margin-bottom:24px;}
+
+/* 8-BIT COUNTDOWN BOX (ปรับปรุงแล้ว) */
+.countdown-box{
+  background: var(--nes-card);
+  border: var(--border-retro);
+  box-shadow: var(--shadow-retro);
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 520px;
+}
+.cd-title{
+  font-family: var(--font-thai);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--nes-dark);
+  margin-bottom: 12px;
+}
+.cd-grid{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cd-unit{
+  background: var(--nes-yellow);
+  border: 3px solid var(--nes-dark);
+  padding: 10px 14px;
+  min-width: 80px;
+  box-shadow: 3px 3px 0px var(--nes-dark);
+}
+.cd-unit span{
+  display: block;
+  font-family: var(--font-thai); /* เปลี่ยนฟอนต์ให้อ่านง่าย */
+  font-size: 32px; /* ขนาดใหญ่ ชัดเจน */
+  font-weight: 700;
+  color: var(--nes-red); /* สีแดงเน้นๆ */
+  line-height: 1.1;
+}
+.cd-unit small{
+  font-family: var(--font-thai);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--nes-dark);
+}
+
+.hero-meta{display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:32px; font-family:var(--font-thai); font-size:16px; font-weight:700;}
 .hero-meta span{background:var(--nes-card); padding:10px 20px; border:var(--border-retro); box-shadow:4px 4px 0px #000;}
 
 .btn-start{font-family:var(--font-pixel); font-size:16px; padding:20px 32px; border:var(--border-retro); background:var(--nes-red); color:#fff; cursor:pointer; box-shadow:var(--shadow-retro); transition:all 0.1s; text-transform:uppercase;}
@@ -165,7 +212,6 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-h
 
 .lootList{
   display: flex;
-  flex-direction: flex;
   flex-direction: column;
   gap: 10px;
 }
@@ -239,7 +285,18 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   <h1 class="title">JAPAN<br>WINTER TRIP 2027</h1>
   <div class="hero-dates">25 FEB — 3 MAR 2027</div>
   <div class="hero-sub">❄️ “ภารกิจผลาญเงินออม: ตะลุยหิมะเจแปน!”</div>
-  
+
+  <!-- COUNTDOWN WIDGET -->
+  <div class="countdown-box">
+    <div class="cd-title">⏳ นับถอยหลังก่อนมังกรเหล็กออกบิน (VZ820)</div>
+    <div class="cd-grid">
+      <div class="cd-unit"><span id="cd-days">00</span><small>วัน</small></div>
+      <div class="cd-unit"><span id="cd-hours">00</span><small>ชม.</small></div>
+      <div class="cd-unit"><span id="cd-mins">00</span><small>นาที</small></div>
+      <div class="cd-unit"><span id="cd-secs">00</span><small>วิ</small></div>
+    </div>
+  </div>
+
   <div class="hero-meta">
     <span>📍 Osaka & Tokyo</span>
     <span>⚔️ Level: Hardcore Snow</span>
@@ -377,6 +434,33 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 function startJourney(){
   document.getElementById('quests').scrollIntoView({behavior:'smooth', block:'start'});
 }
+
+/* COUNTDOWN LOGIC (Target: 25 FEB 2027 - 00:25 AM) */
+function updateCountdown() {
+  const target = new Date("2027-02-25T00:25:00+07:00").getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').innerText = "00";
+    document.getElementById('cd-hours').innerText = "00";
+    document.getElementById('cd-mins').innerText = "00";
+    document.getElementById('cd-secs').innerText = "00";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').innerText = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').innerText = String(secs).padStart(2, '0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 const sf=document.getElementById("stage-elements");
 for(let i=0;i<15;i++){const f=document.createElement("span");f.className="element";f.textContent=["☁️","☁️","⭐"][Math.random()*3|0];
