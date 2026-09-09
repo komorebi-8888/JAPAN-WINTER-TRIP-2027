@@ -396,16 +396,16 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
       <a href="https://maps.google.com/?q=2-3-9+Hanazonokita+Nishinari+Ward+Osaka" target="_blank" class="btn-map" style="font-size:12px; width:100%;" onclick="playCoinSFX()">📍 เปิดแผนที่โอซาก้า Google Maps ➔</a>
     </div>
 
-    <!-- AIRBNB TOKYO (WANTED) -->
+    <!-- TOKYO BASECAMP (WANTED - ANY) -->
     <div class="ticket wanted" style="border: 4px dashed var(--nes-red);">
       <div class="tTop">
         <div class="name" style="color:var(--nes-red);">🏠 TOKYO BASECAMP<br><span style="font-size:12px; color:var(--nes-dark);">(ยังไม่มีที่นอน!)</span></div>
         <div class="fare blink" style="background:var(--nes-red);">PENDING<br>(4 คืน)</div>
       </div>
       <div style="font-family: var(--font-thai); font-weight: 600; font-size: 14px; margin-bottom: 16px; color: #444; line-height:1.5;">
-        📍 <b>เควสต์ด่วน:</b> ช่วยกันหา Airbnb ด่วนจี๋!<br>
-        <b>ย่านแนะนำ:</b> Tokyo, Kyobashi, Hatchobori<br>
-        (เพื่อไปต่อฟูจิ กาล่า ดิสนีย์ ให้ไวที่สุด)
+        📍 <b>เควสต์ด่วน:</b> ช่วยกันหาที่พักโตเกียว (โรงแรม หรือ Airbnb ก็ได้)<br>
+        <b>ย่านแนะนำ:</b> Ueno, Tokyo Station, Shinjuku<br>
+        <b>เงื่อนไข:</b> ขอใกล้สถานีรถไฟ เดินทางไปต่อที่อื่นง่าย!
       </div>
       <div class="tInfoRow">
         <span><b>27 FEB</b>CHECK-IN</span>
@@ -413,7 +413,10 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
         <span><b>3 GUESTS</b>WANTED</span>
       </div>
       <br>
-      <a href="https://www.airbnb.com/s/Tokyo--Japan/homes?checkin=2027-02-27&checkout=2027-03-03&adults=3" target="_blank" class="btn-map" style="background:var(--nes-red); color:#fff; font-size:12px; width:100%;" onclick="playCoinSFX()">🔍 กดวาร์ปไปช่วยกันไถหา Airbnb ➔</a>
+      <div style="display: flex; gap: 8px; flex-direction: column;">
+        <a href="https://www.google.com/travel/hotels/Tokyo?checkin=2027-02-27&checkout=2027-03-03&adults=3" target="_blank" class="btn-map" style="background:var(--nes-red); color:#fff; font-size:12px; width:100%;" onclick="playCoinSFX()">🏨 ส่องราคาโรงแรมโตเกียว (เทียบทุกแอป) ➔</a>
+        <a href="https://www.airbnb.com/s/Tokyo--Japan/homes?checkin=2027-02-27&checkout=2027-03-03&adults=3" target="_blank" class="btn-map" style="background:var(--nes-red); color:#fff; font-size:12px; width:100%;" onclick="playCoinSFX()">🏠 จิ้มไปช่วยหา Airbnb โตเกียว ➔</a>
+      </div>
     </div>
 
   </div>
@@ -632,7 +635,7 @@ const quests=[
   mapUrl:"https://maps.google.com/?q=Tokyo+Station",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
   summary:"เช็คเอาท์โอซาก้า แล้วนั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่โตเกียว",
-  tl:[["เช้า","เช็คเอาท์จาก Joyful Residence"],["กลางวัน","ขึ้น Shinkansen กินข้าวกล่อง Ekiben"],["เย็น","เช็คอินที่พักโตเกียว (ถ้าหาได้!)"]]},
+  tl:[["เช้า","เช็คเอาท์จาก Joyful Residence"],["กลางวัน","ขึ้น Shinkansen กินข้าวกล่อง Ekiben"],["เย็น","เช็คอินที่พักโตเกียว (ที่กำลังจะจอง!)"]]},
   
  {
   localImg:"./day4.jpg",
@@ -703,7 +706,7 @@ party.forEach(p=>{
 
 function inviteFriend(){
   playCoinSFX();
-  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! แวะมาดูแผนที่ แล้วช่วยกันหา Airbnb โตเกียวด่วนจี๋!\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
+  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราอัปเดตเควสต์แพลนเที่ยวแล้ว! แวะมาดูแผนที่ แล้วช่วยกันไถหาที่พักโตเกียว (โรงแรมหรือ Airbnb ก็ได้) ด่วนจี๋!\n\nกด Press Start เข้าดูแพลนเลย 👇\n"+location.href;
   if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนผู้กล้าเรียบร้อย!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
   else showToast("🎉 ชวนเพื่อนมาร่วมตี้เลย!");
 }
