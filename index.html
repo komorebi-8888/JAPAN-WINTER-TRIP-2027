@@ -46,21 +46,35 @@ a{color:inherit; text-decoration:none;}
 .hud{position:fixed; top:0; left:0; right:0; z-index:50; background:var(--nes-dark); border-bottom:4px solid #000;}
 .hudRow{display:flex; align-items:center; justify-content:space-between; height:60px; color:#fff;}
 .logo{display:flex; align-items:center; gap:10px; font-family:var(--font-pixel); font-size:12px; color:var(--nes-yellow)}
-.hudNav{display:flex; align-items:center; gap:20px}
+.hudNav{display:flex; align-items:center; gap:16px}
 .hudNav a{font-family:var(--font-pixel); font-size:10px; color:#fff; text-transform:uppercase;}
 .hudNav a:hover{color:var(--nes-yellow);}
-.hud-hp{font-family:var(--font-pixel); font-size:10px; color:#fff;}
-.hud-hp span{color:var(--nes-red);}
+
+/* ปุ่มเปิด/ปิด BGM */
+.bgm-toggle{
+  background: var(--nes-yellow);
+  color: var(--nes-dark);
+  border: 2px solid #000;
+  padding: 6px 12px;
+  font-family: var(--font-thai);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #000;
+  transition: 0.1s;
+}
+.bgm-toggle:active{ transform: translate(2px, 2px); box-shadow: 0px 0px 0px #000; }
+
 @media(max-width:760px){.hudNav{display:none}}
 
-/* ---------- HERO & COUNTDOWN (ปรับปรุงให้อ่านง่าย คมชัด) ---------- */
+/* ---------- HERO & COUNTDOWN ---------- */
 .hero{min-height:95vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:100px 0 60px;}
 .hero-tag{font-family:var(--font-pixel); font-size:11px; color:var(--nes-dark); background:var(--nes-yellow); padding:10px 16px; border:var(--border-retro); margin-bottom:24px; box-shadow:4px 4px 0px #000;}
 h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-height:1.4; margin:0 0 16px; color:#fff; text-shadow: 4px 4px 0px var(--nes-dark);}
 .hero-dates{font-family:var(--font-thai); font-size:clamp(22px,4vw,28px); font-weight:700; color:var(--nes-yellow); margin-bottom:16px; text-shadow: 2px 2px 0px #000;}
 .hero-sub{font-family:var(--font-thai); font-size:18px; font-weight:700; color:#fff; background:rgba(0,0,0,0.3); padding:8px 20px; border-radius:8px; margin-bottom:24px;}
 
-/* 8-BIT COUNTDOWN BOX (ปรับปรุงแล้ว) */
+/* 8-BIT COUNTDOWN BOX */
 .countdown-box{
   background: var(--nes-card);
   border: var(--border-retro);
@@ -93,10 +107,10 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-h
 }
 .cd-unit span{
   display: block;
-  font-family: var(--font-thai); /* เปลี่ยนฟอนต์ให้อ่านง่าย */
-  font-size: 32px; /* ขนาดใหญ่ ชัดเจน */
+  font-family: var(--font-thai);
+  font-size: 32px;
   font-weight: 700;
-  color: var(--nes-red); /* สีแดงเน้นๆ */
+  color: var(--nes-red);
   line-height: 1.1;
 }
 .cd-unit small{
@@ -130,12 +144,32 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-h
 .q-day-badge{background:var(--nes-blue); color:#fff; font-family:var(--font-pixel); padding:8px 12px; font-size:12px; display:inline-block; border:2px solid #000; margin-bottom:12px;}
 .qTitle h3{margin:0; font-family:var(--font-thai); font-size:28px; font-weight:700;}
 .qTitle small{color:var(--nes-dark); font-size:14px; font-weight:700; background:var(--nes-yellow); padding:4px 8px; border:2px solid #000; margin-top:8px; display:inline-block;}
-.q-summary{font-size:16px; font-weight:600; margin-bottom:24px;}
+.q-summary{font-size:16px; font-weight:600; margin-bottom:20px;}
 
-.tl-grid{display:grid; gap:12px;}
+.tl-grid{display:grid; gap:12px; margin-bottom: 20px;}
 .tlRow{display:grid; grid-template-columns:100px 1fr; gap:16px; background:#f0f0f0; padding:12px; border:2px solid #000;}
 .tlRow time{color:var(--nes-red); font-family:var(--font-pixel); font-size:10px; padding-top:4px;}
 .tlRow span{font-family:var(--font-thai); font-weight:600; font-size:15px;}
+
+/* ปุ่ม MAP LINK */
+.btn-map{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--nes-yellow);
+  color: var(--nes-dark);
+  border: 2px solid #000;
+  padding: 10px 16px;
+  font-family: var(--font-thai);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 3px 3px 0px #000;
+  transition: 0.1s;
+  align-self: flex-start;
+}
+.btn-map:hover{ background: #ffe033; }
+.btn-map:active{ transform: translate(2px, 2px); box-shadow: 0px 0px 0px #000; }
 
 @media(max-width:860px){
   .quest-card{flex-direction:column;}
@@ -276,7 +310,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   <nav class="hudNav">
     <a href="#quests">STAGES</a><a href="#tickets">ITEMS</a><a href="#loot">COINS</a><a href="#party">PARTY</a>
   </nav>
-  <div class="hud-hp">HP: <span>████████</span></div>
+  <button class="bgm-toggle" id="bgmBtn" onclick="toggleBGM()">🔊 BGM: OFF</button>
 </div></header>
 
 <main class="wrap">
@@ -309,7 +343,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <section class="section" id="quests">
   <div class="sHead" style="display:block;">
     <h2>🗺️ STAGE SELECT : เควสต์ประจำวัน</h2>
-    <p>แพลนที่วางไว้แบบเน้นๆ แต่หน้างานจะหลงกี่โมงค่อยว่ากันอีกที!</p>
+    <p>แพลนที่วางไว้แบบเน้นๆ กดดูพิกัด Google Maps ได้ทุกด่าน!</p>
   </div>
   <div class="quest-timeline" id="questList"></div>
 </section>
@@ -431,11 +465,67 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <div class="toast" id="toast"></div>
 
 <script>
+/* WEB AUDIO SYNTHESIZER (8-BIT SFX & BGM) */
+function playCoinSFX() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(987.77, ctx.currentTime); // B5
+    osc.frequency.setValueAtTime(1318.51, ctx.currentTime + 0.08); // E6
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.25);
+  } catch(e){}
+}
+
+/* 8-BIT BGM CHIPTUNE LOOP */
+let bgmInterval = null;
+let isBgmOn = false;
+let bgmCtx = null;
+const melody = [261.63, 329.63, 392.00, 523.25, 392.00, 329.63, 293.66, 349.23, 440.00, 587.33, 440.00, 349.23];
+let noteIdx = 0;
+
+function toggleBGM() {
+  playCoinSFX();
+  isBgmOn = !isBgmOn;
+  const btn = document.getElementById('bgmBtn');
+  if (isBgmOn) {
+    btn.innerText = "🔊 BGM: ON";
+    if (!bgmCtx) bgmCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (bgmCtx.state === 'suspended') bgmCtx.resume();
+    bgmInterval = setInterval(() => {
+      if (!isBgmOn) return;
+      try {
+        const osc = bgmCtx.createOscillator();
+        const gain = bgmCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(melody[noteIdx], bgmCtx.currentTime);
+        gain.gain.setValueAtTime(0.03, bgmCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, bgmCtx.currentTime + 0.18);
+        osc.connect(gain);
+        gain.connect(bgmCtx.destination);
+        osc.start();
+        osc.stop(bgmCtx.currentTime + 0.18);
+        noteIdx = (noteIdx + 1) % melody.length;
+      } catch(e){}
+    }, 220);
+  } else {
+    btn.innerText = "🔇 BGM: OFF";
+    if (bgmInterval) clearInterval(bgmInterval);
+  }
+}
+
 function startJourney(){
+  playCoinSFX();
   document.getElementById('quests').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-/* COUNTDOWN LOGIC (Target: 25 FEB 2027 - 00:25 AM) */
+/* COUNTDOWN LOGIC */
 function updateCountdown() {
   const target = new Date("2027-02-25T00:25:00+07:00").getTime();
   const now = new Date().getTime();
@@ -469,10 +559,12 @@ for(let i=0;i<15;i++){const f=document.createElement("span");f.className="elemen
   f.style.animationDuration=(15+Math.random()*20)+"s";f.style.animationDelay=(-Math.random()*20)+"s";
   f.style.opacity="0.8"; sf.appendChild(f);}
 
+/* เพิ่มลิงก์ GOOGLE MAPS พิกัดจริงของแต่ละด่าน */
 const quests=[
  {
   localImg:"./day1.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dotonbori_at_night_2016.jpg/800px-Dotonbori_at_night_2016.jpg",
+  mapUrl:"https://maps.google.com/?q=Dotonbori+Osaka",
   icon:"🦀",day:"STAGE 1",date:"25 ก.พ.",title:"โอซาก้ายามค่ำคืน",
   summary:"ลงเครื่องปุ๊บ บุกตะลุย Dotonbori ป้ายไฟ ปูยักษ์ และของกินเพียบ!",
   tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
@@ -480,6 +572,7 @@ const quests=[
  {
   localImg:"./day2.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Osaka_Castle_02bs3200.jpg/800px-Osaka_Castle_02bs3200.jpg",
+  mapUrl:"https://maps.google.com/?q=Osaka+Castle",
   icon:"🏯",day:"STAGE 2",date:"26 ก.พ.",title:"ปราสาท & ช้อปปิ้ง",
   summary:"ชมความงามของปราสาทโอซาก้า แล้วไปละลายทรัพย์ที่ชินไซบาชิ",
   tl:[["เช้า","บุกปราสาทโอซาก้า (Osaka Castle)"],["บ่าย","Shinsaibashi ซื้อของฝาก"],["ค่ำ","จัดซูชิหรือทาโกะยากิชุดใหญ่"]]},
@@ -487,6 +580,7 @@ const quests=[
  {
   localImg:"./day3.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Shinkansen_N700.jpg/800px-Shinkansen_N700.jpg",
+  mapUrl:"https://maps.google.com/?q=Tokyo+Station",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
   summary:"นั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่มหานครโตเกียว",
   tl:[["เช้า","เช็คเอาท์ เตรียมตัวขึ้นรถไฟ"],["กลางวัน","กินข้าวกล่อง Ekiben บน Shinkansen"],["เย็น","เช็คอินที่พักโตเกียว เดินเล่นชิลๆ"]]},
@@ -494,6 +588,7 @@ const quests=[
  {
   localImg:"./day4.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg/800px-Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg",
+  mapUrl:"https://maps.google.com/?q=Oishi+Park+Kawaguchiko",
   icon:"🗻",day:"STAGE 4",date:"28 ก.พ.",title:"ตามล่าฟูจิซัง",
   summary:"นั่งบัสออกนอกเมืองไปชมภูเขาไฟฟูจิ แบบอลังการเต็มตา",
   tl:[["06:30","นั่งไฮเวย์บัส Tokyo → Kawaguchiko"],["09:30","เที่ยวรอบทะเลสาบ / เจดีย์แดงชูเรโตะ"],["16:00","เดินทางกลับโตเกียว"]]},
@@ -501,6 +596,7 @@ const quests=[
  {
   localImg:"./day5.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tokyo_Disneyland_Cinderella_Castle_2019.jpg/800px-Tokyo_Disneyland_Cinderella_Castle_2019.jpg",
+  mapUrl:"https://maps.google.com/?q=Tokyo+Disneyland",
   icon:"🏰",day:"STAGE 5",date:"1 มี.ค.",title:"ดินแดนเวทมนตร์",
   summary:"ใช้แรงทั้งหมดที่มีใน Tokyo Disneyland เล่นเครื่องเล่น รอดูพาเหรด!",
   tl:[["06:30","รีบตื่นไปต่อแถวหน้าสวนสนุก"],["08:00","ลุยเครื่องเล่น ดูโชว์ไฟตอนกลางคืน"],["21:00","ขาลากกลับที่พัก"]]},
@@ -508,6 +604,7 @@ const quests=[
  {
   localImg:"./day6.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gala_Yuzawa_Station_and_Ski_Resort.jpg/800px-Gala_Yuzawa_Station_and_Ski_Resort.jpg",
+  mapUrl:"https://maps.google.com/?q=Gala+Yuzawa+Snow+Resort",
   icon:"⛷️",day:"STAGE 6",date:"2 มี.ค.",title:"ลุยหิมะ Gala Yuzawa",
   summary:"นั่งชินคันเซ็นขึ้นเหนือไปเจอหิมะฟูๆ เล่นถาดเลื่อนและสกี",
   tl:[["06:00","Shinkansen ตรงสู่ Gala Yuzawa"],["09:00","ลานสกี เล่นหิมะ แช่ออนเซ็น"],["17:00","กลับมาหาชาบู/ปิ้งย่างกินที่โตเกียว"]]},
@@ -515,6 +612,7 @@ const quests=[
  {
   localImg:"./day7.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Narita_International_Airport_Terminal_1.jpg/800px-Narita_International_Airport_Terminal_1.jpg",
+  mapUrl:"https://maps.google.com/?q=Narita+International+Airport",
   icon:"🧳",day:"STAGE 7",date:"3 มี.ค.",title:"ภารกิจสุดท้าย",
   summary:"ซื้อของฝากที่สนามบินนาริตะ แล้วเดินทางกลับบ้านอย่างปลอดภัย",
   tl:[["08:00","เก็บตกช้อปปิ้งของที่ลืมซื้อ"],["10:00","เช็คเอาท์ นั่งรถไฟไปนาริตะ"],["18:30","เครื่องบินออก NRT → BKK"]]},
@@ -540,6 +638,7 @@ quests.forEach((q)=>{
       <div class="tl-grid">
         ${q.tl.map(r=>`<div class="tlRow"><time>${r[0]}</time><span>${r[1]}</span></div>`).join("")}
       </div>
+      <a href="${q.mapUrl}" target="_blank" class="btn-map" onclick="playCoinSFX()">📍 เปิดพิกัด Google Maps ➔</a>
     </div>`;
   questList.appendChild(el);
 });
@@ -554,7 +653,8 @@ party.forEach(p=>{
 });
 
 function inviteFriend(){
-  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! ทรงเกมกด 8-bit สนุกๆ\nOsaka → Tokyo → Kawaguchiko → Disneyland → Gala Yuzawa\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
+  playCoinSFX();
+  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! มีปุ่มกดดูแผนที่ Google Maps และเปิดเพลง BGM เพลินๆ ได้ด้วยนะ\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
   if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนผู้กล้าเรียบร้อย!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
   else showToast("🎉 ชวนเพื่อนมาร่วมตี้เลย!");
 }
