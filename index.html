@@ -311,7 +311,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <div class="stage-elements" id="stage-elements"></div>
 
 <header class="hud"><div class="wrap hudRow">
-  <div class="logo">⭐ NINTENDO TRIP</div>
+  <div class="logo">⭐ JAPAN WINTER TRIP 2027</div>
   <nav class="hudNav">
     <a href="#quests">STAGES</a><a href="#tickets">ITEMS</a><a href="#loot">COINS</a><a href="#party">PARTY</a>
   </nav>
@@ -337,8 +337,8 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   </div>
 
   <div class="hero-meta">
-    <span>📍 Osaka & Tokyo</span>
-    <span>⚔️ Level: Hardcore Snow</span>
+    <span>🗺️ รูทเดินทาง: 🐙 โอซาก้า ➔ 🗼 โตเกียว ➔ 🗻 ฟูจิ ➔ ⛷️ ลานสกี</span>
+    <span>⚔️ Level: Hardcore Snow ❄️</span>
   </div>
   
   <button class="btn-start" onclick="startJourney()">► PRESS START THE JOURNEY</button>
@@ -348,7 +348,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <section class="section" id="quests">
   <div class="sHead" style="display:block;">
     <h2>🗺️ STAGE SELECT : เควสต์ประจำวัน</h2>
-    <p>แพลนที่วางไว้แบบเน้นๆ กดดูพิกัด Google Maps ได้ทุกด่าน!</p>
+    <p>ตารางเวลาตีกลมๆ เผื่อเวลาหลงทางไว้ให้เรียบร้อยแล้ว!</p>
   </div>
   <div class="quest-timeline" id="questList"></div>
 </section>
@@ -357,7 +357,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
 <section class="section" id="tickets">
   <div class="sHead" style="display:block;">
     <h2>🎒 INVENTORY : ตั๋วเดินทาง & ฐานทัพหลัก</h2>
-    <p>ตั๋วเครื่องบินและที่ซุกหัวนอน (ที่จองแล้ว และที่ยังไม่ได้จอง!)</p>
+    <p>ไอเทมสำคัญของทริป และจุดเซฟที่ต้องช่วยกันหา!</p>
   </div>
   
   <!-- ตั๋วเครื่องบิน -->
@@ -399,7 +399,7 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
     <!-- TOKYO BASECAMP (WANTED - ANY) -->
     <div class="ticket wanted" style="border: 4px dashed var(--nes-red);">
       <div class="tTop">
-        <div class="name" style="color:var(--nes-red);">🏠 TOKYO BASECAMP<br><span style="font-size:12px; color:var(--nes-dark);">(ยังไม่มีที่นอน!)</span></div>
+        <div class="name" style="color:var(--nes-red);">🏠 TOKYO BASECAMP<br><span style="font-size:12px; color:var(--nes-dark);">(ยังไม่มีที่ซุกหัวนอน!)</span></div>
         <div class="fare blink" style="background:var(--nes-red);">PENDING<br>(4 คืน)</div>
       </div>
       <div style="font-family: var(--font-thai); font-weight: 600; font-size: 14px; margin-bottom: 16px; color: #444; line-height:1.5;">
@@ -612,62 +612,63 @@ for(let i=0;i<15;i++){const f=document.createElement("span");f.className="elemen
   f.style.animationDuration=(15+Math.random()*20)+"s";f.style.animationDelay=(-Math.random()*20)+"s";
   f.style.opacity="0.8"; sf.appendChild(f);}
 
+/* อัปเดตตารางเวลาแบบตีกลมๆ มีไอคอนนาฬิกา และแก้เนื้อหาให้อ่านง่าย */
 const quests=[
  {
   localImg:"./day1.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dotonbori_at_night_2016.jpg/800px-Dotonbori_at_night_2016.jpg",
   mapUrl:"https://maps.google.com/?q=Dotonbori+Osaka",
   icon:"🦀",day:"STAGE 1",date:"25 ก.พ.",title:"โอซาก้ายามค่ำคืน",
-  summary:"ลงเครื่องปุ๊บ เช็คอินเข้า Joyful Residence แล้วบุกตะลุย Dotonbori!",
-  tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["16:00","เช็คอินที่พัก Joyful Residence"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
+  summary:"แลนดิ้งปุ๊บ พุ่งตัวไปเช็คอินฐานทัพ Joyful Residence แล้วบุกตะลุยของกินที่ Dotonbori!",
+  tl:[["00:25","ขึ้นมังกรเหล็ก VZ820 บินตรงสู่คันไซ"],["08:30","วาร์ปเข้าเมืองโอซาก้า ฝากกระเป๋า"],["16:00","เช็คอินที่พัก Joyful Residence 302"],["18:00","ถ่ายรูปป้ายกูลิโกะ ล่าของกินริมคลอง"]]},
   
  {
   localImg:"./day2.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Osaka_Castle_02bs3200.jpg/800px-Osaka_Castle_02bs3200.jpg",
   mapUrl:"https://maps.google.com/?q=Osaka+Castle",
   icon:"🏯",day:"STAGE 2",date:"26 ก.พ.",title:"ปราสาท & ช้อปปิ้ง",
-  summary:"ชมความงามของปราสาทโอซาก้า แล้วไปละลายทรัพย์ที่ชินไซบาชิ",
-  tl:[["เช้า","บุกปราสาทโอซาก้า (Osaka Castle)"],["บ่าย","Shinsaibashi ซื้อของฝาก"],["ค่ำ","จัดซูชิหรือทาโกะยากิชุดใหญ่"]]},
+  summary:"ตีป้อมปราสาทโอซาก้าในช่วงเช้า แล้วไปละลายทรัพย์ที่ชินไซบาชิ",
+  tl:[["09:00","บุกปราสาทโอซาก้า (Osaka Castle)"],["13:00","ช้อปปิ้งซื้อของฝากที่ Shinsaibashi"],["18:00","จัดมื้อใหญ่ ซูชิ หรือ ทาโกะยากิ"]]},
   
  {
   localImg:"./day3.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Shinkansen_N700.jpg/800px-Shinkansen_N700.jpg",
   mapUrl:"https://maps.google.com/?q=Tokyo+Station",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
-  summary:"เช็คเอาท์โอซาก้า แล้วนั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่โตเกียว",
-  tl:[["เช้า","เช็คเอาท์จาก Joyful Residence"],["กลางวัน","ขึ้น Shinkansen กินข้าวกล่อง Ekiben"],["เย็น","เช็คอินที่พักโตเกียว (ที่กำลังจะจอง!)"]]},
+  summary:"บอกลาโอซาก้า แล้วนั่งรถไฟ Shinkansen วาร์ปข้ามภูมิภาคสู่มหานครโตเกียว",
+  tl:[["09:00","เช็คเอาท์จาก Joyful Residence"],["12:00","ขึ้น Shinkansen กินข้าวกล่อง Ekiben"],["16:00","ถึงโตเกียว เช็คอินเข้าจุดเซฟใหม่"]]},
   
  {
   localImg:"./day4.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg/800px-Look_at_Mt._Fuji_from_Oishi_Park_20140412.jpg",
   mapUrl:"https://maps.google.com/?q=Oishi+Park+Kawaguchiko",
   icon:"🗻",day:"STAGE 4",date:"28 ก.พ.",title:"ตามล่าฟูจิซัง",
-  summary:"นั่งบัสออกนอกเมืองไปชมภูเขาไฟฟูจิ แบบอลังการเต็มตา",
-  tl:[["06:30","นั่งไฮเวย์บัส Tokyo → Kawaguchiko"],["09:30","เที่ยวรอบทะเลสาบ / เจดีย์แดงชูเรโตะ"],["16:00","เดินทางกลับโตเกียว"]]},
+  summary:"นั่งไฮเวย์บัสออกนอกเมือง ไปรับพลังจากภูเขาไฟฟูจิแบบอลังการเต็มตา",
+  tl:[["06:30","ขึ้นรถบัสตรงสู่ Kawaguchiko"],["10:00","เดินเล่นรอบทะเลสาบ / เจดีย์ชูเรโตะ"],["16:00","ขึ้นรถบัสเดินทางกลับโตเกียว"]]},
   
  {
   localImg:"./day5.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tokyo_Disneyland_Cinderella_Castle_2019.jpg/800px-Tokyo_Disneyland_Cinderella_Castle_2019.jpg",
   mapUrl:"https://maps.google.com/?q=Tokyo+Disneyland",
   icon:"🏰",day:"STAGE 5",date:"1 มี.ค.",title:"ดินแดนเวทมนตร์",
-  summary:"ใช้แรงทั้งหมดที่มีใน Tokyo Disneyland เล่นเครื่องเล่น รอดูพาเหรด!",
-  tl:[["06:30","รีบตื่นไปต่อแถวหน้าสวนสนุก"],["08:00","ลุยเครื่องเล่น ดูโชว์ไฟตอนกลางคืน"],["21:00","ขาลากกลับที่พัก"]]},
+  summary:"เทหมดหน้าตักที่ Tokyo Disneyland ลุยเครื่องเล่น รอดูพาเหรด!",
+  tl:[["07:00","รีบตื่นไปต่อแถวหน้าสวนสนุก"],["09:00","ลุยเครื่องเล่น ดูพาเหรด และโชว์ไฟ"],["21:00","ขาลากกลับที่พัก"]]},
   
  {
   localImg:"./day6.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gala_Yuzawa_Station_and_Ski_Resort.jpg/800px-Gala_Yuzawa_Station_and_Ski_Resort.jpg",
   mapUrl:"https://maps.google.com/?q=Gala+Yuzawa+Snow+Resort",
   icon:"⛷️",day:"STAGE 6",date:"2 มี.ค.",title:"ลุยหิมะ Gala Yuzawa",
-  summary:"นั่งชินคันเซ็นขึ้นเหนือไปเจอหิมะฟูๆ เล่นถาดเลื่อนและสกี",
-  tl:[["06:00","Shinkansen ตรงสู่ Gala Yuzawa"],["09:00","ลานสกี เล่นหิมะ แช่ออนเซ็น"],["17:00","กลับมาหาชาบู/ปิ้งย่างกินที่โตเกียว"]]},
+  summary:"นั่งชินคันเซ็นขึ้นเหนือไปเจอหิมะฟูๆ เล่นถาดเลื่อนและปาหิมะให้หนำใจ",
+  tl:[["06:30","Shinkansen ตรงสู่ Gala Yuzawa"],["09:00","เช่าชุด ลานสกี เล่นหิมะ แช่ออนเซ็น"],["17:00","กลับมาจัดชาบู/ปิ้งย่างที่โตเกียว"]]},
   
  {
   localImg:"./day7.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Narita_International_Airport_Terminal_1.jpg/800px-Narita_International_Airport_Terminal_1.jpg",
   mapUrl:"https://maps.google.com/?q=Narita+International+Airport",
   icon:"🧳",day:"STAGE 7",date:"3 มี.ค.",title:"ภารกิจสุดท้าย",
-  summary:"ซื้อของฝากที่สนามบินนาริตะ แล้วเดินทางกลับบ้านอย่างปลอดภัย",
-  tl:[["08:00","เก็บตกช้อปปิ้งของที่ลืมซื้อ"],["10:00","เช็คเอาท์ นั่งรถไฟไปนาริตะ"],["18:30","เครื่องบินออก NRT → BKK"]]},
+  summary:"กวาดของฝากที่สนามบินนาริตะ แล้ววาร์ปกลับบ้านอย่างปลอดภัย",
+  tl:[["09:00","เก็บตกช้อปปิ้งของที่ลืมซื้อ"],["12:00","เช็คเอาท์ นั่งรถไฟไปนาริตะ"],["18:30","เครื่องบินออก NRT → BKK"]]},
 ];
 
 const questList=document.getElementById("questList");
@@ -688,7 +689,7 @@ quests.forEach((q)=>{
       </div>
       <div class="q-summary">${q.summary}</div>
       <div class="tl-grid">
-        ${q.tl.map(r=>`<div class="tlRow"><time>${r[0]}</time><span>${r[1]}</span></div>`).join("")}
+        ${q.tl.map(r=>`<div class="tlRow"><time>⌚ ${r[0]}</time><span>${r[1]}</span></div>`).join("")}
       </div>
       <a href="${q.mapUrl}" target="_blank" class="btn-map" onclick="playCoinSFX()">📍 เปิดพิกัด Google Maps ➔</a>
     </div>`;
@@ -706,7 +707,7 @@ party.forEach(p=>{
 
 function inviteFriend(){
   playCoinSFX();
-  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราอัปเดตเควสต์แพลนเที่ยวแล้ว! แวะมาดูแผนที่ แล้วช่วยกันไถหาที่พักโตเกียว (โรงแรมหรือ Airbnb ก็ได้) ด่วนจี๋!\n\nกด Press Start เข้าดูแพลนเลย 👇\n"+location.href;
+  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์แพลนเที่ยวสไตล์ 8-bit มาให้ดูแล้ว! แวะมาดูแผนที่ แล้วช่วยกันหาที่พักโตเกียวด่วนจี๋!\n\nกด Press Start เข้าดูแพลนเลย 👇\n"+location.href;
   if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนผู้กล้าเรียบร้อย!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
   else showToast("🎉 ชวนเพื่อนมาร่วมตี้เลย!");
 }
