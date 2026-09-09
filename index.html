@@ -41,6 +41,8 @@ a{color:inherit; text-decoration:none;}
 .stage-elements{position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden}
 .element{position:absolute; top:-10%; font-size:30px; animation:drift linear infinite}
 @keyframes drift{to{transform:translateY(110vh) translateX(var(--dx,0))}}
+@keyframes blink { 50% { opacity: 0.3; } }
+.blink { animation: blink 1s infinite; }
 
 /* ---------- NAV / HUD STATUS BAR ---------- */
 .hud{position:fixed; top:0; left:0; right:0; z-index:50; background:var(--nes-dark); border-bottom:4px solid #000;}
@@ -177,21 +179,24 @@ h1.title{font-family:var(--font-pixel); font-size:clamp(26px,4.5vw,52px); line-h
   .q-content{width:100%; padding:24px;}
 }
 
-/* ---------- TICKETS ---------- */
+/* ---------- TICKETS & HOTELS ---------- */
 .ticketRow{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
 .ticket{background:#fff; border:var(--border-retro); box-shadow:var(--shadow-retro); padding:24px; position:relative;}
 .ticket::before{content:'AIRSHIP PASS'; position:absolute; top:-16px; left:20px; background:var(--nes-yellow); border:2px solid #000; padding:4px 10px; font-family:var(--font-pixel); font-size:10px;}
-.tTop{display:flex; justify-content:space-between; margin-bottom:20px; margin-top:10px;}
-.tTop .name{font-family:var(--font-pixel); font-size:20px; color:var(--nes-blue);}
-.tTop .fare{background:var(--nes-dark); color:#fff; font-family:var(--font-pixel); padding:8px; font-size:10px;}
+.ticket.hotel::before{content:'BASECAMP Airbnb'; background:#ff5a5f; color:#fff;}
+.ticket.wanted::before{content:'URGENT QUEST'; background:var(--nes-red); color:#fff;}
+
+.tTop{display:flex; justify-content:space-between; margin-bottom:16px; margin-top:10px;}
+.tTop .name{font-family:var(--font-pixel); font-size:16px; color:var(--nes-blue); line-height: 1.4;}
+.tTop .fare{background:var(--nes-dark); color:#fff; font-family:var(--font-pixel); padding:8px; font-size:10px; white-space: nowrap; height: fit-content;}
 .route{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; text-align:center; margin-bottom:20px; background:#f0f0f0; padding:16px; border:2px solid #000;}
 .route b{font-family:var(--font-pixel); font-size:24px; display:block; margin-bottom:4px;}
 .route small{font-family:var(--font-thai); font-weight:700;}
 .route .plane{color:var(--nes-red); font-size:24px;}
 .tInfoRow{display:flex; justify-content:space-between; border-top:4px dashed #000; padding-top:16px;}
 .tInfoRow span{text-align:center; font-family:var(--font-thai); font-weight:600;}
-.tInfoRow b{display:block; font-size:16px; font-family:var(--font-pixel); margin-bottom:4px;}
-@media(max-width:760px){.ticketRow{grid-template-columns:1fr}}
+.tInfoRow b{display:block; font-size:15px; font-family:var(--font-pixel); margin-bottom:4px;}
+@media(max-width:860px){.ticketRow{grid-template-columns:1fr}}
 
 /* ---------- LOOT & BUDGET ---------- */
 .lootGrid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
@@ -348,13 +353,15 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
   <div class="quest-timeline" id="questList"></div>
 </section>
 
-<!-- TICKETS -->
+<!-- TICKETS & BASECAMPS -->
 <section class="section" id="tickets">
   <div class="sHead" style="display:block;">
-    <h2>🎒 INVENTORY : ตั๋วขี่มังกรเหล็ก</h2>
-    <p>ใบเบิกทางข้ามมหาสมุทร (ถ้าลืม Passport = เควสต์ล้มเหลวทันที!)</p>
+    <h2>🎒 INVENTORY : ตั๋วเดินทาง & ฐานทัพหลัก</h2>
+    <p>ตั๋วเครื่องบินและที่ซุกหัวนอน (ที่จองแล้ว และที่ยังไม่ได้จอง!)</p>
   </div>
-  <div class="ticketRow">
+  
+  <!-- ตั๋วเครื่องบิน -->
+  <div class="ticketRow" style="margin-bottom: 32px;">
     <div class="ticket">
       <div class="tTop"><div class="name">VZ820</div><div class="fare">DELUXE</div></div>
       <div class="route"><div><b>BKK</b></div><div class="plane">✈</div><div><b>KIX</b></div></div>
@@ -365,6 +372,50 @@ footer{text-align:center; padding:60px 0 80px; font-family:var(--font-pixel); fo
       <div class="route"><div><b>NRT</b></div><div class="plane">✈</div><div><b>BKK</b></div></div>
       <div class="tInfoRow"><span><b>18:30</b>DEPART</span><span><b>20 KG</b>BAG</span><span><b>7 KG</b>CARRY</span></div>
     </div>
+  </div>
+
+  <!-- ที่พัก OSAKA & TOKYO -->
+  <div class="ticketRow">
+    
+    <!-- AIRBNB OSAKA (CONFIRMED) -->
+    <div class="ticket hotel">
+      <div class="tTop">
+        <div class="name">🏠 OSAKA BASECAMP<br><span style="font-size:12px; color:var(--nes-dark);">愉悅居 302 (Joyful Residence)</span></div>
+        <div class="fare" style="background:#ff5a5f;">CONFIRMED<br>(2 คืน)</div>
+      </div>
+      <div style="font-family: var(--font-thai); font-weight: 600; font-size: 14px; margin-bottom: 16px; line-height:1.5;">
+        📍 <b>พิกัด:</b> ย่าน Nishinari Ward, Osaka<br>
+        (เดิน 3 นาทีถึงสถานีรถไฟ Hanazonocho)
+      </div>
+      <div class="tInfoRow">
+        <span><b>25 FEB</b>CHECK-IN</span>
+        <span><b>27 FEB</b>CHECK-OUT</span>
+        <span><b>3 GUESTS</b>CONFIRMED</span>
+      </div>
+      <br>
+      <a href="https://maps.google.com/?q=2-3-9+Hanazonokita+Nishinari+Ward+Osaka" target="_blank" class="btn-map" style="font-size:12px; width:100%;" onclick="playCoinSFX()">📍 เปิดแผนที่โอซาก้า Google Maps ➔</a>
+    </div>
+
+    <!-- AIRBNB TOKYO (WANTED) -->
+    <div class="ticket wanted" style="border: 4px dashed var(--nes-red);">
+      <div class="tTop">
+        <div class="name" style="color:var(--nes-red);">🏠 TOKYO BASECAMP<br><span style="font-size:12px; color:var(--nes-dark);">(ยังไม่มีที่นอน!)</span></div>
+        <div class="fare blink" style="background:var(--nes-red);">PENDING<br>(4 คืน)</div>
+      </div>
+      <div style="font-family: var(--font-thai); font-weight: 600; font-size: 14px; margin-bottom: 16px; color: #444; line-height:1.5;">
+        📍 <b>เควสต์ด่วน:</b> ช่วยกันหา Airbnb ด่วนจี๋!<br>
+        <b>ย่านแนะนำ:</b> Tokyo, Kyobashi, Hatchobori<br>
+        (เพื่อไปต่อฟูจิ กาล่า ดิสนีย์ ให้ไวที่สุด)
+      </div>
+      <div class="tInfoRow">
+        <span><b>27 FEB</b>CHECK-IN</span>
+        <span><b>3 MAR</b>CHECK-OUT</span>
+        <span><b>3 GUESTS</b>WANTED</span>
+      </div>
+      <br>
+      <a href="https://www.airbnb.com/s/Tokyo--Japan/homes?checkin=2027-02-27&checkout=2027-03-03&adults=3" target="_blank" class="btn-map" style="background:var(--nes-red); color:#fff; font-size:12px; width:100%;" onclick="playCoinSFX()">🔍 กดวาร์ปไปช่วยกันไถหา Airbnb ➔</a>
+    </div>
+
   </div>
 </section>
 
@@ -472,8 +523,8 @@ function playCoinSFX() {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.type = 'square';
-    osc.frequency.setValueAtTime(987.77, ctx.currentTime); // B5
-    osc.frequency.setValueAtTime(1318.51, ctx.currentTime + 0.08); // E6
+    osc.frequency.setValueAtTime(987.77, ctx.currentTime);
+    osc.frequency.setValueAtTime(1318.51, ctx.currentTime + 0.08);
     gain.gain.setValueAtTime(0.15, ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
     osc.connect(gain);
@@ -483,7 +534,6 @@ function playCoinSFX() {
   } catch(e){}
 }
 
-/* 8-BIT BGM CHIPTUNE LOOP */
 let bgmInterval = null;
 let isBgmOn = false;
 let bgmCtx = null;
@@ -559,15 +609,14 @@ for(let i=0;i<15;i++){const f=document.createElement("span");f.className="elemen
   f.style.animationDuration=(15+Math.random()*20)+"s";f.style.animationDelay=(-Math.random()*20)+"s";
   f.style.opacity="0.8"; sf.appendChild(f);}
 
-/* เพิ่มลิงก์ GOOGLE MAPS พิกัดจริงของแต่ละด่าน */
 const quests=[
  {
   localImg:"./day1.jpg",
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dotonbori_at_night_2016.jpg/800px-Dotonbori_at_night_2016.jpg",
   mapUrl:"https://maps.google.com/?q=Dotonbori+Osaka",
   icon:"🦀",day:"STAGE 1",date:"25 ก.พ.",title:"โอซาก้ายามค่ำคืน",
-  summary:"ลงเครื่องปุ๊บ บุกตะลุย Dotonbori ป้ายไฟ ปูยักษ์ และของกินเพียบ!",
-  tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
+  summary:"ลงเครื่องปุ๊บ เช็คอินเข้า Joyful Residence แล้วบุกตะลุย Dotonbori!",
+  tl:[["00:25","บินตรง BKK → KIX"],["08:30","นั่งรถไฟเข้าเมืองโอซาก้า"],["16:00","เช็คอินที่พัก Joyful Residence"],["เย็น","ถ่ายรูปป้ายกูลิโกะ หาของกินริมคลอง"]]},
   
  {
   localImg:"./day2.jpg",
@@ -582,8 +631,8 @@ const quests=[
   fallbackImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Shinkansen_N700.jpg/800px-Shinkansen_N700.jpg",
   mapUrl:"https://maps.google.com/?q=Tokyo+Station",
   icon:"🚄",day:"STAGE 3",date:"27 ก.พ.",title:"มุ่งหน้าสู่เมืองหลวง",
-  summary:"นั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่มหานครโตเกียว",
-  tl:[["เช้า","เช็คเอาท์ เตรียมตัวขึ้นรถไฟ"],["กลางวัน","กินข้าวกล่อง Ekiben บน Shinkansen"],["เย็น","เช็คอินที่พักโตเกียว เดินเล่นชิลๆ"]]},
+  summary:"เช็คเอาท์โอซาก้า แล้วนั่งรถไฟหัวกระสุน Shinkansen วาร์ปข้ามภูมิภาคสู่โตเกียว",
+  tl:[["เช้า","เช็คเอาท์จาก Joyful Residence"],["กลางวัน","ขึ้น Shinkansen กินข้าวกล่อง Ekiben"],["เย็น","เช็คอินที่พักโตเกียว (ถ้าหาได้!)"]]},
   
  {
   localImg:"./day4.jpg",
@@ -654,7 +703,7 @@ party.forEach(p=>{
 
 function inviteFriend(){
   playCoinSFX();
-  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! มีปุ่มกดดูแผนที่ Google Maps และเปิดเพลง BGM เพลินๆ ได้ด้วยนะ\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
+  const msg="🎮 JAPAN WINTER TRIP 2027 ❄️\nเราทำพรีเซนต์เควสต์แพลนเที่ยวมาให้ดูแล้ว! แวะมาดูแผนที่ แล้วช่วยกันหา Airbnb โตเกียวด่วนจี๋!\n\nกด Press Start ดูแพลนผลาญเงินออมได้เลย 👇\n"+location.href;
   if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast("📋 คัดลอกข้อความชวนผู้กล้าเรียบร้อย!")).catch(()=>showToast("🎉 เปิดดูแพลนเลย!"));}
   else showToast("🎉 ชวนเพื่อนมาร่วมตี้เลย!");
 }
