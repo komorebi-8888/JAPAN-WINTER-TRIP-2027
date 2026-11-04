@@ -3,74 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAPAN WINTER & DISNEY 2027 • Travel Journal & Dashboard</title>
+    <title>JAPAN WINTER & DISNEY 2027 • Travel Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans & Prompt for pristine modern bilingual readability -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Plus Jakarta Sans & Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Prompt', 'sans-serif'],
-                        thai: ['Prompt', 'Sarabun', 'sans-serif'],
-                    },
-                    colors: {
-                        sand: {
-                            50: '#FAF8F5',
-                            100: '#F4EFEB',
-                            200: '#E8DFD7',
-                            300: '#D5C4B4',
-                            800: '#4A3E36',
-                        },
-                        sage: {
-                            50: '#F3F6F3',
-                            100: '#E4ECE5',
-                            500: '#52796F',
-                            600: '#354F52',
-                            700: '#2F3E46',
-                        },
-                        terracotta: {
-                            50: '#FDF4F0',
-                            100: '#F9E4DB',
-                            500: '#C86D51',
-                            600: '#B25338',
-                        },
-                        warmDark: '#1E1B18',
-                    },
-                    boxShadow: {
-                        'subtle': '0 2px 16px -2px rgba(47, 62, 70, 0.05), 0 1px 4px -1px rgba(0, 0, 0, 0.02)',
-                        'lifted': '0 12px 30px -4px rgba(47, 62, 70, 0.08)',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         body {
-            background-color: #FAF8F5;
-            color: #2F3E46;
+            background-color: #F8F6F0;
+            color: #181A1E;
             font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
-        .editorial-tab.active {
+        /* Punchy Tactile Borders & Offset Shadows */
+        .punch-card {
             background-color: #FFFFFF;
-            color: #1E1B18;
+            border: 2px solid #181A1E;
+            box-shadow: 3px 3px 0px #181A1E;
+            border-radius: 14px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .punch-btn {
+            border: 2px solid #181A1E;
+            box-shadow: 2px 2px 0px #181A1E;
+            border-radius: 10px;
             font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            border-color: #E8DFD7;
+            transition: all 0.1s ease;
+        }
+        .punch-btn:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 3px 3px 0px #181A1E;
+        }
+        .punch-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px #181A1E;
         }
 
-        .border-warm {
-            border-color: #EFE9E2;
+        /* Active Navigation Tab */
+        .tab-btn.active {
+            background-color: #181A1E;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 0px #F97316;
         }
 
-        /* Snow Canvas Overlay (non-intrusive) */
+        /* Snow Overlay */
         #snow-canvas {
             position: fixed;
             top: 0;
@@ -78,1031 +59,647 @@
             width: 100vw;
             height: 100vh;
             pointer-events: none;
-            z-index: 30;
-            transition: opacity 0.5s ease;
+            z-index: 25;
+            transition: opacity 0.4s ease;
         }
     </style>
 </head>
-<body class="min-h-screen pb-32 relative">
+<body class="min-h-screen pb-28 lg:pb-16 relative">
 
-    <!-- Falling Snow Canvas Overlay -->
+    <!-- Falling Snow Canvas -->
     <canvas id="snow-canvas"></canvas>
 
-    <!-- Top Mini Ticker -->
-    <div class="border-b border-sand-200/70 bg-sand-100/60 py-2 px-4 text-xs text-sand-800">
-        <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
-            <div class="flex-1 text-center truncate">
-                <span class="inline-flex items-center gap-1.5 font-semibold text-terracotta-600">
-                    <i class="fa-solid fa-snowflake text-[10px]"></i> Winter 2027 Group Travel
-                </span>
-                <span class="text-sand-300 mx-2">•</span>
-                <span>25 ก.พ. – 3 มี.ค. 2027 (7 วัน 6 คืน)</span>
-                <span class="text-sand-300 mx-2 hidden sm:inline">•</span>
-                <span class="font-medium hidden sm:inline">4 คน • กระเป๋าคนละ 1 ใบ รวม 4 ใบ (มีลิฟต์ทั้ง 2 ที่พัก)</span>
+    <!-- Top Notice Bar -->
+    <header class="bg-amber-300 border-b-2 border-stone-900 py-2 px-3 text-xs font-bold text-stone-900">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 truncate">
+                <span class="bg-stone-900 text-white px-2 py-0.5 rounded text-[11px] shrink-0">WINTER 2027</span>
+                <span class="truncate">25 ก.พ. – 3 มี.ค. 2027 (7 วัน 6 คืน) • 4 คน • กระเป๋าคนละ 1 ใบ รวม 4 ใบ (มีลิฟต์ทั้ง 2 ตึก)</span>
             </div>
             <!-- Snow Toggle Button -->
-            <button id="snow-toggle-btn" onclick="toggleSnow()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 hover:bg-white text-sand-800 text-[11px] font-medium border border-sand-200 shadow-sm transition-all shrink-0 active:scale-95" title="เปิด/ปิด หิมะตก">
-                <i class="fa-solid fa-snowflake text-sky-400"></i>
+            <button id="snow-toggle-btn" onclick="toggleSnow()" class="punch-btn bg-white px-2.5 py-0.5 text-[11px] shrink-0 flex items-center gap-1.5 cursor-pointer">
+                <i class="fa-solid fa-snowflake text-sky-500"></i>
                 <span id="snow-btn-text">หิมะ: เปิด</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
+
+        <!-- Title Section -->
+        <div class="punch-card p-5 sm:p-7 bg-white mb-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-900 border border-orange-300 text-xs px-2.5 py-1 rounded-md font-bold mb-2">
+                        <span>🇯🇵 Osaka • Gala Yuzawa • Mt. Fuji • Tokyo Disneyland</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-stone-900">
+                        Japan Winter Journey 2027
+                    </h1>
+                    <p class="text-xs sm:text-sm text-stone-600 font-medium mt-1.5">
+                        แผนเที่ยวฉบับกระชับ 4 คน พร้อมประมาณการงบต่อคน คัดที่พักมีลิฟต์ติดสถานี และปุ่มก๊อปส่งแชต IG/FB DM
+                    </p>
+                </div>
+                
+                <!-- Quick KPI Badges -->
+                <div class="grid grid-cols-2 gap-2 text-center shrink-0 w-full md:w-auto">
+                    <div class="border-2 border-stone-900 rounded-xl p-2.5 bg-emerald-50">
+                        <div class="text-[10px] font-bold text-stone-500">งบประมาณการ/คน</div>
+                        <div class="text-sm sm:text-base font-extrabold text-stone-900 mt-0.5">~฿38k - 39k</div>
+                        <div class="text-[9px] font-semibold text-emerald-700">*ขึ้นกับโปรดีสนีย์ 50%</div>
+                    </div>
+                    <div class="border-2 border-stone-900 rounded-xl p-2.5 bg-amber-50">
+                        <div class="text-[10px] font-bold text-stone-500">ที่พัก 6 คืน (หาร 4)</div>
+                        <div class="text-sm sm:text-base font-extrabold text-stone-900 mt-0.5">~฿8,633/คน</div>
+                        <div class="text-[9px] font-semibold text-amber-800">เฉลี่ย ~฿1,440/คน/คืน</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation (4 Tabs) -->
+            <div class="flex gap-2 overflow-x-auto pb-1 mt-6 border-t-2 border-stone-100 pt-4">
+                <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-btn punch-btn active bg-white px-4 py-2 text-xs sm:text-sm whitespace-nowrap cursor-pointer">
+                    <i class="fa-regular fa-calendar-days mr-1.5 text-orange-500"></i> แพลนเที่ยว 7 วัน
+                </button>
+                <button onclick="switchTab('budget')" id="tab-budget" class="tab-btn punch-btn bg-white px-4 py-2 text-xs sm:text-sm whitespace-nowrap cursor-pointer">
+                    <i class="fa-solid fa-coins mr-1.5 text-amber-500"></i> คุมงบ (ต่อ 1 คน)
+                </button>
+                <button onclick="switchTab('food')" id="tab-food" class="tab-btn punch-btn bg-white px-4 py-2 text-xs sm:text-sm whitespace-nowrap cursor-pointer">
+                    <i class="fa-solid fa-mug-hot mr-1.5 text-emerald-600"></i> ☕ คาเฟ่ & ของกิน
+                </button>
+                <button onclick="switchTab('prep')" id="tab-prep" class="tab-btn punch-btn bg-white px-4 py-2 text-xs sm:text-sm whitespace-nowrap cursor-pointer">
+                    <i class="fa-solid fa-shield-halved mr-1.5 text-sky-600"></i> ซิม & ประกัน & ตั๋ว
+                </button>
+            </div>
+        </div>
+
+        <!-- Layout Grid: Left Content (Tabs) + Right Sticky Sidebar -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            
+            <!-- Left Main Column (8 Cols on Desktop) -->
+            <div class="lg:col-span-8 space-y-4">
+
+                <!-- TAB 1: ITINERARY -->
+                <div id="content-itinerary" class="space-y-3.5">
+                    
+                    <!-- Day 1 -->
+                    <div class="punch-card p-4 sm:p-5">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-orange-500 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 1</span>
+                                <span class="text-xs font-bold text-stone-700">พุธ 25 ก.พ. 2027</span>
+                                <span class="text-[11px] bg-orange-100 text-orange-800 font-bold px-2 py-0.5 rounded">โอซาก้า คืนที่ 1</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">Nankai Rapi:t (35 นาที)</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>บ่าย:</strong> บินลง KIX รับกระเป๋า 4 ใบ นั่งรถไฟด่วน <strong>Nankai Rapi:t ต่อเดียวตรงเข้า Namba</strong> ไม่ต้องเปลี่ยนสาย</p>
+                            <div class="p-2.5 bg-stone-50 border border-stone-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <p class="mb-0"><strong>เช็กอิน:</strong> เดิน 3–4 นาทีเข้า <strong>b&Namba No. 1</strong> (ตึกมีลิฟต์ ขนย้ายกระเป๋า 4 ใบสะดวก)</p>
+                                <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-stone-900 text-[11px] px-2.5 py-1 shrink-0 inline-flex items-center gap-1">
+                                    <i class="fa-brands fa-airbnb text-rose-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                </a>
+                            </div>
+                            <p><strong>เย็น-ค่ำ:</strong> เดินเล่นย่าน <strong>Dotonbori / Shinsaibashi</strong> ถ่ายรูปคู่ป้ายกูลิโกะ ทานทาโกยากิและราเม็ง</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="punch-card p-4 sm:p-5">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-orange-500 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 2</span>
+                                <span class="text-xs font-bold text-stone-700">พฤหัส 26 ก.พ. 2027</span>
+                                <span class="text-[11px] bg-orange-100 text-orange-800 font-bold px-2 py-0.5 rounded">โอซาก้า คืนที่ 2</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">แตะ IC Card</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>เช้า:</strong> ถ่ายรูปแลนด์มาร์ก <strong>ปราสาทโอซาก้า (Osaka Castle)</strong> และเดินเล่นสวน</p>
+                            <p><strong>บ่าย:</strong> ช้อปปิ้งใหญ่ย่าน <strong>Umeda</strong> (ห้าง Hankyu / Lucua / Grand Front Osaka)</p>
+                            <p><strong>ค่ำ:</strong> ดินเนอร์ย่าน <strong>Shinsekai</strong> ชิมคุชิคัตสึ (ของทอดเสียบไม้) ชมวิวหอคอยซึเทนคาคุ</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="punch-card p-4 sm:p-5">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-yellow-400 text-stone-900 font-extrabold text-xs px-2.5 py-1 rounded">DAY 3</span>
+                                <span class="text-xs font-bold text-stone-700">ศุกร์ 27 ก.พ. 2027</span>
+                                <span class="text-[11px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">ย้ายสู่โตเกียว (คืนที่ 1)</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">Shinkansen Nozomi (2.5 ชม.)</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>สาย:</strong> เช็กเอาต์พร้อมกระเป๋า 4 ใบ นั่งใต้ดินไป Shin-Osaka ขึ้น <strong>Shinkansen Nozomi สู่ Tokyo</strong> (จองที่นั่งแถวหลังสุดเพื่อวางกระเป๋า)</p>
+                            <div class="p-2.5 bg-stone-50 border border-stone-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <p class="mb-0"><strong>บ่าย:</strong> นั่ง JR Yamanote 10 นาทีถึง <strong>JR Tabata</strong> เช็กอิน <strong>Wes-Stay Tabata</strong> (2 ห้องนอน 4 เตียง ตึกมีลิฟต์)</p>
+                                <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-stone-900 text-[11px] px-2.5 py-1 shrink-0 inline-flex items-center gap-1">
+                                    <i class="fa-brands fa-airbnb text-rose-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                </a>
+                            </div>
+                            <p><strong>เย็น:</strong> นั่ง JR ไปย่าน <strong>Shinjuku หรือ Ikebukuro</strong> แลกรับตั๋วตัวจริง <strong>JR TOKYO Wide Pass</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="punch-card p-4 sm:p-5 border-l-8 border-l-sky-500">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-sky-500 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 4</span>
+                                <span class="text-xs font-bold text-stone-700">เสาร์ 28 ก.พ. 2027</span>
+                                <span class="text-[11px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded">❄️ JR Pass วันที่ 1 (ฟรี)</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">Joetsu Shinkansen (75 นาที)</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>เช้า-บ่าย:</strong> ขึ้นชินคันเซ็นตรงเข้า <strong>สถานี Gala Yuzawa</strong> (เชื่อมลานสกีในอาคาร) ถ่ายรูปหิมะ นั่งกระเช้า Gondola ชมวิวยอดเขา และเล่นถาดเลื่อนหิมะ Sled (ไม่เล่นสกี)</p>
+                            <p><strong>เย็น:</strong> นั่งชินคันเซ็นกลับลงสถานี Ueno แวะชิมของอร่อยตลาด <strong>Ameyoko</strong> แล้วนั่ง JR 7 นาทีกลับห้องพัก Tabata</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div class="punch-card p-4 sm:p-5 border-l-8 border-l-emerald-600">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-emerald-600 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 5</span>
+                                <span class="text-xs font-bold text-stone-700">อาทิตย์ 1 มี.ค. 2027</span>
+                                <span class="text-[11px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">🗻 JR Pass วันที่ 2 (ฟรี)</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">Fuji Excursion ด่วนพิเศษ</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>เช้า-บ่าย:</strong> นั่งรถไฟด่วน <strong>Fuji Excursion</strong> ยิงตรงจาก Shinjuku ถึง <strong>Kawaguchiko</strong> ขึ้นกระเช้าลอยฟ้า Panorama Ropeway ชมวิวฟูจิและทะเลสาบ</p>
+                            <p><strong>เย็น:</strong> นั่งรถไฟด่วนกลับเข้า Shinjuku ต่อสาย Yamanote เพียง 3 สถานีลง <strong>Shibuya</strong> เดินข้ามห้าแยกชิบูย่า</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="punch-card p-4 sm:p-5 border-l-8 border-l-rose-500 bg-rose-50/30">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-rose-500 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 6</span>
+                                <span class="text-xs font-bold text-stone-700">จันทร์ 2 มี.ค. 2027</span>
+                                <span class="text-[11px] bg-rose-100 text-rose-800 font-bold px-2 py-0.5 rounded">🏰 JR Pass วันที่ 3 (นั่ง JR ฟรีทั้งวัน)</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-rose-600">วันจันทร์คนน้อยกว่าวันหยุด!</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>07:45:</strong> นั่ง JR จาก Tabata ไปสถานี Tokyo ต่อสาย <strong>JR Keiyo Line</strong> ลงสถานี <strong>Maihama</strong> (ถึงหน้าทางเข้าดิสนีย์พอดี ฟรีด้วยพาส)</p>
+                            <p><strong>08:30 - 21:00 Tokyo Disneyland เต็มวัน:</strong> สนุกกับเครื่องเล่น Beauty and the Beast, Space Mountain ชมพาเหรดช่วงบ่าย และดูพลุปิดปราสาทซินเดอเรลลา</p>
+                            <p><strong>21:15:</strong> นั่ง JR รวดเดียวกลับห้องพัก Tabata พักผ่อนและแพ็กกระเป๋า 4 ใบเตรียมบิน</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 7 -->
+                    <div class="punch-card p-4 sm:p-5">
+                        <div class="flex items-center justify-between pb-2.5 border-b-2 border-stone-100 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-stone-900 text-white font-extrabold text-xs px-2.5 py-1 rounded">DAY 7</span>
+                                <span class="text-xs font-bold text-stone-700">อังคาร 3 มี.ค. 2027</span>
+                                <span class="text-[11px] bg-stone-200 text-stone-800 font-bold px-2 py-0.5 rounded">เดินทางกลับไทย</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-stone-500">Keisei Skyliner (36 นาที)</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm text-stone-700">
+                            <p><strong>เช็กเอาต์:</strong> พร้อมกระเป๋า 4 ใบ เดิน 5 นาทีจากที่พักไปสถานี JR Tabata</p>
+                            <p><strong>ต่อเดียวถึงสนามบิน:</strong> นั่ง JR 1 สถานี (2 นาที) ถึงสถานี <strong>Nippori</strong> ➔ ต่อรถไฟด่วน <strong>Keisei Skyliner ยิงตรงถึง Narita ในเวลา 36 นาที</strong></p>
+                            <p><strong>ที่สนามบิน:</strong> เช็กอินโหลดสัมภาระ ผ่าน ตม. ช้อปปิ้ง Duty Free บินไฟลต์ 19:00 น. กลับถึง กทม. โดยสวัสดิภาพ</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TAB 2: BUDGET BREAKDOWN (1 PERSON) -->
+                <div id="content-budget" class="hidden space-y-4">
+                    
+                    <!-- Grand Total Banner -->
+                    <div class="punch-card p-5 bg-stone-900 text-white">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">ESTIMATED BUDGET PER PERSON</span>
+                                <h3 class="text-xl sm:text-2xl font-black mt-0.5">ประมาณการงบประมาณทริป (ต่อ 1 คน)</h3>
+                                <p class="text-xs text-stone-300 mt-1">
+                                    *เป็นราคาประมาณการล่วงหน้า เผื่อช่วยกันคุมงบกินหรือได้เรตเงินดี ยอดจริงอาจประหยัดลงได้อีก
+                                </p>
+                            </div>
+                            <div class="bg-stone-800 border-2 border-amber-400 rounded-xl p-3 text-right shrink-0">
+                                <div class="text-[11px] text-stone-400 font-bold">รวมประมาณการต่อคน</div>
+                                <div class="text-xl sm:text-2xl font-black text-amber-400">~฿38,048 <span class="text-xs font-normal text-white">ถึง</span> ~฿39,123</div>
+                                <div class="text-[10px] text-emerald-400 font-bold mt-0.5">✓ ไม่รวมงบช้อปปิ้งส่วนตัว</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 Cost Item Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+
+                        <!-- 1. Flight -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">1</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ตั๋วเครื่องบินไป-กลับ</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">บินตรง/ต่อเครื่อง (ลง KIX / กลับ NRT)</div>
+                                <div class="text-xs text-stone-500 mt-0.5">ช่วงไฮซีซั่นหิมะปลาย ก.พ.</div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~11,000 บ.</div>
+                                <span class="text-[10px] text-stone-400">ต่อคน</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. Stays -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">2</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ค่าที่พัก 6 คืน (หาร 4 คน)</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">Osaka 2 คืน + Tokyo 4 คืน</div>
+                                <div class="text-xs text-stone-600 mt-1 space-y-0.5">
+                                    <div>• โอซาก้า: ~$220.08 USD (~฿938/คน/คืน)</div>
+                                    <div>• โตเกียว: ฿27,029 (~฿1,689/คน/คืน)</div>
+                                    <div class="text-emerald-700 font-bold">🛗 มีลิฟต์ทั้ง 2 ตึก ขนกระเป๋า 4 ใบสบาย</div>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~8,633 บ.</div>
+                                <span class="text-[10px] text-stone-400">รวม 6 คืน/คน</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Transit -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">3</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ค่าเดินทางตลอดทริป</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">รถไฟ + ชินคันเซ็น + JR Pass</div>
+                                <div class="text-xs text-stone-600 mt-1 space-y-0.5">
+                                    <div>• Nankai Rapi:t (KIX ➔ Namba): ~310 บ.</div>
+                                    <div>• Shinkansen Nozomi (จองที่วางกระเป๋า): ~3,580 บ.</div>
+                                    <div>• JR TOKYO Wide Pass 3 วัน: ~3,600 บ.</div>
+                                    <div>• Skyliner นาริตะ + รถไฟท้องถิ่น: ~1,270 บ.</div>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~8,760 บ.</div>
+                                <span class="text-[10px] text-stone-400">ต่อคน</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Activities -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">4</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ค่าตั๋ว & กิจกรรม (แยกจุด)</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">หิมะ + ฟูจิ + Tokyo Disneyland</div>
+                                <div class="text-xs text-stone-600 mt-1 space-y-0.5">
+                                    <div>• ❄️ Gala Yuzawa (กระเช้า+ถาดเลื่อน): ~840 บ.</div>
+                                    <div>• 🗻 กระเช้าลอยฟ้า Kawaguchiko: ~240 บ.</div>
+                                    <div>• 🏰 Tokyo Disneyland (ราคาปกติ): ~2,150 บ.</div>
+                                    <div class="text-rose-600 font-bold bg-rose-50 p-1 rounded mt-1 border border-rose-200">
+                                        ⚡️ ดักโปร 12.12/01.01/02.02 ลด 50% เหลือ ~1,075 บ.!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~2,155 - 3,230 บ.</div>
+                                <span class="text-[10px] text-stone-400">ต่อคน</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Food (Separated completely) -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">5</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ค่ากิน 7 วัน (แยกต่างหาก)</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">อาหาร ขนม กาแฟ ตลอด 7 วัน</div>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    ตั้งงบไว้ช่วง 6,000 – 7,000 บ. (เฉลี่ยวันละ ~900–1,000 บ. หรือ ~4,000 เยน/วัน) ทานราเม็ง ทาโกยากิ ของทอด คาเฟ่ ข้าวหน้าเนื้อ สบายๆ คุมงบได้จริง
+                                </p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~6,500 บ.</div>
+                                <span class="text-[10px] text-stone-400">ต่อคน (7 วัน)</span>
+                            </div>
+                        </div>
+
+                        <!-- 6. Other (Insurance & eSIM) -->
+                        <div class="punch-card p-4 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-stone-900 text-white text-xs font-black flex items-center justify-center">6</span>
+                                    <span class="text-xs font-bold text-stone-500 uppercase">ค่าอื่นๆ (ประกัน & เน็ต)</span>
+                                </div>
+                                <div class="font-bold text-stone-900 text-sm mt-1.5">ประกันเดินทาง + eSIM เน็ต</div>
+                                <div class="text-xs text-stone-600 mt-1 space-y-0.5">
+                                    <div>• ประกันเดินทาง 7 วัน (Sompo/MSIG คลุมหิมะ): 350 บ.</div>
+                                    <div>• อินเทอร์เน็ต eSIM (AIS SIM2Fly หรือ Klook): 650 บ.</div>
+                                    <div class="text-stone-400 text-[11px]">*ไม่รวมค่าช้อปปิ้งส่วนตัวของแต่ละคน</div>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="text-base font-black text-stone-900">~1,000 บ.</div>
+                                <span class="text-[10px] text-stone-400">ต่อคน</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Note -->
+                    <div class="punch-card p-4 bg-amber-50 text-xs text-stone-800 space-y-1">
+                        <div class="font-bold text-stone-900">📌 บันทึกควบคุมงบ:</div>
+                        <p>1. <strong>ราคาประมาณการ:</strong> หากช่วยกันคุมงบค่ากิน เลือกร้านราคาประหยัด หรือได้เรตเงินดี ยอดจริงอาจลดลงได้อีก</p>
+                        <p>2. <strong>Tokyo Disneyland:</strong> คิดงบไว้ 2 กรณี (ตั๋วปกติ ~2,150 บ. รวม ~39,123 บ. / ถ้าดักโปร 50% วันเบิ้ลได้ เหลือ ~1,075 บ. รวมจะเหลือ ~38,048 บ.)</p>
+                        <p>3. <strong>ลานสกี Gala Yuzawa:</strong> ไม่เล่นสกี จึงเสียเฉพาะค่ากระเช้า Gondola + ถาดเลื่อนหิมะ (~840 บ.) ไม่เสียค่าเช่าอุปกรณ์สกีราคาแพง</p>
+                    </div>
+
+                </div>
+
+                <!-- TAB 3: CAFES & LOCAL FOOD -->
+                <div id="content-food" class="hidden space-y-4">
+                    
+                    <div class="punch-card p-4 bg-emerald-50 border-emerald-900 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">LOCAL CAFES & EATS</span>
+                            <h3 class="text-base font-extrabold text-stone-900 mt-0.5">ร้านกาแฟโลคอล & ของกินราคาประหยัด</h3>
+                            <p class="text-xs text-stone-600 mt-0.5">กาแฟแก้วละ ~350–550 JPY / อาหารจานละ ~500–1,200 JPY มีปุ่มนำทาง Google Maps ทุกร้าน</p>
+                        </div>
+                    </div>
+
+                    <!-- Osaka Spots -->
+                    <div class="punch-card p-4 space-y-3">
+                        <div class="flex items-center justify-between pb-2 border-b-2 border-stone-100">
+                            <span class="text-xs font-bold bg-orange-100 text-orange-900 px-2 py-0.5 rounded">โอซาก้า (ใกล้ที่พัก b&Namba • Shinsaibashi)</span>
+                            <span class="text-[11px] text-stone-500 font-bold">Day 1 - 2</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>☕ LiLo Coffee Roasters</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~450–600 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">โรงคั่วสเปเชียลตี้ชื่อดังย่าน Shinsaibashi ดริปแก้วต่อแก้ว พร้อมการ์ดโน้ตกาแฟ</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=LiLo+Coffee+Roasters+Osaka" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>☕ Granknot Coffee (Kitahorie)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~400–550 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">เดินจากที่พัก b&Namba 6 นาที กาแฟหอมกรุ่น บรรยากาศฮิปสเตอร์ ลาเต้นุ่มละมุน</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Granknot+Coffee+Osaka" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>🐙 Takoyaki Wanaka (Namba)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~500 JPY (8 ลูก)</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">ทาโกยากิต้นตำรับ แป้งกรอบนอกเยิ้มใน โรยต้นหอมพูนๆ ราคาสบายกระเป๋า</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Takoyaki+Wanaka+Namba" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>🍢 Kushikatsu Daruma (Shinsekai)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">ไม้ละ ~130–180 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">ของทอดเสียบไม้คุณลุงหน้าดุ แป้งบางกรอบ สั่งคุมงบได้ตามใจชอบ</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Shinsekai+Sohonten" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tokyo & Nearby Spots -->
+                    <div class="punch-card p-4 space-y-3">
+                        <div class="flex items-center justify-between pb-2 border-b-2 border-stone-100">
+                            <span class="text-xs font-bold bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded">โตเกียว • ฟูจิ • ลานสกี</span>
+                            <span class="text-[11px] text-stone-500 font-bold">Day 3 - 7</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>☕ Kayaba Coffee (Yanaka)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~500–600 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">คาเฟ่บ้านไม้ปี 1938 นั่งเสื่อทาทามิ แซนด์วิชไข่หนานุ่มฟู ใกล้ที่พัก Tabata</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kayaba+Coffee+Tokyo" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>🥩 Yanaka Menchi-katsu</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~250 JPY/ชิ้น</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">เนื้อบดทอดกรอบสูตรตำนานบนถนนคนเดิน Yanaka Ginza กัดปุ๊บน้ำซุปฉ่ำหอมกรุ่น</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Niku+no+Suzuki+Yanaka+Ginza" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>🍲 Houtou Fudou (Kawaguchiko)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~1,200 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">บะหมี่หม้อเหล็กร้อนๆ ซุปมิโซะฟักทองเข้มข้น อาหารพื้นเมืองฟูจิ ซดคลายหนาว</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Houtou+Fudou+Kawaguchiko+Station" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+
+                            <div class="border border-stone-200 p-3 rounded-lg bg-stone-50 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between font-bold text-stone-900">
+                                        <span>🍙 ข้าวปั้นยักษ์ (Gala Yuzawa)</span>
+                                        <span class="text-[10px] bg-white px-1.5 py-0.5 rounded border border-stone-300">~450–700 JPY</span>
+                                    </div>
+                                    <p class="text-stone-600 text-[11px] mt-1">Bakudan Onigiri ทำจากข้าวพันธุ์โคชิฮิคารินีงาตะแท้ ลูกเดียวอิ่มแทนมื้อหลัก</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Yukinto+Bakudan+Onigiri+Echigo+Yuzawa" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-emerald-800 text-[11px] px-2.5 py-1 mt-2.5 text-center block">
+                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> แผนที่ Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TAB 4: PREPARATION, SIM & INSURANCE -->
+                <div id="content-prep" class="hidden space-y-4">
+                    
+                    <div class="punch-card p-5">
+                        <div class="flex items-center justify-between mb-2 pb-2 border-b-2 border-stone-100">
+                            <span class="text-xs font-bold text-sky-800 uppercase tracking-wide">INSURANCE & CONNECTIVITY</span>
+                            <span class="text-xs font-bold text-stone-500">เตรียมก่อนบิน</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+                            <div class="border-2 border-stone-200 p-3.5 rounded-xl bg-stone-50">
+                                <div class="font-bold text-stone-900 text-sm">🛡️ ประกันเดินทาง (Sompo Japan)</div>
+                                <div class="text-xs text-stone-600 mt-1">งบ ~350 บาท/คน คลุมอุบัติเหตุลานสกี Gala Yuzawa ไม่ต้องสำรองจ่าย มีล่ามไทย-ญี่ปุ่น 24 ชม.</div>
+                            </div>
+                            <div class="border-2 border-stone-200 p-3.5 rounded-xl bg-stone-50">
+                                <div class="font-bold text-stone-900 text-sm">📶 eSIM อินเทอร์เน็ต (AIS SIM2Fly)</div>
+                                <div class="text-xs text-stone-600 mt-1">งบ ~399–650 บาท ไม่ต้องถอดซิมไทย รับ OTP ธนาคารได้สะดวก ไม่ต้องพก Pocket Wi-Fi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticketing Hacks -->
+                    <div class="punch-card p-5 bg-amber-50">
+                        <h4 class="font-bold text-stone-900 text-sm mb-2">🎟️ แหล่งซื้อตั๋วราคาถูก & ทริกดักส่วนลด</h4>
+                        <div class="text-xs text-stone-700 space-y-2">
+                            <p>• <strong>Tokyo Disneyland:</strong> รอดักโค้ดลด 50% หรือบัตรสวนสนุก ซื้อ 1 แถม 1 ใน Klook / KKday ช่วงวันเบิ้ล (12.12, 01.01, 02.02) ลดเหลือคนละ ~1,075 บ.</p>
+                            <p>• <strong>Nankai Rapi:t:</strong> ซื้อล่วงหน้าผ่าน Klook เหลือ ~310 บ. (หน้าเคาน์เตอร์ 350 บ.) สแกน QR แลกตั๋วที่สถานี KIX ได้ทันที</p>
+                            <p>• <strong>JR TOKYO Wide Pass (15,000 JPY):</strong> เปิดจองล่วงหน้า 1 เดือนผ่านเว็บ JR-East Train Reservation จองที่นั่งชินคันเซ็นและรถไฟด่วนฟูจิฟรี 100%</p>
+                        </div>
+                    </div>
+
+                    <!-- Clothing & Weather -->
+                    <div class="punch-card p-5">
+                        <h4 class="font-bold text-stone-900 text-sm mb-2">🧤 สภาพอากาศ & การจัดกระเป๋า (หนาว 2–10°C / ลานสกีติดลบ)</h4>
+                        <div class="text-xs text-stone-700 space-y-1.5">
+                            <p>• <strong>แต่งตัวแบบ 3 เลเยอร์:</strong> ฮีทเทค (Base) + สเวตเตอร์หรือฟรีซ (Mid) + โค้ตกันลมหรือขนเป็ด (Outer)</p>
+                            <p>• <strong>อุปกรณ์จำเป็น:</strong> ถุงมือทัชสกรีน (สำคัญมาก มือแข็งกดมือถือไม่ได้), ผ้าพันคอ, หมวกไหมพรม, ถุงเท้าหนา</p>
+                            <p>• <strong>แผ่นแปะร้อน (Kairo):</strong> ซื้อได้ที่ร้านสะดวกซื้อ 7-Eleven หรือดองกี้ แปะตัวและใส่ในรองเท้าช่วยได้เยอะ</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Column: Stays Showcase & Sticky DM Share (4 Cols on Desktop) -->
+            <div class="lg:col-span-4 space-y-4">
+
+                <!-- Stays Overview Card -->
+                <div class="punch-card p-4 bg-white">
+                    <div class="flex items-center justify-between pb-2 border-b-2 border-stone-100">
+                        <span class="text-xs font-bold text-stone-900 uppercase">🏨 ที่พักทั้ง 2 แห่ง (มีลิฟต์)</span>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">เตียงครบ 4 คน</span>
+                    </div>
+
+                    <!-- Stay 1: Osaka -->
+                    <div class="mt-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-bold bg-orange-100 text-orange-800 px-2 py-0.5 rounded">โอซาก้า 2 คืน</span>
+                            <span class="text-xs font-bold text-stone-900">~฿938/คน/คืน</span>
+                        </div>
+                        <div class="font-bold text-stone-900 text-xs mt-1.5">b&Namba No. 1</div>
+                        <p class="text-[11px] text-stone-600 mt-0.5 leading-relaxed">
+                            เดิน 3-4 นาทีถึง JR Namba • นั่ง Rapi:t ตรงจาก KIX • ตึกมีลิฟต์ • กระเป๋า 4 ใบสบาย
+                        </p>
+                        <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-stone-900 text-[11px] px-2.5 py-1 mt-2 w-full text-center block">
+                            <i class="fa-brands fa-airbnb text-rose-500"></i> เปิดดูห้องโอซาก้า <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Stay 2: Tokyo -->
+                    <div class="mt-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">โตเกียว 4 คืน</span>
+                            <span class="text-xs font-bold text-stone-900">~฿1,689/คน/คืน</span>
+                        </div>
+                        <div class="font-bold text-stone-900 text-xs mt-1.5">Wes-Stay Tabata</div>
+                        <p class="text-[11px] text-stone-600 mt-0.5 leading-relaxed">
+                            เดิน 5 นาทีจาก JR Tabata (ติดสาย Yamanote) • 2 ห้องนอน 4 เตียง • ตึกมีลิฟต์ • ต่อ Skyliner ไปนาริตะ 36 นาที
+                        </p>
+                        <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="punch-btn bg-white text-stone-900 text-[11px] px-2.5 py-1 mt-2 w-full text-center block">
+                            <i class="fa-brands fa-airbnb text-rose-500"></i> เปิดดูห้องโตเกียว <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Quick Copy Box -->
+                <div class="punch-card p-4 bg-amber-100/60 hidden lg:block">
+                    <div class="text-xs font-bold text-stone-900 mb-1">💬 ส่งแชตให้เพื่อน (IG / FB DM)</div>
+                    <p class="text-[11px] text-stone-600 leading-relaxed mb-3">
+                        กดปุ่มด้านล่างเพื่อคัดลอกสรุปย่อ Day 1-7 พร้อมลิงก์ที่พักและงบประมาณการ/คน วางใน DM ได้ทันที
+                    </p>
+                    <button onclick="copyPitchText('compact')" class="punch-btn bg-stone-900 text-white text-xs py-2 w-full flex items-center justify-center gap-1.5 cursor-pointer">
+                        <i class="fa-brands fa-instagram text-rose-400"></i>
+                        <span>ก๊อปส่ง IG / FB DM (สรุปย่อ Day 1-7)</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Mobile Bottom Floating Action Bar -->
+    <div class="fixed bottom-3 left-3 right-3 lg:hidden z-40 max-w-md mx-auto">
+        <div class="punch-card p-2.5 bg-white flex items-center justify-between gap-2 shadow-xl">
+            <button onclick="copyPitchText('compact')" class="punch-btn bg-stone-900 text-white text-xs py-2 px-3 flex-1 flex items-center justify-center gap-1.5 cursor-pointer">
+                <i class="fa-brands fa-instagram text-rose-400"></i>
+                <span>ก๊อปส่ง IG / FB DM (สรุปย่อ)</span>
+            </button>
+            <button onclick="copyPitchText('full')" class="punch-btn bg-stone-100 text-stone-900 text-xs py-2 px-3 shrink-0 cursor-pointer">
+                <span>แบบเต็ม</span>
             </button>
         </div>
     </div>
 
-    <!-- Main Container -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
-
-        <!-- Editorial Header -->
-        <header class="text-center mb-8">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-100 text-sage-600 text-xs font-medium tracking-wide mb-3 border border-sand-200">
-                <span>Osaka • Tokyo • Snow Play • Mt. Fuji • Disneyland</span>
-            </div>
-            <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-warmDark">
-                Japan Winter Journey 2027
-            </h1>
-            <p class="mt-2 text-xs sm:text-sm text-sand-800/80 max-w-xl mx-auto leading-relaxed">
-                แผนการเดินทางและประมาณการงบต่อคน (4 คน/กระเป๋าคนละใบ) คัดสรรที่พักติดสถานี มีลิฟต์ ลากกระเป๋าสบาย พร้อมทริกตั๋วและโปรลด 50%
-            </p>
-
-            <!-- 4 Key Stat Badges -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6 text-left">
-                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
-                    <div class="text-[11px] text-slate-400 font-medium">สมาชิก & กระเป๋า</div>
-                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">4 คน (คนละ 1 ใบ)</div>
-                    <div class="text-[10px] text-sage-600 mt-0.5 font-medium">รวม 4 ใบ (มีลิฟต์ทั้ง 2 ตึก)</div>
-                </div>
-
-                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
-                    <div class="text-[11px] text-slate-400 font-medium">ตั๋วเครื่องบินไป-กลับ</div>
-                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~11,000 บาท/คน</div>
-                    <div class="text-[10px] text-terracotta-600 mt-0.5 font-medium">ลง KIX / กลับ NRT</div>
-                </div>
-
-                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
-                    <div class="text-[11px] text-slate-400 font-medium">ที่พัก 6 คืน (หาร 4)</div>
-                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~8,633 บาท/คน</div>
-                    <div class="text-[10px] text-sage-600 mt-0.5 font-medium">เฉลี่ย ~฿1,440/คน/คืน</div>
-                </div>
-
-                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
-                    <div class="text-[11px] text-slate-400 font-medium">งบประมาณการ/คน</div>
-                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~38,048 – 39,123 บ.</div>
-                    <div class="text-[10px] text-emerald-600 mt-0.5 font-medium">*ขึ้นกับดีลดิสนีย์ 50%</div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Navigation Tabs -->
-        <div class="flex justify-center mb-8">
-            <div class="bg-sand-100 p-1 rounded-xl inline-flex gap-1 border border-sand-200/80 max-w-full overflow-x-auto">
-                <button onclick="switchTab('itinerary')" id="tab-itinerary" class="editorial-tab active px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap">
-                    <i class="fa-regular fa-calendar-days mr-1.5 text-sage-600"></i> แพลนเที่ยว 7 วัน
-                </button>
-                <button onclick="switchTab('food')" id="tab-food" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
-                    <i class="fa-solid fa-mug-hot mr-1.5 text-amber-700"></i> คาเฟ่ & ของกินใกล้จุดเที่ยว
-                </button>
-                <button onclick="switchTab('deals')" id="tab-deals" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
-                    <i class="fa-solid fa-tags mr-1.5 text-terracotta-500"></i> ตั๋ว & ดีลลด 50%
-                </button>
-                <button onclick="switchTab('prep')" id="tab-prep" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
-                    <i class="fa-solid fa-shield-halved mr-1.5 text-sage-500"></i> ประกัน & eSIM
-                </button>
-                <button onclick="switchTab('stays')" id="tab-stays" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
-                    <i class="fa-solid fa-coins mr-1.5 text-terracotta-600"></i> ประมาณการงบ (ต่อคน)
-                </button>
-            </div>
-        </div>
-
-        <!-- TAB 1: ITINERARY -->
-        <section id="content-itinerary" class="space-y-3.5">
-
-            <!-- Day 1 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 1</span>
-                        <span class="text-xs font-medium text-slate-400">พุธ 25 ก.พ. 2027</span>
-                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-medium">โอซาก้า คืนที่ 1</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-sage-600">Nankai Rapi:t (35 นาที)</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">บ่าย:</strong> บินลงสนามบินคันไซ (KIX) รับกระเป๋า 4 ใบ เดินข้ามไปขึ้นรถไฟด่วน <strong>Nankai Rapi:t ต่อเดียวตรงเข้า Namba</strong> ไม่ต้องเปลี่ยนสาย</p>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 bg-sand-50 rounded-xl border border-sand-200/60">
-                        <p class="mb-0"><strong class="text-warmDark">เช็กอิน:</strong> เดิน 3–4 นาทีเข้าที่พัก <strong>b&Namba No. 1</strong> (ตึกมีลิฟต์ ขนย้ายกระเป๋า 4 ใบสะดวกมาก)</p>
-                        <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-terracotta-600 hover:text-terracotta-700 bg-white px-2.5 py-1 rounded-lg border border-terracotta-200 shrink-0">
-                            <i class="fa-brands fa-airbnb text-terracotta-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                        </a>
-                    </div>
-                    <p><strong class="text-warmDark">เย็น-ค่ำ:</strong> เดินเท้าชิลล์ๆ ย่าน <strong>Dotonbori / Shinsaibashi</strong> ถ่ายรูปคู่ป้ายกูลิโกะ ทานทาโกยากิและราเม็ง</p>
-                </div>
-            </div>
-
-            <!-- Day 2 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 2</span>
-                        <span class="text-xs font-medium text-slate-400">พฤหัส 26 ก.พ. 2027</span>
-                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-medium">โอซาก้า คืนที่ 2</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-sand-800">แตะ IC Card ขึ้นใต้ดิน</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">เช้า:</strong> ชมแลนด์มาร์ก <strong>ปราสาทโอซาก้า (Osaka Castle)</strong> และเดินเล่นสวนรอบนอก</p>
-                    <p><strong class="text-warmDark">บ่าย:</strong> ช้อปปิ้งใหญ่ย่าน <strong>Umeda</strong> (ห้าง Hankyu / Lucua / Grand Front Osaka)</p>
-                    <p><strong class="text-warmDark">ค่ำ:</strong> ดินเนอร์ย่าน <strong>Shinsekai</strong> ชิมคุชิคัตสึ (ของทอดเสียบไม้) วิวหอคอยซึเทนคาคุ</p>
-                </div>
-            </div>
-
-            <!-- Day 3 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 3</span>
-                        <span class="text-xs font-medium text-slate-400">ศุกร์ 27 ก.พ. 2027</span>
-                        <span class="text-xs bg-sage-50 text-sage-600 px-2 py-0.5 rounded font-medium">ย้ายสู่โตเกียว (คืนที่ 1)</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-terracotta-600">Shinkansen Nozomi (2.5 ชม.)</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">สาย:</strong> เช็กเอาต์พร้อมกระเป๋า 4 ใบ นั่งรถไฟใต้ดินไป Shin-Osaka ขึ้น <strong>Shinkansen Nozomi สู่ Tokyo Station</strong> (จองที่นั่งแถวหลังสุดเพื่อวางกระเป๋าขนาดใหญ่)</p>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 bg-sand-50 rounded-xl border border-sand-200/60">
-                        <p class="mb-0"><strong class="text-warmDark">บ่าย:</strong> ต่อสาย JR Yamanote 10 นาทีถึง <strong>JR Tabata</strong> เช็กอิน <strong>Wes-Stay Tabata</strong> (40.75 ตร.ม. 2 ห้องนอน 4 เตียง มีลิฟต์)</p>
-                        <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-terracotta-600 hover:text-terracotta-700 bg-white px-2.5 py-1 rounded-lg border border-terracotta-200 shrink-0">
-                            <i class="fa-brands fa-airbnb text-terracotta-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                        </a>
-                    </div>
-                    <p><strong class="text-warmDark">เย็น:</strong> นั่ง JR ไปย่าน <strong>Shinjuku หรือ Ikebukuro</strong> แลกรับตั๋วตัวจริง <strong>JR TOKYO Wide Pass</strong></p>
-                </div>
-            </div>
-
-            <!-- Day 4 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border-2 border-sage-500/20 shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-sage-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">DAY 4</span>
-                        <span class="text-xs font-medium text-slate-400">เสาร์ 28 ก.พ. 2027</span>
-                        <span class="text-xs bg-sage-100 text-sage-700 px-2 py-0.5 rounded font-bold">❄️ ใช้ JR Pass วันที่ 1 (ฟรี)</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-sage-600">Joetsu Shinkansen (75 นาที)</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">เช้า-บ่าย:</strong> นั่ง JR จาก Tabata ไป Ueno 7 นาที ➔ ขึ้นชินคันเซ็นตรงเข้า <strong>สถานี Gala Yuzawa</strong> (เชื่อมลานสกีในอาคาร) เล่นหิมะ สกี นั่งกระเช้าชมวิวภูเขาหิมะ</p>
-                    <p><strong class="text-warmDark">เย็น:</strong> นั่งชินคันเซ็นกลับลงสถานี Ueno แวะชิมของอร่อยตลาด <strong>Ameyoko</strong> แล้วนั่ง JR 7 นาทีกลับห้องพัก Tabata</p>
-                </div>
-            </div>
-
-            <!-- Day 5 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border-2 border-terracotta-500/20 shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-terracotta-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">DAY 5</span>
-                        <span class="text-xs font-medium text-slate-400">อาทิตย์ 1 มี.ค. 2027</span>
-                        <span class="text-xs bg-terracotta-100 text-terracotta-700 px-2 py-0.5 rounded font-bold">🗻 ใช้ JR Pass วันที่ 2 (ฟรี)</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-terracotta-600">Fuji Excursion ด่วนพิเศษ</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">เช้า-บ่าย:</strong> นั่งรถไฟด่วน <strong>Fuji Excursion</strong> ยิงตรงจาก Shinjuku ถึง <strong>Kawaguchiko</strong> ชมวิวฟูจิริมทะเลสาบ ถ่ายรูปเจดีย์แดง Chureito Pagoda</p>
-                    <p><strong class="text-warmDark">เย็น:</strong> นั่งรถไฟด่วนกลับเข้า Shinjuku ต่อสาย Yamanote เพียง 3 สถานีลง <strong>Shibuya</strong> เดินข้ามห้าแยกชิบูย่าและชมวิวตึก Shibuya Sky</p>
-                </div>
-            </div>
-
-            <!-- Day 6: Disney Highlight -->
-            <div class="bg-sand-50/70 rounded-2xl p-4 sm:p-5 border-2 border-terracotta-500/30 shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-200">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-warmDark text-white text-xs font-extrabold px-2.5 py-1 rounded-md">DAY 6</span>
-                        <span class="text-xs font-medium text-slate-400">จันทร์ 2 มี.ค. 2027</span>
-                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-bold">🏰 ใช้ JR Pass วันที่ 3 (นั่ง JR ฟรีตลอดวัน)</span>
-                    </div>
-                    <span class="text-[11px] font-semibold text-terracotta-600">วันจันทร์คนน้อยกว่าเสาร์-อาทิตย์!</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">07:45 เดินทางง่ายมาก:</strong> จาก Tabata นั่ง JR เข้าสถานี Tokyo ต่อสาย <strong>JR Keiyo Line</strong> ลงสถานี <strong>Maihama</strong> (หน้าทางเข้าดิสนีย์พอดี 40 นาที ฟรีด้วย JR Pass)</p>
-                    <p><strong class="text-warmDark">08:30 - 21:00 Tokyo Disneyland เต็มวัน:</strong> สนุกกับเครื่องเล่นยอดฮิต Beauty and the Beast, Space Mountain, ชมขบวนพาเหรดช่วงบ่าย และชมพลุปิดท้ายปราสาทซินเดอเรลลา</p>
-                    <p><strong class="text-warmDark">21:15:</strong> นั่งรถไฟ JR รวดเดียวกลับมานอนพักผ่อนที่ Tabata และแพ็กกระเป๋า 4 ใบเตรียมบิน</p>
-                </div>
-            </div>
-
-            <!-- Day 7 -->
-            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
-                    <div class="flex items-center gap-2.5">
-                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 7</span>
-                        <span class="text-xs font-medium text-slate-400">อังคาร 3 มี.ค. 2027</span>
-                        <span class="text-xs bg-sand-200 text-sand-800 px-2 py-0.5 rounded font-medium">เดินทางกลับไทย</span>
-                    </div>
-                    <span class="text-[11px] font-medium text-sage-600">Keisei Skyliner (36 นาที)</span>
-                </div>
-                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
-                    <p><strong class="text-warmDark">เช็กเอาต์:</strong> พร้อมกระเป๋า 4 ใบ เดิน 5 นาทีจากที่พักไปสถานี JR Tabata</p>
-                    <p><strong class="text-warmDark">ต่อเดียวถึงสนามบิน:</strong> นั่ง JR เพียง 1 สถานี (2 นาที) ถึงสถานี <strong>Nippori</strong> ➔ ต่อรถไฟด่วน <strong>Keisei Skyliner ยิงตรงถึง Narita Airport ในเวลาเพียง 36 นาที</strong></p>
-                    <p><strong class="text-warmDark">ที่สนามบิน:</strong> เช็กอินโหลดสัมภาระ ผ่าน ตม. ช้อปปิ้ง Duty Free บินไฟลต์ 19:00 น. กลับถึง กทม. โดยสวัสดิภาพ</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- TAB NEW: LOCAL CAFES & DINING (ใกล้จุดเที่ยวในแต่ละวัน) -->
-        <section id="content-food" class="hidden space-y-4">
-
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div>
-                    <span class="text-xs font-bold text-amber-700 uppercase tracking-wide">
-                        <i class="fa-solid fa-mug-saucer mr-1"></i> Budget-Friendly Local Cafes & Eats
-                    </span>
-                    <h3 class="text-base sm:text-lg font-bold text-warmDark mt-1">
-                        ร้านกาแฟโลคอล & ของกินราคาเป็นมิตร (กดเปิด Google Maps ได้เลย)
-                    </h3>
-                    <p class="text-xs text-sand-800/80 mt-1">
-                        คัดร้านสเปเชียลตี้และร้านโลคอลแท้ๆ ราคาเข้าถึงง่าย (กาแฟ ~350–550 JPY / อาหาร ~500–1,200 JPY) ใกล้ที่พักและจุดเที่ยว
-                    </p>
-                </div>
-                <div class="bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1.5 rounded-xl font-medium shrink-0 flex items-center gap-1.5">
-                    <i class="fa-solid fa-location-dot text-emerald-600"></i> มีปุ่มแผนที่ Google Maps ทุกร้าน
-                </div>
-            </div>
-
-            <!-- Area 1: Osaka Namba / Dotonbori / Umeda -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
-                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-terracotta-50 text-terracotta-600 text-xs font-bold px-2.5 py-1 rounded-md">โอซาก้า</span>
-                        <h4 class="text-sm font-bold text-warmDark">ใกล้ที่พัก b&Namba • Shinsaibashi • Dotonbori</h4>
-                    </div>
-                    <span class="text-[11px] text-slate-400">Day 1 - 2</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    <!-- Cafes -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
-                            <i class="fa-solid fa-coffee-bean"></i> กาแฟสเปเชียลตี้โลคอล (แก้วละ ~400–600 JPY)
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Cafe 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. LiLo Coffee Roasters</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–600 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    โรงคั่วชื่อดังย่าน Shinsaibashi ร้านเล็กอบอุ่น ดริปแก้วต่อแก้ว พร้อมการ์ดอธิบายโน้ตกาแฟ เดินจากที่พัก Namba ได้ชิลล์ๆ
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=LiLo+Coffee+Roasters+Osaka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Cafe 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. Granknot Coffee (Kitahorie)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~400–550 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ใกล้ที่พัก b&Namba เดิน 6-7 นาที กาแฟหอมกรุ่น บรรยากาศฮิปสเตอร์อินดัสเทรียล ลาเต้รสละมุน ไม่แพง
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Granknot+Coffee+Osaka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Food -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
-                            <i class="fa-solid fa-utensils"></i> ของกินโลคอลต้นตำรับ (สบายกระเป๋า)
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Food 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. Takoyaki Wanaka (Namba)</span>
-                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~500–600 JPY (8 ลูก)</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ทาโกยากิในตำนานของชาวโอซาก้า แป้งกรอบนอกเยิ้มใน ไม่อมน้ำมัน แนะนำราดซอสผสมต้นหอมพูนๆ
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Takoyaki+Wanaka+Namba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Food 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. Kushikatsu Daruma (Shinsekai)</span>
-                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">เริ่มต้น ~130–180 JPY/ไม้</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ของทอดเสียบไม้คุณลุงหน้าดุ แป้งบางกรอบสั่งได้ตามงบ ทานแกล้มกะหล่ำปลีสดและซอสสูตรเด็ด (Day 2 มื้อค่ำ)
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Shinsekai+Sohonten" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Area 2: Tokyo Tabata / Yanaka / Nippori -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
-                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-sage-50 text-sage-600 text-xs font-bold px-2.5 py-1 rounded-md">โตเกียวโซนที่พัก</span>
-                        <h4 class="text-sm font-bold text-warmDark">ใกล้ที่พัก Wes-Stay Tabata • Yanaka • Nippori</h4>
-                    </div>
-                    <span class="text-[11px] text-slate-400">Day 3 & Day 7</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    <!-- Cafes -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
-                            <i class="fa-solid fa-mug-hot"></i> ร้านกาแฟชุมชนโบราณ & โลคอล
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Cafe 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. Kayaba Coffee (Yanaka)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500–600 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    คาเฟ่บ้านไม้โบราณปี 1938 นั่งเสื่อทาทามิชั้น 2 สั่ง <strong>"แซนด์วิชไข่หนานุ่มฟู (Egg Toast ~550 JPY)"</strong> แกล้มกาแฟร้อน
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Kayaba+Coffee+Tokyo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Cafe 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. Yanaka Coffee (Yanaka Ginza)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~300–400 JPY (ถูกมาก!)</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ร้านกาแฟคั่วบดสดแก้วต่อแก้ว กลิ่นหอมฟุ้งทั้งถนนคนเดิน ราคาเบาๆ สบายกระเป๋าที่สุดในย่าน
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Yanaka+Coffee+Yanaka+Ginza" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Food -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-sage-600 flex items-center gap-1.5">
-                            <i class="fa-solid fa-bowl-rice"></i> สตรีทฟู้ด & ราเม็งราคาประหยัด
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Food 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. Yanaka Ginza Menchi-katsu (Suzuki Meat)</span>
-                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~250 JPY/ชิ้น</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    โคร็อกเกะเนื้อบดทอดกรอบสูตรตำนาน กัดปุ๊บน้ำซุปฉ่ำหอมกรุ่น คนต่อคิวซื้อกินเล่นเยอะมาก
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Niku+no+Suzuki+Yanaka+Ginza" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Food 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. โลคอลราเม็งหน้าสถานี Tabata</span>
-                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~750–950 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    รอบสถานี JR Tabata มีร้านราเม็งและโซบะหยอดเหรียญของคนทำงานญี่ปุ่นแท้ๆ ราคาประหยัด ซุปกลมกล่อม ทานง่ายก่อนเข้าห้องพัก
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Ramen+near+Tabata+Station+Tokyo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Area 3: Shinjuku / Shibuya / Ueno -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
-                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">ใจกลางโตเกียว</span>
-                        <h4 class="text-sm font-bold text-warmDark">Shibuya • Shinjuku • Ueno</h4>
-                    </div>
-                    <span class="text-[11px] text-slate-400">Day 3, 4, 5</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    <!-- Cafes -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
-                            <i class="fa-solid fa-seedling"></i> คาเฟ่ชื่อดัง (Specialty Vibe)
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Cafe 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. Fuglen Tokyo (Shibuya)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500–650 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    คาเฟ่สไตล์วินเทจสแกนดิเนเวียใกล้สวน Yoyogi คั่วอ่อนรสละมุน กลิ่นหอม ถ่ายรูปมุมหน้าร้านสวยมาก
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Fuglen+Tokyo+Shibuya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Cafe 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. About Life Coffee Brewers (Shibuya)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–550 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    สแตนด์กาแฟเล็กๆ หัวมุมถนน รวมเมล็ดจากไมโครโรสเตอร์ทั่วญี่ปุ่น เดินจิบชิลล์ๆ หลังข้ามห้าแยกชิบูย่า
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=About+Life+Coffee+Brewers+Shibuya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Food -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
-                            <i class="fa-solid fa-fire-burner"></i> ร้านฮิตรสชาติคุ้มราคา
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Food 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">1. Afuri Ramen (Shinjuku/Shibuya)</span>
-                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~1,080–1,280 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ราเม็งซุปส้มยูซุ (Yuzu Shio) หอมสดชื่นตัดเลี่ยน ซดคล่องคอ หมูชาชูย่างเตาถ่านหอมกรุ่น
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Afuri+Ramen+Shinjuku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Food 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">2. Ameyoko Street Eats (Ueno)</span>
-                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~500–1,000 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ตลาดคนเดินใต้ทางรถไฟ Ueno เต็มไปด้วยข้าวหน้าปลาดิบดงบุริราคาประหยัด ผลไม้เสียบไม้ และเกี๊ยวซ่าชิ้นโต
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+District+Ueno" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Area 4: Kawaguchiko & Gala Yuzawa (Outside Tokyo) -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
-                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
-                    <div class="flex items-center gap-2">
-                        <span class="bg-terracotta-50 text-terracotta-600 text-xs font-bold px-2.5 py-1 rounded-md">ฟูจิ & ดินแดนหิมะ</span>
-                        <h4 class="text-sm font-bold text-warmDark">Kawaguchiko (ฟูจิ) & Gala Yuzawa (นีงาตะ)</h4>
-                    </div>
-                    <span class="text-[11px] text-slate-400">Day 4 & 5</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    <!-- Kawaguchiko -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
-                            <i class="fa-solid fa-mountain"></i> Kawaguchiko (ฟูจิ)
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Kawaguchiko 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">🍲 Houtou Fudou (โฮโต ฟุโด)</span>
-                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~1,200 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    บะหมี่เส้นแบนต้มหม้อเหล็กร้อนๆ ในซุปมิโซะและฟักทองเข้มข้น อาหารพื้นเมืองแท้หน้าสถานี ซดคลายหนาวได้ดีมาก
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Houtou+Fudou+Kawaguchiko+Station" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Kawaguchiko 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">☕ Cisco Coffee (ริมทะเลสาบ)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–600 JPY</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    คาเฟ่บรรยากาศสบายๆ ริมทะเลสาบ เสิร์ฟกาแฟ Pour-over หอมกรุ่น นั่งพักผ่อนชมวิวธรรมชาติ
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Cisco+Coffee+Kawaguchiko" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gala Yuzawa -->
-                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
-                        <div class="text-xs font-bold text-sage-600 flex items-center gap-1.5">
-                            <i class="fa-solid fa-snowflake"></i> Gala Yuzawa & Echigo-Yuzawa
-                        </div>
-                        <div class="space-y-3 text-xs text-sand-800">
-                            <!-- Yuzawa 1 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">🍙 Bakudan Onigiri (Yukinto)</span>
-                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~450–700 JPY (ลูกยักษ์อิ่มจุก)</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    ข้าวปั้นยักษ์ทำจากข้าวพันธุ์โคชิฮิคารินีงาตะ (ข้าวที่ดีที่สุดในญี่ปุ่น) ไส้แซลมอนและไข่ปลาพูนๆ ลูกเดียวอิ่มแทนมื้อหลักได้เลย
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Yukinto+Bakudan+Onigiri+Echigo+Yuzawa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Yuzawa 2 -->
-                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
-                                <div class="flex items-start justify-between gap-2">
-                                    <span class="font-bold text-warmDark text-xs">🍶 Ponshukan (ที่สถานี Echigo-Yuzawa)</span>
-                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500 JPY (แลกได้ 5 เหรียญ)</span>
-                                </div>
-                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
-                                    พิพิธภัณฑ์สาเกตู้หยอดเหรียญชื่อดัง ชิมสาเกท้องถิ่นและดังโงะย่างเตาถ่านอุ่นๆ หน้าสถานีก่อนกลับเข้าโตเกียว
-                                </p>
-                                <div class="mt-2.5">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Ponshukan+Echigo+Yuzawa+Station" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
-                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- TAB 2: DEALS & PROMOS -->
-        <section id="content-deals" class="hidden space-y-4">
-            
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <h3 class="text-sm font-bold text-warmDark flex items-center gap-2">
-                    <i class="fa-solid fa-tag text-terracotta-500"></i> สรุปแหล่งซื้อตั๋วราคาถูก & ทริกดักส่วนลด
-                </h3>
-                <p class="text-xs text-sand-800/80 mt-1">
-                    คัดสรรมาให้แล้วว่าตั๋วใบไหนควรซื้อล่วงหน้าผ่านช่องทางไหนเพื่อเซฟเงินในกระเป๋าได้มากที่สุด
-                </p>
-            </div>
-
-            <!-- Disney Mega Deal -->
-            <div class="bg-terracotta-50/50 rounded-2xl p-5 border border-terracotta-100 shadow-subtle">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">
-                        Tokyo Disneyland (วันที่ 2 มี.ค. 2027)
-                    </span>
-                    <span class="text-[11px] font-bold bg-white text-terracotta-600 px-2.5 py-0.5 rounded-full border border-terracotta-200">
-                        ดักโปรลด 50%
-                    </span>
-                </div>
-                <h4 class="text-base font-bold text-warmDark">กดโค้ดแคมเปญ Double-Date (12.12 / 01.01 / 02.02)</h4>
-                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
-                    <p>• ในแอป <strong>Klook</strong> และ <strong>KKday</strong> วันที่ 12 ธ.ค., 1 ม.ค. และ 2 ก.พ. มักมีโค้ดลด 50% หรือบัตรสวนสนุก ซื้อ 1 แถม 1 ปล่อยช่วงเที่ยงคืนหรือเที่ยงวัน</p>
-                    <p>• ตั๋วรอบทางการของโตเกียวดิสนีย์แลนด์เปิดขายล่วงหน้า <strong>2 เดือน</strong> (ต้นเดือน ม.ค. 2027) ราคาปกติประมาณ 8,400–9,400 เยน (~2,000–2,250 บาท)</p>
-                    <p class="text-terracotta-600 font-medium bg-white/80 p-2 rounded-lg border border-terracotta-100">
-                        💡 ทริก: ดาวน์โหลดแอป <strong>Tokyo Disney Resort App</strong> ไว้ล่วงหน้า ตอนเข้าเกตตอนเช้าให้กดจอง Disney Premier Access (DPA) ของปราสาท Beauty and the Beast ทันที
-                    </p>
-                </div>
-            </div>
-
-            <!-- Nankai Rapi:t -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-sage-600 uppercase tracking-wide">
-                        Nankai Rapi:t (สนามบิน KIX ➔ Namba)
-                    </span>
-                    <span class="text-[11px] font-medium bg-sage-50 text-sage-700 px-2 py-0.5 rounded">
-                        เซฟ ~30-40 บาท/คน
-                    </span>
-                </div>
-                <h4 class="text-base font-bold text-warmDark">ซื้อตั๋วออนไลน์ล่วงหน้าผ่าน Klook / KKday</h4>
-                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
-                    <p>• ซื้อหน้าเคาน์เตอร์สนามบินราคาปกติ 1,490 เยน (~350 บาท)</p>
-                    <p>• ซื้อออนไลน์ได้ราคาลดเหลือประมาณ <strong>~300 - 320 บาท (1,300 เยน)</strong></p>
-                    <p>• ได้ QR Code ในมือถือ สแกนแลกตั๋วจริงพร้อมเลือกที่นั่งที่ตู้หน้าสถานี KIX ได้ทันที มีช่องวางกระเป๋าขนาดใหญ่ปลอดภัย</p>
-                </div>
-            </div>
-
-            <!-- JR TOKYO Wide Pass -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-warmDark uppercase tracking-wide">
-                        JR TOKYO Wide Pass (15,000 JPY / คน)
-                    </span>
-                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
-                        ใช้ 3 วันติด (28 ก.พ. - 2 มี.ค.)
-                    </span>
-                </div>
-                <h4 class="text-base font-bold text-warmDark">จองผ่านเว็บทางการ JR-East Train Reservation</h4>
-                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
-                    <p>• เปิดให้จองล่วงหน้า 1 เดือน (ช่วงปลาย ม.ค. 2027)</p>
-                    <p>• สามารถกด **จองที่นั่งฟรี 100%** ล่วงหน้าได้ทั้งขบวน <strong>Fuji Excursion</strong> (ไป Kawaguchiko) และ <strong>Joetsu Shinkansen</strong> (ไป Gala Yuzawa)</p>
-                    <p>• วันที่ 6 ใช้ขึ้นรถไฟ JR Keiyo Line ไป-กลับ Tokyo Disneyland ได้ฟรีตลอดทั้งวัน</p>
-                </div>
-            </div>
-
-            <!-- Skyliner & YouTrip -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-white rounded-xl p-4 border border-warm">
-                    <div class="text-xs font-bold text-warmDark mb-1">Keisei Skyliner (ขากลับ NRT)</div>
-                    <p class="text-xs text-sand-800 leading-relaxed">
-                        ซื้อตั๋ว e-Ticket ล่วงหน้าผ่าน Klook หรือ Trip.com ราคาประมาณ ~530–550 บาท (หน้าเคาน์เตอร์ 2,570 เยน) เดินทางจาก Nippori ถึงสนามบินใน 36 นาที
-                    </p>
-                </div>
-                <div class="bg-white rounded-xl p-4 border border-warm">
-                    <div class="text-xs font-bold text-warmDark mb-1">YouTrip ล็อกเรต Airbnb USD</div>
-                    <p class="text-xs text-sand-800 leading-relaxed">
-                        ที่พักโอซาก้าเรียกเก็บเป็น USD ($220.08) ตัดเงิน 18 ม.ค. 2027 ทยอยแลกเงิน USD ใน YouTrip ช่วงเรตดีเพื่อล็อกราคา และฟรีค่าธรรมเนียม FX 2.5%
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- TAB 3: PREPARATION (INSURANCE & ESIM) -->
-        <section id="content-prep" class="hidden space-y-4">
-            
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <h3 class="text-sm font-bold text-warmDark flex items-center gap-2">
-                    <i class="fa-solid fa-shield-heart text-sage-600"></i> รายการเตรียมตัวส่วนบุคคล: ประกันภัยเดินทาง & อินเทอร์เน็ต eSIM
-                </h3>
-                <p class="text-xs text-sand-800/80 mt-1">
-                    เตรียมให้ครบก่อนบินเพื่อความสบายใจ ไม่ต้องสำรองจ่ายกรณีฉุกเฉิน และติดต่อสื่อสารได้ตลอดเวลา
-                </p>
-            </div>
-
-            <!-- Travel Insurance -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-sage-600 uppercase tracking-wide">
-                        ประกันการเดินทางต่างประเทศ (Travel Insurance)
-                    </span>
-                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
-                        ตั้งงบ ~350 บาท / คน
-                    </span>
-                </div>
-                <h4 class="text-base font-bold text-warmDark">เลือกแผนที่คุ้มครองกีฬาหิมะ + สัมภาระ + ค่ารักษา</h4>
-                
-                <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">1. Sompo Japan (แนะนำ)</div>
-                        <div class="text-[11px] text-sand-800 mt-1">บริษัทญี่ปุ่นแท้ มีสายด่วนล่ามแปลไทย-ญี่ปุ่น ประสานงานโรงพยาบาลในญี่ปุ่นได้แบบไม่ต้องสำรองจ่าย</div>
-                    </div>
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">2. MSIG Travel Easy</div>
-                        <div class="text-[11px] text-sand-800 mt-1">ครอบคลุมอุบัติเหตุสันทนาการลานสกี Gala Yuzawa คุ้มครองไฟลต์ดีเลย์และกระเป๋าล่าช้า</div>
-                    </div>
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">3. Chubb / AXA</div>
-                        <div class="text-[11px] text-sand-800 mt-1">สมัครออนไลน์ 5 นาที กรมธรรม์ออกทันที เคลมเอกสารผ่านช่องทางดิจิทัลได้สะดวก</div>
-                    </div>
-                </div>
-
-                <p class="text-xs text-sand-800 mt-3 bg-sand-100/60 p-2.5 rounded-lg">
-                    💡 ซื้อครอบคลุมวันที่ <strong>25 ก.พ. - 3 มี.ค. 2027 (7 วันเต็ม)</strong> วงเงินรักษาพยาบาลแนะนำ 1.5 ล้านบาทขึ้นไป
-                </p>
-            </div>
-
-            <!-- eSIM -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">
-                        อินเทอร์เน็ตต่างประเทศ (eSIM สะดวก ไม่ต้องถอดซิมไทย)
-                    </span>
-                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
-                        ตั้งงบ ~650 บาท / คน
-                    </span>
-                </div>
-                <h4 class="text-base font-bold text-warmDark">แนะนำติดตั้งแบบ eSIM ล่วงหน้า ถึงญี่ปุ่นเปิดปุ๊บต่อเน็ตได้ทันที</h4>
-
-                <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">1. AIS SIM2Fly (eSIM)</div>
-                        <div class="text-[11px] text-sand-800 mt-1">399 บาท เน็ต 6GB 10 วัน วิ่งสัญญาณ SoftBank / Docomo รับ SMS OTP ธนาคารไทยได้ตามปกติ</div>
-                    </div>
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">2. Klook / Trip.com eSIM</div>
-                        <div class="text-[11px] text-sand-800 mt-1">มีแพ็กเกจเน็ตรายวัน Unlimited (1-2GB/วัน หรือ Max Speed) ในงบประมาณ ~300-650 บาท</div>
-                    </div>
-                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
-                        <div class="font-bold text-xs text-warmDark">3. Nomad / Airalo</div>
-                        <div class="text-[11px] text-sand-800 mt-1">เช็กปริมาณเน็ตที่เหลือผ่านแอปได้โดยตรง สะดวกสำหรับคนต้องการเน็ตความจุสูง</div>
-                    </div>
-                </div>
-
-                <p class="text-xs text-sand-800 mt-3 bg-sand-100/60 p-2.5 rounded-lg">
-                    💡 ข้อดีของ eSIM คือไม่ต้องพก Pocket Wi-Fi ให้หนักกระเป๋า เดินแยกช้อปปิ้งหรือถ่ายรูปได้อิสระทุกคน
-                </p>
-            </div>
-
-        </section>
-
-        <!-- TAB 4: ACCOMMODATION & BUDGET BREAKDOWN -->
-        <section id="content-stays" class="hidden space-y-4">
-            
-            <!-- Summary Banner -->
-            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">Estimated Budget Per Person</span>
-                    <h3 class="text-lg sm:text-xl font-bold text-warmDark mt-0.5">ประมาณการงบประมาณทริป (คิดต่อ 1 คน)</h3>
-                    <p class="text-xs text-sand-800 mt-1">
-                        *เป็นราคาประมาณการล่วงหน้า เผื่อช่วยกันควบคุมงบกิน/เดินทาง หรือได้เรตเงินดี ยอดจริงอาจประหยัดลงได้อีก
-                    </p>
-                </div>
-                <div class="bg-sand-50 rounded-xl px-4 py-3 text-right border border-sand-200 flex-shrink-0 w-full sm:w-auto">
-                    <div class="text-[11px] text-slate-400 font-medium">รวมประมาณการต่อคน</div>
-                    <div class="text-lg sm:text-xl font-bold text-warmDark">~฿38,048 <span class="text-xs font-normal text-slate-500">ถึง</span> ~฿39,123</div>
-                    <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">✓ ไม่รวมงบช้อปปิ้งส่วนตัว</div>
-                </div>
-            </div>
-
-            <!-- Direct Airbnb Showcase Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <!-- Osaka Airbnb Card -->
-                <div class="bg-white rounded-2xl p-4 border border-warm shadow-subtle flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded">โอซาก้า (25–27 ก.พ.)</span>
-                            <span class="text-[11px] text-slate-400 font-medium">2 คืน • 4 คน</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">b&Namba No. 1</h4>
-                        <p class="text-xs text-sand-800 mt-1 leading-relaxed">
-                            ใกล้สถานี JR Namba & OCAT เดิน 3-4 นาที • นั่ง Rapi:t ยิงตรงจากสนามบิน KIX ไม่ต้องต่อรถ • ตึกมีลิฟต์ • มีห้องแยกเป็นสัดส่วน
-                        </p>
-                        <div class="mt-2 text-xs font-semibold text-warmDark">
-                            ยอดรวม: $220.08 USD (~7,500 บ.) <span class="text-sage-600 font-normal">ตกคนละ ~938 บ./คืน</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-sand-100 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-400">จองแล้ว (ตัดเงิน 18 ม.ค. 27)</span>
-                        <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-terracotta-500 hover:bg-terracotta-600 px-3 py-1.5 rounded-lg shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-airbnb"></i> เปิดดูห้องโอซาก้า <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Tokyo Airbnb Card -->
-                <div class="bg-white rounded-2xl p-4 border border-warm shadow-subtle flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold bg-sage-50 text-sage-600 px-2 py-0.5 rounded">โตเกียว (27 ก.พ. – 3 มี.ค.)</span>
-                            <span class="text-[11px] text-slate-400 font-medium">4 คืน • 4 คน</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">Wes-Stay Tabata</h4>
-                        <p class="text-xs text-sand-800 mt-1 leading-relaxed">
-                            เดิน 5 นาทีจากสถานี JR Tabata (ติดสาย Yamanote Line) • 2 ห้องนอน 4 เตียง ขนาด 40.75 ตร.ม. • ตึกมีลิฟต์ • นั่ง JR 2 นาทีต่อ Skyliner ไปนาริตะ
-                        </p>
-                        <div class="mt-2 text-xs font-semibold text-warmDark">
-                            ยอดรวม: ~27,029 บ. <span class="text-sage-600 font-normal">ตกคนละ ~1,689 บ./คืน</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-sand-100 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-400">เตียงครบ 4 คน สบายๆ</span>
-                        <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-sage-600 hover:bg-sage-700 px-3 py-1.5 rounded-lg shadow-sm transition-all active:scale-95">
-                            <i class="fa-brands fa-airbnb"></i> เปิดดูห้องโตเกียว <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Detailed Cost Cards Per Person -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                <!-- 1. Flight -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">1</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าเครื่องบินไป-กลับ</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">ตั๋วเครื่องบิน (ลง KIX / กลับ NRT)</h4>
-                        <p class="text-xs text-sand-800 mt-1">บินตรงหรือต่อเครื่องช่วงไฮซีซั่นฤดูหนาว</p>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~11,000 บ.</div>
-                        <span class="text-[10px] text-slate-400">ต่อคน</span>
-                    </div>
-                </div>
-
-                <!-- 2. Stays (Divided by 4) -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">2</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าที่พัก 6 คืน (หาร 4 คน)</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">Osaka (2 คืน) + Tokyo (4 คืน)</h4>
-                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
-                            <p>• b&Namba No. 1: ~$220.08 USD (~฿938/คน/คืน)</p>
-                            <p>• Wes-Stay Tabata: ฿27,029 (~฿1,689/คน/คืน)</p>
-                            <p class="text-sage-600 text-[11px] font-medium mt-1">🛗 มีลิฟต์ทั้ง 2 ตึก ขนกระเป๋า 4 ใบสบาย</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~8,633 บ.</div>
-                        <span class="text-[10px] text-slate-400">รวม 6 คืน/คน</span>
-                    </div>
-                </div>
-
-                <!-- 3. All Transit -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">3</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าเดินทางทั้งหมด</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">รถไฟ + ชินคันเซ็น + JR Pass</h4>
-                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
-                            <p>• Nankai Rapi:t (KIX ➔ Namba): ~310 บ.</p>
-                            <p>• Osaka Metro (2 วัน): ~360 บ.</p>
-                            <p>• Shinkansen Nozomi (จองที่วางกระเป๋า): ~3,580 บ.</p>
-                            <p>• JR TOKYO Wide Pass 3 วัน: ~3,600 บ.</p>
-                            <p>• Kawaguchiko Bus + Skyliner: ~910 บ.</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~8,760 บ.</div>
-                        <span class="text-[10px] text-slate-400">ต่อคน</span>
-                    </div>
-                </div>
-
-                <!-- 4. Tickets & Activities (Separated) -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">4</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าตั๋ว & กิจกรรม (แยกจุด)</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">หิมะ + ฟูจิ + Tokyo Disneyland</h4>
-                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
-                            <p>• ❄️ Gala Yuzawa (ไม่เล่นสกี): ~840 บ. (กระเช้า+ถาดเลื่อน)</p>
-                            <p>• 🗻 กระเช้าลอยฟ้า Kawaguchiko: ~240 บ.</p>
-                            <p>• 🏰 Tokyo Disneyland (ปกติ): ~2,150 บ.</p>
-                            <p class="text-terracotta-600 text-[11px] font-bold mt-1">
-                                ⚡️ ดักโปร 12.12 / 01.01 / 02.02 ลด 50% เหลือ ~1,075 บ.!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~2,155 – 3,230 บ.</div>
-                        <span class="text-[10px] text-slate-400">ต่อคน</span>
-                    </div>
-                </div>
-
-                <!-- 5. Food (Separated completely) -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">5</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่ากินตลอดทริป 7 วัน (แยกต่างหาก)</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">อาหาร ขนม เครื่องดื่ม 7 วัน</h4>
-                        <p class="text-xs text-sand-800 mt-1">
-                            ตั้งกรอบไว้ช่วง 6,000 – 7,000 บาท (เฉลี่ยวันละ ~900–1,000 บาท หรือ ~4,000 เยน/วัน) ทานราเม็ง ทาโกยากิ ของทอด คาเฟ่ ข้าวหน้าเนื้อ สบายๆ
-                        </p>
-                        <p class="text-[11px] text-emerald-600 font-medium mt-1">
-                            💡 หากคุมงบดี ทานร้านท้องถิ่นหรือสะดวกซื้อบางมื้อ งบนี้จะเหลือแน่นอน
-                        </p>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~6,500 บ.</div>
-                        <span class="text-[10px] text-slate-400">ต่อคน (7 วัน)</span>
-                    </div>
-                </div>
-
-                <!-- 6. Other Costs (Insurance & Internet) -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">6</span>
-                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าอื่นๆ (ประกัน & เน็ต)</span>
-                        </div>
-                        <h4 class="text-sm font-bold text-warmDark mt-2">ประกันเดินทาง + eSIM อินเทอร์เน็ต</h4>
-                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
-                            <p>• ประกันเดินทาง 7 วัน (คุ้มครองกีฬาหิมะ Sompo/MSIG): 350 บ.</p>
-                            <p>• อินเทอร์เน็ต eSIM (AIS SIM2Fly หรือ Klook): 650 บ.</p>
-                            <p class="text-slate-400 text-[11px] mt-1">*ไม่รวมค่าช้อปปิ้งส่วนตัวของแต่ละคน</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm sm:text-base font-bold text-warmDark">~1,000 บ.</div>
-                        <span class="text-[10px] text-slate-400">ต่อคน</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Notes Banner -->
-            <div class="bg-sand-50 rounded-2xl p-4 border border-sand-200 text-xs text-sand-800 space-y-1.5 leading-relaxed">
-                <p class="font-bold text-warmDark">📌 หมายเหตุประกอบการคุมงบประมาณ:</p>
-                <p>1. <strong>ราคาประมาณการ (Estimation):</strong> ตัวเลขที่คำนวณไว้เป็นราคามาตรฐาน หากเพื่อนๆ ช่วยกันคุมงบกิน เลือกร้านราคาประหยัด หรือทยอยแลกเงินช่วงเรตบาทแข็ง (ทั้ง USD จ่าย Airbnb และ JPY) ยอดรวมจริงอาจถูกลงกว่านี้ได้อีก</p>
-                <p>2. <strong>Tokyo Disneyland:</strong> คิดงบไว้ 2 กรณี (ราคาปกติ ~2,150 บ. ยอดรวมจะอยู่ที่ ~39,123 บ. / หากดักโปร 50% ช่วง 12.12, 01.01, 02.02 ได้ จะเหลือ ~1,075 บ. ยอดรวมจะเหลือเพียง ~38,048 บ.)</p>
-                <p>3. <strong>ลานสกี Gala Yuzawa:</strong> พวกเราไม่เล่นสกี จึงเสียเฉพาะค่ากระเช้า Gondola ชมวิวมุมสูง + ถาดเลื่อนหิมะ Sled ถ่ายรูปเล่นเท่านั้น (~840 บ.) ไม่เสียค่าเช่าชุดสกีและสโนว์บอร์ดราคาแพง</p>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Bottom Sticky Action Bar for IG & FB DM -->
-    <div class="fixed bottom-4 left-0 right-0 max-w-xl mx-auto px-4 z-40">
-        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-sand-300/80 shadow-lifted flex items-center justify-between gap-3">
-            <div class="pl-1 hidden sm:block">
-                <div class="text-[11px] text-slate-400 font-medium">ส่งให้เพื่อนอ่านในแชต</div>
-                <div class="text-xs font-bold text-warmDark">สรุปย่อ Day 1-7 พร้อมงบ/คน 💬</div>
-            </div>
-            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                <button onclick="copyPitchText('compact')" class="flex-1 sm:flex-none bg-warmDark hover:bg-black text-white font-medium text-xs px-4 py-2.5 rounded-xl shadow-sm transition-all active:scale-95 flex items-center justify-center gap-1.5">
-                    <i class="fa-brands fa-instagram text-terracotta-500"></i>
-                    <span>ก๊อปส่ง IG / FB DM (สรุปย่อ Day 1-7)</span>
-                </button>
-                <button onclick="copyPitchText('full')" class="bg-sand-100 hover:bg-sand-200 text-warmDark font-medium text-xs px-3 py-2.5 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-1 border border-sand-200">
-                    <i class="fa-regular fa-copy"></i>
-                    <span>แบบเต็ม</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Toast Notification -->
-    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-warmDark text-white text-xs sm:text-sm font-medium px-5 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 z-50">
+    <div id="toast" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-stone-900 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl border-2 border-amber-400 shadow-2xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-200 z-50">
         <i class="fa-solid fa-circle-check text-emerald-400"></i>
-        <span id="toast-text">คัดลอกข้อความสรุปเรียบร้อย พร้อมส่งใน IG / FB DM ได้ทันที!</span>
+        <span id="toast-text">คัดลอกข้อความสรุปเรียบร้อย พร้อมส่งใน IG / FB DM ทันที!</span>
     </div>
 
-    <!-- Script for Tabs & Copy -->
+    <!-- Clean, Robust JavaScript Logic -->
     <script>
         function switchTab(tabId) {
-            document.querySelectorAll('.editorial-tab').forEach(btn => {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             const activeBtn = document.getElementById('tab-' + tabId);
-            activeBtn.classList.add('active');
+            if (activeBtn) activeBtn.classList.add('active');
 
-            document.getElementById('content-itinerary').classList.add('hidden');
-            document.getElementById('content-food').classList.add('hidden');
-            document.getElementById('content-deals').classList.add('hidden');
-            document.getElementById('content-prep').classList.add('hidden');
-            document.getElementById('content-stays').classList.add('hidden');
+            const tabIds = ['itinerary', 'budget', 'food', 'prep'];
+            tabIds.forEach(id => {
+                const el = document.getElementById('content-' + id);
+                if (el) el.classList.add('hidden');
+            });
 
-            document.getElementById('content-' + tabId).classList.remove('hidden');
+            const targetContent = document.getElementById('content-' + tabId);
+            if (targetContent) targetContent.classList.remove('hidden');
         }
 
         function copyPitchText(mode) {
@@ -1119,16 +716,11 @@
 1. โอซาก้า (b&Namba No. 1): https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4
 2. โตเกียว (Wes-Stay Tabata): https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4
 
-☕ ไฮไลต์คาเฟ่ & ของกินโลคอล:
-• โอซาก้า: LiLo Coffee Roasters (กาแฟดริปสเปเชียลตี้ชินไซบาชิ), ทาโกยากิ Wanaka, ของทอด Kushikatsu Daruma
-• โตเกียว: Kayaba Coffee (คาเฟ่บ้านไม้โบราณแซนด์วิชไข่ฟู Yanaka), Fuglen Tokyo (กาแฟสแกนดิเนเวีย), Afuri ราเม็งยูซุ
-• ฟูจิ & นีงาตะ: ซดโฮโตมิโซะร้อนๆ ริมทะเลสาบ Kawaguchiko + ข้าวปั้นโคชิฮิคารินีงาตะที่ Gala Yuzawa
-
 🗺️ สรุปไปไหนบ้างแต่ละวัน:
 • Day 1 (25 ก.พ.): บินลง KIX นั่ง Rapi:t ต่อเดียวเข้า Namba เช็กอิน b&Namba เดินกิน Dotonbori
 • Day 2 (26 ก.พ.): ปราสาทโอซาก้า + ช้อป Umeda + กินของทอด Shinsekai
 • Day 3 (27 ก.พ.): ชินคันเซ็นข้ามไปโตเกียว เช็กอิน Wes-Stay Tabata (ติด Yamanote) ช้อป Shinjuku
-• Day 4 (28 ก.พ.): [JR Pass 1] ชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa เย็นเดินตลาด Ameyoko Ueno
+• Day 4 (28 ก.พ.): [JR Pass 1] ชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa (กระเช้า+ถาดเลื่อน) เย็นเดิน Ameyoko Ueno
 • Day 5 (1 มี.ค.): [JR Pass 2] รถไฟด่วน Fuji Excursion ชมฟูจิ Kawaguchiko เย็นเดินห้าแยก Shibuya
 • Day 6 (2 มี.ค.): [JR Pass 3] Tokyo Disneyland เต็มวันยันดูพาเหรด & พลุปิดปราสาท (นั่ง JR ฟรีตลอดสาย)
 • Day 7 (3 มี.ค.): นั่ง JR 2 นาทีไป Nippori ต่อ Skyliner 36 นาทีถึง Narita ช้อป Duty Free บินกลับไทย 19:00
@@ -1141,7 +733,7 @@
 🗻 กระเช้าลอยฟ้าฟูจิ: ~240 บ.
 🏰 Tokyo Disneyland: ~2,150 บ.
    *(📌 ถ้าดักกดตั๋วโปร 12.12 / 01.01 / 02.02 ได้ลด 50% เหลือแค่ ~1,075 บ.!)*
-🍱 ค่ากิน 7 วัน (แยกต่างหาก): ~6,500 บ. (เฉลี่ยวันละพัน)
+🍱 ค่ากิน 7 วัน (แยกต่างหาก): ~6,500 บ. (เฉลี่ยวันละพัน คุมงบได้)
 🛡️ ค่าอื่นๆ (ประกัน+เน็ต): ~1,000 บ. (ประกัน 350 บ. + ค่าเน็ต eSIM 650 บ.)
 *ไม่รวมค่าช้อปปิ้งส่วนตัว*
 
@@ -1161,18 +753,12 @@
 
 🗓️ แพลนเที่ยวรายวัน:
 • Day 1 (พ. 25 ก.พ.): ถึง KIX นั่ง Nankai Rapi:t ต่อเดียวลง Namba เช็กอิน b&Namba No. 1 เดินเล่น Dotonbori / Shinsaibashi
-• Day 2 (พฤ. 26 ก.พ.): ปราสาทโอซาก้า + ช้อปปิ้ง Umeda + ดินเนอร์ของทอด Shinsekai & หอคอยซึเทนคาคุ
-• Day 3 (ศ. 27 ก.พ.): ชินคันเซ็นข้ามไปโตเกียว เช็กอิน Wes-Stay Tabata (ติดสาย Yamanote) แลกตั๋ว JR Pass ช้อปปิ้ง Shinjuku
-• Day 4 (ส. 28 ก.พ.): [JR Pass Day 1] นั่งชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa Snow Resort เย็นกลับมาเดินตลาด Ameyoko Ueno
+• Day 2 (พฤ. 26 ก.พ.): ปราสาทโอซาก้า + ช้อปปิ้ง Umeda + ดินเนอร์ของทอด Shinsekai
+• Day 3 (ศ. 27 ก.พ.): ชินคันเซ็นข้ามไปโตเกียว เช็กอิน Wes-Stay Tabata (ติดสาย Yamanote) ช้อปปิ้ง Shinjuku
+• Day 4 (ส. 28 ก.พ.): [JR Pass Day 1] นั่งชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa Snow Resort เย็นเดินตลาด Ameyoko Ueno
 • Day 5 (อา. 1 มี.ค.): [JR Pass Day 2] นั่งรถไฟด่วน Fuji Excursion ชมวิวภูเขาไฟฟูจิที่ Kawaguchiko เย็นเดินห้าแยก Shibuya
 • Day 6 (จ. 2 มี.ค.): [JR Pass Day 3] Tokyo Disneyland เต็มวัน ชมพาเหรด & พลุปิดปราสาท (นั่งสาย JR Keiyo ฟรีตลอดสาย)
 • Day 7 (อ. 3 มี.ค.): เช็กเอาต์ นั่ง JR 2 นาทีไป Nippori ต่อ Keisei Skyliner 36 นาทีถึงสนามบิน Narita ช้อป Duty Free บินกลับไทย 19:00
-
-☕ ร้านกาแฟ & อาหารโลคอลแนะนำ:
-• โอซาก้า: LiLo Coffee Roasters, ทาโกยากิ Wanaka, ของทอด Kushikatsu Daruma
-• โตเกียว (ใกล้ที่พัก Tabata): Kayaba Coffee (แซนด์วิชไข่ฟู Yanaka), CIBI Tokyo Store, Menchi-katsu ถนนคนเดิน Yanaka Ginza
-• โตเกียวใจกลางเมือง: Fuglen Tokyo, Afuri Ramen ราเม็งส้มยูซุ, Gyukatsu Motomura เนื้อทอด
-• ฟูจิ & หิมะ: บะหมี่หม้อไฟ Houtou Fudou (Kawaguchiko), ข้าวปั้นโคชิฮิคาริ & ชิมสาเก Ponshukan (Gala/Echigo-Yuzawa)
 
 💰 ประมาณการค่าใช้จ่ายละเอียด (ต่อ 1 คน):
 1. ตั๋วเครื่องบินไป-กลับ: ~11,000 บาท
@@ -1206,21 +792,23 @@
 
             const toast = document.getElementById('toast');
             const toastText = document.getElementById('toast-text');
-            toastText.textContent = mode === 'compact' ? 'คัดลอกสรุปย่อสำหรับส่ง IG / FB DM แล้ว! ✨' : 'คัดลอกแพลนเต็มวันเรียบร้อยแล้ว! 📋';
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 3000);
+            if (toastText) toastText.textContent = mode === 'compact' ? 'คัดลอกสรุปย่อส่ง IG / FB DM แล้ว! ✨' : 'คัดลอกแพลนเต็มวันเรียบร้อย! 📋';
+            if (toast) {
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'pointer-events-none');
+                }, 2500);
+            }
         }
 
-        /* --- Realistic & Smooth Falling Snow Animation --- */
+        /* --- Falling Snow Animation --- */
         let snowEnabled = true;
         const canvas = document.getElementById('snow-canvas');
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
 
-        const maxSnowflakes = window.innerWidth < 640 ? 45 : 75; // Responsive density
+        const maxSnowflakes = window.innerWidth < 640 ? 35 : 60;
         const snowflakes = [];
 
         class Snowflake {
@@ -1231,19 +819,15 @@
             reset(initial = false) {
                 this.x = Math.random() * width;
                 this.y = initial ? Math.random() * height : -10;
-                this.size = Math.random() * 3 + 1.2; // Snowflake radius
-                this.speedY = Math.random() * 0.9 + 0.6; // Gentle fall
-                this.speedX = Math.random() * 0.5 - 0.25; // Gentle breeze
-                this.opacity = Math.random() * 0.55 + 0.25; // Translucent depth
-                this.sway = Math.random() * 0.02 + 0.01;
-                this.swayOffset = Math.random() * Math.PI * 2;
+                this.size = Math.random() * 2.5 + 1.2;
+                this.speedY = Math.random() * 0.8 + 0.5;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.5 + 0.25;
             }
 
             update() {
-                this.swayOffset += this.sway;
-                this.x += Math.sin(this.swayOffset) * 0.6 + this.speedX;
+                this.x += this.speedX;
                 this.y += this.speedY;
-
                 if (this.y > height + 10 || this.x < -10 || this.x > width + 10) {
                     this.reset(false);
                 }
@@ -1252,9 +836,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(185, 215, 235, ${this.opacity})`; // Soft icy-white
-                ctx.shadowBlur = 4;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
+                ctx.fillStyle = `rgba(180, 210, 235, ${this.opacity})`;
                 ctx.fill();
             }
         }
@@ -1274,16 +856,13 @@
             animationFrameId = requestAnimationFrame(renderSnow);
         }
 
-        // Start animation
         renderSnow();
 
-        // Handle Window Resize gracefully
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
         });
 
-        // Toggle Snow Effect
         function toggleSnow() {
             snowEnabled = !snowEnabled;
             const btnText = document.getElementById('snow-btn-text');
@@ -1291,17 +870,17 @@
             
             if (snowEnabled) {
                 canvas.style.opacity = '1';
-                btnText.textContent = 'หิมะ: เปิด';
-                toggleBtn.classList.remove('opacity-60');
+                if (btnText) btnText.textContent = 'หิมะ: เปิด';
+                if (toggleBtn) toggleBtn.classList.remove('opacity-50');
                 renderSnow();
             } else {
                 canvas.style.opacity = '0';
-                btnText.textContent = 'หิมะ: ปิด';
-                toggleBtn.classList.add('opacity-60');
+                if (btnText) btnText.textContent = 'หิมะ: ปิด';
+                if (toggleBtn) toggleBtn.classList.add('opacity-50');
                 if (animationFrameId) cancelAnimationFrame(animationFrameId);
                 setTimeout(() => {
                     if (!snowEnabled) ctx.clearRect(0, 0, width, height);
-                }, 500);
+                }, 400);
             }
         }
     </script>
