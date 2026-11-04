@@ -1,128 +1,1309 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101826"><meta name="description" content="Japan Winter Trip 2027 · Interactive travel plan for four friends"><title>JAPAN WINTER TRIP 2027 — Friends Edition</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#5c94fc;--white:#fff;--red:#e60012;--blue:#0059b3;--yellow:#fbd000;--dark:#212529;--shadow:6px 6px 0 var(--dark);--border:4px solid var(--dark);--pixel:'Press Start 2P',cursive;--thai:'Chakra Petch',sans-serif;--body:'IBM Plex Sans Thai',sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--dark);font-family:var(--body);line-height:1.65}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff25 1px,transparent 1px),linear-gradient(90deg,#ffffff25 1px,transparent 1px);background-size:40px 40px}.wrap{width:min(1080px,92%);margin:auto;position:relative;z-index:1}a{color:#004fa3;font-weight:700}.hud{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:4px solid #000;color:white}.hudrow{min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:14px}.logo{font:10px var(--pixel);color:var(--yellow)}nav{display:flex;gap:16px}nav a{font:9px var(--pixel);color:#fff;text-decoration:none}nav a:hover{color:var(--yellow)}button{cursor:pointer;font-family:var(--thai);font-weight:700}.hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 0 48px}.tag{background:var(--yellow);border:var(--border);box-shadow:4px 4px #000;padding:9px 14px;font:10px var(--pixel);margin-bottom:24px}h1{font:clamp(24px,5vw,46px)/1.5 var(--pixel);color:#fff;text-shadow:4px 4px var(--dark);margin:0 0 12px}.dates{font:700 clamp(20px,4vw,28px) var(--thai);color:var(--yellow);text-shadow:2px 2px #000}.subtitle{background:#0006;color:white;border-radius:8px;padding:8px 16px;font-weight:700;margin:14px 0 24px}.countbox,.sectionhead,.daycard,.panel,.ticket{background:var(--white);border:var(--border);box-shadow:var(--shadow)}.countbox{padding:18px 22px;width:min(100%,520px);margin-bottom:26px}.counttitle{font-weight:700;margin-bottom:10px}.countgrid{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.countunit{background:var(--yellow);border:3px solid var(--dark);padding:8px 12px;min-width:74px;box-shadow:3px 3px var(--dark)}.countunit strong{display:block;font:700 28px var(--thai);color:var(--red)}.countunit small{font-weight:700}.metas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}.metas span{background:white;border:var(--border);box-shadow:4px 4px #000;padding:8px 12px;font-weight:700}.primary{background:var(--red);color:white;border:var(--border);box-shadow:var(--shadow);padding:14px 22px;font:11px var(--pixel)}.section{padding:54px 0}.sectionhead{text-align:center;padding:18px;margin-bottom:28px}.sectionhead h2{font:clamp(14px,2.5vw,20px)/1.7 var(--pixel);margin:0 0 8px}.sectionhead p{margin:0;font-weight:600;color:#444}.daylist{display:grid;gap:26px}.daycard{overflow:hidden}.daytop{padding:20px 24px;background:var(--yellow);border-bottom:4px solid var(--dark);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.daybadge{font:10px var(--pixel);background:var(--blue);color:white;border:2px solid #000;padding:8px 10px}.daytop h3{font-size:25px;margin:8px 0 0;line-height:1.35}.daydate{font-weight:700}.daybody{padding:22px 24px}.daydesc{font-weight:600;margin:0 0 16px}.optionlabel{font-size:14px;font-weight:700;margin:14px 0 8px}.options{display:flex;gap:8px;flex-wrap:wrap}.optbtn{border:2px solid var(--dark);background:#eee;padding:8px 12px;box-shadow:2px 2px var(--dark);font-size:14px}.optbtn.active{background:var(--blue);color:white}.optpanel{margin-top:14px;padding:16px;background:#f4f6f8;border:2px solid var(--dark)}.optpanel h4{margin:0 0 8px;font-size:18px}.optpanel ul{margin:8px 0 12px;padding-left:22px}.optpanel li{margin:5px 0}.pill{display:inline-block;background:#fff2b2;border:1px solid #6e5b00;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:700;margin:2px}.linkrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.linkbtn{display:inline-block;background:var(--yellow);border:2px solid #000;padding:8px 12px;text-decoration:none;color:var(--dark);box-shadow:2px 2px #000;font-size:14px}.note{border-left:5px solid var(--red);background:#fff5f5;padding:10px 14px;margin-top:14px;font-size:14px}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{padding:22px}.panel h3{margin:0 0 12px;border-bottom:3px solid var(--dark);padding-bottom:8px}.list{padding-left:22px}.list li{margin:8px 0}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff}th,td{border:2px solid var(--dark);padding:10px;text-align:left;vertical-align:top}th{background:var(--yellow)}.footer{text-align:center;padding:40px 0 60px;font:9px var(--pixel);line-height:2}.muted{color:#555;font-size:14px}.party{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.person{border:3px solid #000;background:#fff;padding:12px;min-width:105px;text-align:center;box-shadow:3px 3px #000}.person strong{display:block;font:12px var(--pixel);color:var(--red)}.person small{font-weight:700}.dayjoke{background:#fff3cd;border:2px dashed #8a6500;padding:10px 12px;margin:0 0 16px;font-weight:700;color:#5a4300}.party-fine{font-weight:700}.routegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.routecard{background:#fff;border:4px solid var(--dark);box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:10px}.routecard h3{margin:0;border-bottom:3px solid var(--dark);padding-bottom:10px;font-size:22px}.routeprice{font:700 clamp(23px,3vw,34px) var(--thai);color:var(--red);line-height:1.3}.routecard ul{padding-left:22px;margin:4px 0}.routecard li{margin:6px 0}.routecard.recommended{outline:5px solid var(--yellow)}.routecard.chosen{outline:5px solid #198754;background:#f0fff5}.live-budget{margin:22px 0;padding:20px;background:#e8f5ff;border:4px solid var(--dark);box-shadow:var(--shadow)}.live-budget h3{margin:0 0 10px}.live-total-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}.live-total{background:#fff;border:2px solid var(--dark);padding:12px}.live-total strong{display:block;font-size:20px;color:var(--red)}.live-budget .selected-name{font-weight:800;color:#0059b3}@media(max-width:760px){.live-total-grid{grid-template-columns:1fr}.routevote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto}.routevote button{border:3px solid #000;background:var(--yellow);padding:10px 12px;box-shadow:3px 3px #000;font-weight:700}.routevote button.selected{background:var(--blue);color:#fff}.voteresult{margin-top:20px;padding:16px;background:#f4f6f8;border:3px dashed var(--dark);font-weight:700}.routefoot{font-size:13px;color:#444}.routecard .badge{display:inline-block;background:var(--yellow);border:2px solid #000;padding:4px 8px;font-size:12px;font-weight:700;width:max-content}@media(max-width:980px){.routegrid{grid-template-columns:1fr 1fr}}@media(max-width:760px){.routegrid{grid-template-columns:1fr}nav{display:none}.daytop h3{font-size:21px}.daybody{padding:16px}.twocol{grid-template-columns:1fr}.logo{font-size:8px}.section{padding:38px 0}.hero{min-height:65vh}}
- .price-inline{margin:12px 0 14px;padding:12px 14px;background:#fff4b8;border:2px dashed #987400;color:#292929;line-height:1.65}.price-inline strong{display:block;font-weight:800}.price-inline div{font-size:.92em;margin-top:3px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAPAN WINTER & DISNEY 2027 • Travel Journal & Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Prompt for pristine modern bilingual readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-/* Friend-facing presentation improvements */
-.daydetails{border-top:2px dashed #b8b8b8;margin-top:16px;padding-top:12px}.daydetails>summary{cursor:pointer;display:inline-block;background:var(--yellow);border:3px solid var(--dark);box-shadow:3px 3px var(--dark);padding:9px 13px;font-weight:800;list-style:none}.daydetails>summary::-webkit-details-marker{display:none}.daydetails>summary:before{content:"＋ ";font-weight:900}.daydetails[open]>summary:before{content:"− "}.daydetails[open]>summary{margin-bottom:12px}.group-decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.decision{display:flex;gap:10px;align-items:flex-start;padding:12px;background:#fff9d9;border:2px solid var(--dark);box-shadow:3px 3px var(--dark);font-weight:600}.decision input{width:18px;height:18px;margin-top:5px;accent-color:#0059b3;flex-shrink:0}.decision small{display:block;color:#555;font-weight:500}.statusline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.status{display:inline-block;padding:4px 9px;border:2px solid var(--dark);font-size:12px;font-weight:800;background:#fff}.status.done{background:#c9f7d5}.status.pending{background:#fff0ad}.status.check{background:#ffd8d8}.decisions-note{font-size:13px;color:#555;margin-top:12px}.decision-save{margin-top:14px;border:3px solid #000;background:var(--blue);color:#fff;padding:9px 13px;box-shadow:3px 3px #000}.budget-intro{font-size:14px;color:#444}.share-note{background:#e8f5ff;border-left:5px solid #0059b3;padding:12px 14px;margin:14px 0}@media(max-width:760px){.group-decisions{grid-template-columns:1fr}}
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Prompt', 'sans-serif'],
+                        thai: ['Prompt', 'Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        sand: {
+                            50: '#FAF8F5',
+                            100: '#F4EFEB',
+                            200: '#E8DFD7',
+                            300: '#D5C4B4',
+                            800: '#4A3E36',
+                        },
+                        sage: {
+                            50: '#F3F6F3',
+                            100: '#E4ECE5',
+                            500: '#52796F',
+                            600: '#354F52',
+                            700: '#2F3E46',
+                        },
+                        terracotta: {
+                            50: '#FDF4F0',
+                            100: '#F9E4DB',
+                            500: '#C86D51',
+                            600: '#B25338',
+                        },
+                        warmDark: '#1E1B18',
+                    },
+                    boxShadow: {
+                        'subtle': '0 2px 16px -2px rgba(47, 62, 70, 0.05), 0 1px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'lifted': '0 12px 30px -4px rgba(47, 62, 70, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF8F5;
+            color: #2F3E46;
+            font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
+        .editorial-tab.active {
+            background-color: #FFFFFF;
+            color: #1E1B18;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-color: #E8DFD7;
+        }
 
-/* ===== CINEMATIC WINTER EDITION ===== */
-:root{--bg:#0c1422;--white:#fff;--red:#d94b54;--blue:#6fa9d8;--yellow:#d9c6a0;--dark:#152235;--shadow:0 18px 50px #0005;--border:1px solid #ffffff1c;--pixel:'Chakra Petch',sans-serif;--thai:'Chakra Petch',sans-serif;--body:'IBM Plex Sans Thai',sans-serif}
-html{scroll-padding-top:90px}body{background:#0c1422;color:#eef3fa;line-height:1.75}body:before{background:radial-gradient(ellipse at 15% 8%,#203a5d80,transparent 38%),radial-gradient(ellipse at 85% 30%,#75434c35,transparent 36%),linear-gradient(180deg,#0c1422,#101c2b 45%,#0c1422);background-size:cover}
-.wrap{width:min(1160px,92%)}a{color:#8bc9f5;text-underline-offset:3px}a:hover{color:#e7d7b8}.hud{background:#0a101bf2;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff20}.hudrow{min-height:72px}.logo{font:700 14px 'Chakra Petch',sans-serif;letter-spacing:2px;color:#e5d3b2}.logo:before{content:'✦ ';color:#8bc9f5}nav{gap:clamp(8px,1.5vw,20px)}nav a{font:600 11px 'Chakra Petch',sans-serif;letter-spacing:1px;color:#d8e2ef;transition:color .2s}nav a:hover{color:#e5d3b2}
-.hero{min-height:82vh;position:relative;isolation:isolate;overflow:hidden;border-radius:0 0 32px 32px;margin-bottom:28px;padding:90px 20px 70px;background:linear-gradient(110deg,#0b1423eF 0%,#0b1423a8 50%,#0b142360 100%),radial-gradient(ellipse at 75% 35%,#6086a955,transparent 38%),linear-gradient(140deg,#182b43,#111c2b 60%,#273747);border:1px solid #ffffff14;box-shadow:0 24px 80px #0005}
-.hero:before{content:'富士山';position:absolute;z-index:-1;right:-3%;bottom:5%;font-size:clamp(150px,26vw,340px);font-weight:700;line-height:1;color:#ffffff07;letter-spacing:-.1em;writing-mode:vertical-rl}.hero:after{content:'';position:absolute;z-index:-1;inset:auto 0 0;height:45%;background:linear-gradient(0deg,#0c1422,transparent);pointer-events:none}
-.tag{background:#ffffff0d;border:1px solid #d9c6a080;box-shadow:none;border-radius:99px;padding:9px 17px;font:600 11px 'Chakra Petch',sans-serif;letter-spacing:2px;color:#e5d3b2;margin-bottom:28px}h1{font:700 clamp(38px,7vw,84px)/1.04 'Chakra Petch',sans-serif;letter-spacing:.03em;color:#f5f7fb;text-shadow:none;margin:0 0 22px}h1 br{display:block}.dates{font:600 clamp(22px,3.6vw,36px) 'Chakra Petch',sans-serif;color:#e5d3b2;letter-spacing:3px;text-shadow:none}.subtitle{background:#ffffff0b;border:1px solid #ffffff25;color:#dbe5f1;border-radius:99px;padding:10px 18px;font-weight:500;margin:20px 0 28px;max-width:100%}.countbox,.sectionhead,.daycard,.panel,.ticket{background:#152235;border:1px solid #ffffff1c;box-shadow:0 16px 45px #0003;border-radius:18px}.countbox{padding:18px 22px;width:min(100%,550px);margin-bottom:28px;background:#101c2bcc;backdrop-filter:blur(10px)}.counttitle{color:#dce6f2}.countunit{background:#1b2c42;border:1px solid #ffffff20;padding:9px 13px;min-width:74px;box-shadow:none;border-radius:10px}.countunit strong{font:700 29px 'Chakra Petch',sans-serif;color:#e5d3b2}.countunit small{color:#c5d1df}.metas span{background:#ffffff0a;border:1px solid #ffffff22;border-radius:99px;box-shadow:none;padding:9px 14px;color:#e0e8f1}.primary{background:#e5d3b2;color:#142033;border:0;border-radius:99px;box-shadow:0 8px 24px #0004;padding:15px 25px;font:700 13px 'Chakra Petch',sans-serif;letter-spacing:1px;transition:transform .2s,background .2s}.primary:hover{transform:translateY(-2px);background:#f4e8d3}
-.section{padding:60px 0}.sectionhead{text-align:left;padding:24px 28px;margin-bottom:26px;position:relative;overflow:hidden}.sectionhead:after{content:'✦';position:absolute;right:24px;top:14px;font-size:38px;color:#e5d3b22b}.sectionhead h2{font:700 clamp(21px,3vw,31px)/1.3 'Chakra Petch',sans-serif;letter-spacing:.3px;color:#f4f6fa;margin:0 0 9px}.sectionhead p{color:#b7c5d6;font-weight:400}.daylist{gap:20px}.daycard{overflow:hidden;transition:transform .22s,border-color .22s}.daycard:hover{transform:translateY(-2px);border-color:#d9c6a066}.daytop{padding:22px 26px;background:linear-gradient(110deg,#243c56,#1b2b40);border-bottom:1px solid #ffffff1b}.daybadge{font:600 11px 'Chakra Petch',sans-serif;letter-spacing:1.5px;background:#d9c6a0;color:#142033;border:0;border-radius:99px;padding:7px 12px}.daytop h3{font:700 clamp(21px,3vw,28px)/1.35 'Chakra Petch',sans-serif;color:#f4f6fa;margin:11px 0 0}.daydate{color:#d9c6a0}.daybody{padding:24px 26px}.daydesc{color:#d2dce8;font-weight:500}.optionlabel{color:#e5d3b2;font-weight:700}.options{gap:10px}.optbtn{border:1px solid #ffffff26;background:#0f1a29;color:#dce6f2;padding:9px 14px;box-shadow:none;border-radius:9px}.optbtn.active{background:#d9c6a0;color:#132033;border-color:#d9c6a0}.optpanel{margin-top:14px;padding:18px;background:#0e1928;border:1px solid #ffffff1c;border-radius:12px;color:#d6e0eb}.optpanel h4{color:#f4f6fa;font-size:19px}.pill{background:#263b51;border:1px solid #536a80;color:#e3eaf2;border-radius:99px}.linkrow{gap:10px}.linkbtn{background:#1e344b;border:1px solid #52677b;padding:9px 13px;text-decoration:none;color:#e9f0f8;box-shadow:none;border-radius:9px;font-weight:600;transition:background .2s}.linkbtn:hover{background:#304d69;color:#fff}.note{border-left:3px solid #d9c6a0;background:#2a2730;padding:12px 15px;border-radius:0 9px 9px 0;color:#e8dfe0}.twocol{gap:18px}.panel{padding:24px}.panel h3{color:#f0f4f8;border-bottom:1px solid #ffffff25;padding-bottom:12px;font:700 22px 'Chakra Petch',sans-serif}.list li{margin:9px 0;color:#d2dce8}.muted,.budget-intro{color:#aebdd0}.tablewrap{overflow-x:auto}table{background:#122033;color:#e0e8f1;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden}th,td{border:0;border-bottom:1px solid #ffffff17;padding:13px 14px}th{background:#263b51;color:#f1dfbd;font-weight:700}td{background:#142236}tr:last-child td,tr:last-child th{border-bottom:0}.routegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.routecard{background:#152235;border:1px solid #ffffff22;box-shadow:0 16px 45px #0003;padding:22px;border-radius:18px;gap:12px;min-width:0}.routecard h3{font:700 23px/1.3 'Chakra Petch',sans-serif;color:#f3f5f8;border-bottom:1px solid #ffffff25;padding-bottom:13px}.routeprice{font:700 clamp(24px,2.5vw,33px) 'Chakra Petch',sans-serif;color:#e5d3b2;line-height:1.3}.routecard p,.routecard li{color:#cbd7e5}.routecard.recommended{outline:1px solid #d9c6a0;box-shadow:0 0 0 4px #d9c6a018,0 18px 45px #0003}.routecard.chosen{outline:2px solid #8bc9a7;background:#172b2c}.routecard .badge{display:inline-block;background:#263b51;border:1px solid #52677b;color:#dce7f3;padding:5px 10px;border-radius:99px;font-size:12px;font-weight:700;width:max-content}.routevote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto}.routevote button{border:1px solid #d9c6a0;background:#d9c6a0;color:#152235;border-radius:9px;padding:11px 14px;box-shadow:none;font-weight:700}.routevote button:hover{background:#f0e1c7}.routevote button.selected{background:#8bc9a7;border-color:#8bc9a7;color:#11251c}.voteresult{margin-top:20px;padding:16px;background:#122033;border:1px dashed #71869e;border-radius:12px;color:#e0e8f1}.live-budget{margin:22px 0;padding:24px;background:linear-gradient(120deg,#213950,#172a3f);border:1px solid #7b96ad66;border-radius:18px;box-shadow:var(--shadow)}.live-budget h3{color:#f5f7fa;font:700 24px 'Chakra Petch',sans-serif}.live-total-grid{gap:12px}.live-total{background:#0e1a29;border:1px solid #ffffff1e;border-radius:12px;padding:15px;color:#c7d4e2}.live-total strong{font:700 24px 'Chakra Petch',sans-serif;color:#e5d3b2}.live-budget .selected-name{color:#d9c6a0}.share-note{background:#1a3146;border-left:3px solid #8bc9f5;color:#e1ebf5;border-radius:0 10px 10px 0}.daydetails{border-top:1px solid #ffffff1c}.daydetails>summary{background:#213950;border:1px solid #61778d;color:#f1f5fa;box-shadow:none;border-radius:9px;padding:10px 14px}.daydetails[open]>summary{margin-bottom:14px}.dayjoke{display:none}.decision{background:#122033;border:1px solid #ffffff22;box-shadow:none;border-radius:10px;color:#d9e4ef}.decision small{color:#9fb0c4}.status{border:1px solid #ffffff30;border-radius:99px;background:#1b2d41;color:#dce7f2}.status.done{background:#244838;color:#d2f3dd}.status.pending{background:#51452b;color:#f5e3ad}.status.check{background:#512f37;color:#ffd8dd}.decision-save{border:0;background:#d9c6a0;color:#152235;border-radius:9px;box-shadow:none}.footer{font:600 12px 'Chakra Petch',sans-serif;letter-spacing:1px;color:#9eafc3}.person{border:1px solid #ffffff25;background:#142236;box-shadow:none;border-radius:12px;color:#e4ecf5}.person strong{font:700 15px 'Chakra Petch',sans-serif;color:#d9c6a0}
-@media(max-width:980px){.routegrid{grid-template-columns:1fr 1fr}.hero{min-height:70vh}}
-@media(max-width:760px){.hudrow{min-height:60px}.logo{font-size:11px;letter-spacing:1px}nav{display:none}.hero{min-height:72vh;padding:65px 15px 45px;border-radius:0 0 22px 22px}h1{font-size:clamp(36px,10vw,58px)}.dates{letter-spacing:1px}.section{padding:38px 0}.sectionhead{padding:20px}.daytop{padding:19px}.daybody{padding:18px}.twocol,.routegrid,.group-decisions{grid-template-columns:1fr}.panel{padding:18px}.routecard{padding:20px}.live-total-grid{grid-template-columns:1fr}.countunit{min-width:62px}.countunit strong{font-size:24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+        .border-warm {
+            border-color: #EFE9E2;
+        }
 
-</style>
+        /* Snow Canvas Overlay (non-intrusive) */
+        #snow-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 30;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
-<body>
-<header class="hud"><div class="wrap hudrow"><div class="logo">⭐ JAPAN WINTER TRIP 2027</div><nav><a href="#overview">TRIP INFO</a><a href="#plan">DAILY PLAN</a><a href="#places">PLACES</a><a href="#group-decisions">GROUP VOTE</a><a href="#route-vote">TRANSPORT</a><a href="#tickets">STAY & TICKETS</a><a href="#tips">TIPS</a><a href="#budget">BUDGET</a></nav></div></header>
-<main class="wrap">
-<section class="hero"><div class="tag">🕹️ 4 PLAYERS / 7 DAYS / BUDGET-FRIENDLY ADVENTURE</div><h1>JAPAN<br>WINTER TRIP 2027</h1><div class="dates">25 FEB — 3 MAR 2027</div><div class="subtitle">❄️ 7 วัน 2 เมือง · เที่ยวแบบไม่รีบ · วางแผนด้วยกันทั้งแก๊ง</div>
-<div class="countbox"><div class="counttitle">⏳ นับถอยหลังก่อนมังกรเหล็กออกบิน — ยังมีเวลาเก็บเงินอีกนิด</div><div class="countgrid"><div class="countunit"><strong id="days">00</strong><small>วัน</small></div><div class="countunit"><strong id="hours">00</strong><small>ชม.</small></div><div class="countunit"><strong id="mins">00</strong><small>นาที</small></div><div class="countunit"><strong id="secs">00</strong><small>วิ</small></div></div></div>
-<div class="metas"><span>🐙 โอซาก้า → 🗼 โตเกียว → 🗻 ฟูจิ → ❄️ เล่นหิมะ</span><span>👥 4 คน · Tokyo 2 ห้อง</span><span>💰 เป้างบ ฿35,500–36,000/คน</span><span>✈️ กลับ 3 มี.ค. เวลา 19:00 น.</span></div><button class="primary" onclick="document.querySelector('#plan').scrollIntoView({behavior:'smooth'})">▶ ▶ เริ่มสำรวจแพลนทริป</button></section>
-<section class="section" id="overview"><div class="sectionhead"><h2>🧭 TRIP OVERVIEW: มาดูแผนเดียวกันก่อน</h2><p>นี่คือแผนตั้งต้นสำหรับทุกคนช่วยกันดู เสนอเปลี่ยนแปลงได้ตามความเห็นและงบของกลุ่ม</p></div><div class="twocol">
-<div class="panel"><h3>✅ ข้อมูลทริปที่มีตอนนี้</h3><ul class="list"><li><b>วันเดินทาง:</b> 25 ก.พ. – 3 มี.ค. 2027 · 4 คน</li><li><b>เส้นทาง:</b> Osaka 2 คืน → Tokyo 4 คืน</li><li><b>ขาไป:</b> VietJet VZ820 · BKK 00:25 → KIX (ตามข้อมูลตั๋วเดิม)</li><li><b>ขากลับ:</b> VietJet VZ833 · NRT 19:00 วันที่ 3 มี.ค.</li><li><b>วันเที่ยวหลัก:</b> 28 ก.พ. ฟูจิ / 1 มี.ค. Tokyo Disneyland / 2 มี.ค. GALA Yuzawa เล่นหิมะ ไม่เล่นสกี</li><li><b>ที่พักโตเกียว:</b> ยังต้องหา 2 ห้องสำหรับ 4 คน ใกล้สถานี และอยากได้เครื่องซักผ้าในห้อง</li></ul><p class="note"><b>ก่อนจอง:</b> ยืนยันว่าที่พักโอซาก้ารองรับ 4 คนจริง และตรวจสิทธิ์สัมภาระ/รายละเอียดผู้โดยสารจาก e-ticket</p></div>
-<div class="panel"><h3>⚠️ จุดที่ยังไม่ใช่ราคายืนยัน</h3><ul class="list"><li>ค่าเดินทาง Option A/B เป็นเพียงช่วงประมาณการ ยังต้องเทียบเส้นทางและค่าโดยสารทีละรายการ</li><li>JR TOKYO Wide Pass ราคา ¥16,000 และใช้ได้ 3 วันต่อเนื่อง แต่ <b>ใช้กับ Tokaido Shinkansen Osaka–Tokyo ไม่ได้</b></li><li>กิจกรรม GALA และตั๋ว Disneyland ไม่รวมอยู่ในงบค่าเดินทางของ Option A/B</li><li>งบรวมทั้งทริปยังขึ้นกับราคาที่พักโตเกียว 2 ห้องและราคาตั๋วจริง</li></ul><p class="muted">แหล่งทางการ: <a href="https://www.jreast.co.jp/TC/tokyowidepass/index.html" target="_blank" rel="noopener">JR TOKYO Wide Pass</a> · <a href="https://gala.co.jp/winter/hours-pricing/" target="_blank" rel="noopener">GALA Yuzawa 2026–27</a></p></div>
-</div></section>
-<section class="section" id="places"><div class="sectionhead"><h2>📍 PLACES TO VISIT: เปิดดูสถานที่ก่อนโหวต</h2><p>รวมลิงก์แผนที่และเว็บทางการ ให้ทุกคนเห็นภาพว่าแต่ละวันจะไปที่ไหน</p></div><div class="twocol">
-<div class="panel"><h3>🏯 Osaka · 26 ก.พ.</h3><p><b>ตัวเลือกเที่ยวในโอซาก้า</b><br>Osaka Castle หรือย่าน Namba / Dotonbori เดินเล่น กินข้าว และถ่ายรูป</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle">📍 Osaka Castle Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka">📍 Dotonbori Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.osaka-info.jp/en/">เว็บท่องเที่ยว Osaka</a></div></div>
-<div class="panel"><h3>🗼 Tokyo · 27 ก.พ.</h3><p><b>วันย้ายเมืองและเข้าที่พัก</b><br>ถึงโตเกียวแล้วเช็กอิน พักเหนื่อย และเดินเล่นใกล้ที่พัก ไม่จัดโปรแกรมหนัก</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ueno+Station+Tokyo">📍 Ueno Station Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+Street">📍 Ameyoko Map</a></div></div>
-<div class="panel"><h3>🗻 Kawaguchiko / Fuji · 28 ก.พ.</h3><p><b>วันชมวิวภูเขาไฟฟูจิ</b><br>ตัวอย่างจุดเที่ยวคือริมทะเลสาบ Kawaguchiko และ Oishi Park เลือกตามสภาพอากาศจริง</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lake+Kawaguchiko">📍 Lake Kawaguchiko Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Oishi+Park+Kawaguchiko">📍 Oishi Park Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.japan.travel/en/spot/1329/">ข้อมูลทะเลสาบจาก JNTO</a></div><p class="note">ถ้าฟูจิถูกเมฆบัง สามารถปรับจุดเที่ยวได้ ไม่รับประกันว่าจะเห็นยอดเขา</p></div>
-<div class="panel"><h3>🏰 Tokyo Disneyland · 1 มี.ค.</h3><p><b>เต็มวันใน Tokyo Disneyland</b><br>ไม่ใช่ DisneySea — เช็กบัตรตามวันที่เข้าและแอปทางการก่อนเดินทาง</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland">📍 Disneyland Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.tokyodisneyresort.jp/en/tdl/">เว็บไซต์ทางการ</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.tokyodisneyresort.jp/en/ticket/">ตั๋วทางการ</a></div></div>
-<div class="panel"><h3>❄️ GALA Yuzawa · 2 มี.ค.</h3><p><b>สัมผัสหิมะและถ่ายรูป ไม่เล่นสกี</b><br>ก่อนซื้อบัตรต้องเช็กโซน snow play และบริการที่เปิดในวันที่ไป</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=GALA+Yuzawa+Snow+Resort">📍 GALA Yuzawa Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://gala.co.jp/winter/english/">ข้อมูลรีสอร์ตทางการ</a></div></div>
-<div class="panel"><h3>🛫 Narita Airport · 3 มี.ค.</h3><p><b>วันเดินทางกลับไทย</b><br>วางแผนออกจากย่าน Ueno ล่วงหน้าและตรวจ terminal จากตั๋วเครื่องบิน</p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Keisei+Ueno+Station">📍 Keisei Ueno Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Narita+International+Airport">📍 Narita Airport Map</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/">Skyliner</a></div></div>
-</div><p class="note">ลิงก์แผนที่ใช้เปิดดูตำแหน่งและภาพสถานที่ได้ทันที ส่วนเวลาเดินทางและเส้นทางรถไฟให้ตรวจอีกครั้งใกล้วันเดินทาง</p></section>
-<section class="section" id="group-decisions"><div class="sectionhead"><h2>🤝 LET’S DECIDE TOGETHER</h2><p>นี่คือแผนตั้งต้น ไม่ใช่ข้อสรุปสุดท้าย — ช่วยกันเช็กสิ่งที่อยากตกลงก่อนจอง</p></div><div class="panel"><div class="statusline"><span class="status done">ข้อมูลเที่ยวบินตามข้อมูลเดิม</span><span class="status pending">ที่พักโตเกียวยังต้องจอง</span><span class="status check">ราคาเดินทาง/กิจกรรมต้องเช็กอีกครั้ง</span></div><div class="group-decisions" id="decisionList"><label class="decision"><input type="checkbox" data-key="budget"><span>งบประมาณโอเคไหม?<small>เป้าหมาย ฿35,500–36,000/คน ไม่รวมช้อปปิ้ง</small></span></label><label class="decision"><input type="checkbox" data-key="stay"><span>เลือกที่พักโตเกียวแบบไหน?<small>4 คน / 2 ห้อง / ใกล้สถานี / อยากมีเครื่องซักผ้าในห้อง</small></span></label><label class="decision"><input type="checkbox" data-key="fuji"><span>ถ้าวันฟูจิอากาศไม่ดี จะยอมปรับแผนไหม?<small>เน้นเที่ยวไม่เหนื่อยและเผื่อเวลารถกลับ</small></span></label><label class="decision"><input type="checkbox" data-key="disney"><span>Disneyland เอาตามแผนไหม?<small>รอตรวจโปรได้ แต่ยังไม่ถือว่ามีโปรแน่นอน</small></span></label><label class="decision"><input type="checkbox" data-key="gala"><span>GALA Yuzawa เน้นเล่นหิมะ/ถ่ายรูป ไม่เล่นสกีใช่ไหม?<small>ต้องตรวจว่ามีโซน snow play เปิดในวันเดินทาง</small></span></label><label class="decision"><input type="checkbox" data-key="route"><span>เลือกแนวทางเดินทางร่วมกัน<small>เปรียบเทียบพาสกับตั๋วแยกก่อนจ่ายจริง</small></span></label></div><button class="decision-save" type="button" onclick="saveDecisions()">💾 บันทึกเช็กลิสต์ในเครื่องนี้</button><div id="decisionStatus" class="decisions-note">ติ๊กได้ตามที่คุยกันแล้ว การบันทึกนี้อยู่ในอุปกรณ์/เบราว์เซอร์นี้ ไม่ได้ซิงก์ไปหาเพื่อนอัตโนมัติ</div><p class="share-note"><b>วิธีใช้ตอนคุยกับเพื่อน:</b> เปิดภาพรวมก่อน → ดูตารางเที่ยว 7 วัน → ตกลงงบและที่พัก → ค่อยเปิดรายละเอียดรถไฟวันที่ต้องการ แล้วให้ทุกคนเสนอแก้ได้</p></div></section>
-<section class="section" id="plan"><div class="sectionhead"><h2>🗓️ 7 DAYS, 7 QUESTS: แผนเที่ยวรายวัน</h2><p>ภาพรวมดูได้เลย ส่วนรายละเอียดรถไฟและตัวเลือกกดเปิดอ่านเฉพาะวันที่อยากดู</p></div><div class="daylist" id="daylist"></div></section>
-<section class="section" id="route-vote"><div class="sectionhead"><h2>🗳️ TRANSPORT OPTIONS: เปรียบเทียบการเดินทาง</h2><p>เลือกได้หลายแบบตามงบ ความสะดวก และสภาพอากาศ — ทุกแบบยังคงนั่ง Shinkansen Osaka → Tokyo</p></div>
-<div class="panel tablewrap" style="margin-bottom:24px"><h3>💴 ตารางค่ารถโดยประมาณ — เทียบทีละรายการ</h3><p class="muted">ต่อผู้ใหญ่ 1 คน · อัตราคิดเงินคร่าว ๆ ¥1 ≈ ฿0.22 · รวมค่ารถหลักของทริป ไม่รวมค่าเข้า Disneyland, กิจกรรม/บัตร GALA, อาหาร และที่พัก</p><table><thead><tr><th>เส้นทาง</th><th>Option A<br>Wide Pass</th><th>Option B<br>ตั๋วแยก + รถบัสฟูจิ</th><th>Option C<br>ตั๋วแยก + รถไฟฟูจิ</th></tr></thead><tbody><tr><td>KIX → ที่พักโอซาก้า + รถในโอซาก้า</td><td>¥2,000–2,500</td><td>¥2,000–2,500</td><td>¥2,000–2,500</td></tr><tr><td>Shin-Osaka → Tokyo (Shinkansen)</td><td>¥14,000–15,000</td><td>¥14,000–15,000</td><td>¥14,000–15,000</td></tr><tr><td>โตเกียวในเมือง / ไป Disneyland</td><td>ใช้พาสกับ JR ที่ครอบคลุมเป็นหลัก; เผื่อรถที่ไม่ครอบคลุม</td><td>¥1,700–3,000</td><td>¥1,700–3,000</td></tr><tr><td>Tokyo ↔ Kawaguchiko</td><td>รวมในพาสเฉพาะเส้นทางที่ครอบคลุม; รถด่วนบางประเภทอาจมีค่าเพิ่ม</td><td>¥4,600 (รถบัสเริ่ม ¥2,300/เที่ยว)</td><td>ประมาณ ¥8,400 (Fuji Excursion ไป–กลับ)</td></tr><tr><td>Tokyo ↔ GALA Yuzawa</td><td>รวมในพาส</td><td>ประมาณ ¥14,660</td><td>ประมาณ ¥14,660</td></tr><tr><td>Ueno → Narita</td><td>ประมาณ ¥2,500 (Keisei Skyliner)</td><td>ประมาณ ¥2,500 (Keisei Skyliner)</td><td>ประมาณ ¥2,500 (Keisei Skyliner)</td></tr><tr><th>รวมค่ารถโดยประมาณ</th><th>¥34,500–36,000<br>฿7,590–7,920</th><th>¥38,000–40,000<br>฿8,360–8,800</th><th>¥43,000–44,500<br>฿9,460–9,790</th></tr><tr><td>รวมสำหรับ 4 คน</td><td>฿30,360–31,680</td><td>฿33,440–35,200</td><td>฿37,840–39,160</td></tr></tbody></table><p class="note"><b>อ่านก่อนเลือก:</b> Option A คิดค่า JR TOKYO Wide Pass ¥16,000 แยกจากชินคันเซ็น Osaka–Tokyo ซึ่งพาสใช้ไม่ได้; ค่าเดินทางย่อยบางช่วงอาจเพิ่มตามที่พักจริงและเส้นทางที่เลือก ตัวเลขเป็นงบประมาณเทียบกัน ไม่ใช่ราคาจองยืนยัน ตรวจราคาวันเดินทางจริงก่อนซื้อ</p></div><div class="routegrid">
-<div class="routecard recommended"><span class="badge">⭐ ตัวเลือกที่ควรนำมาเทียบ</span><h3>🟦 OPTION A · Wide Pass</h3><p><b>รวมเส้นทางหลักไว้ในพาส 3 วัน แต่ต้องเช็กค่าใช้จ่ายรวมให้ชัวร์</b></p><div class="routeprice">¥34,500–36,000 / คน</div><p>ประมาณ <b>฿7,590–7,920/คน</b><br>4 คนประมาณ <b>฿30,360–31,680</b></p><ul><li>27 ก.พ. นั่ง Shinkansen Osaka → Tokyo ตามเดิม</li><li>ซื้อ JR TOKYO Wide Pass ¥16,000 ใช้ 28 ก.พ.–2 มี.ค.</li><li>28 ก.พ. นั่งรถไฟไป Kawaguchiko ตามเส้นทางที่พาสครอบคลุม</li><li>1 มี.ค. ใช้ JR ไป Disneyland</li><li>2 มี.ค. ใช้ Joetsu Shinkansen ไป GALA Yuzawa</li><li>3 มี.ค. ใช้ Keisei Skyliner จาก Ueno ไป Narita</li></ul><p class="routefoot">ตัวเลขนี้เป็นช่วงตั้งต้นสำหรับคุยกัน ไม่ใช่ยอดที่ตรวจค่าโดยสารครบแล้ว ต้องแยกตรวจ Shinkansen Osaka–Tokyo, พาส, รถสนามบิน และค่าเดินทางย่อยก่อนเลือกจริง ไม่รวมตั๋ว Disneyland/กิจกรรม GALA</p><div class="routevote"><button type="button" onclick="voteRoute('A',this)">เลือก Option A — ใช้พาส</button></div></div>
-<div class="routecard"><span class="badge">💴 อีกทางเลือก</span><h3>🟨 OPTION B · ซื้อตั๋วแยก</h3><p><b>ไม่ซื้อพาส แต่ต้องจัดการตั๋วหลายใบ</b></p><div class="routeprice">¥38,000–40,000 / คน</div><p>ประมาณ <b>฿8,360–8,800/คน</b><br>4 คนประมาณ <b>฿33,440–35,200</b></p><ul><li>27 ก.พ. นั่ง Shinkansen Osaka → Tokyo ตามเดิม</li><li>28 ก.พ. นั่งรถบัสไป–กลับ Kawaguchiko ประหยัดกว่ารถไฟบางตัวเลือก</li><li>1 มี.ค. ซื้อตั๋ว JR ไป Disneyland แยก</li><li>2 มี.ค. ซื้อตั๋ว Shinkansen ไป–กลับ GALA Yuzawa แยก</li><li>3 มี.ค. เลือก Keisei รถธรรมดาราคาถูกกว่า Skyliner แต่ใช้เวลานานกว่า</li></ul><p class="routefoot">ตัวเลขนี้เป็นช่วงตั้งต้น ยังต้องเช็กราคาชินคันเซ็นไป GALA และรถบัสฟูจิจากวันเดินทางจริง ข้อดีคือยืดหยุ่น แต่ยังสรุปไม่ได้ว่าจะถูกกว่าพาสจนกว่าจะเทียบทุกขา</p><div class="routevote"><button type="button" onclick="voteRoute('B',this)">เลือก Option B — ซื้อตั๋วแยก</button></div></div>
-</div><div class="routecard"><span class="badge">🚆 ทางเลือกเพิ่ม</span><h3>🟩 OPTION C · ซื้อตั๋วแยก + รถไฟไปฟูจิ</h3><p><b>ไม่ซื้อพาส และเลือกเดินทางไป Kawaguchiko ด้วยรถไฟ</b></p><div class="routeprice">¥43,000–44,500 / คน</div><p>ประมาณ <b>฿9,460–9,790/คน</b><br>4 คนประมาณ <b>฿37,840–39,160</b></p><ul><li>27 ก.พ. นั่ง Shinkansen Osaka → Tokyo ตามเดิม</li><li>28 ก.พ. เลือก Fuji Excursion จาก Shinjuku หรือ JR Chuo Line ต่อ Fujikyu Railway ผ่าน Otsuki</li><li>1 มี.ค. ซื้อตั๋ว JR ไป Disneyland แยก</li><li>2 มี.ค. ซื้อตั๋ว Joetsu Shinkansen ไป–กลับ GALA Yuzawa แยก</li><li>3 มี.ค. เลือกรถไฟไป Narita ตามย่านที่พักและงบ</li></ul><p class="routefoot">ข้อดีคือไม่ต้องพึ่งรถบัสและไม่ต้องซื้อพาส แต่รถไฟไปฟูจิอาจแพงกว่าและที่นั่งรถไฟตรงมีจำนวนจำกัด ต้องเทียบค่าโดยสารไป–กลับและค่าจองให้ครบก่อนตัดสินใจ</p><div class="routevote"><button type="button" onclick="voteRoute('C',this)">เลือก Option C — ตั๋วแยก + รถไฟฟูจิ</button></div></div><div id="routeVoteResult" class="voteresult" aria-live="polite">ยังไม่มีใครเลือก — ใช้ปุ่มนี้ช่วยบันทึกความเห็นบนอุปกรณ์นี้ได้ (ไม่รวมคะแนนจากอุปกรณ์อื่นอัตโนมัติ)</div><div class="live-budget" id="liveTransportBudget" aria-live="polite"><h3>🧮 งบอัปเดตตาม Option ที่เลือก</h3><p>เลือก Option A, B หรือ C ด้านบน แล้วระบบจะคำนวณค่าเดินทางและงบทั้งทริปด้านล่างให้อัตโนมัติ</p><div class="live-total-grid"><div class="live-total">ค่าเดินทาง / คน<strong id="liveTransportPerPerson">—</strong></div><div class="live-total">ค่าเดินทาง / 4 คน<strong id="liveTransportGroup">—</strong></div><div class="live-total">งบทั้งทริป / คน<strong id="liveTripPerPerson">—</strong></div></div><p id="liveTripGroup" class="selected-name">งบทั้งทริปสำหรับ 4 คน: —</p><p class="muted">คำนวณจากค่าเครื่องบิน ฿11,000 + ที่พัก ฿6,000 + Disneyland/GALA ฿2,000–4,000 + อาหาร ฿7,000–9,000 ต่อคน และค่าเดินทางตาม Option ที่เลือก ไม่รวมช้อปปิ้ง ประกัน/เงินฉุกเฉิน และราคาที่พักที่เกินงบตั้งต้น ตัวเลขเป็นประมาณการ ไม่ใช่ราคายืนยัน</p></div>
-<p class="note"><b>หมายเหตุสำคัญ:</b> ตัวเลข Option A/B/C ในตารางเป็นค่ารถโดยประมาณต่อคน ยังต้องตรวจสอบค่าโดยสารจริงให้ครบทุกขาและอาจเปลี่ยนได้ อย่าใช้เป็นยอดจ่ายทันที. เปิดรับข้อเสนอเส้นทางอื่นจากทุกคนได้. ราคา Option A/B ในหน้านี้ยังเป็นงบตั้งต้นที่ต้องตรวจสอบ ไม่ควรใช้เป็นยอดตัดสินใจจ่ายเงินทันที ใช้อัตราแลกเปลี่ยนคร่าว ๆ ¥1 ≈ ฿0.22 และยังอาจขาดรถไฟใต้ดิน/รถบัสย่อยบางช่วง ให้เทียบค่าโดยสารทุกขาและตรวจเงื่อนไขพาส/ค่าจองรถ Fujikyu ก่อนซื้อ</p>
-<div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.jreast.co.jp/TC/tokyowidepass/index.html">🔎 รายละเอียด Wide Pass</a><a class="linkbtn" target="_blank" rel="noopener" href="https://bus.fujikyu.co.jp/en/highway/fujisan/tokyo/">🚌 รถบัสไป Kawaguchiko</a><a class="linkbtn" target="_blank" rel="noopener" href="https://smart-ex.jp/en/">🚄 จอง Shinkansen</a></div></section>
-<section class="section" id="tickets"><div class="sectionhead"><h2>🎒 INVENTORY: ตั๋วเดินทาง & ที่พัก</h2><p>ของที่ต้องจองล่วงหน้า และจุดเซฟของปาร์ตี้</p></div>
-<div class="twocol">
-<div class="ticket panel"><h3>✈️ ตั๋วเครื่องบิน</h3><p><b>ขาไป · VietJet VZ820</b><br>25 ก.พ. 2027 · BKK → KIX · ออก 00:25 น.</p><p><b>ขากลับ · VietJet VZ833</b><br>3 มี.ค. 2027 · NRT → BKK · ออก 19:00 น.</p><p class="muted">น้ำหนักกระเป๋าโหลด 20 กก. + ถือขึ้นเครื่อง 7 กก. ตามข้อมูลเดิม โปรดเช็ก e-ticket ว่ารวมสิทธิ์นี้สำหรับผู้โดยสารทุกคนหรือไม่ และตรวจสอบ terminal/เวลาอีกครั้งก่อนเดินทาง</p></div>
-<div class="ticket panel"><h3>🏠 OSAKA BASECAMP · จองแล้ว</h3><p><b>Joyful Residence 302</b><br>ย่าน Hanazonokita / Nishinari Ward, Osaka<br>25–27 ก.พ. · 2 คืน</p><a class="linkbtn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Joyful+Residence+302+Osaka">📍 เปิด Google Maps</a><p class="note">ยืนยันกับที่พักเรื่องจำนวนผู้เข้าพักจริงให้ครบ 4 คนก่อนเดินทาง เพราะข้อมูลเดิมในหน้าเว็บระบุ 3 คน</p></div>
-<div class="ticket panel"><h3>🏨 TOKYO BASECAMP · ต้องจอง</h3><p><b>27 ก.พ.–3 มี.ค. · 4 คืน</b><br>ผู้เข้าพัก 4 คน แบ่ง 2 ห้อง ห้องละ 2 คน</p><p>ย่านที่ควรเทียบ: <b>Ueno / Nippori / Tokyo Station</b></p><div class="linkrow"><a class="linkbtn" target="_blank" rel="noopener" href="https://www.google.com/travel/hotels/Tokyo?checkin=2027-02-27&checkout=2027-03-03&adults=2">🏨 เทียบโรงแรม</a><a class="linkbtn" target="_blank" rel="noopener" href="https://www.airbnb.com/s/Tokyo--Japan/homes?checkin=2027-02-27&checkout=2027-03-03&adults=4">🏠 ค้นหา Airbnb</a></div><p class="muted">ค้นหาห้อง 2 ห้องแยกกันหรือที่พักที่ระบุชัดว่าเป็น 2 ห้องนอน/2 ยูนิต อย่าดูแค่จำนวนผู้เข้าพักรวม</p></div>
-<div class="ticket panel"><h3>🎟️ ลิงก์ทางการที่ควรเซฟ</h3><ul class="list"><li><a target="_blank" rel="noopener" href="https://smart-ex.jp/en/">SmartEX · จองชินคันเซ็น Shin-Osaka → Tokyo</a></li><li><a target="_blank" rel="noopener" href="https://www.highwaybus.com/gp/inbound/index">Highwaybus.com · รถบัสทางไกล</a></li><li><a target="_blank" rel="noopener" href="https://www.tokyodisneyresort.jp/en/ticket/">Tokyo Disney Resort · ตั๋วสวนสนุก</a></li><li><a target="_blank" rel="noopener" href="https://gala.co.jp/winter/english/">GALA Yuzawa · ข้อมูลฤดูหนาว</a></li><li><a target="_blank" rel="noopener" href="https://www.jreast.co.jp/multi/en/">JR East · ข้อมูลรถไฟ</a></li></ul><p class="muted">ราคา ตารางรถ และบริการฤดูหนาวปี 2026–27 อาจยังไม่เปิดครบ ตรวจสอบอีกครั้งก่อนชำระเงิน</p></div>
-</div></section>
-<section class="section" id="tips"><div class="sectionhead"><h2>🧰 SURVIVAL GUIDE: คู่มือเอาตัวรอด</h2><p>อ่านก่อนออกจากบ้าน ลดโอกาสวิ่งไล่รถไฟพร้อมกระเป๋า 20 กิโล</p></div><div class="twocol">
-<div class="panel"><h3>🧳 กระเป๋า & ชินคันเซ็น</h3><ul class="list"><li>ชินคันเซ็นสาย Tokaido/Sanyo/Kyushu: กระเป๋าที่ผลรวม 3 ด้านมากกว่า 160 ซม. ถึง 250 ซม. ต้องจองที่นั่งพร้อมพื้นที่วางกระเป๋าขนาดใหญ่ตามกฎของเส้นทาง</li><li>กระเป๋าใหญ่กว่า 250 ซม. โดยทั่วไปไม่รับเป็นสัมภาระปกติบนเส้นทางดังกล่าว ควรเช็กเงื่อนไขล่าสุด</li><li>ถ้าจะส่งกระเป๋าล่วงหน้าไปโตเกียว ต้องถามที่พักก่อนว่ารับพัสดุได้และรับวันไหน</li><li>กระเป๋าถือขึ้นเครื่องต้องเป็นไปตามขนาดและน้ำหนักของสายการบินบน e-ticket</li></ul></div>
-<div class="panel"><h3>❄️ เตรียมตัวเล่นหิมะ</h3><ul class="list"><li>รองเท้ากันน้ำ พื้นเกาะดี ถุงมือกันน้ำ ถุงเท้าอุ่น และเสื้อผ้าหลายชั้น</li><li>ไม่เล่นสกี/สโนว์บอร์ด ให้เลือกบัตรหรือโซนสำหรับผู้มาเที่ยวและเล่นหิมะเท่านั้น</li><li>ตรวจสอบว่า GALA เปิดวันนั้นหรือไม่ และโซนเล่นหิมะ/อุปกรณ์เลื่อนเปิดให้บริการหรือเปล่า</li><li>หากไม่มีโซนเล่นหิมะที่เหมาะสม อย่าซื้อแพ็กเกจสกีโดยคิดว่าจะใช้ทุกพื้นที่ได้</li></ul></div>
-<div class="panel"><h3>🚆 ซื้อตั๋วยังไงดี</h3><ul class="list"><li>บัตร IC เช่น ICOCA/Suica ใช้จ่ายรถไฟท้องถิ่นและร้านค้าที่ร่วมรายการได้ แต่ไม่แทนตั๋ว/ค่าจองที่นั่งชินคันเซ็นหรือรถด่วนพิเศษทุกกรณี</li><li>ชินคันเซ็น Osaka–Tokyo: ขึ้นที่ Shin-Osaka และลง Tokyo/Shinagawa ตามที่พัก</li><li>Kawaguchiko: จองรถบัสจาก Shinjuku หรือรถไฟ Fuji Excursion ล่วงหน้า ตรวจสถานีต้นทางให้ตรงกับตั๋ว</li><li>วันฟูจิควรเลือกจุดเที่ยว 2–3 จุดใกล้กัน และเผื่อเวลารถติดขากลับ</li></ul></div>
-<div class="panel"><h3>🛫 วันกลับ Narita</h3><ul class="list"><li>เป้าหมายถึงสนามบินประมาณ 16:00 น. สำหรับเที่ยวบิน 19:00 น.</li><li>ถ้าพัก Ueno/Nippori ให้เทียบ Keisei Skyliner; หากพักย่านอื่นให้เทียบ Narita Express หรือรถบัสสนามบิน</li><li>วันกลับไม่ควรใส่กิจกรรมไกลหรือจองอะไรที่ยกเลิกยาก</li><li>ตรวจ terminal, check-in deadline และน้ำหนักกระเป๋าจากข้อมูลสายการบินอีกครั้ง</li></ul></div>
-</div></section>
+<body class="min-h-screen pb-32 relative">
 
-<section class="section" id="budget"><div class="sectionhead"><h2>💰 GOLD & COINS: งบประมาณเบื้องต้น</h2><p>เป้าหมายตั้งต้น: ฿35,500–36,000 ต่อคน ไม่รวมช้อปปิ้ง — ต้องเช็กราคาจริงก่อนยืนยัน</p></div><div class="panel tablewrap"><table><thead><tr><th>รายการ</th><th>งบประมาณต่อคน</th><th>หมายเหตุ</th></tr></thead><tbody><tr><td>ตั๋วเครื่องบิน</td><td>ประมาณ ฿11,000</td><td>ใช้ราคาที่จ่ายจริงจาก booking</td></tr><tr><td>ที่พัก 6 คืน</td><td>ประมาณ ฿6,000 ขึ้นไป</td><td>โตเกียว 2 ห้องสำหรับ 4 คน อาจเปลี่ยนงบมาก</td></tr><tr><td>เดินทางระหว่างเมือง/สนามบิน</td><td id="budgetTransportValue">เลือก Option ด้านบน</td><td id="budgetTransportNote">ระบบจะอัปเดตตาม Option A/B/C ที่เลือก</td></tr><tr><td>Disneyland + กิจกรรม</td><td>ประมาณ ฿2,000–4,000 ขึ้นไป</td><td>ตรวจราคาบัตรจริงตามวันที่ไป</td></tr><tr><td>อาหาร</td><td>ประมาณ ฿7,000–9,000</td><td>ขึ้นกับมื้อพิเศษและของกินเล่น</td></tr><tr><td>ประกัน/สำรองจ่าย</td><td>เพิ่มตามแผน</td><td>แนะนำกันเงินฉุกเฉินและค่ากระเป๋าไว้</td></tr></tbody></table><p class="share-note"><b>ยอดรวมอัตโนมัติ:</b> เมื่อเลือก Option การเดินทางด้านบน ยอดงบทั้งทริปต่อคนและสำหรับ 4 คนจะแสดงในกล่องคำนวณด้านบน และรายการค่าเดินทางในตารางนี้จะอัปเดตตามตัวเลือก</p><p class="note"><b>กรอบงบของ Kwan:</b> ฿35,500–36,000/คน ไม่รวมช้อปปิ้ง (4 คนรวม ฿142,000–144,000) ตารางด้านบนเป็นเพียงรายการตั้งงบ ยังไม่ใช่ยอดรวมที่ยืนยันแล้ว ต้องรวมค่าที่พักจริง 6 คืน ตั๋ว Disneyland กิจกรรม GALA อาหาร ประกัน และค่าเดินทางทุกขาให้ครบก่อนสรุป</p></div></section>
-<section class="section"><div class="panel" style="text-align:center"><h2 style="font-family:var(--pixel);font-size:16px;line-height:1.8">👥 CHOOSE YOUR PARTY</h2><p>ปาร์ตี้ 4 คนพร้อมลุย!</p><div class="party"><div class="person"><strong>P1</strong><small>ผู้กล้า 1</small></div><div class="person"><strong>P2</strong><small>ผู้กล้า 2</small></div><div class="person"><strong>P3</strong><small>ผู้กล้า 3</small></div><div class="person"><strong>P4</strong><small>ผู้กล้า 4</small></div></div></div></section>
-</main><footer class="wrap footer">© 2027 JAPAN WINTER TRIP · 8-BIT EDITION<br>PLAN TOGETHER · DETAILS WHEN YOU NEED THEM · ONE PARTY.</footer>
-<script>
-const transportOptions={A:{name:'OPTION A — JR TOKYO Wide Pass',low:7590,high:7920},B:{name:'OPTION B — ตั๋วแยก + รถบัสไปฟูจิ',low:8360,high:8800},C:{name:'OPTION C — ตั๋วแยก + รถไฟไปฟูจิ',low:9460,high:9790}};
-function baht(n){return '฿'+Math.round(n).toLocaleString('en-US')}
-function voteRoute(option,button){const data=transportOptions[option];const result=document.getElementById('routeVoteResult');result.innerHTML='เลือกแล้ว: <b>'+data.name+'</b> — คำนวณงบตามตัวเลือกนี้ให้อัตโนมัติ';document.querySelectorAll('.routevote button').forEach(b=>b.classList.remove('selected'));document.querySelectorAll('.routecard').forEach(c=>c.classList.remove('chosen'));button.classList.add('selected');button.closest('.routecard').classList.add('chosen');
-const tripLow=11000+6000+2000+7000+data.low;const tripHigh=11000+6000+4000+9000+data.high;
-document.getElementById('liveTransportPerPerson').textContent=baht(data.low)+'–'+baht(data.high);
-document.getElementById('liveTransportGroup').textContent=baht(data.low*4)+'–'+baht(data.high*4);
-document.getElementById('liveTripPerPerson').textContent=baht(tripLow)+'–'+baht(tripHigh);
-document.getElementById('liveTripGroup').textContent='งบทั้งทริปสำหรับ 4 คน: '+baht(tripLow*4)+'–'+baht(tripHigh*4);
-document.getElementById('budgetTransportValue').textContent=baht(data.low)+'–'+baht(data.high)+' / คน';
-document.getElementById('budgetTransportNote').textContent=data.name+'; 4 คน '+baht(data.low*4)+'–'+baht(data.high*4)+' (ประมาณการ)';
-}
-const plans=[
-{day:'STAGE 1',date:'พฤหัสบดี 25 ก.พ.',title:'ลงจอดคันไซ & เปิดเควสต์โอซาก้า',desc:'วันเดินทางถึงญี่ปุ่น อย่าอัดโปรแกรมแน่นเกินไป เผื่อเวลาตรวจคนเข้าเมือง ฝากกระเป๋า และเดินทางเข้าที่พัก — วันนี้เน้นรอด ไม่เน้นวิ่ง',options:[
-{name:'ประหยัด · แนะนำ',heading:'แนะนำ: Nankai Airport Express → Namba → Metro ไป Hanazonocho',price:'ประมาณ ¥1,200–1,500/คน (ประมาณ ฿265–330)',priceNote:'เป็นงบคร่าว ๆ สำหรับรถไฟจาก KIX เข้า Namba และ Osaka Metro ไป Hanazonocho; ตรวจราคาจริงก่อนเดินทาง',recommendation:'แนะนำตัวเลือกนี้สำหรับทริปแรก เพราะประหยัดและเส้นทางค่อนข้างตรงไปย่านที่พัก: นั่ง Nankai Airport Express ถึง Namba แล้วตามป้าย Osaka Metro สาย Yotsubashi ไปลง Hanazonocho ไม่ต้องเปลี่ยนรถไฟหลายรอบ',items:['ที่ Namba ให้ตามป้าย Osaka Metro สาย Yotsubashi (สีน้ำเงิน) แล้วขึ้นรถไฟไปทาง Suminoekoen ลงสถานี Hanazonocho','เผื่อเวลาเดินในสถานี Namba และดูป้ายภาษาอังกฤษ ไม่ต้องรีบตามคนอื่น','ถ้ามีกระเป๋าใบใหญ่หรือเหนื่อยมาก ให้พิจารณา Rapi:t ซึ่งจองที่นั่งได้'],links:[['ดูเส้นทาง KIX → ที่พักย่าน Hanazonocho','https://www.google.com/maps/dir/Kansai+International+Airport/Hanazonocho+Station,+Osaka/'],['ข้อมูล Osaka Metro','https://subway.osakametro.co.jp/en/']]},
-{name:'สะดวกกว่า',heading:'Nankai Rapi:t → Namba → Metro ไป Hanazonocho',price:'ประมาณ ¥1,700–2,000/คน (ประมาณ ฿375–440)',priceNote:'งบคร่าว ๆ รวม Rapi:t และ Osaka Metro; ตรวจราคาตั๋ว/โปรโมชันก่อนเดินทาง',items:['นั่ง Rapi:t แบบจองที่นั่งไป Namba แล้วตามป้าย Osaka Metro สาย Yotsubashi ไปลง Hanazonocho','ข้อดีคือมีที่นั่งจองและเหมาะหลังนั่งเครื่องบินข้ามคืน แต่ต้องจ่ายเพิ่มจาก Airport Express','ถ้าอยากลดความกังวลเรื่องที่นั่งและมีกระเป๋าเยอะ ตัวเลือกนี้ก็น่าสบายกว่า'],links:[['ข้อมูล Nankai Railway','https://www.nankai.co.jp/en_railway/traffic/'],['ข้อมูล Osaka Metro','https://subway.osakametro.co.jp/en/']]},
-{name:'แท็กซี่/รถรับส่ง',heading:'รถรับส่งส่วนตัวถึงที่พัก',price:'ประมาณ ¥15,000–25,000/คัน (ประมาณ ฿3,300–5,500/คัน)',priceNote:'ราคาเหมาคันโดยประมาณสำหรับกลุ่ม; ถ้า 4 คนจะเฉลี่ยราว ฿825–1,375/คน และขึ้นกับรถ/กระเป๋า/เวลารอ',items:['จองล่วงหน้าและแจ้งจำนวนคนกับจำนวน/ขนาดกระเป๋าให้ครบ','สะดวกที่สุดแต่ราคาแพงกว่า ควรเทียบราคารวมและเงื่อนไขรอเที่ยวบิน'],links:[['เปิดแผนที่ที่พัก','https://maps.google.com/?q=Joyful+Residence+302+Osaka']]}],timeline:['00:25 · ออกเดินทางจาก BKK ด้วย VZ820 (ตรวจ e-ticket อีกครั้ง)','เช้า · ถึง KIX ผ่าน ตม. รับกระเป๋า และซื้อ/เติม IC card หากต้องใช้','ช่วงบ่าย · เข้าเมือง ฝากกระเป๋าหรือเช็กอินตามเวลาอนุญาต','เย็น · Dotonbori / ป้ายกูลิโกะ / หาอาหาร แล้วกลับพักผ่อน'],note:'เวลาเครื่องลงและเวลาเข้าเมืองยังต้องอิง e-ticket จริง อย่าถือว่า 08:30 ถึงโอซาก้าแน่นอน'} ,
-{day:'STAGE 2',date:'ศุกร์ 26 ก.พ.',title:'Osaka Castle & Shinsaibashi',desc:'เที่ยวโอซาก้าเต็มวัน เลือกว่าจะเน้นปราสาท หรือช้อปปิ้งแบบไม่เร่ง',options:[
-{name:'สายแลนด์มาร์ก',heading:'Osaka Castle → Shinsaibashi → Dotonbori',items:['ช่วงเช้าไป Osaka Castle Park ถ่ายรูปและเลือกเข้าพิพิธภัณฑ์ตามความสนใจ','บ่ายเดินช้อป Shinsaibashi-suji','เย็นกินทาโกะยากิ/โอโคโนมิยากิแถว Dotonbori'],links:[['Osaka Castle Map','https://maps.google.com/?q=Osaka+Castle'],['Shinsaibashi Map','https://maps.google.com/?q=Shinsaibashi+Osaka']]},
-{name:'ชิล ๆ ไม่เข้าปราสาท',heading:'Kuromon Market → Namba → Shinsaibashi',items:['เริ่มสายที่ Kuromon Market หาอาหารเช้า/ของกิน','เดินย่าน Namba และช้อปปิ้งแบบสบาย ๆ','เก็บ Dotonbori ไว้ช่วงเย็นเพื่อถ่ายรูปไฟกลางคืน'],links:[['Kuromon Market Map','https://maps.google.com/?q=Kuromon+Market']]},
-{name:'วันฝนตก',heading:'ช้อปปิ้งในร่ม',items:['เน้นห้างและทางเดินช้อปปิ้งใน Namba/Shinsaibashi','เตรียมรองเท้าที่เดินสบายและถุงพับได้สำหรับของฝาก','ปรับลำดับตามพยากรณ์อากาศใกล้วันเดินทาง'],links:[['Namba Parks Map','https://maps.google.com/?q=Namba+Parks']]}],timeline:['09:00 · ออกจากที่พัก','09:30–12:00 · เที่ยวตามตัวเลือกที่เลือก','12:00–13:00 · พักกินข้าว','13:00–17:30 · ช้อปปิ้ง/แลนด์มาร์ก','เย็น · กลับที่พัก จัดกระเป๋าสำหรับย้ายเมือง'],note:'เช็กเวลาเปิดและค่าบัตรของสถานที่ใกล้วันเดินทาง'} ,
-{day:'STAGE 3',date:'เสาร์ 27 ก.พ.',title:'ย้ายฐานจากโอซาก้าไปโตเกียว',desc:'เช็กเอาต์ เดินทางจาก Shin-Osaka ด้วย Shinkansen แล้วไปเช็กอินที่พักโตเกียว',options:[
-{name:'เร็วและตรง',heading:'Nozomi Shinkansen',items:['เดินทางไป Shin-Osaka แล้วขึ้น Nozomi ไป Tokyo หรือ Shinagawa','จองที่นั่งล่วงหน้า โดยเฉพาะเมื่อเดินทาง 4 คนและอยากนั่งใกล้กัน','ใช้ SmartEX หรือช่องทางจำหน่ายที่ได้รับอนุญาต'],links:[['จองผ่าน SmartEX','https://smart-ex.jp/en/']]},
-{name:'ทางเลือก',heading:'Hikari / Kodama',items:['ตรวจตารางและราคา Hikari/Kodama หากเวลาเดินทางยืดหยุ่น','อย่าซื้อตั๋วจากแค่ชื่อรถไฟ ให้ตรวจวัน เวลา สถานี และเงื่อนไขตั๋วให้ครบ'],links:[['JR Central','https://global.jr-central.co.jp/en/']]},
-{name:'จัดการกระเป๋าใหญ่',heading:'จองพื้นที่กระเป๋า หรือส่งกระเป๋า',items:['กระเป๋าผลรวมสามด้านเกิน 160 ซม. บน Tokaido Shinkansen ต้องทำตามกฎกระเป๋า oversized และจองพื้นที่ที่กำหนด','หรือสอบถามที่พักโตเกียวก่อนส่งกระเป๋าล่วงหน้า อย่าส่งโดยไม่ยืนยันผู้รับ'],links:[['กฎกระเป๋า Shinkansen','https://global.jr-central.co.jp/en/']] }],timeline:['เช้า · เช็กเอาต์จาก Joyful Residence','ก่อนเที่ยง · ไป Shin-Osaka เผื่อเวลาหาสถานี/ซื้ออาหาร','เที่ยง–บ่าย · Shinkansen ไปโตเกียว','บ่ายแก่ · เช็กอินที่พักใหม่และพัก','เย็น · เดินเล่นใกล้ที่พัก ไม่จัดกิจกรรมไกล'],note:'เวลารถไฟเป็นตัวอย่าง ให้เลือกขบวนจริงหลังตัดสินใจย่านที่พักโตเกียว'} ,
-{day:'STAGE 4',date:'อาทิตย์ 28 ก.พ.',title:'ภารกิจตามล่าฟูจิซัง · Kawaguchiko',desc:'ออกแต่เช้า เลือกวิธีเดินทางหนึ่งแบบ และจำกัดจุดเที่ยว 2–3 แห่งเพื่อไม่ต้องวิ่งแข่งกับเวลา',options:[
-{name:'รถบัสตรง',heading:'Shinjuku Expressway Bus Terminal → Kawaguchiko',items:['จองรถบัสไป-กลับล่วงหน้าและตรวจจุดขึ้นรถให้ตรงกับตั๋ว','ราคามักคุ้มค่า แต่รถอาจติด โดยเฉพาะขากลับ','เลือกจุดเที่ยวรอบทะเลสาบใกล้กัน เช่น Oishi Park และสถานี Kawaguchiko'],links:[['จอง/ตรวจรถบัส','https://www.highwaybus.com/gp/inbound/index'],['Oishi Park Map','https://maps.google.com/?q=Oishi+Park+Kawaguchiko']]},
-{name:'รถไฟตรง',heading:'Fuji Excursion จาก Shinjuku',items:['ตรวจว่ามีที่นั่งและขบวนตรงกับวันเดินทางหรือไม่','รถไฟตรงสะดวก แต่ที่นั่งอาจเต็ม ควรจองล่วงหน้า','ตรวจสถานีลงและเงื่อนไขตั๋วไปกลับให้ครบ'],links:[['JR East','https://www.jreast.co.jp/multi/en/']]},
-{name:'รถไฟต่อขบวน',heading:'JR Chuo Line → Otsuki → Fujikyu Railway',items:['ใช้รถไฟ JR ไป Otsuki แล้วเปลี่ยนเป็น Fujikyu Railway','มีการเปลี่ยนขบวนและอาจมีค่าตั๋วแยก ควรเผื่อเวลา','เหมาะถ้ารถบัส/รถไฟตรงไม่ตรงเวลา'],links:[['Kawaguchiko Station Map','https://maps.google.com/?q=Kawaguchiko+Station']]}],timeline:['06:00–07:00 · ออกจากที่พักตามเวลาตั๋ว','ช่วงเช้า · เดินทางไป Kawaguchiko','10:00–15:00 · เลือกจุดเที่ยว 2–3 แห่งตามอากาศและทัศนวิสัย','ช่วงบ่ายแก่ · กลับโตเกียวตามตั๋วที่จองไว้','ค่ำ · กินข้าวและเตรียมของสำหรับ Disneyland'],note:'เจดีย์ Chureito ต้องมีเวลาเดินขึ้นบันไดและต่อรถเพิ่ม อย่าใส่หลายจุดจนเสี่ยงพลาดรถกลับ'} ,
-{day:'STAGE 5',date:'จันทร์ 1 มี.ค.',title:'Tokyo Disneyland · วันปล่อยใจ',desc:'วันนี้โฟกัส Disneyland ไม่สลับไป DisneySea เตรียมรองเท้าเดินสบายและแอปทางการ',options:[
-{name:'เล่นให้คุ้ม',heading:'ไปก่อนเปิดสวนสนุก',items:['ซื้อตั๋ววันและประเภทที่ถูกต้องจากเว็บไซต์ทางการ','จาก Tokyo Station ต่อ JR Keiyo/Musashino Line ไป Maihama; ทางเดินเปลี่ยนรถใน Tokyo Station ค่อนข้างยาว','ดาวน์โหลดแอป Tokyo Disney Resort และดูการจอง/เวลารอเครื่องเล่นในวันจริง'],links:[['ซื้อตั๋วทางการ','https://www.tokyodisneyresort.jp/en/ticket/'],['Tokyo Disneyland Map','https://maps.google.com/?q=Tokyo+Disneyland']]},
-{name:'เน้นถ่ายรูปและโชว์',heading:'เลือกเครื่องเล่นหลัก + พาเหรด',items:['เลือกเครื่องเล่นที่อยากเล่นจริง 3–5 อย่างก่อน','เช็กตารางพาเหรด/โชว์และเวลาที่ประกาศในแอป','พักกินอาหารเป็นช่วง ๆ และตรวจเงื่อนไขการจองบริการในแอป'],links:[['แอป/ข้อมูลสวนสนุก','https://www.tokyodisneyresort.jp/en/']]},
-{name:'วันคนเยอะ',heading:'ยืดหยุ่นตามเวลารอ',items:['ไปถึงก่อนเวลาเปิดที่ประกาศและตรวจแถวเข้าสวนสนุก','จัดกลุ่มเครื่องเล่นตามโซน ลดการเดินย้อน','อย่าซื้อตั๋วจากเว็บไซต์ที่ไม่ชัดเจนเรื่องวันและชื่อผู้ให้บริการ'],links:[['ข้อมูลตั๋วทางการ','https://www.tokyodisneyresort.jp/en/ticket/']]}],timeline:['06:30–07:00 · ออกจากที่พัก เผื่อเวลาต่อรถใน Tokyo Station','ก่อนเวลาเปิด · ไปถึงทางเข้าสวนสนุก','ทั้งวัน · เครื่องเล่น อาหาร รูปถ่าย และโชว์ตามตารางจริง','หลังจบกิจกรรม · กลับที่พักด้วย JR จาก Maihama'],note:'ราคาบัตร Disneyland เปลี่ยนตามวันและประเภทบัตร ตรวจราคาจริงบนเว็บไซต์ทางการก่อนซื้อ'} ,
-{day:'STAGE 6',date:'อังคาร 2 มี.ค.',title:'GALA Yuzawa · สัมผัสหิมะ ไม่เล่นสกี',desc:'เป้าหมายคือถ่ายรูป สัมผัสหิมะ และเล่นกิจกรรมสำหรับผู้ไม่เล่นสกีเท่านั้น',options:[
-{name:'ชินคันเซ็นตรง',heading:'Tokyo Station → GALA Yuzawa Station',items:['บางขบวน/ช่วงฤดูกาลอาจวิ่งตรงถึง GALA Yuzawa Station ต้องตรวจตารางฤดู 2026–27','ซื้อตั๋วชินคันเซ็นและเลือกเวลาไปกลับที่ให้เวลาเที่ยวพอ','ก่อนจ่ายเงิน ตรวจว่ามีโซน snow play เปิดในวันที่ไป'],links:[['GALA Yuzawa Official','https://gala.co.jp/winter/english/'],['JR East','https://www.jreast.co.jp/multi/en/']]},
-{name:'ต่อรถที่ Echigo-Yuzawa',heading:'Joetsu Shinkansen → Echigo-Yuzawa → Shuttle',items:['หากไม่มีขบวนตรงที่เหมาะสม ลง Echigo-Yuzawa แล้วตรวจรถรับส่งของรีสอร์ต','เช็กจุดขึ้นรถและรอบสุดท้ายกลับสถานีให้ชัดเจน','เผื่อเวลาสำหรับการเช่าอุปกรณ์/เปลี่ยนเสื้อผ้า'],links:[['GALA Transport Info','https://gala.co.jp/winter/english/']]},
-{name:'แผนสำรอง',heading:'ยืดหยุ่นตามบริการหิมะ',items:['หากไม่มีบัตร snow play หรือโซนเล่นหิมะไม่เปิด อย่าซื้อบัตรสกีแทนโดยเดาเอา','พิจารณาเปลี่ยนวัน/สถานที่หลังตรวจข้อมูลทางการและสภาพอากาศ','คืนก่อนหน้าเตรียมถุงมือกันน้ำ รองเท้าเกาะพื้นดี และเสื้อผ้าสำรอง'],links:[['ตรวจข้อมูลบริการฤดูหนาว','https://gala.co.jp/winter/english/']]}],timeline:['เช้ามืด · ออกจากที่พักไป Tokyo Station ตามเวลารถไฟที่จอง','เช้า · ถึงสถานีปลายทางและตรวจการเดินทางเข้ารีสอร์ต','ช่วงกลางวัน · เล่นหิมะ/ถ่ายรูปเฉพาะโซนที่อนุญาตสำหรับ non-ski visitors','บ่ายแก่ · กลับสถานีโดยเผื่อเวลา ไม่รอขบวนสุดท้าย','ค่ำ · กลับโตเกียว เก็บกระเป๋าและเตรียมวันกลับ'],note:'ต้องตรวจฤดูกาล 2026–27 โดยตรง: วันเปิด, บัตรผู้ไม่เล่นสกี, snow play zone, ค่าเช่าอุปกรณ์ และรถรับส่งอาจเปลี่ยนแปลง'} ,
-{day:'STAGE 7',date:'พุธ 3 มี.ค.',title:'เช็กเอาต์ & กลับบ้านจาก Narita',desc:'วันกลับให้ความสำคัญกับการไปสนามบินตรงเวลา ซื้อของฝากใกล้ที่พักได้เฉพาะเมื่อมีเวลาพอ',options:[
-{name:'พัก Ueno/Nippori',heading:'Keisei Skyliner',items:['สะดวกสำหรับผู้พักใกล้ Keisei-Ueno หรือ Nippori','จอง/ตรวจเวลารถไฟและสถานีขึ้นให้ตรงกับที่พัก','เผื่อเวลาเดินจากโรงแรมไปสถานีและหาทางขึ้นชานชาลา'],links:[['Keisei Skyliner','https://www.keisei.co.jp/keisei/tetudou/skyliner/us/']]},
-{name:'พักย่าน JR',heading:'Narita Express (N’EX)',items:['ตรวจว่ามีสถานีขึ้นที่สะดวกกับที่พัก เช่น Tokyo/Shinagawa หรือไม่','ตรวจตารางและจองที่นั่งตามเงื่อนไข','เผื่อเวลาเดินทางไปสถานีและกรณีรถไฟล่าช้า'],links:[['JR East Airport Access','https://www.jreast.co.jp/multi/en/']]},
-{name:'รถบัสสนามบิน',heading:'Airport Limousine / รถบัสตามเส้นทาง',items:['เลือกเฉพาะเส้นทางที่จอดใกล้ที่พักหรือจุดขึ้นที่ไปถึงง่าย','รถอาจเจอการจราจร ควรเลือกเที่ยวที่มี buffer มากพอ','ตรวจสัมภาระและเวลาขึ้นรถก่อนซื้อตั๋ว'],links:[['Airport Limousine','https://www.limousinebus.co.jp/english/']]}],timeline:['เช้า · เช็กเอาต์และฝากกระเป๋าหากยังมีเวลา','ช่วงเช้า–เที่ยง · ซื้อของฝากใกล้ที่พักเท่านั้น','ประมาณ 13:00–14:00 · แนะนำให้เริ่มมุ่งหน้าไปสนามบินตามย่านที่พักและตั๋วรถไฟ','ประมาณ 16:00 · เป้าหมายถึง Narita Airport','19:00 · VZ833 ออกเดินทางกลับ BKK'],note:'เวลาออกจากโรงแรมเป็นแนวทางเพื่อให้ถึงสนามบินราว 16:00 น. ให้ปรับตามที่พัก เส้นทาง และข้อกำหนด check-in ใน e-ticket'}
-];
-const jokes=['วันนี้เป้าหมายคือเข้าที่พักให้ได้ก่อน อย่าเพิ่งหลงตั้งแต่สนามบิน','ถ่ายรูปปราสาท 10 นาที ช้อปปิ้ง 3 ชั่วโมง — ประวัติศาสตร์รอได้ แต่เซลล์รอไม่ได้','ขึ้นชินคันเซ็นด้วยความเร็วสูง เงินเก็บหายเร็วกว่านั้นอีก','ถ้าฟูจิไม่ออกมาให้เห็น อย่างน้อยเราก็ได้ออกจากที่พักมาตากลม','วันนี้ไม่รับรู้เรื่องงาน ไม่รับรู้เรื่องเงินเดือน รับรู้แค่คิวเครื่องเล่น','เราไม่ได้มาฝึกเป็นนักกีฬา เรามาถ่ายรูปให้เหมือนคนรักอากาศหนาว','Final Boss คือสนามบิน เช็กอินให้ทันและอย่าทิ้งเพื่อนไว้กับของฝาก'];
-const host=document.getElementById('daylist');
-plans.forEach((p,idx)=>{const card=document.createElement('article');card.className='daycard';card.innerHTML=`<div class="daytop"><div><span class="daybadge">${p.day}</span><h3>${p.title}</h3></div><div class="daydate">📅 ${p.date}</div></div><div class="daybody"><p class="daydesc">${p.desc}</p><details class="daydetails"><summary>ดูวิธีเดินทาง + ไทม์ไลน์ของวันนี้</summary><div class="optionlabel">🕹️ เลือกแผน / ตัวเลือกการเดินทาง</div><div class="options" role="group" aria-label="ตัวเลือกแผน ${p.title}">${p.options.map((o,i)=>`<button class="optbtn ${i===0?'active':''}" type="button" data-day="${idx}" data-option="${i}" aria-pressed="${i===0?'true':'false'}">${o.name}</button>`).join('')}</div><div class="optpanel" id="panel-${idx}"></div><div class="optionlabel">⏰ ไทม์ไลน์คร่าว ๆ</div><ul class="list">${p.timeline.map(t=>`<li>${t}</li>`).join('')}</ul><div class="note">⚠️ ${p.note}</div></details></div>`;host.appendChild(card);renderOption(idx,0)});
-function renderOption(day,option){const p=plans[day],o=p.options[option],panel=document.getElementById('panel-'+day);panel.innerHTML=`<h4>${o.heading}</h4>${o.price?`<div class="price-inline"><strong>💴 ค่าเดินทางโดยประมาณ: ${o.price}</strong>${o.priceNote?`<div>${o.priceNote}</div>`:''}</div>`:''}${o.recommendation?`<div class="note" style="border-left-color:#198754;background:#effbf2"><b>⭐ ทำไมเราแนะนำ?</b><br>${o.recommendation}</div>`:''}<ul>${o.items.map(x=>`<li>${x}</li>`).join('')}</ul><div class="linkrow">${o.links.map(l=>`<a class="linkbtn" href="${l[1]}" target="_blank" rel="noopener">↗ ${l[0]}</a>`).join('')}</div>`;document.querySelectorAll(`.optbtn[data-day="${day}"]`).forEach((b,i)=>{b.classList.toggle('active',i===option);b.setAttribute('aria-pressed',String(i===option))})}
-document.addEventListener('click',e=>{const b=e.target.closest('.optbtn');if(b)renderOption(Number(b.dataset.day),Number(b.dataset.option))});
-function pickPayer(){const people=['ผู้กล้า P1','ผู้กล้า P2','ผู้กล้า P3','ผู้กล้า P4'];const chosen=people[Math.floor(Math.random()*people.length)];document.getElementById('payerResult').textContent='🏆 วันนี้ขอเสียงให้ '+chosen+' ผู้สนับสนุนเศรษฐกิจญี่ปุ่น! (ล้อเล่นนะ หารกันตามจริงจ้า)';}
-function reportFriend(msg){document.getElementById('reportResult').textContent='📋 รับเรื่องร้องเรียนแล้ว: '+msg+' — บทลงโทษ: เลี้ยงขนม 1 ชิ้น หรือส่งรูปเข้ากลุ่มเดี๋ยวนี้!';}
-function saveDecisions(){const checks=[...document.querySelectorAll('#decisionList input[type=checkbox]')];const data={};checks.forEach(c=>data[c.dataset.key]=c.checked);try{localStorage.setItem('japan2027_friend_decisions',JSON.stringify(data));document.getElementById('decisionStatus').textContent='บันทึกแล้วบนอุปกรณ์นี้ ✓ หากแชร์ลิงก์ให้เพื่อน แต่ละคนจะมีเช็กลิสต์ของตัวเอง';}catch(e){document.getElementById('decisionStatus').textContent='เบราว์เซอร์นี้ไม่อนุญาตให้บันทึกถาวร แต่ยังติ๊กเพื่อใช้คุยกันได้';}}
-(function loadDecisions(){try{const data=JSON.parse(localStorage.getItem('japan2027_friend_decisions')||'{}');document.querySelectorAll('#decisionList input[type=checkbox]').forEach(c=>c.checked=!!data[c.dataset.key]);}catch(e){}})();
-function countdown(){const target=new Date('2027-02-25T00:25:00+07:00').getTime(),diff=Math.max(0,target-Date.now());document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0')}countdown();setInterval(countdown,1000);
-</script>
-</body></html>
+    <!-- Falling Snow Canvas Overlay -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Top Mini Ticker -->
+    <div class="border-b border-sand-200/70 bg-sand-100/60 py-2 px-4 text-xs text-sand-800">
+        <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
+            <div class="flex-1 text-center truncate">
+                <span class="inline-flex items-center gap-1.5 font-semibold text-terracotta-600">
+                    <i class="fa-solid fa-snowflake text-[10px]"></i> Winter 2027 Group Travel
+                </span>
+                <span class="text-sand-300 mx-2">•</span>
+                <span>25 ก.พ. – 3 มี.ค. 2027 (7 วัน 6 คืน)</span>
+                <span class="text-sand-300 mx-2 hidden sm:inline">•</span>
+                <span class="font-medium hidden sm:inline">4 คน • กระเป๋าคนละ 1 ใบ รวม 4 ใบ (มีลิฟต์ทั้ง 2 ที่พัก)</span>
+            </div>
+            <!-- Snow Toggle Button -->
+            <button id="snow-toggle-btn" onclick="toggleSnow()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 hover:bg-white text-sand-800 text-[11px] font-medium border border-sand-200 shadow-sm transition-all shrink-0 active:scale-95" title="เปิด/ปิด หิมะตก">
+                <i class="fa-solid fa-snowflake text-sky-400"></i>
+                <span id="snow-btn-text">หิมะ: เปิด</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
+
+        <!-- Editorial Header -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-100 text-sage-600 text-xs font-medium tracking-wide mb-3 border border-sand-200">
+                <span>Osaka • Tokyo • Snow Play • Mt. Fuji • Disneyland</span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-warmDark">
+                Japan Winter Journey 2027
+            </h1>
+            <p class="mt-2 text-xs sm:text-sm text-sand-800/80 max-w-xl mx-auto leading-relaxed">
+                แผนการเดินทางและประมาณการงบต่อคน (4 คน/กระเป๋าคนละใบ) คัดสรรที่พักติดสถานี มีลิฟต์ ลากกระเป๋าสบาย พร้อมทริกตั๋วและโปรลด 50%
+            </p>
+
+            <!-- 4 Key Stat Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6 text-left">
+                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
+                    <div class="text-[11px] text-slate-400 font-medium">สมาชิก & กระเป๋า</div>
+                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">4 คน (คนละ 1 ใบ)</div>
+                    <div class="text-[10px] text-sage-600 mt-0.5 font-medium">รวม 4 ใบ (มีลิฟต์ทั้ง 2 ตึก)</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
+                    <div class="text-[11px] text-slate-400 font-medium">ตั๋วเครื่องบินไป-กลับ</div>
+                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~11,000 บาท/คน</div>
+                    <div class="text-[10px] text-terracotta-600 mt-0.5 font-medium">ลง KIX / กลับ NRT</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
+                    <div class="text-[11px] text-slate-400 font-medium">ที่พัก 6 คืน (หาร 4)</div>
+                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~8,633 บาท/คน</div>
+                    <div class="text-[10px] text-sage-600 mt-0.5 font-medium">เฉลี่ย ~฿1,440/คน/คืน</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-3 border border-warm shadow-subtle">
+                    <div class="text-[11px] text-slate-400 font-medium">งบประมาณการ/คน</div>
+                    <div class="text-xs sm:text-sm font-bold text-warmDark mt-0.5">~38,048 – 39,123 บ.</div>
+                    <div class="text-[10px] text-emerald-600 mt-0.5 font-medium">*ขึ้นกับดีลดิสนีย์ 50%</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-sand-100 p-1 rounded-xl inline-flex gap-1 border border-sand-200/80 max-w-full overflow-x-auto">
+                <button onclick="switchTab('itinerary')" id="tab-itinerary" class="editorial-tab active px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap">
+                    <i class="fa-regular fa-calendar-days mr-1.5 text-sage-600"></i> แพลนเที่ยว 7 วัน
+                </button>
+                <button onclick="switchTab('food')" id="tab-food" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
+                    <i class="fa-solid fa-mug-hot mr-1.5 text-amber-700"></i> คาเฟ่ & ของกินใกล้จุดเที่ยว
+                </button>
+                <button onclick="switchTab('deals')" id="tab-deals" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
+                    <i class="fa-solid fa-tags mr-1.5 text-terracotta-500"></i> ตั๋ว & ดีลลด 50%
+                </button>
+                <button onclick="switchTab('prep')" id="tab-prep" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
+                    <i class="fa-solid fa-shield-halved mr-1.5 text-sage-500"></i> ประกัน & eSIM
+                </button>
+                <button onclick="switchTab('stays')" id="tab-stays" class="editorial-tab px-3.5 py-2 rounded-lg text-xs sm:text-sm text-sand-800 font-medium transition-all whitespace-nowrap hover:text-warmDark">
+                    <i class="fa-solid fa-coins mr-1.5 text-terracotta-600"></i> ประมาณการงบ (ต่อคน)
+                </button>
+            </div>
+        </div>
+
+        <!-- TAB 1: ITINERARY -->
+        <section id="content-itinerary" class="space-y-3.5">
+
+            <!-- Day 1 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 1</span>
+                        <span class="text-xs font-medium text-slate-400">พุธ 25 ก.พ. 2027</span>
+                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-medium">โอซาก้า คืนที่ 1</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-sage-600">Nankai Rapi:t (35 นาที)</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">บ่าย:</strong> บินลงสนามบินคันไซ (KIX) รับกระเป๋า 4 ใบ เดินข้ามไปขึ้นรถไฟด่วน <strong>Nankai Rapi:t ต่อเดียวตรงเข้า Namba</strong> ไม่ต้องเปลี่ยนสาย</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 bg-sand-50 rounded-xl border border-sand-200/60">
+                        <p class="mb-0"><strong class="text-warmDark">เช็กอิน:</strong> เดิน 3–4 นาทีเข้าที่พัก <strong>b&Namba No. 1</strong> (ตึกมีลิฟต์ ขนย้ายกระเป๋า 4 ใบสะดวกมาก)</p>
+                        <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-terracotta-600 hover:text-terracotta-700 bg-white px-2.5 py-1 rounded-lg border border-terracotta-200 shrink-0">
+                            <i class="fa-brands fa-airbnb text-terracotta-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+                    </div>
+                    <p><strong class="text-warmDark">เย็น-ค่ำ:</strong> เดินเท้าชิลล์ๆ ย่าน <strong>Dotonbori / Shinsaibashi</strong> ถ่ายรูปคู่ป้ายกูลิโกะ ทานทาโกยากิและราเม็ง</p>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 2</span>
+                        <span class="text-xs font-medium text-slate-400">พฤหัส 26 ก.พ. 2027</span>
+                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-medium">โอซาก้า คืนที่ 2</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-sand-800">แตะ IC Card ขึ้นใต้ดิน</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">เช้า:</strong> ชมแลนด์มาร์ก <strong>ปราสาทโอซาก้า (Osaka Castle)</strong> และเดินเล่นสวนรอบนอก</p>
+                    <p><strong class="text-warmDark">บ่าย:</strong> ช้อปปิ้งใหญ่ย่าน <strong>Umeda</strong> (ห้าง Hankyu / Lucua / Grand Front Osaka)</p>
+                    <p><strong class="text-warmDark">ค่ำ:</strong> ดินเนอร์ย่าน <strong>Shinsekai</strong> ชิมคุชิคัตสึ (ของทอดเสียบไม้) วิวหอคอยซึเทนคาคุ</p>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 3</span>
+                        <span class="text-xs font-medium text-slate-400">ศุกร์ 27 ก.พ. 2027</span>
+                        <span class="text-xs bg-sage-50 text-sage-600 px-2 py-0.5 rounded font-medium">ย้ายสู่โตเกียว (คืนที่ 1)</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-terracotta-600">Shinkansen Nozomi (2.5 ชม.)</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">สาย:</strong> เช็กเอาต์พร้อมกระเป๋า 4 ใบ นั่งรถไฟใต้ดินไป Shin-Osaka ขึ้น <strong>Shinkansen Nozomi สู่ Tokyo Station</strong> (จองที่นั่งแถวหลังสุดเพื่อวางกระเป๋าขนาดใหญ่)</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 bg-sand-50 rounded-xl border border-sand-200/60">
+                        <p class="mb-0"><strong class="text-warmDark">บ่าย:</strong> ต่อสาย JR Yamanote 10 นาทีถึง <strong>JR Tabata</strong> เช็กอิน <strong>Wes-Stay Tabata</strong> (40.75 ตร.ม. 2 ห้องนอน 4 เตียง มีลิฟต์)</p>
+                        <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-terracotta-600 hover:text-terracotta-700 bg-white px-2.5 py-1 rounded-lg border border-terracotta-200 shrink-0">
+                            <i class="fa-brands fa-airbnb text-terracotta-500"></i> ดูรูปห้องบน Airbnb <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+                    </div>
+                    <p><strong class="text-warmDark">เย็น:</strong> นั่ง JR ไปย่าน <strong>Shinjuku หรือ Ikebukuro</strong> แลกรับตั๋วตัวจริง <strong>JR TOKYO Wide Pass</strong></p>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border-2 border-sage-500/20 shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-sage-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">DAY 4</span>
+                        <span class="text-xs font-medium text-slate-400">เสาร์ 28 ก.พ. 2027</span>
+                        <span class="text-xs bg-sage-100 text-sage-700 px-2 py-0.5 rounded font-bold">❄️ ใช้ JR Pass วันที่ 1 (ฟรี)</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-sage-600">Joetsu Shinkansen (75 นาที)</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">เช้า-บ่าย:</strong> นั่ง JR จาก Tabata ไป Ueno 7 นาที ➔ ขึ้นชินคันเซ็นตรงเข้า <strong>สถานี Gala Yuzawa</strong> (เชื่อมลานสกีในอาคาร) เล่นหิมะ สกี นั่งกระเช้าชมวิวภูเขาหิมะ</p>
+                    <p><strong class="text-warmDark">เย็น:</strong> นั่งชินคันเซ็นกลับลงสถานี Ueno แวะชิมของอร่อยตลาด <strong>Ameyoko</strong> แล้วนั่ง JR 7 นาทีกลับห้องพัก Tabata</p>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border-2 border-terracotta-500/20 shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-terracotta-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">DAY 5</span>
+                        <span class="text-xs font-medium text-slate-400">อาทิตย์ 1 มี.ค. 2027</span>
+                        <span class="text-xs bg-terracotta-100 text-terracotta-700 px-2 py-0.5 rounded font-bold">🗻 ใช้ JR Pass วันที่ 2 (ฟรี)</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-terracotta-600">Fuji Excursion ด่วนพิเศษ</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">เช้า-บ่าย:</strong> นั่งรถไฟด่วน <strong>Fuji Excursion</strong> ยิงตรงจาก Shinjuku ถึง <strong>Kawaguchiko</strong> ชมวิวฟูจิริมทะเลสาบ ถ่ายรูปเจดีย์แดง Chureito Pagoda</p>
+                    <p><strong class="text-warmDark">เย็น:</strong> นั่งรถไฟด่วนกลับเข้า Shinjuku ต่อสาย Yamanote เพียง 3 สถานีลง <strong>Shibuya</strong> เดินข้ามห้าแยกชิบูย่าและชมวิวตึก Shibuya Sky</p>
+                </div>
+            </div>
+
+            <!-- Day 6: Disney Highlight -->
+            <div class="bg-sand-50/70 rounded-2xl p-4 sm:p-5 border-2 border-terracotta-500/30 shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-200">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-warmDark text-white text-xs font-extrabold px-2.5 py-1 rounded-md">DAY 6</span>
+                        <span class="text-xs font-medium text-slate-400">จันทร์ 2 มี.ค. 2027</span>
+                        <span class="text-xs bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded font-bold">🏰 ใช้ JR Pass วันที่ 3 (นั่ง JR ฟรีตลอดวัน)</span>
+                    </div>
+                    <span class="text-[11px] font-semibold text-terracotta-600">วันจันทร์คนน้อยกว่าเสาร์-อาทิตย์!</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">07:45 เดินทางง่ายมาก:</strong> จาก Tabata นั่ง JR เข้าสถานี Tokyo ต่อสาย <strong>JR Keiyo Line</strong> ลงสถานี <strong>Maihama</strong> (หน้าทางเข้าดิสนีย์พอดี 40 นาที ฟรีด้วย JR Pass)</p>
+                    <p><strong class="text-warmDark">08:30 - 21:00 Tokyo Disneyland เต็มวัน:</strong> สนุกกับเครื่องเล่นยอดฮิต Beauty and the Beast, Space Mountain, ชมขบวนพาเหรดช่วงบ่าย และชมพลุปิดท้ายปราสาทซินเดอเรลลา</p>
+                    <p><strong class="text-warmDark">21:15:</strong> นั่งรถไฟ JR รวดเดียวกลับมานอนพักผ่อนที่ Tabata และแพ็กกระเป๋า 4 ใบเตรียมบิน</p>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between pb-3 border-b border-sand-100">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">DAY 7</span>
+                        <span class="text-xs font-medium text-slate-400">อังคาร 3 มี.ค. 2027</span>
+                        <span class="text-xs bg-sand-200 text-sand-800 px-2 py-0.5 rounded font-medium">เดินทางกลับไทย</span>
+                    </div>
+                    <span class="text-[11px] font-medium text-sage-600">Keisei Skyliner (36 นาที)</span>
+                </div>
+                <div class="mt-3 space-y-2 text-xs sm:text-sm text-sand-800">
+                    <p><strong class="text-warmDark">เช็กเอาต์:</strong> พร้อมกระเป๋า 4 ใบ เดิน 5 นาทีจากที่พักไปสถานี JR Tabata</p>
+                    <p><strong class="text-warmDark">ต่อเดียวถึงสนามบิน:</strong> นั่ง JR เพียง 1 สถานี (2 นาที) ถึงสถานี <strong>Nippori</strong> ➔ ต่อรถไฟด่วน <strong>Keisei Skyliner ยิงตรงถึง Narita Airport ในเวลาเพียง 36 นาที</strong></p>
+                    <p><strong class="text-warmDark">ที่สนามบิน:</strong> เช็กอินโหลดสัมภาระ ผ่าน ตม. ช้อปปิ้ง Duty Free บินไฟลต์ 19:00 น. กลับถึง กทม. โดยสวัสดิภาพ</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TAB NEW: LOCAL CAFES & DINING (ใกล้จุดเที่ยวในแต่ละวัน) -->
+        <section id="content-food" class="hidden space-y-4">
+
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                    <span class="text-xs font-bold text-amber-700 uppercase tracking-wide">
+                        <i class="fa-solid fa-mug-saucer mr-1"></i> Budget-Friendly Local Cafes & Eats
+                    </span>
+                    <h3 class="text-base sm:text-lg font-bold text-warmDark mt-1">
+                        ร้านกาแฟโลคอล & ของกินราคาเป็นมิตร (กดเปิด Google Maps ได้เลย)
+                    </h3>
+                    <p class="text-xs text-sand-800/80 mt-1">
+                        คัดร้านสเปเชียลตี้และร้านโลคอลแท้ๆ ราคาเข้าถึงง่าย (กาแฟ ~350–550 JPY / อาหาร ~500–1,200 JPY) ใกล้ที่พักและจุดเที่ยว
+                    </p>
+                </div>
+                <div class="bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1.5 rounded-xl font-medium shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-emerald-600"></i> มีปุ่มแผนที่ Google Maps ทุกร้าน
+                </div>
+            </div>
+
+            <!-- Area 1: Osaka Namba / Dotonbori / Umeda -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
+                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-terracotta-50 text-terracotta-600 text-xs font-bold px-2.5 py-1 rounded-md">โอซาก้า</span>
+                        <h4 class="text-sm font-bold text-warmDark">ใกล้ที่พัก b&Namba • Shinsaibashi • Dotonbori</h4>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Day 1 - 2</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <!-- Cafes -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-coffee-bean"></i> กาแฟสเปเชียลตี้โลคอล (แก้วละ ~400–600 JPY)
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Cafe 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. LiLo Coffee Roasters</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–600 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    โรงคั่วชื่อดังย่าน Shinsaibashi ร้านเล็กอบอุ่น ดริปแก้วต่อแก้ว พร้อมการ์ดอธิบายโน้ตกาแฟ เดินจากที่พัก Namba ได้ชิลล์ๆ
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=LiLo+Coffee+Roasters+Osaka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Cafe 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. Granknot Coffee (Kitahorie)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~400–550 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ใกล้ที่พัก b&Namba เดิน 6-7 นาที กาแฟหอมกรุ่น บรรยากาศฮิปสเตอร์อินดัสเทรียล ลาเต้รสละมุน ไม่แพง
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Granknot+Coffee+Osaka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-utensils"></i> ของกินโลคอลต้นตำรับ (สบายกระเป๋า)
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Food 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. Takoyaki Wanaka (Namba)</span>
+                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~500–600 JPY (8 ลูก)</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ทาโกยากิในตำนานของชาวโอซาก้า แป้งกรอบนอกเยิ้มใน ไม่อมน้ำมัน แนะนำราดซอสผสมต้นหอมพูนๆ
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Takoyaki+Wanaka+Namba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Food 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. Kushikatsu Daruma (Shinsekai)</span>
+                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">เริ่มต้น ~130–180 JPY/ไม้</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ของทอดเสียบไม้คุณลุงหน้าดุ แป้งบางกรอบสั่งได้ตามงบ ทานแกล้มกะหล่ำปลีสดและซอสสูตรเด็ด (Day 2 มื้อค่ำ)
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Shinsekai+Sohonten" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 2: Tokyo Tabata / Yanaka / Nippori -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
+                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-sage-50 text-sage-600 text-xs font-bold px-2.5 py-1 rounded-md">โตเกียวโซนที่พัก</span>
+                        <h4 class="text-sm font-bold text-warmDark">ใกล้ที่พัก Wes-Stay Tabata • Yanaka • Nippori</h4>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Day 3 & Day 7</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <!-- Cafes -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-mug-hot"></i> ร้านกาแฟชุมชนโบราณ & โลคอล
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Cafe 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. Kayaba Coffee (Yanaka)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500–600 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    คาเฟ่บ้านไม้โบราณปี 1938 นั่งเสื่อทาทามิชั้น 2 สั่ง <strong>"แซนด์วิชไข่หนานุ่มฟู (Egg Toast ~550 JPY)"</strong> แกล้มกาแฟร้อน
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kayaba+Coffee+Tokyo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Cafe 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. Yanaka Coffee (Yanaka Ginza)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~300–400 JPY (ถูกมาก!)</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ร้านกาแฟคั่วบดสดแก้วต่อแก้ว กลิ่นหอมฟุ้งทั้งถนนคนเดิน ราคาเบาๆ สบายกระเป๋าที่สุดในย่าน
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Yanaka+Coffee+Yanaka+Ginza" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-sage-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-bowl-rice"></i> สตรีทฟู้ด & ราเม็งราคาประหยัด
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Food 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. Yanaka Ginza Menchi-katsu (Suzuki Meat)</span>
+                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~250 JPY/ชิ้น</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    โคร็อกเกะเนื้อบดทอดกรอบสูตรตำนาน กัดปุ๊บน้ำซุปฉ่ำหอมกรุ่น คนต่อคิวซื้อกินเล่นเยอะมาก
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Niku+no+Suzuki+Yanaka+Ginza" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Food 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. โลคอลราเม็งหน้าสถานี Tabata</span>
+                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~750–950 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    รอบสถานี JR Tabata มีร้านราเม็งและโซบะหยอดเหรียญของคนทำงานญี่ปุ่นแท้ๆ ราคาประหยัด ซุปกลมกล่อม ทานง่ายก่อนเข้าห้องพัก
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ramen+near+Tabata+Station+Tokyo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 3: Shinjuku / Shibuya / Ueno -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
+                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-sand-100 text-warmDark text-xs font-bold px-2.5 py-1 rounded-md">ใจกลางโตเกียว</span>
+                        <h4 class="text-sm font-bold text-warmDark">Shibuya • Shinjuku • Ueno</h4>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Day 3, 4, 5</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <!-- Cafes -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-seedling"></i> คาเฟ่ชื่อดัง (Specialty Vibe)
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Cafe 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. Fuglen Tokyo (Shibuya)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500–650 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    คาเฟ่สไตล์วินเทจสแกนดิเนเวียใกล้สวน Yoyogi คั่วอ่อนรสละมุน กลิ่นหอม ถ่ายรูปมุมหน้าร้านสวยมาก
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Fuglen+Tokyo+Shibuya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Cafe 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. About Life Coffee Brewers (Shibuya)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–550 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    สแตนด์กาแฟเล็กๆ หัวมุมถนน รวมเมล็ดจากไมโครโรสเตอร์ทั่วญี่ปุ่น เดินจิบชิลล์ๆ หลังข้ามห้าแยกชิบูย่า
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=About+Life+Coffee+Brewers+Shibuya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-fire-burner"></i> ร้านฮิตรสชาติคุ้มราคา
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Food 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">1. Afuri Ramen (Shinjuku/Shibuya)</span>
+                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~1,080–1,280 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ราเม็งซุปส้มยูซุ (Yuzu Shio) หอมสดชื่นตัดเลี่ยน ซดคล่องคอ หมูชาชูย่างเตาถ่านหอมกรุ่น
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Afuri+Ramen+Shinjuku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Food 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">2. Ameyoko Street Eats (Ueno)</span>
+                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~500–1,000 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ตลาดคนเดินใต้ทางรถไฟ Ueno เต็มไปด้วยข้าวหน้าปลาดิบดงบุริราคาประหยัด ผลไม้เสียบไม้ และเกี๊ยวซ่าชิ้นโต
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+District+Ueno" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 4: Kawaguchiko & Gala Yuzawa (Outside Tokyo) -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle space-y-3">
+                <div class="flex items-center justify-between pb-2.5 border-b border-sand-100">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-terracotta-50 text-terracotta-600 text-xs font-bold px-2.5 py-1 rounded-md">ฟูจิ & ดินแดนหิมะ</span>
+                        <h4 class="text-sm font-bold text-warmDark">Kawaguchiko (ฟูจิ) & Gala Yuzawa (นีงาตะ)</h4>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Day 4 & 5</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <!-- Kawaguchiko -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-terracotta-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-mountain"></i> Kawaguchiko (ฟูจิ)
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Kawaguchiko 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">🍲 Houtou Fudou (โฮโต ฟุโด)</span>
+                                    <span class="text-[10px] bg-terracotta-50 text-terracotta-700 px-2 py-0.5 rounded font-semibold shrink-0">~1,200 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    บะหมี่เส้นแบนต้มหม้อเหล็กร้อนๆ ในซุปมิโซะและฟักทองเข้มข้น อาหารพื้นเมืองแท้หน้าสถานี ซดคลายหนาวได้ดีมาก
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Houtou+Fudou+Kawaguchiko+Station" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Kawaguchiko 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">☕ Cisco Coffee (ริมทะเลสาบ)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~450–600 JPY</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    คาเฟ่บรรยากาศสบายๆ ริมทะเลสาบ เสิร์ฟกาแฟ Pour-over หอมกรุ่น นั่งพักผ่อนชมวิวธรรมชาติ
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Cisco+Coffee+Kawaguchiko" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gala Yuzawa -->
+                    <div class="bg-sand-50/70 p-3.5 rounded-xl border border-sand-200/60 space-y-3">
+                        <div class="text-xs font-bold text-sage-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-snowflake"></i> Gala Yuzawa & Echigo-Yuzawa
+                        </div>
+                        <div class="space-y-3 text-xs text-sand-800">
+                            <!-- Yuzawa 1 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">🍙 Bakudan Onigiri (Yukinto)</span>
+                                    <span class="text-[10px] bg-sage-50 text-sage-700 px-2 py-0.5 rounded font-semibold shrink-0">~450–700 JPY (ลูกยักษ์อิ่มจุก)</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    ข้าวปั้นยักษ์ทำจากข้าวพันธุ์โคชิฮิคารินีงาตะ (ข้าวที่ดีที่สุดในญี่ปุ่น) ไส้แซลมอนและไข่ปลาพูนๆ ลูกเดียวอิ่มแทนมื้อหลักได้เลย
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Yukinto+Bakudan+Onigiri+Echigo+Yuzawa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Yuzawa 2 -->
+                            <div class="bg-white p-3 rounded-xl border border-sand-200/70">
+                                <div class="flex items-start justify-between gap-2">
+                                    <span class="font-bold text-warmDark text-xs">🍶 Ponshukan (ที่สถานี Echigo-Yuzawa)</span>
+                                    <span class="text-[10px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold shrink-0">~500 JPY (แลกได้ 5 เหรียญ)</span>
+                                </div>
+                                <p class="text-[11px] text-sand-800/90 mt-1 leading-relaxed">
+                                    พิพิธภัณฑ์สาเกตู้หยอดเหรียญชื่อดัง ชิมสาเกท้องถิ่นและดังโงะย่างเตาถ่านอุ่นๆ หน้าสถานีก่อนกลับเข้าโตเกียว
+                                </p>
+                                <div class="mt-2.5">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ponshukan+Echigo+Yuzawa+Station" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 transition-all active:scale-95">
+                                        <i class="fa-solid fa-map-location-dot"></i> นำทาง Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TAB 2: DEALS & PROMOS -->
+        <section id="content-deals" class="hidden space-y-4">
+            
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <h3 class="text-sm font-bold text-warmDark flex items-center gap-2">
+                    <i class="fa-solid fa-tag text-terracotta-500"></i> สรุปแหล่งซื้อตั๋วราคาถูก & ทริกดักส่วนลด
+                </h3>
+                <p class="text-xs text-sand-800/80 mt-1">
+                    คัดสรรมาให้แล้วว่าตั๋วใบไหนควรซื้อล่วงหน้าผ่านช่องทางไหนเพื่อเซฟเงินในกระเป๋าได้มากที่สุด
+                </p>
+            </div>
+
+            <!-- Disney Mega Deal -->
+            <div class="bg-terracotta-50/50 rounded-2xl p-5 border border-terracotta-100 shadow-subtle">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">
+                        Tokyo Disneyland (วันที่ 2 มี.ค. 2027)
+                    </span>
+                    <span class="text-[11px] font-bold bg-white text-terracotta-600 px-2.5 py-0.5 rounded-full border border-terracotta-200">
+                        ดักโปรลด 50%
+                    </span>
+                </div>
+                <h4 class="text-base font-bold text-warmDark">กดโค้ดแคมเปญ Double-Date (12.12 / 01.01 / 02.02)</h4>
+                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
+                    <p>• ในแอป <strong>Klook</strong> และ <strong>KKday</strong> วันที่ 12 ธ.ค., 1 ม.ค. และ 2 ก.พ. มักมีโค้ดลด 50% หรือบัตรสวนสนุก ซื้อ 1 แถม 1 ปล่อยช่วงเที่ยงคืนหรือเที่ยงวัน</p>
+                    <p>• ตั๋วรอบทางการของโตเกียวดิสนีย์แลนด์เปิดขายล่วงหน้า <strong>2 เดือน</strong> (ต้นเดือน ม.ค. 2027) ราคาปกติประมาณ 8,400–9,400 เยน (~2,000–2,250 บาท)</p>
+                    <p class="text-terracotta-600 font-medium bg-white/80 p-2 rounded-lg border border-terracotta-100">
+                        💡 ทริก: ดาวน์โหลดแอป <strong>Tokyo Disney Resort App</strong> ไว้ล่วงหน้า ตอนเข้าเกตตอนเช้าให้กดจอง Disney Premier Access (DPA) ของปราสาท Beauty and the Beast ทันที
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nankai Rapi:t -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-sage-600 uppercase tracking-wide">
+                        Nankai Rapi:t (สนามบิน KIX ➔ Namba)
+                    </span>
+                    <span class="text-[11px] font-medium bg-sage-50 text-sage-700 px-2 py-0.5 rounded">
+                        เซฟ ~30-40 บาท/คน
+                    </span>
+                </div>
+                <h4 class="text-base font-bold text-warmDark">ซื้อตั๋วออนไลน์ล่วงหน้าผ่าน Klook / KKday</h4>
+                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
+                    <p>• ซื้อหน้าเคาน์เตอร์สนามบินราคาปกติ 1,490 เยน (~350 บาท)</p>
+                    <p>• ซื้อออนไลน์ได้ราคาลดเหลือประมาณ <strong>~300 - 320 บาท (1,300 เยน)</strong></p>
+                    <p>• ได้ QR Code ในมือถือ สแกนแลกตั๋วจริงพร้อมเลือกที่นั่งที่ตู้หน้าสถานี KIX ได้ทันที มีช่องวางกระเป๋าขนาดใหญ่ปลอดภัย</p>
+                </div>
+            </div>
+
+            <!-- JR TOKYO Wide Pass -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-warmDark uppercase tracking-wide">
+                        JR TOKYO Wide Pass (15,000 JPY / คน)
+                    </span>
+                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
+                        ใช้ 3 วันติด (28 ก.พ. - 2 มี.ค.)
+                    </span>
+                </div>
+                <h4 class="text-base font-bold text-warmDark">จองผ่านเว็บทางการ JR-East Train Reservation</h4>
+                <div class="mt-2 text-xs sm:text-sm text-sand-800 space-y-1.5 leading-relaxed">
+                    <p>• เปิดให้จองล่วงหน้า 1 เดือน (ช่วงปลาย ม.ค. 2027)</p>
+                    <p>• สามารถกด **จองที่นั่งฟรี 100%** ล่วงหน้าได้ทั้งขบวน <strong>Fuji Excursion</strong> (ไป Kawaguchiko) และ <strong>Joetsu Shinkansen</strong> (ไป Gala Yuzawa)</p>
+                    <p>• วันที่ 6 ใช้ขึ้นรถไฟ JR Keiyo Line ไป-กลับ Tokyo Disneyland ได้ฟรีตลอดทั้งวัน</p>
+                </div>
+            </div>
+
+            <!-- Skyliner & YouTrip -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-warm">
+                    <div class="text-xs font-bold text-warmDark mb-1">Keisei Skyliner (ขากลับ NRT)</div>
+                    <p class="text-xs text-sand-800 leading-relaxed">
+                        ซื้อตั๋ว e-Ticket ล่วงหน้าผ่าน Klook หรือ Trip.com ราคาประมาณ ~530–550 บาท (หน้าเคาน์เตอร์ 2,570 เยน) เดินทางจาก Nippori ถึงสนามบินใน 36 นาที
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-warm">
+                    <div class="text-xs font-bold text-warmDark mb-1">YouTrip ล็อกเรต Airbnb USD</div>
+                    <p class="text-xs text-sand-800 leading-relaxed">
+                        ที่พักโอซาก้าเรียกเก็บเป็น USD ($220.08) ตัดเงิน 18 ม.ค. 2027 ทยอยแลกเงิน USD ใน YouTrip ช่วงเรตดีเพื่อล็อกราคา และฟรีค่าธรรมเนียม FX 2.5%
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TAB 3: PREPARATION (INSURANCE & ESIM) -->
+        <section id="content-prep" class="hidden space-y-4">
+            
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <h3 class="text-sm font-bold text-warmDark flex items-center gap-2">
+                    <i class="fa-solid fa-shield-heart text-sage-600"></i> รายการเตรียมตัวส่วนบุคคล: ประกันภัยเดินทาง & อินเทอร์เน็ต eSIM
+                </h3>
+                <p class="text-xs text-sand-800/80 mt-1">
+                    เตรียมให้ครบก่อนบินเพื่อความสบายใจ ไม่ต้องสำรองจ่ายกรณีฉุกเฉิน และติดต่อสื่อสารได้ตลอดเวลา
+                </p>
+            </div>
+
+            <!-- Travel Insurance -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-sage-600 uppercase tracking-wide">
+                        ประกันการเดินทางต่างประเทศ (Travel Insurance)
+                    </span>
+                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
+                        ตั้งงบ ~350 บาท / คน
+                    </span>
+                </div>
+                <h4 class="text-base font-bold text-warmDark">เลือกแผนที่คุ้มครองกีฬาหิมะ + สัมภาระ + ค่ารักษา</h4>
+                
+                <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">1. Sompo Japan (แนะนำ)</div>
+                        <div class="text-[11px] text-sand-800 mt-1">บริษัทญี่ปุ่นแท้ มีสายด่วนล่ามแปลไทย-ญี่ปุ่น ประสานงานโรงพยาบาลในญี่ปุ่นได้แบบไม่ต้องสำรองจ่าย</div>
+                    </div>
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">2. MSIG Travel Easy</div>
+                        <div class="text-[11px] text-sand-800 mt-1">ครอบคลุมอุบัติเหตุสันทนาการลานสกี Gala Yuzawa คุ้มครองไฟลต์ดีเลย์และกระเป๋าล่าช้า</div>
+                    </div>
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">3. Chubb / AXA</div>
+                        <div class="text-[11px] text-sand-800 mt-1">สมัครออนไลน์ 5 นาที กรมธรรม์ออกทันที เคลมเอกสารผ่านช่องทางดิจิทัลได้สะดวก</div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-sand-800 mt-3 bg-sand-100/60 p-2.5 rounded-lg">
+                    💡 ซื้อครอบคลุมวันที่ <strong>25 ก.พ. - 3 มี.ค. 2027 (7 วันเต็ม)</strong> วงเงินรักษาพยาบาลแนะนำ 1.5 ล้านบาทขึ้นไป
+                </p>
+            </div>
+
+            <!-- eSIM -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">
+                        อินเทอร์เน็ตต่างประเทศ (eSIM สะดวก ไม่ต้องถอดซิมไทย)
+                    </span>
+                    <span class="text-[11px] font-bold bg-sand-100 text-warmDark px-2 py-0.5 rounded">
+                        ตั้งงบ ~650 บาท / คน
+                    </span>
+                </div>
+                <h4 class="text-base font-bold text-warmDark">แนะนำติดตั้งแบบ eSIM ล่วงหน้า ถึงญี่ปุ่นเปิดปุ๊บต่อเน็ตได้ทันที</h4>
+
+                <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">1. AIS SIM2Fly (eSIM)</div>
+                        <div class="text-[11px] text-sand-800 mt-1">399 บาท เน็ต 6GB 10 วัน วิ่งสัญญาณ SoftBank / Docomo รับ SMS OTP ธนาคารไทยได้ตามปกติ</div>
+                    </div>
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">2. Klook / Trip.com eSIM</div>
+                        <div class="text-[11px] text-sand-800 mt-1">มีแพ็กเกจเน็ตรายวัน Unlimited (1-2GB/วัน หรือ Max Speed) ในงบประมาณ ~300-650 บาท</div>
+                    </div>
+                    <div class="bg-sand-50 p-3 rounded-xl border border-sand-200/60">
+                        <div class="font-bold text-xs text-warmDark">3. Nomad / Airalo</div>
+                        <div class="text-[11px] text-sand-800 mt-1">เช็กปริมาณเน็ตที่เหลือผ่านแอปได้โดยตรง สะดวกสำหรับคนต้องการเน็ตความจุสูง</div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-sand-800 mt-3 bg-sand-100/60 p-2.5 rounded-lg">
+                    💡 ข้อดีของ eSIM คือไม่ต้องพก Pocket Wi-Fi ให้หนักกระเป๋า เดินแยกช้อปปิ้งหรือถ่ายรูปได้อิสระทุกคน
+                </p>
+            </div>
+
+        </section>
+
+        <!-- TAB 4: ACCOMMODATION & BUDGET BREAKDOWN -->
+        <section id="content-stays" class="hidden space-y-4">
+            
+            <!-- Summary Banner -->
+            <div class="bg-white rounded-2xl p-5 border border-warm shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wide">Estimated Budget Per Person</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-warmDark mt-0.5">ประมาณการงบประมาณทริป (คิดต่อ 1 คน)</h3>
+                    <p class="text-xs text-sand-800 mt-1">
+                        *เป็นราคาประมาณการล่วงหน้า เผื่อช่วยกันควบคุมงบกิน/เดินทาง หรือได้เรตเงินดี ยอดจริงอาจประหยัดลงได้อีก
+                    </p>
+                </div>
+                <div class="bg-sand-50 rounded-xl px-4 py-3 text-right border border-sand-200 flex-shrink-0 w-full sm:w-auto">
+                    <div class="text-[11px] text-slate-400 font-medium">รวมประมาณการต่อคน</div>
+                    <div class="text-lg sm:text-xl font-bold text-warmDark">~฿38,048 <span class="text-xs font-normal text-slate-500">ถึง</span> ~฿39,123</div>
+                    <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">✓ ไม่รวมงบช้อปปิ้งส่วนตัว</div>
+                </div>
+            </div>
+
+            <!-- Direct Airbnb Showcase Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Osaka Airbnb Card -->
+                <div class="bg-white rounded-2xl p-4 border border-warm shadow-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold bg-terracotta-50 text-terracotta-600 px-2 py-0.5 rounded">โอซาก้า (25–27 ก.พ.)</span>
+                            <span class="text-[11px] text-slate-400 font-medium">2 คืน • 4 คน</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">b&Namba No. 1</h4>
+                        <p class="text-xs text-sand-800 mt-1 leading-relaxed">
+                            ใกล้สถานี JR Namba & OCAT เดิน 3-4 นาที • นั่ง Rapi:t ยิงตรงจากสนามบิน KIX ไม่ต้องต่อรถ • ตึกมีลิฟต์ • มีห้องแยกเป็นสัดส่วน
+                        </p>
+                        <div class="mt-2 text-xs font-semibold text-warmDark">
+                            ยอดรวม: $220.08 USD (~7,500 บ.) <span class="text-sage-600 font-normal">ตกคนละ ~938 บ./คืน</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-sand-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">จองแล้ว (ตัดเงิน 18 ม.ค. 27)</span>
+                        <a href="https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-terracotta-500 hover:bg-terracotta-600 px-3 py-1.5 rounded-lg shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-airbnb"></i> เปิดดูห้องโอซาก้า <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tokyo Airbnb Card -->
+                <div class="bg-white rounded-2xl p-4 border border-warm shadow-subtle flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold bg-sage-50 text-sage-600 px-2 py-0.5 rounded">โตเกียว (27 ก.พ. – 3 มี.ค.)</span>
+                            <span class="text-[11px] text-slate-400 font-medium">4 คืน • 4 คน</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">Wes-Stay Tabata</h4>
+                        <p class="text-xs text-sand-800 mt-1 leading-relaxed">
+                            เดิน 5 นาทีจากสถานี JR Tabata (ติดสาย Yamanote Line) • 2 ห้องนอน 4 เตียง ขนาด 40.75 ตร.ม. • ตึกมีลิฟต์ • นั่ง JR 2 นาทีต่อ Skyliner ไปนาริตะ
+                        </p>
+                        <div class="mt-2 text-xs font-semibold text-warmDark">
+                            ยอดรวม: ~27,029 บ. <span class="text-sage-600 font-normal">ตกคนละ ~1,689 บ./คืน</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-sand-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">เตียงครบ 4 คน สบายๆ</span>
+                        <a href="https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-sage-600 hover:bg-sage-700 px-3 py-1.5 rounded-lg shadow-sm transition-all active:scale-95">
+                            <i class="fa-brands fa-airbnb"></i> เปิดดูห้องโตเกียว <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Cost Cards Per Person -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- 1. Flight -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">1</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าเครื่องบินไป-กลับ</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">ตั๋วเครื่องบิน (ลง KIX / กลับ NRT)</h4>
+                        <p class="text-xs text-sand-800 mt-1">บินตรงหรือต่อเครื่องช่วงไฮซีซั่นฤดูหนาว</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~11,000 บ.</div>
+                        <span class="text-[10px] text-slate-400">ต่อคน</span>
+                    </div>
+                </div>
+
+                <!-- 2. Stays (Divided by 4) -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">2</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าที่พัก 6 คืน (หาร 4 คน)</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">Osaka (2 คืน) + Tokyo (4 คืน)</h4>
+                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
+                            <p>• b&Namba No. 1: ~$220.08 USD (~฿938/คน/คืน)</p>
+                            <p>• Wes-Stay Tabata: ฿27,029 (~฿1,689/คน/คืน)</p>
+                            <p class="text-sage-600 text-[11px] font-medium mt-1">🛗 มีลิฟต์ทั้ง 2 ตึก ขนกระเป๋า 4 ใบสบาย</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~8,633 บ.</div>
+                        <span class="text-[10px] text-slate-400">รวม 6 คืน/คน</span>
+                    </div>
+                </div>
+
+                <!-- 3. All Transit -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">3</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าเดินทางทั้งหมด</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">รถไฟ + ชินคันเซ็น + JR Pass</h4>
+                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
+                            <p>• Nankai Rapi:t (KIX ➔ Namba): ~310 บ.</p>
+                            <p>• Osaka Metro (2 วัน): ~360 บ.</p>
+                            <p>• Shinkansen Nozomi (จองที่วางกระเป๋า): ~3,580 บ.</p>
+                            <p>• JR TOKYO Wide Pass 3 วัน: ~3,600 บ.</p>
+                            <p>• Kawaguchiko Bus + Skyliner: ~910 บ.</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~8,760 บ.</div>
+                        <span class="text-[10px] text-slate-400">ต่อคน</span>
+                    </div>
+                </div>
+
+                <!-- 4. Tickets & Activities (Separated) -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">4</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าตั๋ว & กิจกรรม (แยกจุด)</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">หิมะ + ฟูจิ + Tokyo Disneyland</h4>
+                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
+                            <p>• ❄️ Gala Yuzawa (ไม่เล่นสกี): ~840 บ. (กระเช้า+ถาดเลื่อน)</p>
+                            <p>• 🗻 กระเช้าลอยฟ้า Kawaguchiko: ~240 บ.</p>
+                            <p>• 🏰 Tokyo Disneyland (ปกติ): ~2,150 บ.</p>
+                            <p class="text-terracotta-600 text-[11px] font-bold mt-1">
+                                ⚡️ ดักโปร 12.12 / 01.01 / 02.02 ลด 50% เหลือ ~1,075 บ.!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~2,155 – 3,230 บ.</div>
+                        <span class="text-[10px] text-slate-400">ต่อคน</span>
+                    </div>
+                </div>
+
+                <!-- 5. Food (Separated completely) -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">5</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่ากินตลอดทริป 7 วัน (แยกต่างหาก)</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">อาหาร ขนม เครื่องดื่ม 7 วัน</h4>
+                        <p class="text-xs text-sand-800 mt-1">
+                            ตั้งกรอบไว้ช่วง 6,000 – 7,000 บาท (เฉลี่ยวันละ ~900–1,000 บาท หรือ ~4,000 เยน/วัน) ทานราเม็ง ทาโกยากิ ของทอด คาเฟ่ ข้าวหน้าเนื้อ สบายๆ
+                        </p>
+                        <p class="text-[11px] text-emerald-600 font-medium mt-1">
+                            💡 หากคุมงบดี ทานร้านท้องถิ่นหรือสะดวกซื้อบางมื้อ งบนี้จะเหลือแน่นอน
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~6,500 บ.</div>
+                        <span class="text-[10px] text-slate-400">ต่อคน (7 วัน)</span>
+                    </div>
+                </div>
+
+                <!-- 6. Other Costs (Insurance & Internet) -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-warm shadow-subtle flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sand-100 text-warmDark text-xs font-bold flex items-center justify-center">6</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">ค่าอื่นๆ (ประกัน & เน็ต)</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-warmDark mt-2">ประกันเดินทาง + eSIM อินเทอร์เน็ต</h4>
+                        <div class="text-xs text-sand-800 mt-1 space-y-0.5">
+                            <p>• ประกันเดินทาง 7 วัน (คุ้มครองกีฬาหิมะ Sompo/MSIG): 350 บ.</p>
+                            <p>• อินเทอร์เน็ต eSIM (AIS SIM2Fly หรือ Klook): 650 บ.</p>
+                            <p class="text-slate-400 text-[11px] mt-1">*ไม่รวมค่าช้อปปิ้งส่วนตัวของแต่ละคน</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm sm:text-base font-bold text-warmDark">~1,000 บ.</div>
+                        <span class="text-[10px] text-slate-400">ต่อคน</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Notes Banner -->
+            <div class="bg-sand-50 rounded-2xl p-4 border border-sand-200 text-xs text-sand-800 space-y-1.5 leading-relaxed">
+                <p class="font-bold text-warmDark">📌 หมายเหตุประกอบการคุมงบประมาณ:</p>
+                <p>1. <strong>ราคาประมาณการ (Estimation):</strong> ตัวเลขที่คำนวณไว้เป็นราคามาตรฐาน หากเพื่อนๆ ช่วยกันคุมงบกิน เลือกร้านราคาประหยัด หรือทยอยแลกเงินช่วงเรตบาทแข็ง (ทั้ง USD จ่าย Airbnb และ JPY) ยอดรวมจริงอาจถูกลงกว่านี้ได้อีก</p>
+                <p>2. <strong>Tokyo Disneyland:</strong> คิดงบไว้ 2 กรณี (ราคาปกติ ~2,150 บ. ยอดรวมจะอยู่ที่ ~39,123 บ. / หากดักโปร 50% ช่วง 12.12, 01.01, 02.02 ได้ จะเหลือ ~1,075 บ. ยอดรวมจะเหลือเพียง ~38,048 บ.)</p>
+                <p>3. <strong>ลานสกี Gala Yuzawa:</strong> พวกเราไม่เล่นสกี จึงเสียเฉพาะค่ากระเช้า Gondola ชมวิวมุมสูง + ถาดเลื่อนหิมะ Sled ถ่ายรูปเล่นเท่านั้น (~840 บ.) ไม่เสียค่าเช่าชุดสกีและสโนว์บอร์ดราคาแพง</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Bottom Sticky Action Bar for IG & FB DM -->
+    <div class="fixed bottom-4 left-0 right-0 max-w-xl mx-auto px-4 z-40">
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-sand-300/80 shadow-lifted flex items-center justify-between gap-3">
+            <div class="pl-1 hidden sm:block">
+                <div class="text-[11px] text-slate-400 font-medium">ส่งให้เพื่อนอ่านในแชต</div>
+                <div class="text-xs font-bold text-warmDark">สรุปย่อ Day 1-7 พร้อมงบ/คน 💬</div>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                <button onclick="copyPitchText('compact')" class="flex-1 sm:flex-none bg-warmDark hover:bg-black text-white font-medium text-xs px-4 py-2.5 rounded-xl shadow-sm transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                    <i class="fa-brands fa-instagram text-terracotta-500"></i>
+                    <span>ก๊อปส่ง IG / FB DM (สรุปย่อ Day 1-7)</span>
+                </button>
+                <button onclick="copyPitchText('full')" class="bg-sand-100 hover:bg-sand-200 text-warmDark font-medium text-xs px-3 py-2.5 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-1 border border-sand-200">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>แบบเต็ม</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-warmDark text-white text-xs sm:text-sm font-medium px-5 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-text">คัดลอกข้อความสรุปเรียบร้อย พร้อมส่งใน IG / FB DM ได้ทันที!</span>
+    </div>
+
+    <!-- Script for Tabs & Copy -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.editorial-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('active');
+
+            document.getElementById('content-itinerary').classList.add('hidden');
+            document.getElementById('content-food').classList.add('hidden');
+            document.getElementById('content-deals').classList.add('hidden');
+            document.getElementById('content-prep').classList.add('hidden');
+            document.getElementById('content-stays').classList.add('hidden');
+
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+
+        function copyPitchText(mode) {
+            let text = '';
+            
+            if (mode === 'compact') {
+                text = 
+`🇯🇵 JAPAN WINTER & DISNEY TRIP 2027 ❄️🏰
+(ทริป 4 คน • 25 ก.พ. - 3 มี.ค. 2027 • 7 วัน 6 คืน)
+🎒 สัมภาระ: คนละ 1 ใบ (รวม 4 ใบ)
+🛗 ที่พัก: 2 ห้องนอนแยกเป็นสัดส่วน (เตียงครบ 4 คน) และมีลิฟต์ทั้ง 2 ตึก!
+
+🏨 ลิงก์ดูห้องพัก Airbnb (ทั้ง 2 ที่):
+1. โอซาก้า (b&Namba No. 1): https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4
+2. โตเกียว (Wes-Stay Tabata): https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4
+
+☕ ไฮไลต์คาเฟ่ & ของกินโลคอล:
+• โอซาก้า: LiLo Coffee Roasters (กาแฟดริปสเปเชียลตี้ชินไซบาชิ), ทาโกยากิ Wanaka, ของทอด Kushikatsu Daruma
+• โตเกียว: Kayaba Coffee (คาเฟ่บ้านไม้โบราณแซนด์วิชไข่ฟู Yanaka), Fuglen Tokyo (กาแฟสแกนดิเนเวีย), Afuri ราเม็งยูซุ
+• ฟูจิ & นีงาตะ: ซดโฮโตมิโซะร้อนๆ ริมทะเลสาบ Kawaguchiko + ข้าวปั้นโคชิฮิคารินีงาตะที่ Gala Yuzawa
+
+🗺️ สรุปไปไหนบ้างแต่ละวัน:
+• Day 1 (25 ก.พ.): บินลง KIX นั่ง Rapi:t ต่อเดียวเข้า Namba เช็กอิน b&Namba เดินกิน Dotonbori
+• Day 2 (26 ก.พ.): ปราสาทโอซาก้า + ช้อป Umeda + กินของทอด Shinsekai
+• Day 3 (27 ก.พ.): ชินคันเซ็นข้ามไปโตเกียว เช็กอิน Wes-Stay Tabata (ติด Yamanote) ช้อป Shinjuku
+• Day 4 (28 ก.พ.): [JR Pass 1] ชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa เย็นเดินตลาด Ameyoko Ueno
+• Day 5 (1 มี.ค.): [JR Pass 2] รถไฟด่วน Fuji Excursion ชมฟูจิ Kawaguchiko เย็นเดินห้าแยก Shibuya
+• Day 6 (2 มี.ค.): [JR Pass 3] Tokyo Disneyland เต็มวันยันดูพาเหรด & พลุปิดปราสาท (นั่ง JR ฟรีตลอดสาย)
+• Day 7 (3 มี.ค.): นั่ง JR 2 นาทีไป Nippori ต่อ Skyliner 36 นาทีถึง Narita ช้อป Duty Free บินกลับไทย 19:00
+
+💰 ประมาณการงบเที่ยวต่อ 1 คน:
+✈️ ตั๋วเครื่องบินไป-กลับ: ~11,000 บ.
+🏨 ค่าที่พัก 6 คืน (หาร 4): ~8,633 บ. (เฉลี่ยคืนละ ~1,440 บ. มีลิฟต์ทั้ง 2 ที่)
+🚆 ค่าเดินทางทั้งหมด: ~8,760 บ. (Rapi:t + ชินคันเซ็นจองที่วางกระเป๋า + JR Wide Pass 3 วัน + Skyliner)
+❄️ Gala Yuzawa (ไม่เล่นสกี): ~840 บ. (กระเช้า Gondola + ถาดเลื่อนหิมะ)
+🗻 กระเช้าลอยฟ้าฟูจิ: ~240 บ.
+🏰 Tokyo Disneyland: ~2,150 บ.
+   *(📌 ถ้าดักกดตั๋วโปร 12.12 / 01.01 / 02.02 ได้ลด 50% เหลือแค่ ~1,075 บ.!)*
+🍱 ค่ากิน 7 วัน (แยกต่างหาก): ~6,500 บ. (เฉลี่ยวันละพัน)
+🛡️ ค่าอื่นๆ (ประกัน+เน็ต): ~1,000 บ. (ประกัน 350 บ. + ค่าเน็ต eSIM 650 บ.)
+*ไม่รวมค่าช้อปปิ้งส่วนตัว*
+
+✨ ยอดรวมประมาณการต่อคน:
+👉 กรณีกดตั๋วดิสนีย์ลด 50% ได้: ~38,048 บ. / คน
+👉 กรณีตั๋วดิสนีย์ราคาปกติ: ~39,123 บ. / คน
+*(เป็นราคาประมาณการ เผื่อช่วยกันคุมงบกินหรือได้เรตเงินดี ยอดจริงอาจประหยัดลงได้อีก)*`;
+            } else {
+                text = 
+`🇯🇵 แผนการเดินทางละเอียด JAPAN WINTER & DISNEY TRIP 2027 (4 คน)
+📅 25 ก.พ. - 3 มี.ค. 2027 (7 วัน 6 คืน)
+🎒 กระเป๋าคนละ 1 ใบ รวม 4 ใบ (ที่พักมีลิฟต์ทั้ง 2 แห่ง)
+
+🏨 ลิงก์ที่พัก Airbnb ทั้ง 2 แห่ง:
+1. โอซาก้า (b&Namba No. 1): https://th.airbnb.com/rooms/1442389067523280865?check_in=2027-02-25&check_out=2027-02-27&guests=1&adults=4
+2. โตเกียว (Wes-Stay Tabata): https://th.airbnb.com/rooms/1370940995150956442?check_in=2027-02-27&check_out=2027-03-03&guests=1&adults=4
+
+🗓️ แพลนเที่ยวรายวัน:
+• Day 1 (พ. 25 ก.พ.): ถึง KIX นั่ง Nankai Rapi:t ต่อเดียวลง Namba เช็กอิน b&Namba No. 1 เดินเล่น Dotonbori / Shinsaibashi
+• Day 2 (พฤ. 26 ก.พ.): ปราสาทโอซาก้า + ช้อปปิ้ง Umeda + ดินเนอร์ของทอด Shinsekai & หอคอยซึเทนคาคุ
+• Day 3 (ศ. 27 ก.พ.): ชินคันเซ็นข้ามไปโตเกียว เช็กอิน Wes-Stay Tabata (ติดสาย Yamanote) แลกตั๋ว JR Pass ช้อปปิ้ง Shinjuku
+• Day 4 (ส. 28 ก.พ.): [JR Pass Day 1] นั่งชินคันเซ็นตรงไปเล่นหิมะ Gala Yuzawa Snow Resort เย็นกลับมาเดินตลาด Ameyoko Ueno
+• Day 5 (อา. 1 มี.ค.): [JR Pass Day 2] นั่งรถไฟด่วน Fuji Excursion ชมวิวภูเขาไฟฟูจิที่ Kawaguchiko เย็นเดินห้าแยก Shibuya
+• Day 6 (จ. 2 มี.ค.): [JR Pass Day 3] Tokyo Disneyland เต็มวัน ชมพาเหรด & พลุปิดปราสาท (นั่งสาย JR Keiyo ฟรีตลอดสาย)
+• Day 7 (อ. 3 มี.ค.): เช็กเอาต์ นั่ง JR 2 นาทีไป Nippori ต่อ Keisei Skyliner 36 นาทีถึงสนามบิน Narita ช้อป Duty Free บินกลับไทย 19:00
+
+☕ ร้านกาแฟ & อาหารโลคอลแนะนำ:
+• โอซาก้า: LiLo Coffee Roasters, ทาโกยากิ Wanaka, ของทอด Kushikatsu Daruma
+• โตเกียว (ใกล้ที่พัก Tabata): Kayaba Coffee (แซนด์วิชไข่ฟู Yanaka), CIBI Tokyo Store, Menchi-katsu ถนนคนเดิน Yanaka Ginza
+• โตเกียวใจกลางเมือง: Fuglen Tokyo, Afuri Ramen ราเม็งส้มยูซุ, Gyukatsu Motomura เนื้อทอด
+• ฟูจิ & หิมะ: บะหมี่หม้อไฟ Houtou Fudou (Kawaguchiko), ข้าวปั้นโคชิฮิคาริ & ชิมสาเก Ponshukan (Gala/Echigo-Yuzawa)
+
+💰 ประมาณการค่าใช้จ่ายละเอียด (ต่อ 1 คน):
+1. ตั๋วเครื่องบินไป-กลับ: ~11,000 บาท
+2. ค่าที่พัก 6 คืน (หาร 4 คน): ~8,633 บาท
+   • b&Namba No. 1 (2 คืน): ~1,875 บาท (~938 บ./คืน มีลิฟต์)
+   • Wes-Stay Tabata (4 คืน): ~6,758 บาท (~1,689 บ./คืน มีลิฟต์)
+3. ค่าเดินทางทั้งหมด: ~8,760 บาท
+   • Nankai Rapi:t + Shinkansen (จองที่วางกระเป๋า 4 ใบ) + JR TOKYO Wide Pass 3 วัน + Skyliner + บัสท้องถิ่น
+4. ค่าตั๋วและกิจกรรม (แยกตามจุด):
+   • Gala Yuzawa (ไม่เล่นสกี เน้นถ่ายรูป+ถาดเลื่อน): ~840 บาท
+   • กระเช้าลอยฟ้า Kawaguchiko: ~240 บาท
+   • Tokyo Disneyland: ~2,150 บาท (ถ้าดักโปร 50% วันเบิ้ล 12.12/01.01/02.02 เหลือ ~1,075 บาท)
+5. ค่ากินตลอดทริป 7 วัน (แยกต่างหาก): ~6,500 บาท
+6. ค่าอื่นๆ (ประกัน + เน็ต): ~1,000 บาท
+   • ประกันเดินทาง 7 วัน: 350 บาท
+   • ค่าเน็ต eSIM: 650 บาท
+*ไม่รวมช้อปปิ้งส่วนตัว*
+
+💰 ยอดรวมประมาณการต่อคน:
+👉 กรณีกดตั๋วดิสนีย์ลด 50% ได้: ~38,048 บาท / คน
+👉 กรณีตั๋วดิสนีย์ราคาปกติ: ~39,123 บาท / คน
+*(เป็นราคาประมาณการล่วงหน้า หากร่วมกันคุมงบกินหรือได้เรตเงินดี ยอดจริงอาจประหยัดลงได้อีก)*`;
+            }
+
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = mode === 'compact' ? 'คัดลอกสรุปย่อสำหรับส่ง IG / FB DM แล้ว! ✨' : 'คัดลอกแพลนเต็มวันเรียบร้อยแล้ว! 📋';
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        /* --- Realistic & Smooth Falling Snow Animation --- */
+        let snowEnabled = true;
+        const canvas = document.getElementById('snow-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        const maxSnowflakes = window.innerWidth < 640 ? 45 : 75; // Responsive density
+        const snowflakes = [];
+
+        class Snowflake {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * width;
+                this.y = initial ? Math.random() * height : -10;
+                this.size = Math.random() * 3 + 1.2; // Snowflake radius
+                this.speedY = Math.random() * 0.9 + 0.6; // Gentle fall
+                this.speedX = Math.random() * 0.5 - 0.25; // Gentle breeze
+                this.opacity = Math.random() * 0.55 + 0.25; // Translucent depth
+                this.sway = Math.random() * 0.02 + 0.01;
+                this.swayOffset = Math.random() * Math.PI * 2;
+            }
+
+            update() {
+                this.swayOffset += this.sway;
+                this.x += Math.sin(this.swayOffset) * 0.6 + this.speedX;
+                this.y += this.speedY;
+
+                if (this.y > height + 10 || this.x < -10 || this.x > width + 10) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(185, 215, 235, ${this.opacity})`; // Soft icy-white
+                ctx.shadowBlur = 4;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < maxSnowflakes; i++) {
+            snowflakes.push(new Snowflake());
+        }
+
+        let animationFrameId;
+        function renderSnow() {
+            if (!snowEnabled) return;
+            ctx.clearRect(0, 0, width, height);
+            snowflakes.forEach(flake => {
+                flake.update();
+                flake.draw();
+            });
+            animationFrameId = requestAnimationFrame(renderSnow);
+        }
+
+        // Start animation
+        renderSnow();
+
+        // Handle Window Resize gracefully
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Toggle Snow Effect
+        function toggleSnow() {
+            snowEnabled = !snowEnabled;
+            const btnText = document.getElementById('snow-btn-text');
+            const toggleBtn = document.getElementById('snow-toggle-btn');
+            
+            if (snowEnabled) {
+                canvas.style.opacity = '1';
+                btnText.textContent = 'หิมะ: เปิด';
+                toggleBtn.classList.remove('opacity-60');
+                renderSnow();
+            } else {
+                canvas.style.opacity = '0';
+                btnText.textContent = 'หิมะ: ปิด';
+                toggleBtn.classList.add('opacity-60');
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                setTimeout(() => {
+                    if (!snowEnabled) ctx.clearRect(0, 0, width, height);
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>
