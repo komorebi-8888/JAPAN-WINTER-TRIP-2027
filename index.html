@@ -43,14 +43,12 @@
             padding-bottom: 80px;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Neo-Brutalist Card base */
         .nb-card {
             background: #FFFFFF;
             border: var(--border-heavy);
@@ -67,7 +65,6 @@
             box-shadow: var(--shadow-hard-lg);
         }
 
-        /* Header */
         header {
             background: var(--dark-card);
             color: #FFFFFF;
@@ -109,7 +106,6 @@
             font-size: 0.95rem;
         }
 
-        /* Quick Stat Badges */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -151,7 +147,6 @@
             font-weight: 600;
         }
 
-        /* Section Headings */
         .section-header {
             display: flex;
             align-items: center;
@@ -173,7 +168,6 @@
             font-weight: 800;
         }
 
-        /* Flight Strip */
         .flight-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -238,7 +232,6 @@
             font-weight: 600;
         }
 
-        /* Mobile Alert / Booking Calendar Checklist */
         .alert-box {
             background: #FEF3C7;
             border: 3px solid #000;
@@ -295,7 +288,6 @@
             line-height: 1.5;
         }
 
-        /* Day Navigator Tabs */
         .day-nav {
             display: flex;
             gap: 8px;
@@ -317,24 +309,15 @@
             transition: all 0.1s ease;
         }
 
-        .day-btn:hover {
-            background: #F3F4F6;
-        }
-
+        .day-btn:hover { background: #F3F4F6; }
         .day-btn.active {
             background: var(--main-yellow);
             box-shadow: 4px 4px 0px #000;
             transform: translate(-2px, -2px);
         }
 
-        /* Day Plan Details */
-        .day-panel {
-            display: none;
-        }
-
-        .day-panel.active {
-            display: block;
-        }
+        .day-panel { display: none; }
+        .day-panel.active { display: block; }
 
         .day-title-row {
             display: flex;
@@ -361,7 +344,6 @@
             font-size: 0.85rem;
         }
 
-        /* Timeline Items */
         .timeline-list {
             list-style: none;
             position: relative;
@@ -420,7 +402,6 @@
             line-height: 1.5;
         }
 
-        /* Food Recommendation Section */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -488,7 +469,6 @@
             color: #000;
         }
 
-        /* Transit Master Guide */
         .transit-guide-box {
             background: #EEF2FF;
             border: 3px solid #000;
@@ -545,7 +525,6 @@
             margin-top: 6px;
         }
 
-        /* Maps Embed Responsive */
         .map-wrapper {
             border: 3px solid #000;
             border-radius: 14px;
@@ -561,7 +540,6 @@
             border: 0;
         }
 
-        /* Copy DM Message Section */
         .dm-box {
             background: #F3F4F6;
             border: 2px dashed #4B5563;
@@ -592,7 +570,6 @@
             color: #000;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -623,8 +600,6 @@
 
     <div class="container">
 
-        <!-- Stat Cards -->
-        
         <!-- Live Countdown & Trip Milestone Tracker -->
         <div class="nb-card" style="background: linear-gradient(135deg, #18181B 0%, #27272A 100%); color: #FFF; border-color: #000; margin-bottom: 24px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px;">
@@ -633,7 +608,7 @@
                         <i class="fa-solid fa-stopwatch"></i> LIVE COUNTDOWN
                     </span>
                     <h2 style="font-size: 1.5rem; font-weight: 800; color: #FFF;">นับถอยหลังสู่เที่ยวบิน VZ820 (BKK ➔ KIX)</h2>
-                    <p style="color: #A1A1AA; font-size: 0.9rem;">ออกเดินทาง: คืนวันพุธ 24 ก.พ. / เช้าตรู่พฤหัสบดี 25 ก.พ. 2027 เวลา 00:25 น.</p>
+                    <p style="color: #A1A1AA; font-size: 0.9rem;">ออกเดินทาง: เช้าตรู่พฤหัสบดี 25 ก.พ. 2027 เวลา 00:25 น.</p>
                 </div>
                 <div style="display: flex; gap: 10px; text-align: center;">
                     <div style="background: #27272A; border: 2px solid var(--main-yellow); border-radius: 10px; padding: 10px 14px; min-width: 72px;">
@@ -754,7 +729,7 @@
             </div>
         </div>
 
-        <!-- NEW: Booking Countdown & Mobile Alert Checklist -->
+        <!-- Mobile Alert / Booking Calendar Checklist -->
         <div class="alert-box">
             <div class="alert-box-title">
                 <i class="fa-solid fa-bell fa-shake"></i> ปฏิทินวันกดจอง &amp; เซฟแจ้งเตือนในโทรศัพท์ (ห้ามพลาด!)
@@ -789,7 +764,7 @@
             </div>
         </div>
 
-        <!-- NEW: Transit & Ticket Step-by-Step Master Guide -->
+        <!-- Transit & Ticket Step-by-Step Master Guide -->
         <div class="transit-guide-box">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#1E1B4B; margin-bottom:12px;">
                 <i class="fa-solid fa-ticket-simple"></i> คู่มือซื้อตั๋วรถไฟ &amp; การเดินทางทุกขั้นตอน (Step-by-Step)
@@ -799,7 +774,6 @@
             </p>
 
             <div class="transit-step-grid">
-                <!-- 1. IC Card -->
                 <div class="transit-step-card">
                     <div class="step-num">1</div>
                     <h4>บัตรแตะจ่าย IC Card (Suica / ICOCA)</h4>
@@ -810,7 +784,6 @@
                     </ul>
                 </div>
 
-                <!-- 2. Rinku Bus & Nankai -->
                 <div class="transit-step-card">
                     <div class="step-num">2</div>
                     <h4>KIX ➔ Rinku Outlets ➔ นัมบะ</h4>
@@ -821,7 +794,6 @@
                     </ul>
                 </div>
 
-                <!-- 3. Shinkansen Nozomi -->
                 <div class="transit-step-card">
                     <div class="step-num">3</div>
                     <h4>ชินคันเซ็น Nozomi (Shin-Osaka ➔ Tokyo)</h4>
@@ -834,7 +806,6 @@
                     </ul>
                 </div>
 
-                <!-- 4. Gala Yuzawa -->
                 <div class="transit-step-card">
                     <div class="step-num">4</div>
                     <h4>โตเกียว ➔ Gala Yuzawa (ลานหิมะ)</h4>
@@ -845,7 +816,6 @@
                     </ul>
                 </div>
 
-                <!-- 5. Fuji Excursion -->
                 <div class="transit-step-card">
                     <div class="step-num">5</div>
                     <h4>Shinjuku ➔ Kawaguchiko (ฟูจิ)</h4>
@@ -857,7 +827,6 @@
                     </ul>
                 </div>
 
-                <!-- 6. Keisei Skyliner -->
                 <div class="transit-step-card">
                     <div class="step-num">6</div>
                     <h4>Ueno ➔ สนามบินนาริตะ (วันกลับ)</h4>
@@ -943,7 +912,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 1 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำย่าน Namba / Dotonbori</h4>
                 <div class="food-grid">
@@ -966,7 +934,6 @@
                 </div>
             </div>
 
-            <!-- Route Map -->
             <div class="map-wrapper">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d105260.8228302061!2d135.26388916301382!3d34.46788487373516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x6000b91325d7b5b5%3A0x6e90dc501170d10b!2sKansai+International+Airport!3m2!1d34.4320024!2d135.2303939!4m5!1s0x6000b77dbd394b05%3A0xc3ce3115467dbb69!2sRinku+Premium+Outlets!3m2!1d34.4069796!2d135.2952876!4m0!5e0!3m2!1sen!2sth!4v1700000000000" loading="lazy"></iframe>
             </div>
@@ -1013,7 +980,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 2 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำประจำวัน</h4>
                 <div class="food-grid">
@@ -1085,7 +1051,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 3 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำ</h4>
                 <div class="food-grid">
@@ -1149,7 +1114,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 4 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ของกินห้ามพลาดย่านหิมะ Yuzawa</h4>
                 <div class="food-grid">
@@ -1214,7 +1178,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 5 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> เมนูอุ่นร่างกายอันดับ 1 ของฟูจิ</h4>
                 <div class="food-grid">
@@ -1313,7 +1276,6 @@
                 </li>
             </ul>
 
-            <!-- Food Recommendations for Day 7 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ของกินมื้อส่งท้ายย่าน Ameyoko / Ueno</h4>
                 <div class="food-grid">
@@ -1333,6 +1295,64 @@
                         </div>
                         <a href="https://maps.google.com/?q=Ueno+Taishoken" target="_blank" class="btn-gmaps"><i class="fa-solid fa-location-dot"></i> เปิด Google Maps</a>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIRST-TIMER SURVIVAL KIT -->
+        <div class="nb-card" style="background: #FDF4FF; border-color: #9333EA; border-width: 3px;">
+            <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#581C87; margin-bottom:12px;">
+                <i class="fa-solid fa-compass fa-spin" style="--fa-animation-duration: 15s; color:#9333EA;"></i> 
+                คู่มือเอาตัวรอดฉบับมือใหม่ (ไปญี่ปุ่นครั้งแรก 4 คน ห้ามพลาด!)
+            </div>
+            <p style="font-size:0.92rem; color:#6B21A8; margin-bottom:16px;">
+                รวบรวม 6 เรื่องจริงที่คนไปญี่ปุ่นครั้งแรกมักพลาด ช่วยให้เดินเที่ยวลื่นไหล ไม่โดนดุ ไม่เมื่อยขา และคุมงบอยู่หมัด:
+            </p>
+
+            <div class="transit-step-grid">
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">1</div>
+                    <h4>กฎยืนบันไดเลื่อน (โอซาก้า vs โตเกียว ไม่เหมือนกัน!)</h4>
+                    <p>• <strong>โอซาก้า (Day 1-2):</strong> ยืนชิด <strong>ขวา</strong> (เว้นทางซ้ายให้คนรีบเดิน)<br>
+                    • <strong>โตเกียว (Day 3-7):</strong> ยืนชิด <strong>ซ้าย</strong> (เว้นทางขวาให้คนรีบเดิน)<br>
+                    *ข้อห้าม: อย่ายืนคู่ขวางบันไดเลื่อนเด็ดขาด</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">2</div>
+                    <h4>ญี่ปุ่นแทบไม่มีถังขยะสาธารณะ</h4>
+                    <p>ตามข้างถนนไม่มีถังขยะเลย!<br>
+                    • <strong>วิธีรอด:</strong> ทุกคนต้องพก <em>ถุงพลาสติกเล็กๆ ประจำตัว 1 ใบ</em> ไว้ใส่ขยะตัวเองในกระเป๋า แล้วนำกลับไปทิ้งที่โรงแรม<br>
+                    • ถังขยะข้างตู้กดน้ำ = ทิ้งได้เฉพาะ <strong>ขวด/กระป๋อง</strong> เท่านั้น</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">3</div>
+                    <h4>มารยาทการกิน: ไม่เดินไปกินไป</h4>
+                    <p>คนญี่ปุ่นถือว่าการเดินเคี้ยวอาหารตามทางเดินเสียมารยาท (เว้นถนนคนเดินสตรีทฟู้ดบางแห่ง)<br>
+                    • ซื้อของ 7-11 / Lawson / FamilyMart: ให้ยืนทานให้เสร็จหน้าร้าน หรือในมุมโต๊ะรับประทาน แล้วทิ้งขยะที่หน้าร้านได้เลย</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">4</div>
+                    <h4>เทคนิคซื้อของ Tax-Free (ลด 10% ทุกร้าน)</h4>
+                    <p>• <strong>เงื่อนไข:</strong> ซื้อยอดรวมเกิน <strong>5,500 เยน (รวมภาษี)</strong> ในใบเสร็จเดียว<br>
+                    • <strong>ต้องพกพาสปอร์ตตัวจริงติดตัวเสมอ:</strong> ใช้สแกนทำ Tax-Free (รูปถ่ายใช้ไม่ได้)<br>
+                    • ถุงของกิน/เครื่องสำอางที่ซีลห้ามแกะกินในญี่ปุ่น ต้องนำออกนอกประเทศเท่านั้น</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">5</div>
+                    <h4>ตัวช่วยชีวิตหน้าหนาว & เดินวันละ 20,000 ก้าว</h4>
+                    <p>• <strong>ไคโระ (Hot Pack):</strong> ซื้อในดรักสโตร์/สะดวกซื้อ ซองละ ~30-50 เยน ใส่ในกระเป๋าเสื้อกันหนาวช่วยอุ่นมือ หรือแบบแปะถุงเท้าแก้เท้าเย็น<br>
+                    • <strong>แผ่นแปะแก้ปวดเท้า (Kyusoku Jikan):</strong> วันแรกๆ จะเมื่อยน่องมาก ซื้อแปะฝ่าเท้าก่อนนอน ตื่นมาขาเบาสบาย</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#9333EA;">
+                    <div class="step-num" style="background:#9333EA;">6</div>
+                    <h4>กฎบนรถไฟ & ทางม้าลาย</h4>
+                    <p>• บนรถไฟใต้ดิน/JR: ปรับมือถือเป็น <strong>Silent Mode (Manner Mode)</strong> ห้ามคุยโทรศัพท์เด็ดขาด และคุยกันเบาๆ<br>
+                    • ข้ามถนน: รอสัญญาณไฟเขียวเสมอ แม้จะไม่มีรถวิ่งผ่านมาเลยก็ตาม</p>
                 </div>
             </div>
         </div>
@@ -1391,7 +1411,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
 
     <!-- Interactive Scripts -->
     <script>
-        
         // Live Countdown to Departure: Feb 25, 2027 00:25:00 GMT+0700
         const targetDate = new Date('2027-02-25T00:25:00+07:00').getTime();
 
@@ -1421,7 +1440,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
         updateCountdown();
 
         function switchDay(dayNum) {
-            // Update buttons
             const buttons = document.querySelectorAll('.day-btn');
             buttons.forEach((btn, index) => {
                 if (index === dayNum - 1) {
@@ -1431,7 +1449,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
                 }
             });
 
-            // Update panels
             for (let i = 1; i <= 7; i++) {
                 const panel = document.getElementById('day-panel-' + i);
                 if (panel) {
