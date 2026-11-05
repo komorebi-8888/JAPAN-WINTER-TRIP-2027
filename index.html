@@ -590,10 +590,13 @@
                 <h1>โอซาก้า ➔ โตเกียว (7 วัน 6 คืน)</h1>
                 <p>25 ก.พ. – 3 มี.ค. 2027 • สมาชิก 4 คน • กระเป๋า 28 นิ้ว 4 ใบ • งบเฉลี่ยคนละ ~38,000 บาท</p>
             </div>
-            <div>
-                <a href="https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/" target="_blank" style="text-decoration:none;">
-                    <button class="day-btn active" style="margin:0;"><i class="fa-solid fa-globe"></i> เปิดเว็บ GitHub Pages</button>
-                </a>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <span class="badge-trip" style="background:#BAE6FD; border-color:#0284C7; color:#0369A1;">
+                    <i class="fa-solid fa-users"></i> ทริปเพื่อน 4 คน
+                </span>
+                <span class="badge-trip" style="background:#BBF7D0; border-color:#16A34A; color:#15803D;">
+                    <i class="fa-solid fa-suitcase-rolling"></i> 4 กระเป๋าใหญ่
+                </span>
             </div>
         </div>
     </header>
@@ -608,7 +611,7 @@
                         <i class="fa-solid fa-stopwatch"></i> LIVE COUNTDOWN
                     </span>
                     <h2 style="font-size: 1.5rem; font-weight: 800; color: #FFF;">นับถอยหลังสู่เที่ยวบิน VZ820 (BKK ➔ KIX)</h2>
-                    <p style="color: #A1A1AA; font-size: 0.9rem;">ออกเดินทาง: เช้าตรู่พฤหัสบดี 25 ก.พ. 2027 เวลา 00:25 น.</p>
+                    <p style="color: #A1A1AA; font-size: 0.9rem;">ออกเดินทาง: คืนวันพุธ 24 ก.พ. / เช้าตรู่พฤหัสบดี 25 ก.พ. 2027 เวลา 00:25 น.</p>
                 </div>
                 <div style="display: flex; gap: 10px; text-align: center;">
                     <div style="background: #27272A; border: 2px solid var(--main-yellow); border-radius: 10px; padding: 10px 14px; min-width: 72px;">
@@ -774,6 +777,7 @@
             </p>
 
             <div class="transit-step-grid">
+                <!-- 1. IC Card -->
                 <div class="transit-step-card">
                     <div class="step-num">1</div>
                     <h4>บัตรแตะจ่าย IC Card (Suica / ICOCA)</h4>
@@ -784,6 +788,7 @@
                     </ul>
                 </div>
 
+                <!-- 2. Rinku Bus & Nankai -->
                 <div class="transit-step-card">
                     <div class="step-num">2</div>
                     <h4>KIX ➔ Rinku Outlets ➔ นัมบะ</h4>
@@ -794,6 +799,7 @@
                     </ul>
                 </div>
 
+                <!-- 3. Shinkansen Nozomi -->
                 <div class="transit-step-card">
                     <div class="step-num">3</div>
                     <h4>ชินคันเซ็น Nozomi (Shin-Osaka ➔ Tokyo)</h4>
@@ -806,6 +812,7 @@
                     </ul>
                 </div>
 
+                <!-- 4. Gala Yuzawa -->
                 <div class="transit-step-card">
                     <div class="step-num">4</div>
                     <h4>โตเกียว ➔ Gala Yuzawa (ลานหิมะ)</h4>
@@ -816,6 +823,7 @@
                     </ul>
                 </div>
 
+                <!-- 5. Fuji Excursion -->
                 <div class="transit-step-card">
                     <div class="step-num">5</div>
                     <h4>Shinjuku ➔ Kawaguchiko (ฟูจิ)</h4>
@@ -827,6 +835,7 @@
                     </ul>
                 </div>
 
+                <!-- 6. Keisei Skyliner -->
                 <div class="transit-step-card">
                     <div class="step-num">6</div>
                     <h4>Ueno ➔ สนามบินนาริตะ (วันกลับ)</h4>
@@ -912,6 +921,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 1 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำย่าน Namba / Dotonbori</h4>
                 <div class="food-grid">
@@ -934,9 +944,19 @@
                 </div>
             </div>
 
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d105260.8228302061!2d135.26388916301382!3d34.46788487373516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x6000b91325d7b5b5%3A0x6e90dc501170d10b!2sKansai+International+Airport!3m2!1d34.4320024!2d135.2303939!4m5!1s0x6000b77dbd394b05%3A0xc3ce3115467dbb69!2sRinku+Premium+Outlets!3m2!1d34.4069796!2d135.2952876!4m0!5e0!3m2!1sen!2sth!4v1700000000000" loading="lazy"></iframe>
+            <!-- Interactive Map for Day 1 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 1: สนามบิน KIX ➔ Rinku Outlets ➔ นัมบะ</h4>
+                    <a href="https://www.google.com/maps/dir/Kansai+International+Airport/Rinku+Premium+Outlets/Namba+Station" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Rinku+Premium+Outlets+to:Namba+Station&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
+
         </div>
 
         <!-- Day 2 Panel -->
@@ -980,6 +1000,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 2 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำประจำวัน</h4>
                 <div class="food-grid">
@@ -1001,6 +1022,20 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Interactive Map for Day 2 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 2: นัมบะ ➔ ปราสาทโอซาก้า ➔ อุเมดะ ➔ Orange Street ➔ โดทงโบริ</h4>
+                    <a href="https://www.google.com/maps/dir/Namba+Station/Osaka+Castle/Hankyu+Umeda+Main+Store/Orange+Street+Osaka/Dotonbori" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Namba+Station&daddr=Osaka+Castle+to:Hankyu+Department+Store+Umeda+to:Orange+Street+Osaka+to:Dotonbori&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- Day 3 Panel -->
@@ -1051,6 +1086,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 3 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ร้านอาหารแนะนำ</h4>
                 <div class="food-grid">
@@ -1064,6 +1100,20 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Interactive Map for Day 3 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 3: Shin-Osaka (ชินคันเซ็น) ➔ Tokyo Station ➔ Tabata (Wes-Stay) ➔ Shibuya</h4>
+                    <a href="https://www.google.com/maps/dir/Shin-Osaka+Station/Tokyo+Station/Tabata+Station/Shibuya+Crossing" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Shin-Osaka+Station&daddr=Tokyo+Station+to:Tabata+Station+Tokyo+to:Shibuya+Crossing&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- Day 4 Panel -->
@@ -1114,6 +1164,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 4 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ของกินห้ามพลาดย่านหิมะ Yuzawa</h4>
                 <div class="food-grid">
@@ -1135,6 +1186,20 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Interactive Map for Day 4 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 4: Tabata ➔ Ueno (ชินคันเซ็น) ➔ ลานหิมะ Gala Yuzawa ➔ Echigo-Yuzawa</h4>
+                    <a href="https://www.google.com/maps/dir/Ueno+Station/GALA+Yuzawa+Snow+Resort/Echigo-Yuzawa+Station" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Ueno+Station&daddr=GALA+Yuzawa+Snow+Resort+to:Echigo-Yuzawa+Station&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- Day 5 Panel -->
@@ -1178,6 +1243,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 5 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> เมนูอุ่นร่างกายอันดับ 1 ของฟูจิ</h4>
                 <div class="food-grid">
@@ -1191,6 +1257,20 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Interactive Map for Day 5 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 5: Shinjuku ➔ Fuji Excursion ➔ สถานี Kawaguchiko ➔ สวน Oishi ➔ กระเช้า Ropeway</h4>
+                    <a href="https://www.google.com/maps/dir/Shinjuku+Station/Kawaguchiko+Station/Oishi+Park/Mt.+Fuji+Panoramic+Ropeway" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Shinjuku+Station&daddr=Kawaguchiko+Station+to:Oishi+Park+Fuji+to:Mt.+Fuji+Panoramic+Ropeway&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- Day 6 Panel -->
@@ -1226,6 +1306,20 @@
                     </div>
                 </li>
             </ul>
+        
+            <!-- Interactive Map for Day 6 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 6: Tabata ➔ Tokyo Station (Keiyo Line) ➔ Tokyo Disneyland (Maihama)</h4>
+                    <a href="https://www.google.com/maps/dir/Tabata+Station/Tokyo+Station/Tokyo+Disneyland" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Tokyo+Station+to:Tokyo+Disneyland&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- Day 7 Panel -->
@@ -1276,6 +1370,7 @@
                 </li>
             </ul>
 
+            <!-- Food Recommendations for Day 7 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <h4 style="font-weight:800; margin-bottom:8px;"><i class="fa-solid fa-utensils"></i> ของกินมื้อส่งท้ายย่าน Ameyoko / Ueno</h4>
                 <div class="food-grid">
@@ -1297,9 +1392,22 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Interactive Map for Day 7 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 7: Tabata ➔ Ueno (Ameyoko Market) ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 1</h4>
+                    <a href="https://www.google.com/maps/dir/Tabata+Station/Keisei-Ueno+Station/Ameyoko+Shopping+District/Narita+Airport+Terminal+1" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Keisei-Ueno+Station+to:Ameyoko+Shopping+Street+to:Narita+International+Airport+Terminal+1&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
 
-        <!-- FIRST-TIMER SURVIVAL KIT -->
+        <!-- FIRST-TIMER SURVIVAL KIT (สำหรับมือใหม่ไปญี่ปุ่นครั้งแรก 4 คน) -->
         <div class="nb-card" style="background: #FDF4FF; border-color: #9333EA; border-width: 3px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#581C87; margin-bottom:12px;">
                 <i class="fa-solid fa-compass fa-spin" style="--fa-animation-duration: 15s; color:#9333EA;"></i> 
@@ -1310,6 +1418,7 @@
             </p>
 
             <div class="transit-step-grid">
+                <!-- 1. การขึ้นบันไดเลื่อน โอซาก้า vs โตเกียว -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">1</div>
                     <h4>กฎยืนบันไดเลื่อน (โอซาก้า vs โตเกียว ไม่เหมือนกัน!)</h4>
@@ -1318,6 +1427,7 @@
                     *ข้อห้าม: อย่ายืนคู่ขวางบันไดเลื่อนเด็ดขาด</p>
                 </div>
 
+                <!-- 2. ขยะ & ถังขยะหายากมาก -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">2</div>
                     <h4>ญี่ปุ่นแทบไม่มีถังขยะสาธารณะ</h4>
@@ -1326,6 +1436,7 @@
                     • ถังขยะข้างตู้กดน้ำ = ทิ้งได้เฉพาะ <strong>ขวด/กระป๋อง</strong> เท่านั้น</p>
                 </div>
 
+                <!-- 3. ร้านสะดวกซื้อ & ของกินห้ามเดินกิน -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">3</div>
                     <h4>มารยาทการกิน: ไม่เดินไปกินไป</h4>
@@ -1333,6 +1444,7 @@
                     • ซื้อของ 7-11 / Lawson / FamilyMart: ให้ยืนทานให้เสร็จหน้าร้าน หรือในมุมโต๊ะรับประทาน แล้วทิ้งขยะที่หน้าร้านได้เลย</p>
                 </div>
 
+                <!-- 4. ช็อปปิ้ง Tax-Free (ปลอดภาษี 10%) -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">4</div>
                     <h4>เทคนิคซื้อของ Tax-Free (ลด 10% ทุกร้าน)</h4>
@@ -1341,6 +1453,7 @@
                     • ถุงของกิน/เครื่องสำอางที่ซีลห้ามแกะกินในญี่ปุ่น ต้องนำออกนอกประเทศเท่านั้น</p>
                 </div>
 
+                <!-- 5. แผ่นแปะร้อน Kairo & แผ่นแปะเท้าแก้ปวด -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">5</div>
                     <h4>ตัวช่วยชีวิตหน้าหนาว & เดินวันละ 20,000 ก้าว</h4>
@@ -1348,6 +1461,7 @@
                     • <strong>แผ่นแปะแก้ปวดเท้า (Kyusoku Jikan):</strong> วันแรกๆ จะเมื่อยน่องมาก ซื้อแปะฝ่าเท้าก่อนนอน ตื่นมาขาเบาสบาย</p>
                 </div>
 
+                <!-- 6. สัญญาณไฟคนข้ามถนน & รถไฟห้ามคุยโทรศัพท์ -->
                 <div class="transit-step-card" style="border-color:#9333EA;">
                     <div class="step-num" style="background:#9333EA;">6</div>
                     <h4>กฎบนรถไฟ & ทางม้าลาย</h4>
