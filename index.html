@@ -43,12 +43,14 @@
             padding-bottom: 80px;
         }
 
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* Neo-Brutalist Card base */
         .nb-card {
             background: #FFFFFF;
             border: var(--border-heavy);
@@ -65,6 +67,7 @@
             box-shadow: var(--shadow-hard-lg);
         }
 
+        /* Header */
         header {
             background: var(--dark-card);
             color: #FFFFFF;
@@ -106,6 +109,7 @@
             font-size: 0.95rem;
         }
 
+        /* Quick Stat Badges */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -147,6 +151,7 @@
             font-weight: 600;
         }
 
+        /* Section Headings */
         .section-header {
             display: flex;
             align-items: center;
@@ -168,6 +173,7 @@
             font-weight: 800;
         }
 
+        /* Flight Strip */
         .flight-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -232,6 +238,7 @@
             font-weight: 600;
         }
 
+        /* Mobile Alert / Booking Calendar Checklist */
         .alert-box {
             background: #FEF3C7;
             border: 3px solid #000;
@@ -288,6 +295,7 @@
             line-height: 1.5;
         }
 
+        /* Day Navigator Tabs */
         .day-nav {
             display: flex;
             gap: 8px;
@@ -309,15 +317,24 @@
             transition: all 0.1s ease;
         }
 
-        .day-btn:hover { background: #F3F4F6; }
+        .day-btn:hover {
+            background: #F3F4F6;
+        }
+
         .day-btn.active {
             background: var(--main-yellow);
             box-shadow: 4px 4px 0px #000;
             transform: translate(-2px, -2px);
         }
 
-        .day-panel { display: none; }
-        .day-panel.active { display: block; }
+        /* Day Plan Details */
+        .day-panel {
+            display: none;
+        }
+
+        .day-panel.active {
+            display: block;
+        }
 
         .day-title-row {
             display: flex;
@@ -344,6 +361,7 @@
             font-size: 0.85rem;
         }
 
+        /* Timeline Items */
         .timeline-list {
             list-style: none;
             position: relative;
@@ -402,6 +420,7 @@
             line-height: 1.5;
         }
 
+        /* Food Recommendation Section */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -469,6 +488,7 @@
             color: #000;
         }
 
+        /* Transit Master Guide */
         .transit-guide-box {
             background: #EEF2FF;
             border: 3px solid #000;
@@ -525,6 +545,7 @@
             margin-top: 6px;
         }
 
+        /* Maps Embed Responsive */
         .map-wrapper {
             border: 3px solid #000;
             border-radius: 14px;
@@ -540,6 +561,7 @@
             border: 0;
         }
 
+        /* Copy DM Message Section */
         .dm-box {
             background: #F3F4F6;
             border: 2px dashed #4B5563;
@@ -570,6 +592,7 @@
             color: #000;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -603,6 +626,8 @@
 
     <div class="container">
 
+        <!-- Stat Cards -->
+        
         <!-- Live Countdown & Trip Milestone Tracker -->
         <div class="nb-card" style="background: linear-gradient(135deg, #18181B 0%, #27272A 100%); color: #FFF; border-color: #000; margin-bottom: 24px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px;">
@@ -656,8 +681,11 @@
                     </div>
                     <div style="background: #27272A; border: 1px solid #3F3F46; border-radius: 8px; padding: 10px 12px;">
                         <span style="background: #F59E0B; color: #000; font-weight: 800; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">D-7 (18 ก.พ. 27)</span>
-                        <div style="font-weight: 700; font-size: 0.85rem; margin-top: 4px; color: #FFF;">กรอก Visit Japan</div>
-                        <div style="font-size: 0.75rem; color: #A1A1AA;">แคป QR ตม. & ศุลกากร + ซื้อ eSIM</div>
+                        <div style="font-weight: 700; font-size: 0.85rem; margin-top: 4px; color: #FFF;">กรอก Visit Japan Web</div>
+                        <div style="font-size: 0.75rem; color: #A1A1AA; margin-bottom: 6px;">แคป QR ตม. & ศุลกากร + ซื้อ eSIM</div>
+                        <a href="https://vjw-lp.digital.go.jp/en/" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; background:var(--main-yellow); color:#000; text-decoration:none; font-size:0.72rem; font-weight:800; padding:2px 8px; border-radius:4px;">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเว็บทางการ Visit Japan
+                        </a>
                     </div>
                     <div style="background: #27272A; border: 1px solid #3F3F46; border-radius: 8px; padding: 10px 12px;">
                         <span style="background: #10B981; color: #000; font-weight: 800; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">D-Day (24 ก.พ. 27)</span>
@@ -732,7 +760,7 @@
             </div>
         </div>
 
-        <!-- Section: Interactive 7-Day Anti-Confusion Plan (ย้ายขึ้นมาไว้ด้านบน) -->
+        <!-- Section: Interactive 7-Day Anti-Confusion Plan -->
         <div class="section-header">
             <span class="section-tag">ITINERARY</span>
             <h2>แผนการเดินทาง 7 วัน (ฉบับกันอ๋อง + อัปเดตเวลาบินจริง)</h2>
@@ -765,6 +793,11 @@
                     <div class="timeline-content">
                         <h4>เครื่องลงสนามบินคันไซ (KIX) Terminal 1</h4>
                         <p>ผ่านด่าน ตม. สแกน QR Visit Japan Web และรับกระเป๋า 4 ใบ (ใช้เวลา ~60–75 นาที) ซื้อน้ำ ขนม แวะห้องน้ำให้พร้อม</p>
+                        <div style="margin-top:6px;">
+                            <a href="https://vjw-lp.digital.go.jp/en/" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; background:#18181B; color:#FFD027; text-decoration:none; font-size:0.8rem; font-weight:800; padding:4px 10px; border-radius:6px; border:1px solid #FFD027;">
+                                <i class="fa-solid fa-qrcode"></i> ลิงก์ตรงลงทะเบียนทางการ Visit Japan Web (QR ตม. & ศุลกากร)
+                            </a>
+                        </div>
                     </div>
                 </li>
                 <li class="timeline-item">
@@ -826,6 +859,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Interactive Map for Day 1 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
@@ -1275,23 +1309,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Interactive Map for Day 7 -->
-            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
-                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
-                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 7: Tabata ➔ Ueno (Ameyoko Market) ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 1</h4>
-                    <a href="https://www.google.com/maps/dir/Tabata+Station/Keisei-Ueno+Station/Ameyoko+Shopping+District/Narita+Airport+Terminal+1" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
-                    </a>
-                </div>
-                <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Keisei-Ueno+Station+to:Ameyoko+Shopping+Street+to:Narita+International+Airport+Terminal+1&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
         </div>
 
         
-        <!-- NEW: Booking Countdown & Mobile Alert Checklist (ย้ายลงมาไว้ข้างล่าง) -->
+        
+        <!-- NEW: Booking Countdown & Mobile Alert Checklist -->
         <div class="alert-box">
             <div class="alert-box-title">
                 <i class="fa-solid fa-bell fa-shake"></i> ปฏิทินวันกดจอง &amp; เซฟแจ้งเตือนในโทรศัพท์ (ห้ามพลาด!)
@@ -1326,7 +1348,7 @@
             </div>
         </div>
 
-        <!-- NEW: Transit & Ticket Step-by-Step Master Guide (ย้ายลงมาไว้ข้างล่าง) -->
+        <!-- NEW: Transit & Ticket Step-by-Step Master Guide -->
         <div class="transit-guide-box">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#1E1B4B; margin-bottom:12px;">
                 <i class="fa-solid fa-ticket-simple"></i> คู่มือซื้อตั๋วรถไฟ &amp; การเดินทางทุกขั้นตอน (Step-by-Step)
@@ -1473,6 +1495,98 @@
             </div>
         </div>
 
+        
+        <!-- WINTER PACKING CHECKLIST & EMERGENCY CONTACTS -->
+        <div class="nb-card" style="background: #F0FDF4; border-color: #16A34A; border-width: 3px;">
+            <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#14532D; margin-bottom:12px;">
+                <i class="fa-solid fa-suitcase-rolling" style="color:#16A34A;"></i> 
+                เช็กลิสต์จัดกระเป๋าหน้าหนาว (Winter Packing Checklist)
+            </div>
+            <p style="font-size:0.92rem; color:#166534; margin-bottom:16px;">
+                ทริปนี้เจอทั้งอากาศหนาวในเมือง (5–12°C), ลานหิมะ Gala Yuzawa (ติดลบ -2 ถึง -5°C) และริมทะเลสาบฟูจิ (0–5°C) จัดตามนี้รอดแน่นอน:
+            </p>
+
+            <div class="transit-step-grid">
+                <!-- หมวดเสื้อผ้า & กันหนาว -->
+                <div class="transit-step-card" style="border-color:#16A34A;">
+                    <div class="step-num" style="background:#16A34A;">🧥</div>
+                    <h4>เสื้อผ้า &amp; ลุยหิมะ</h4>
+                    <ul>
+                        <li><strong>เสื้อฮีทเทค (Heattech):</strong> แบบ Extra หรือ Ultra Warm คนละ 3-4 ตัว</li>
+                        <li><strong>เสื้อโค้ต / เสื้อกันหนาวขนเป็ด (Down Jacket):</strong> กันลมและกันละอองน้ำได้</li>
+                        <li><strong>กางเกงลุยหิมะ (Day 4 Gala Yuzawa):</strong> ผ้าร่มกันน้ำ (ห้ามใส่ยีนส์/ผ้าสำลีลุยหิมะ)</li>
+                        <li><strong>ถุงเท้าหนา &amp; ถุงมือกันหนาว:</strong> แนะนำแบบ Touch Screen ได้</li>
+                        <li><strong>แว่นกันแดด (สำคัญมาก):</strong> แสงแดดสะท้อนหิมะสีขาวจะแสบตามาก</li>
+                    </ul>
+                </div>
+
+                <!-- หมวดอุปกรณ์อิเล็กทรอนิกส์ -->
+                <div class="transit-step-card" style="border-color:#16A34A;">
+                    <div class="step-num" style="background:#16A34A;">🔌</div>
+                    <h4>อุปกรณ์ &amp; แก็ดเจ็ต</h4>
+                    <ul>
+                        <li><strong>พาวเวอร์แบงก์ (Power Bank):</strong> อากาศหนาวแบตเตอรี่มือถือจะหมดเร็วมาก พก 10,000–20,000 mAh ขึ้นเครื่อง (ห้ามโหลดใต้ท้องเครื่อง)</li>
+                        <li><strong>หัวแปลงปลั๊กไฟ (Plug Adapter):</strong> ปลั๊กญี่ปุ่นเป็นขาแบน 2 ขา (Type A) ไฟ 100V</li>
+                        <li><strong>ซิมเน็ต / eSIM:</strong> แนะนำ eSIM ซื้อล่วงหน้า หรือ Pocket WiFi แชร์กัน 4 คน</li>
+                        <li><strong>เครื่องชั่งน้ำหนักกระเป๋าพกพา:</strong> ไว้เช็กน้ำหนักไม่ให้เกิน 20 กก./คน วันบินกลับ</li>
+                    </ul>
+                </div>
+
+                <!-- หมวยา & ของใช้ส่วนตัว -->
+                <div class="transit-step-card" style="border-color:#16A34A;">
+                    <div class="step-num" style="background:#16A34A;">💊</div>
+                    <h4>ยา &amp; ของใช้ส่วนตัว</h4>
+                    <ul>
+                        <li><strong>ยาประจำตัว &amp; ยาสามัญ:</strong> ยาแก้แพ้อากาศ, ยาแก้หวัด/ลดไข้, ยาแก้ปวดท้อง/แก้ท้องเสีย</li>
+                        <li><strong>ลิปมัน &amp; โลชั่นทาผิวเข้มข้น:</strong> อากาศญี่ปุ่นหน้าหนาวแห้งมาก ผิวจะแตกคันง่าย</li>
+                        <li><strong>แผ่นแปะร้อน (ไคโระ) &amp; แผ่นแปะแก้ปวดเท้า:</strong> ซื้อที่ดรักสโตร์ญี่ปุ่นได้เลย ถูกและดีมาก</li>
+                        <li><strong>ถุงพลาสติกเล็กพกติดตัว:</strong> ไว้ใส่ขยะตัวเองกลับมาทิ้งที่พัก</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY CONTACTS -->
+        <div class="nb-card" style="background: #FEF2F2; border-color: #DC2626; border-width: 3px;">
+            <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#991B1B; margin-bottom:12px;">
+                <i class="fa-solid fa-phone-volume fa-shake" style="color:#DC2626;"></i> 
+                เบอร์โทรฉุกเฉิน &amp; สถานทูตไทยในญี่ปุ่น (Emergency Contacts)
+            </div>
+            <p style="font-size:0.92rem; color:#B91C1C; margin-bottom:16px;">
+                เซฟเบอร์เหล่านี้ไว้ในโทรศัพท์ เผื่อเกิดเหตุฉุกเฉินหรือทำของสำคัญหายระหว่างเดินทาง:
+            </p>
+
+            <div class="transit-step-grid">
+                <div class="transit-step-card" style="border-color:#DC2626;">
+                    <div class="step-num" style="background:#DC2626;">110</div>
+                    <h4>เหตุด่วนเหตุร้าย / ตำรวจญี่ปุ่น</h4>
+                    <p style="font-size:1.1rem; font-weight:800; color:#DC2626; font-family:'JetBrains Mono', monospace; margin:4px 0;">โทร 110 (โทรฟรีจากทุกตู้)</p>
+                    <p>แจ้งของหาย, อุบัติเหตุ หรือขอความช่วยเหลือจากตำรวจ (มีล่ามภาษาอังกฤษ)</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#DC2626;">
+                    <div class="step-num" style="background:#DC2626;">119</div>
+                    <h4>เรียกรถพยาบาล / กู้ภัย / ดับเพลิง</h4>
+                    <p style="font-size:1.1rem; font-weight:800; color:#DC2626; font-family:'JetBrains Mono', monospace; margin:4px 0;">โทร 119 (โทรฟรี)</p>
+                    <p>เจ็บป่วยฉุกเฉิน, เป็นลม, ได้รับบาดเจ็บ (แจ้งคำว่า "คีคิวชา / Kyukyu-sha" = รถพยาบาล)</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#DC2626;">
+                    <div class="step-num" style="background:#DC2626;"><i class="fa-solid fa-building-flag" style="font-size:0.75rem;"></i></div>
+                    <h4>สถานเอกอัครราชทูต ณ กรุงโตเกียว</h4>
+                    <p style="font-size:0.95rem; font-weight:800; color:#18181B; font-family:'JetBrains Mono', monospace; margin:4px 0;">+81-3-5789-2810</p>
+                    <p><strong>สายด่วนฉุกเฉินคนไทย:</strong> +81-90-4435-7812<br>ดูแลครอบคลุมเขตโตเกียวและปริมณฑล (Day 3-7)</p>
+                </div>
+
+                <div class="transit-step-card" style="border-color:#DC2626;">
+                    <div class="step-num" style="background:#DC2626;"><i class="fa-solid fa-building-flag" style="font-size:0.75rem;"></i></div>
+                    <h4>สถานกงสุลใหญ่ ณ นครโอซาก้า</h4>
+                    <p style="font-size:0.95rem; font-weight:800; color:#18181B; font-family:'JetBrains Mono', monospace; margin:4px 0;">+81-6-6262-9226</p>
+                    <p><strong>สายด่วนฉุกเฉินคนไทย:</strong> +81-90-1248-8450<br>ดูแลพื้นที่ภูมิภาคคันไซ / โอซาก้า (Day 1-2)</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Weather Contingency Plan Section -->
         <div class="nb-card" style="background:#FFFBEB; border-color:#D97706;">
             <h3 style="font-size:1.25rem; font-weight:800; color:#B45309; margin-bottom:12px;">
@@ -1518,7 +1632,21 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
             </div>
         </div>
 
-    </div>
+    
+            <!-- Interactive Map for Day 7 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 7: Tabata ➔ Ueno (Ameyoko Market) ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 1</h4>
+                    <a href="https://www.google.com/maps/dir/Tabata+Station/Keisei-Ueno+Station/Ameyoko+Shopping+District/Narita+Airport+Terminal+1" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Keisei-Ueno+Station+to:Ameyoko+Shopping+Street+to:Narita+International+Airport+Terminal+1&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
 
     <!-- Footer -->
     <footer>
@@ -1527,6 +1655,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
 
     <!-- Interactive Scripts -->
     <script>
+        
         // Live Countdown to Departure: Feb 25, 2027 00:25:00 GMT+0700
         const targetDate = new Date('2027-02-25T00:25:00+07:00').getTime();
 
@@ -1556,6 +1685,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
         updateCountdown();
 
         function switchDay(dayNum) {
+            // Update buttons
             const buttons = document.querySelectorAll('.day-btn');
             buttons.forEach((btn, index) => {
                 if (index === dayNum - 1) {
@@ -1565,6 +1695,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
                 }
             });
 
+            // Update panels
             for (let i = 1; i <= 7; i++) {
                 const panel = document.getElementById('day-panel-' + i);
                 if (panel) {
