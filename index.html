@@ -43,12 +43,14 @@
             padding-bottom: 80px;
         }
 
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* Neo-Brutalist Card base */
         .nb-card {
             background: #FFFFFF;
             border: var(--border-heavy);
@@ -65,6 +67,7 @@
             box-shadow: var(--shadow-hard-lg);
         }
 
+        /* Header */
         header {
             background: var(--dark-card);
             color: #FFFFFF;
@@ -106,6 +109,7 @@
             font-size: 0.95rem;
         }
 
+        /* Quick Stat Badges */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -147,6 +151,7 @@
             font-weight: 600;
         }
 
+        /* Section Headings */
         .section-header {
             display: flex;
             align-items: center;
@@ -168,6 +173,7 @@
             font-weight: 800;
         }
 
+        /* Flight Strip */
         .flight-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -232,6 +238,7 @@
             font-weight: 600;
         }
 
+        /* Mobile Alert / Booking Calendar Checklist */
         .alert-box {
             background: #FEF3C7;
             border: 3px solid #000;
@@ -288,6 +295,7 @@
             line-height: 1.5;
         }
 
+        /* Day Navigator Tabs */
         .day-nav {
             display: flex;
             gap: 8px;
@@ -309,15 +317,24 @@
             transition: all 0.1s ease;
         }
 
-        .day-btn:hover { background: #F3F4F6; }
+        .day-btn:hover {
+            background: #F3F4F6;
+        }
+
         .day-btn.active {
             background: var(--main-yellow);
             box-shadow: 4px 4px 0px #000;
             transform: translate(-2px, -2px);
         }
 
-        .day-panel { display: none; }
-        .day-panel.active { display: block; }
+        /* Day Plan Details */
+        .day-panel {
+            display: none;
+        }
+
+        .day-panel.active {
+            display: block;
+        }
 
         .day-title-row {
             display: flex;
@@ -344,6 +361,7 @@
             font-size: 0.85rem;
         }
 
+        /* Timeline Items */
         .timeline-list {
             list-style: none;
             position: relative;
@@ -402,6 +420,7 @@
             line-height: 1.5;
         }
 
+        /* Food Recommendation Section */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -469,6 +488,7 @@
             color: #000;
         }
 
+        /* Transit Master Guide */
         .transit-guide-box {
             background: #EEF2FF;
             border: 3px solid #000;
@@ -525,6 +545,7 @@
             margin-top: 6px;
         }
 
+        /* Maps Embed Responsive */
         .map-wrapper {
             border: 3px solid #000;
             border-radius: 14px;
@@ -540,6 +561,7 @@
             border: 0;
         }
 
+        /* Copy DM Message Section */
         .dm-box {
             background: #F3F4F6;
             border: 2px dashed #4B5563;
@@ -570,6 +592,7 @@
             color: #000;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -603,6 +626,8 @@
 
     <div class="container">
 
+        <!-- Stat Cards -->
+        
         <!-- Live Countdown & Trip Milestone Tracker -->
         <div class="nb-card" style="background: linear-gradient(135deg, #18181B 0%, #27272A 100%); color: #FFF; border-color: #000; margin-bottom: 24px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px;">
@@ -762,6 +787,32 @@
                 <div class="day-stay-tag"><i class="fa-solid fa-hotel"></i> พัก: รร.ย่านนัมบะ คืนที่ 1 (ฝากเป๋าฟรี)</div>
             </div>
 
+            
+            <!-- Transit & Ticket Guide for Day 1 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 1)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">Nankai Airport Express (45 นาที) หรือ Nankai Rapi:t (34 นาที)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">970 เยน (Express) / 1,490 เยน (Rapi:t ล็อกที่นั่ง)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">แตะบัตร IC Card (Suica/ICOCA) ได้เลย หรือซื้อ e-Ticket Rapi:t ล่วงหน้าใน Klook/Trip.com</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">เดินขึ้นชั้น 2F จากสนามบินข้ามสะพานเชื่อมเข้าสถานีรถไฟได้ทันที มีช่องวางกระเป๋า 28 นิ้ว</div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="timeline-list">
                 <li class="timeline-item">
                     <span class="timeline-time">07:55 น.</span>
@@ -859,6 +910,32 @@
                 <div class="day-stay-tag"><i class="fa-solid fa-hotel"></i> พัก: รร.ย่านนัมบะ คืนที่ 2</div>
             </div>
 
+            
+            <!-- Transit & Ticket Guide for Day 2 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 2)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">Osaka Metro สาย Midosuji (สีแดง) / Tanimachi / Sennichimae</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">~190 - 240 เยน / เที่ยว (เฉลี่ยทั้งวัน ~600-800 เยน)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">ใช้บัตรแตะจ่าย IC Card (iPhone แตะ Apple Wallet / Android แตะบัตร ICOCA)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">ขึ้นบันไดเลื่อนในโอซาก้า ยืนชิด 'ขวา' เสมอ (เว้นทางซ้ายให้คนรีบเดิน)</div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="timeline-list">
                 <li class="timeline-item">
                     <span class="timeline-time">09:00 – 11:30 น.</span>
@@ -938,6 +1015,32 @@
                 <div class="day-stay-tag"><i class="fa-solid fa-house"></i> พัก: Wes-Stay Tabata (Airbnb) คืนที่ 1</div>
             </div>
 
+            
+            <!-- Transit & Ticket Guide for Day 3 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 3)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">Shinkansen Nozomi (2.5 ชม.) + JR Yamanote Line (15 นาที)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">~14,720 เยน / คน (ต้องล็อกที่นั่งกระเป๋าใบใหญ่)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">จองผ่านแอป SmartEX ล่วงหน้า 1 เดือน (27 ม.ค. 2027 เวลา 08:00 น. ไทย)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">ต้องเลือกที่นั่งแถวหลังสุด 'Oversized Baggage Area' เพื่อวางกระเป๋า 28 นิ้ว 4 ใบฟรี</div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="timeline-list">
                 <li class="timeline-item">
                     <span class="timeline-time">10:00 น.</span>
@@ -1014,6 +1117,32 @@
                     <div class="day-main-heading">ลุยหิมะขาวโพลน Gala Yuzawa (ลานสกี &amp; เลื่อนหิมะ)</div>
                 </div>
                 <div class="day-stay-tag"><i class="fa-solid fa-house"></i> พัก: Wes-Stay Tabata (Airbnb) คืนที่ 2</div>
+            </div>
+
+            
+            <!-- Transit & Ticket Guide for Day 4 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 4)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">Joetsu Shinkansen (Ueno ➔ Gala Yuzawa ตรง 75 นาที)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">ใช้บัตรพาส JR Tokyo Wide Pass (15,000 เยน / 3 วัน คลุม Day 4-5)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">ซื้อผ่านเว็บ JR-EAST หรือ Klook ล่วงหน้า 1 เดือน พร้อมกดจองที่นั่งฟรี</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">ลงสถานี Gala Yuzawa เดินออกจากเกตคือจุดเช่าถาดเลื่อนหิมะทันที กางเกงต้องผ้าร่มกันน้ำ</div>
+                    </div>
+                </div>
             </div>
 
             <ul class="timeline-list">
@@ -1102,6 +1231,32 @@
                 <div class="day-stay-tag"><i class="fa-solid fa-house"></i> พัก: Wes-Stay Tabata (Airbnb) คืนที่ 3</div>
             </div>
 
+            
+            <!-- Transit & Ticket Guide for Day 5 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 5)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">รถไฟด่วน Fuji Excursion (Shinjuku ➔ Kawaguchiko ตรง 2 ชม.)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">ฟรี (ครอบคลุมใน JR Tokyo Wide Pass จาก Day 4)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">กดจองที่นั่งล่วงหน้า 1 เดือน (1 ก.พ. 2027 เวลา 08:00 น. ไทย) ผ่านเว็บ JR-EAST</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">ที่นั่งรอบเช้า 07:30 น. เต็มไวมากใน 10 นาที ต้องตั้งปลุกกดให้ทัน</div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="timeline-list">
                 <li class="timeline-item">
                     <span class="timeline-time">07:00 – 07:30 น.</span>
@@ -1173,6 +1328,32 @@
                 <div class="day-stay-tag"><i class="fa-solid fa-house"></i> พัก: Wes-Stay Tabata (Airbnb) คืนที่ 4</div>
             </div>
 
+            
+            <!-- Transit & Ticket Guide for Day 6 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 6)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">JR Yamanote Line (ลง Tokyo) ต่อ JR Keiyo Line (ลง Maihama ~40 นาที)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">รถไฟ ~410 เยน / เที่ยว (แตะ IC Card) + ตั๋ว Disney ~8,400-9,400 เยน</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">ตั๋วพาร์กจองล่วงหน้า 2 เดือน (2 ม.ค. 2027 เวลา 12:00 น. ไทย) ผ่านแอป Disney หรือ Klook</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">ถึง Maihama ก่อน 08:00 น. รถไฟในโตเกียวให้ยืนชิด 'ซ้าย' บนบันไดเลื่อน</div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="timeline-list">
                 <li class="timeline-item">
                     <span class="timeline-time">07:30 – 08:15 น.</span>
@@ -1220,6 +1401,32 @@
                     <div class="day-main-heading">ตลาด Ameyoko ➔ Keisei Skyliner ➔ สนามบินนาริตะ บินกลับไทย</div>
                 </div>
                 <div class="day-stay-tag" style="background:#DCFCE7; border-color:#16A34A;"><i class="fa-solid fa-plane"></i> บินกลับ 19:00 น. (VZ833)</div>
+            </div>
+
+            
+            <!-- Transit & Ticket Guide for Day 7 -->
+            <div style="background:#F0F9FF; border:2px solid #0284C7; border-radius:12px; padding:16px; margin: 16px 0 20px; box-shadow:3px 3px 0px #0284C7;">
+                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.05rem; color:#0369A1; margin-bottom:10px;">
+                    <i class="fa-solid fa-train-subway"></i> คู่มือเดินทาง &amp; ตั๋วที่ต้องใช้วันนี้ (Day 7)
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
+                        <div style="color:#1E293B; font-weight:600;">Keisei Skyliner รถไฟด่วนพิเศษความเร็วสูง (ตรง 36-41 นาที)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
+                        <div style="color:#1E293B; font-weight:600;">~2,570 เยน (~550 บาท)</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
+                        <div style="color:#1E293B; font-weight:600;">ซื้อ e-Ticket ล่วงหน้าใน Klook/Trip.com แล้วสแกนรับตั๋วกดเลือกรอบที่ตู้ Keisei-Ueno</div>
+                    </div>
+                    <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#B45309; margin-bottom:3px;"><i class="fa-solid fa-circle-exclamation"></i> ข้อควรระวัง:</div>
+                        <div style="color:#4B5563;">จองรอบ ~15:20-15:40 น. ไปถึงสนามบินก่อน 2.5 ชม. มีช่องวางกระเป๋า 28 นิ้วหน้าตู้</div>
+                    </div>
+                </div>
             </div>
 
             <ul class="timeline-list">
@@ -1282,7 +1489,7 @@
                     </div>
                 </div>
             </div>
-
+        
             <!-- Interactive Map for Day 7 -->
             <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
                 <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
@@ -1297,6 +1504,8 @@
             </div>
         </div>
 
+        
+        
         <!-- NEW: Booking Countdown & Mobile Alert Checklist -->
         <div class="alert-box">
             <div class="alert-box-title">
@@ -1415,6 +1624,7 @@
             </div>
         </div>
 
+        
         <!-- FIRST-TIMER SURVIVAL KIT (สำหรับมือใหม่ไปญี่ปุ่นครั้งแรก 4 คน) -->
         <div class="nb-card" style="background: #FDF4FF; border-color: #9333EA; border-width: 3px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#581C87; margin-bottom:12px;">
@@ -1479,6 +1689,7 @@
             </div>
         </div>
 
+        
         <!-- WINTER PACKING CHECKLIST & EMERGENCY CONTACTS -->
         <div class="nb-card" style="background: #F0FDF4; border-color: #16A34A; border-width: 3px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#14532D; margin-bottom:12px;">
@@ -1615,7 +1826,8 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
             </div>
         </div>
 
-    </div>
+    
+            
 
     <!-- Footer -->
     <footer>
@@ -1624,6 +1836,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
 
     <!-- Interactive Scripts -->
     <script>
+        
         // Live Countdown to Departure: Feb 25, 2027 00:25:00 GMT+0700
         const targetDate = new Date('2027-02-25T00:25:00+07:00').getTime();
 
@@ -1653,6 +1866,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
         updateCountdown();
 
         function switchDay(dayNum) {
+            // Update buttons
             const buttons = document.querySelectorAll('.day-btn');
             buttons.forEach((btn, index) => {
                 if (index === dayNum - 1) {
@@ -1662,6 +1876,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
                 }
             });
 
+            // Update panels
             for (let i = 1; i <= 7; i++) {
                 const panel = document.getElementById('day-panel-' + i);
                 if (panel) {
