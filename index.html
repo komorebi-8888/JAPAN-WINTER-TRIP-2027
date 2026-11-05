@@ -43,14 +43,12 @@
             padding-bottom: 80px;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Neo-Brutalist Card base */
         .nb-card {
             background: #FFFFFF;
             border: var(--border-heavy);
@@ -67,7 +65,6 @@
             box-shadow: var(--shadow-hard-lg);
         }
 
-        /* Header */
         header {
             background: var(--dark-card);
             color: #FFFFFF;
@@ -109,7 +106,6 @@
             font-size: 0.95rem;
         }
 
-        /* Quick Stat Badges */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -151,7 +147,6 @@
             font-weight: 600;
         }
 
-        /* Section Headings */
         .section-header {
             display: flex;
             align-items: center;
@@ -173,7 +168,6 @@
             font-weight: 800;
         }
 
-        /* Flight Strip */
         .flight-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -238,7 +232,6 @@
             font-weight: 600;
         }
 
-        /* Mobile Alert / Booking Calendar Checklist */
         .alert-box {
             background: #FEF3C7;
             border: 3px solid #000;
@@ -295,7 +288,6 @@
             line-height: 1.5;
         }
 
-        /* Day Navigator Tabs */
         .day-nav {
             display: flex;
             gap: 8px;
@@ -317,24 +309,15 @@
             transition: all 0.1s ease;
         }
 
-        .day-btn:hover {
-            background: #F3F4F6;
-        }
-
+        .day-btn:hover { background: #F3F4F6; }
         .day-btn.active {
             background: var(--main-yellow);
             box-shadow: 4px 4px 0px #000;
             transform: translate(-2px, -2px);
         }
 
-        /* Day Plan Details */
-        .day-panel {
-            display: none;
-        }
-
-        .day-panel.active {
-            display: block;
-        }
+        .day-panel { display: none; }
+        .day-panel.active { display: block; }
 
         .day-title-row {
             display: flex;
@@ -361,7 +344,6 @@
             font-size: 0.85rem;
         }
 
-        /* Timeline Items */
         .timeline-list {
             list-style: none;
             position: relative;
@@ -420,7 +402,6 @@
             line-height: 1.5;
         }
 
-        /* Food Recommendation Section */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -488,7 +469,6 @@
             color: #000;
         }
 
-        /* Transit Master Guide */
         .transit-guide-box {
             background: #EEF2FF;
             border: 3px solid #000;
@@ -545,7 +525,6 @@
             margin-top: 6px;
         }
 
-        /* Maps Embed Responsive */
         .map-wrapper {
             border: 3px solid #000;
             border-radius: 14px;
@@ -561,7 +540,6 @@
             border: 0;
         }
 
-        /* Copy DM Message Section */
         .dm-box {
             background: #F3F4F6;
             border: 2px dashed #4B5563;
@@ -592,7 +570,6 @@
             color: #000;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -626,8 +603,6 @@
 
     <div class="container">
 
-        <!-- Stat Cards -->
-        
         <!-- Live Countdown & Trip Milestone Tracker -->
         <div class="nb-card" style="background: linear-gradient(135deg, #18181B 0%, #27272A 100%); color: #FFF; border-color: #000; margin-bottom: 24px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px;">
@@ -869,7 +844,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Namba+Station+to:UNIQLO+Shinsaibashi+to:Dotonbori&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Namba+Station,+Osaka&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -947,7 +922,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Namba+Station&daddr=Osaka+Castle+to:Hankyu+Department+Store+Umeda+to:Orange+Street+Osaka+to:Dotonbori&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Namba+Station&daddr=Osaka+Castle&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1025,7 +1000,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Shin-Osaka+Station&daddr=Tokyo+Station+to:Tabata+Station+Tokyo+to:Shibuya+Crossing&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Tokyo+Station&daddr=Shibuya+Crossing&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1111,7 +1086,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Ueno+Station&daddr=GALA+Yuzawa+Snow+Resort+to:Echigo-Yuzawa+Station&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Ueno+Station&daddr=GALA+Yuzawa+Snow+Resort&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1182,7 +1157,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Shinjuku+Station&daddr=Kawaguchiko+Station+to:Oishi+Park+Fuji+to:Mt.+Fuji+Panoramic+Ropeway&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Shinjuku+Station&daddr=Kawaguchiko+Station&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1231,7 +1206,7 @@
                     </a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Tokyo+Station+to:Tokyo+Disneyland&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?saddr=Tokyo+Station&daddr=Tokyo+Disneyland&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1307,10 +1282,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Interactive Map for Day 7 -->
+            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 7: Tabata ➔ Ueno (Ameyoko Market) ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 1</h4>
+                    <a href="https://www.google.com/maps/dir/Tabata+Station/Keisei-Ueno+Station/Ameyoko+Shopping+District/Narita+Airport+Terminal+1" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
+                    </a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?saddr=Keisei-Ueno+Station&daddr=Narita+International+Airport+Terminal+1&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
 
-        
-        
         <!-- NEW: Booking Countdown & Mobile Alert Checklist -->
         <div class="alert-box">
             <div class="alert-box-title">
@@ -1429,7 +1415,6 @@
             </div>
         </div>
 
-        
         <!-- FIRST-TIMER SURVIVAL KIT (สำหรับมือใหม่ไปญี่ปุ่นครั้งแรก 4 คน) -->
         <div class="nb-card" style="background: #FDF4FF; border-color: #9333EA; border-width: 3px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#581C87; margin-bottom:12px;">
@@ -1494,7 +1479,6 @@
             </div>
         </div>
 
-        
         <!-- WINTER PACKING CHECKLIST & EMERGENCY CONTACTS -->
         <div class="nb-card" style="background: #F0FDF4; border-color: #16A34A; border-width: 3px;">
             <div style="display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; color:#14532D; margin-bottom:12px;">
@@ -1631,21 +1615,7 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
             </div>
         </div>
 
-    
-            <!-- Interactive Map for Day 7 -->
-            <div style="margin-top:24px; border-top: 2px dashed #CBD5E1; padding-top:16px;">
-                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
-                    <h4 style="font-weight:800; font-size:1.05rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--main-blue);"></i> 📍 เส้นทาง Day 7: Tabata ➔ Ueno (Ameyoko Market) ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 1</h4>
-                    <a href="https://www.google.com/maps/dir/Tabata+Station/Keisei-Ueno+Station/Ameyoko+Shopping+District/Narita+Airport+Terminal+1" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="background:#2563EB;">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดเส้นทางวันนี้ใน Google Maps App
-                    </a>
-                </div>
-                <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?saddr=Tabata+Station&daddr=Keisei-Ueno+Station+to:Ameyoko+Shopping+Street+to:Narita+International+Airport+Terminal+1&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1654,7 +1624,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
 
     <!-- Interactive Scripts -->
     <script>
-        
         // Live Countdown to Departure: Feb 25, 2027 00:25:00 GMT+0700
         const targetDate = new Date('2027-02-25T00:25:00+07:00').getTime();
 
@@ -1684,7 +1653,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
         updateCountdown();
 
         function switchDay(dayNum) {
-            // Update buttons
             const buttons = document.querySelectorAll('.day-btn');
             buttons.forEach((btn, index) => {
                 if (index === dayNum - 1) {
@@ -1694,7 +1662,6 @@ https://komorebi-8888.github.io/JAPAN-WINTER-TRIP-2027/
                 }
             });
 
-            // Update panels
             for (let i = 1; i <= 7; i++) {
                 const panel = document.getElementById('day-panel-' + i);
                 if (panel) {
