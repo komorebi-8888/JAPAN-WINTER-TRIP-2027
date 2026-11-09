@@ -712,10 +712,10 @@
                 <div class="stat-value">~฿38,500</div>
                 <div class="stat-sub">*รวมบิน+ชินคันเซ็น+ที่พัก+กิน (ยังไม่รวม Disney, JR Pass, ช้อปปิ้ง)</div>
             </div>
-            <div class="stat-card blue">
-                <div class="stat-label">โอซาก้า (2 คืน)</div>
-                <div class="stat-value">รอโหวต</div>
-                <div class="stat-sub">Sotetsu Fresa / APA / b&Namba (เน้นลิฟต์+ฝากเป๋า)</div>
+            <div class="stat-card yellow" style="border-color: #D97706; background: #FEF3C7;">
+                <div class="stat-label" style="color: #92400E;"><i class="fa-solid fa-thumbtack"></i> โอซาก้า (2 คืน: 25–27 ก.พ.)</div>
+                <div class="stat-value" style="color: #78350F; font-size: 1.35rem;">เคาะเลือกแล้ว (รอจอง)</div>
+                <div class="stat-sub" style="color: #92400E;">Smile Hotel Premium Shinsaibashi (~฿976/คน/คืน)</div>
             </div>
             <div class="stat-card pink">
                 <div class="stat-label">โตเกียว (4 คืน)</div>
@@ -790,97 +790,79 @@
                     </p>
                 </div>
                 <div style="background: #FEF3C7; border: 2px solid #D97706; border-radius: 10px; padding: 8px 14px; text-align: center;">
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #B45309;">สถานะการจองที่พัก</div>
-                    <div style="font-size: 1.15rem; font-weight: 800; color: #78350F; font-family: 'JetBrains Mono', monospace;">เปิดให้กลุ่ม 4 คนโหวต</div>
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #92400E;">สถานะการจองที่พัก</div>
+                    <div style="font-size: 1.05rem; font-weight: 800; color: #78350F; font-family: 'JetBrains Mono', monospace;">โอซาก้าเคาะเลือกแล้ว (รอกดจอง)</div>
                 </div>
             </div>
 
-            <!-- 1. โอซาก้า (2 คืน: 25-27 ก.พ. 2027) -->
+            <!-- 1. โอซาก้า (2 คืน: 25-27 ก.พ. 2027) - CONFIRMED -->
             <div style="margin-bottom: 24px;">
-                <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.1rem; color: #1E293B; margin-bottom: 12px;">
-                    <i class="fa-solid fa-hotel" style="color: #D97706;"></i> 1. ตัวเลือกที่พัก โอซาก้า (คืน 25 และ 26 ก.พ. 2027)
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.1rem; color: #1E293B;">
+                        <i class="fa-solid fa-thumbtack" style="color: #D97706; font-size: 1.25rem;"></i> 1. ที่พักโอซาก้า (คืน 25 และ 26 ก.พ. 2027) — <span style="color:#B45309;">เคาะเลือกที่นี่แล้ว (ล็อกเป้ารอกดจอง)</span>
+                    </div>
+                    <span style="background: #FEF3C7; color: #92400E; font-weight: 800; font-size: 0.78rem; padding: 4px 10px; border-radius: 20px; border: 1.5px solid #D97706;">
+                        <i class="fa-solid fa-thumbtack"></i> SELECTED (READY TO BOOK)
+                    </span>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-                    
-                    <!-- Choice 1: b&Namba 2 -->
-                    <div class="vote-card" id="vote-opt-osaka-1" style="background:#FFF; border:2px solid #000; border-radius:12px; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:2px 2px 0px #000;">
+
+                <!-- Confirmed Hotel Card -->
+                <div style="background: #FFF; border: 2.5px solid #D97706; border-radius: 14px; padding: 18px 20px; box-shadow: 4px 4px 0px #D97706;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1.5px dashed #CBD5E1; padding-bottom: 12px;">
                         <div>
-                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                                <span style="background:#FEF08A; font-weight:800; font-size:0.75rem; padding:2px 6px; border-radius:4px; border:1px solid #000;">ตัวเลือก A (ถูกสุด &amp; กว้างสุด)</span>
-                                <span style="font-weight:800; font-size:0.95rem; color:#15803D; font-family:'JetBrains Mono', monospace;">~฿840 / คน (2 คืน)</span>
-                            </div>
-                            <h4 style="font-size:1.05rem; font-weight:800; margin-bottom:4px;">บีแอนด์นัมบะ 2 (b&amp;Namba 2)</h4>
-                            <div style="font-size:0.83rem; color:#4B5563; line-height:1.5; margin-bottom:10px;">
-                                • <strong>ขนาดห้อง:</strong> <strong>28 ตร.ม.</strong> (มี 2 เตียงใหญ่ นอนรวมกัน 4 คนในห้องเดียว)<br>
-                                • <strong>ราคารวม:</strong> ~3,363 บ. รวม 2 คืน (ถ้าเลือก 1 ห้องนอน 4 คน)<br>
-                                • <strong>จุดเด่น:</strong> มีครัว ตู้เย็น ไมโครเวฟ เครื่องซักผ้า กางกระเป๋า 28 นิ้ว 4 ใบพร้อมกันได้สบาย<br>
-                                • <strong>ข้อควรระวัง:</strong> อพาร์ตเมนต์ไม่มีเคาน์เตอร์ 24 ชม. ต้องทักถามเรื่องการฝากกระเป๋า 10:30 น. และเช็กเรื่องลิฟต์
+                            <span style="background: #0284C7; color: #FFF; font-weight: 800; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px;">
+                                🛍️ ทำเลสายช้อป &amp; เข้าห้องเร็ว 14:00 น.
+                            </span>
+                            <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; margin-bottom: 2px;">
+                                Smile Hotel Premium Osaka Higashishinsaibashi
+                            </h3>
+                            <div style="font-size: 0.84rem; color: #64748B;">
+                                โรงแรมสไมล์ พรีเมียม โอซาก้า ฮิงาชิ ชินไซบาชิ (スマイルホテルプレミアム大阪東心斎橋) • 3.5 ดาว
                             </div>
                         </div>
-                        <button onclick="castVote('osaka', 'b&Namba 2')" style="background:#18181B; color:#FFF; border:none; border-radius:6px; padding:8px; font-weight:700; font-size:0.85rem; cursor:pointer; width:100%;">
-                            <i class="fa-solid fa-thumbs-up"></i> โหวตเลือกที่นี่ (<span id="count-osaka-1">0</span>)
-                        </button>
-                    </div>
-
-                    <!-- Choice 2: Smile Hotel Premium Higashishinsaibashi -->
-                    <div class="vote-card" id="vote-opt-osaka-2" style="background:#FFF; border:2px solid #000; border-radius:12px; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:2px 2px 0px #000;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                                <span style="background:#BAE6FD; font-weight:800; font-size:0.75rem; padding:2px 6px; border-radius:4px; border:1px solid #000;">ตัวเลือก B (ช้อปปิ้งใกล้สุด)</span>
-                                <span style="font-weight:800; font-size:0.95rem; color:#0369A1; font-family:'JetBrains Mono', monospace;">~฿1,707 / คน (2 คืน)</span>
+                        <div style="text-align: right;">
+                            <div style="font-size: 1.35rem; font-weight: 800; color: #059669; font-family: 'JetBrains Mono', monospace;">
+                                ฿7,808.92
                             </div>
-                            <h4 style="font-size:1.05rem; font-weight:800; margin-bottom:4px;">Smile Hotel Premium Shinsaibashi</h4>
-                            <div style="font-size:0.83rem; color:#4B5563; line-height:1.5; margin-bottom:10px;">
-                                • <strong>ขนาดห้อง:</strong> <strong>15–17 ตร.ม. / ห้อง</strong> (จอง 2 ห้อง ห้องละ 2 คน เตียงใหญ่)<br>
-                                • <strong>ราคารวม 2 ห้อง:</strong> ~6,828 บ. รวม 2 คืน (รีวิว 8.9)<br>
-                                • <strong>จุดเด่น:</strong> โรงแรม 3.5 ดาว ฟรอนต์ 24 ชม. ฝากกระเป๋า 10:30 น. ฟรีชัวร์ มีลิฟต์หลายตัว เดินไปถนนชินไซบาชิ &amp; โดทงโบริใกล้มาก ช้อป Uniqlo หิ้วกลับง่าย<br>
-                                • <strong>ข้อควรระวัง:</strong> นอนแยก 2 ห้อง
+                            <div style="font-size: 0.76rem; color: #64748B; font-weight: 600;">
+                                รวม 2 ห้อง 2 คืน (เฉลี่ย ~฿976 / คน / คืน)
                             </div>
                         </div>
-                        <button onclick="castVote('osaka', 'Smile Hotel Premium')" style="background:#18181B; color:#FFF; border:none; border-radius:6px; padding:8px; font-weight:700; font-size:0.85rem; cursor:pointer; width:100%;">
-                            <i class="fa-solid fa-thumbs-up"></i> โหวตเลือกที่นี่ (<span id="count-osaka-2">0</span>)
-                        </button>
                     </div>
 
-                    <!-- Choice 3: Plum Hotel -->
-                    <div class="vote-card" id="vote-opt-osaka-3" style="background:#FFF; border:2px solid #000; border-radius:12px; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:2px 2px 0px #000;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                                <span style="background:#FCE7F3; font-weight:800; font-size:0.75rem; padding:2px 6px; border-radius:4px; border:1px solid #000;">ตัวเลือก C (รีวิวสูง 9.1)</span>
-                                <span style="font-weight:800; font-size:0.95rem; color:#BE185D; font-family:'JetBrains Mono', monospace;">~฿1,750 / คน (2 คืน)</span>
-                            </div>
-                            <h4 style="font-size:1.05rem; font-weight:800; margin-bottom:4px;">โรงแรมแพลม (Plum Hotel)</h4>
-                            <div style="font-size:0.83rem; color:#4B5563; line-height:1.5; margin-bottom:10px;">
-                                • <strong>ขนาดห้อง:</strong> <strong>13–15 ตร.ม. / ห้อง</strong> (จอง 2 ห้อง ห้องละ 2 คน)<br>
-                                • <strong>ราคารวม 2 ห้อง:</strong> ~7,011 บ. รวม 2 คืน<br>
-                                • <strong>จุดเด่น:</strong> มีเคาน์เตอร์ฟรอนต์ ฝากกระเป๋าเดินทางฟรี มีลิฟต์ คะแนนรีวิวสูง 9.1 สะอาด ใกล้ศาลเจ้าหัวสิงโต<br>
-                                • <strong>ข้อควรระวัง:</strong> เตียงเป็นแบบคู่เล็ก (Semi-Double) 120-130 ซม. นอน 2 คนจะค่อนข้างเบียด
-                            </div>
+                    <!-- Key Badges Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 14px;">
+                        <div style="background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem;">
+                            🕒 <strong>Check-in:</strong> <span style="color:#1D4ED8; font-weight:800;">14:00 น. (บ่าย 2 เร็วสุด)</span>
                         </div>
-                        <button onclick="castVote('osaka', 'Plum Hotel')" style="background:#18181B; color:#FFF; border:none; border-radius:6px; padding:8px; font-weight:700; font-size:0.85rem; cursor:pointer; width:100%;">
-                            <i class="fa-solid fa-thumbs-up"></i> โหวตเลือกที่นี่ (<span id="count-osaka-3">0</span>)
-                        </button>
-                    </div>
-
-                    <!-- Choice 4: Sotetsu Fresa Inn / APA Namba -->
-                    <div class="vote-card" id="vote-opt-osaka-4" style="background:#FFF; border:2px solid #000; border-radius:12px; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:2px 2px 0px #000;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                                <span style="background:#D1FAE5; font-weight:800; font-size:0.75rem; padding:2px 6px; border-radius:4px; border:1px solid #000;">ตัวเลือก D (ใกล้สถานีสุด)</span>
-                                <span style="font-weight:800; font-size:0.95rem; color:#047857; font-family:'JetBrains Mono', monospace;">~฿900–1,050 / คน / คืน</span>
-                            </div>
-                            <h4 style="font-size:1.05rem; font-weight:800; margin-bottom:4px;">Sotetsu Fresa / APA Namba</h4>
-                            <div style="font-size:0.83rem; color:#4B5563; line-height:1.5; margin-bottom:10px;">
-                                • <strong>ขนาดห้อง:</strong> 14–16 ตร.ม. / ห้อง (จอง 2 ห้อง รอกด 11.11 / 12.12)<br>
-                                • <strong>จุดเด่น:</strong> เดินจากสถานี Nankai Namba เพียง 2–4 นาที ลากกระเป๋า 28 นิ้วสบายที่สุด ฟรอนต์ 24 ชม. ฝากกระเป๋าฟรีชัวร์ 100% ลิฟต์มาตรฐาน<br>
-                                • <strong>ข้อควรระวัง:</strong> ต้องรอกดโค้ดวันเบิ้ลเพื่อให้ได้ราคาไม่เกินงบ
-                            </div>
+                        <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem;">
+                            🚪 <strong>Check-out:</strong> ก่อน 11:00 น.
                         </div>
-                        <button onclick="castVote('osaka', 'Sotetsu Fresa / APA')" style="background:#18181B; color:#FFF; border:none; border-radius:6px; padding:8px; font-weight:700; font-size:0.85rem; cursor:pointer; width:100%;">
-                            <i class="fa-solid fa-thumbs-up"></i> โหวตเลือกที่นี่ (<span id="count-osaka-4">0</span>)
-                        </button>
+                        <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem;">
+                            🛏️ <strong>ห้องพัก:</strong> เตียงแฝด (Twin Beds) 2 ห้อง ปลอดบุหรี่
+                        </div>
+                        <div style="background: #F0FDF4; border: 1.5px solid #BBF7D0; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem; color:#166534;">
+                            🛡️ <strong>เงื่อนไข:</strong> ยกเลิกฟรี ก่อน 22 ก.พ. 2027 12:00 น.
+                        </div>
                     </div>
 
+                    <!-- Detailed Info & Transit -->
+                    <div style="font-size: 0.85rem; color: #334155; line-height: 1.6; background: #F8FAFC; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; border: 1px solid #E2E8F0;">
+                        • 🛗 <strong>กระเป๋า 28 นิ้ว 4 ใบ &amp; การฝากกระเป๋า:</strong> โรงแรมมีลิฟต์มาตรฐาน 100% แผนกต้อนรับเปิด 24 ชม. สามารถนำกระเป๋า 4 ใบไปฝากฟรีช่วง 10:30 น. ของ Day 1 ได้ทันที<br>
+                        • 🚅 <strong>วิธีเดินทางขาเข้า (Day 1):</strong> สนามบิน KIX นั่งสาย Nankai ลง <em>สถานี Tengachaya</em> ➔ เปลี่ยนขึ้น Metro สายสีน้ำตาล (Sakaisuji Line) ลง <strong>สถานี Nagahoribashi ทางออก 7 (มีลิฟต์)</strong> ➔ เดินตรงเข้าซอย 4 นาที (~350 ม.) ถึงโรงแรม (ค่ารถไฟรวม 1,210 เยน แตะบัตร IC Card ผ่านได้เลย)<br>
+                        • 🛍️ <strong>ทำเลรอบข้าง:</strong> เดินทะลุถนนคนเดิน Shinsaibashi-suji และป้ายกูลิโกะริมคลอง Dotonbori เพียง 400 ม., ห้างใต้ดิน Crysta Nagahori 300 ม., ปากซอยมีร้าน Lawson และ 7-Eleven ตลอด 24 ชม.<br>
+                        • 🚄 <strong>ขาไปต่อชินคันเซ็น (Day 3):</strong> ขึ้น Metro ที่สถานี Nagahoribashi เปลี่ยนสาย 1 ครั้งที่ Hommachi เข้าสายสีแดง ยิงตรงถึงสถานี Shin-Osaka ใน 20 นาที (290 เยน)
+                    </div>
+
+                    <!-- Link Action Buttons -->
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Smile+Hotel+Premium+Osaka+Higashishinsaibashi" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; background: #18181B; color: #FFF; text-decoration: none; padding: 9px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+                            <i class="fa-solid fa-location-dot" style="color: #FFD027;"></i> เปิดพิกัด Google Maps
+                        </a>
+                        <a href="https://smile-hotels.com/hotels/higashishinsaibashi" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; background: #F1F5F9; color: #0F172A; text-decoration: none; padding: 9px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; border: 1.5px solid #CBD5E1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+                            <i class="fa-solid fa-globe" style="color: #2563EB;"></i> เว็บไซต์ทางการโรงแรม
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -965,7 +947,7 @@
                     <span style="font-weight:800; color:#EF4444; font-size:0.9rem;">พฤหัสบดี 25 ก.พ. 2027</span>
                     <div class="day-main-heading">สนามบิน KIX ตรงสู่ นัมบะ ➔ ฝากกระเป๋า ➔ สอยเสื้อหนาว Uniqlo &amp; GU Flagship</div>
                 </div>
-                <div class="day-stay-tag"><i class="fa-solid fa-hotel"></i> พัก: รร.ย่านนัมบะ คืนที่ 1 (ฝากเป๋าฟรี)</div>
+                <div class="day-stay-tag" style="background:#DCFCE7; border-color:#16A34A; color:#15803D;"><i class="fa-solid fa-circle-check"></i> พัก: Smile Hotel Premium Shinsaibashi คืนที่ 1 (ล็อกเป้าแล้ว)</div>
             </div>
 
             
@@ -977,11 +959,11 @@
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; font-size:0.88rem;">
                     <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
                         <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-route"></i> นั่งรถอะไร:</div>
-                        <div style="color:#1E293B; font-weight:600;">Nankai Airport Express (45 นาที) หรือ Nankai Rapi:t (34 นาที)</div>
+                        <div style="color:#1E293B; font-weight:600;">Nankai ลง Tengachaya ➔ ต่อ Metro สายสีน้ำตาลลง Nagahoribashi Exit 7 ลิฟต์ เดิน 4 นาที</div>
                     </div>
                     <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
                         <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-ticket"></i> ค่าตั๋ว / บัตรที่ใช้:</div>
-                        <div style="color:#1E293B; font-weight:600;">970 เยน (Express) / 1,490 เยน (Rapi:t ล็อกที่นั่ง)</div>
+                        <div style="color:#1E293B; font-weight:600;">รวม 1,210 เยน (Nankai 970 + Metro 240 เยน แตะ IC Card ได้เลย)</div>
                     </div>
                     <div style="background:#FFF; border:1.5px solid #BAE6FD; border-radius:8px; padding:10px;">
                         <div style="font-weight:700; color:#0284C7; margin-bottom:3px;"><i class="fa-solid fa-mobile-screen-button"></i> ซื้อ / จองจากไหน:</div>
@@ -1017,8 +999,8 @@
                 <li class="timeline-item">
                     <span class="timeline-time">10:30 น.</span>
                     <div class="timeline-content">
-                        <h4>เอากระเป๋า 4 ใบไปฝากที่เคาน์เตอร์โรงแรมย่านนัมบะ (ฟรี!)</h4>
-                        <p>เดินลากกระเป๋าเข้าโรงแรม (Sotetsu Fresa Inn / APA Namba) แจ้งฟรอนต์ฝากกระเป๋าเดินทางไว้ก่อนฟรี ตัวเบาทันที ไม่ต้องเสียเงินหยอดล็อกเกอร์แม้แต่เยนเดียว</p>
+                        <h4>ถึง Smile Hotel Premium Osaka ฝากกระเป๋า 4 ใบที่ฟรอนต์ฟรี</h4>
+                        <p>ออกจากลิฟต์สถานี Nagahoribashi ทางออก 7 เดินตรง 4 นาทีเข้าโรงแรม แจ้งฟรอนต์ 24 ชม. ฝากกระเป๋า 28 นิ้ว 4 ใบฟรี ตัวเบาทันที พร้อมลุยต่อ</p>
                     </div>
                 </li>
                 <li class="timeline-item">
@@ -1029,10 +1011,10 @@
                     </div>
                 </li>
                 <li class="timeline-item">
-                    <span class="timeline-time">15:00 น.</span>
+                    <span class="timeline-time">14:00 น. (บ่าย 2 เร็วสุด!)</span>
                     <div class="timeline-content">
-                        <h4>กลับมาเช็คอินเข้าห้องพักโรงแรม พักผ่อน</h4>
-                        <p>เดินหิ้วถุงช้อปปิ้งกลับโรงแรม เช็คอินเข้าห้องพักมาตรฐาน 15:00 น. พอดีเป๊ะ จัดของ แกะเสื้อหนาวตัวใหม่มาใส่ ล้างหน้าล้างตา ชาร์จแบตพักผ่อนเอาแรง</p>
+                        <h4>กลับมาเช็คอินเข้าห้องพัก Smile Hotel Premium งีบพักผ่อนเอาแรง</h4>
+                        <p>ข้อดีที่สุดของโรงแรมนี้คือได้เข้าห้องตั้งแต่ <strong>14:00 น. (เร็วกว่าที่อื่น 1 ชม.)</strong> ได้อาบน้ำ ล้างหน้า ทิ้งตัวงีบพักผ่อนฟื้นร่างจากไฟล์ทบินข้ามคืน ปรับอุณหภูมิร่างกายให้ชินกับความหนาว</p>
                     </div>
                 </li>
                 <li class="timeline-item">
@@ -1088,7 +1070,7 @@
                     <span style="font-weight:800; color:#EF4444; font-size:0.9rem;">ศุกร์ 26 ก.พ. 2027</span>
                     <div class="day-main-heading">ปราสาทโอซาก้า ➔ ห้างอุเมดะ ➔ สตรีทแวร์ Orange Street</div>
                 </div>
-                <div class="day-stay-tag"><i class="fa-solid fa-hotel"></i> พัก: รร.ย่านนัมบะ คืนที่ 2</div>
+                <div class="day-stay-tag" style="background:#DCFCE7; border-color:#16A34A; color:#15803D;"><i class="fa-solid fa-circle-check"></i> พัก: Smile Hotel Premium Shinsaibashi คืนที่ 2 (ล็อกเป้าแล้ว)</div>
             </div>
 
             
@@ -1698,10 +1680,10 @@
                 ตั้งปลุกหรือใส่ปฏิทินใน Google Calendar / Apple Calendar ล่วงหน้า 1 วัน เพื่อแย่งสิทธิ์และที่นั่งที่ดีที่สุด:
             </p>
             <div class="alert-grid">
-                <div class="alert-item">
-                    <span class="alert-date-badge">11 พ.ย. / 12 ธ.ค. 2026 (00:00 น.)</span>
-                    <h4>กดโรงแรมโอซาก้า 2 ห้อง (รอโหวต)</h4>
-                    <p>เข้าแอป Trip.com / Traveloka กดคูปองวันเบิ้ลจอง Sotetsu Fresa Inn Namba, APA Namba หรือตัวเลือกที่ผ่านโหวต (เลือกแบบ Free Cancellation)</p>
+                <div class="alert-item" style="border-color:#D97706; background:#FFFBEB;">
+                    <span class="alert-date-badge" style="background:#D97706;"><i class="fa-solid fa-thumbtack"></i> ล็อกเป้าแล้ว รอกดจอง</span>
+                    <h4 style="color:#78350F;">Smile Hotel Premium Shinsaibashi (2 ห้อง 2 คืน)</h4>
+                    <p style="color:#92400E;">เคาะเลือกแล้ว ราคาเช็กได้ ฿7,808.92 (~฿976/คน/คืน) ห้องเตียงแฝด 2 ห้อง • เตรียมกดจองช่วงโปร 11.11 / 12.12 พร้อมโค้ดลดเพิ่ม</p>
                 </div>
 
                 <div class="alert-item">
@@ -2090,7 +2072,7 @@
 ✈️ ขากลับ: พุธ 3 มี.ค. 2027 | VZ833 นาริตะ Terminal 2 เวลา 19:00 ➔ สุวรรณภูมิ 00:25 น.
 
 📌 แพลนเที่ยว 7 วัน (อัปเดตวันในสัปดาห์):
-- Day 1 (พฤหัส 25 ก.พ.): KIX เช้า ➔ Nankai ตรงเข้านัมบะ ฝากเป๋า ➔ Uniqlo &amp; GU Shinsaibashi ➔ แสงสี Dotonbori
+- Day 1 (พฤหัส 25 ก.พ.): KIX เช้า ➔ Nankai + Metro ลง Nagahoribashi ฝากเป๋า Smile Hotel (ล็อกเป้าแล้ว) ➔ Uniqlo &amp; GU Shinsaibashi ➔ เช็คอินบ่าย 2 ➔ แสงสี Dotonbori
 - Day 2 (ศุกร์ 26 ก.พ.): ปราสาทโอซาก้า ➔ ห้างอุเมดะ ➔ สตรีทแวร์ Amerikamura &amp; Orange Street (ตัด Uniqlo ซ้ำ)
 - Day 3 (เสาร์ 27 ก.พ.): ชินคันเซ็น Nozomi ข้ามสู่โตเกียว ➔ เช็คอินที่พักโตเกียว ➔ ห้าแยก Shibuya
 - Day 4 (อาทิตย์ 28 ก.พ.): ลุยหิมะ Gala Yuzawa (Joetsu Shinkansen) ➔ ข้าวปั้นยักษ์ &amp; สาเก Ponshukan
@@ -2099,7 +2081,7 @@
 - Day 7 (พุธ 3 มี.ค.): ช้อปตลาด Ameyoko Ueno ➔ Keisei Skyliner ➔ สนามบินนาริตะ Terminal 2 บินกลับ 19:00 น.
 
 🔔 ปฏิทินวันตั้งปลุกกดจองในโทรศัพท์ (5 รายการ):
-1. 11 พ.ย. / 12 ธ.ค. 2026: กดโปร รร. โอซาก้า 2 ห้อง (เน้นลิฟต์+ฝากเป๋าฟรี)
+1. รร. โอซาก้า 2 คืน: เคาะเลือกแล้ว (Smile Hotel Premium ล็อกเป้ารอกดโปร 11.11/12.12)
 2. 2 ม.ค. 2027 (12:00 น. ไทย): ซื้อตั๋ว Tokyo Disneyland (เข้าพาร์ก 2 มี.ค.)
 3. 27 ม.ค. 2027 (08:00 น. ไทย): จอง SmartEX ชินคันเซ็น ที่นั่ง Oversized Baggage 4 ใบ
 4. 28 ม.ค. 2027 (08:00 น. ไทย): จองที่นั่ง Joetsu Shinkansen (Ueno ➔ Gala Yuzawa วัน 28 ก.พ.)
